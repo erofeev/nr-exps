@@ -593,7 +593,7 @@
         "type": "debug",
         "z": "efd97995f8a02a42",
         "name": "",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
