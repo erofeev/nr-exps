@@ -1,0 +1,17 @@
+{
+    "name": "Testprj1",
+    "description": "A Node-RED Project",
+    "version": "0.0.1",
+    "dependencies": {
+        "@kevingodell/node-red-pipe2jpeg": "0.1.1-beta.1",
+        "node-red-contrib-image-output": "0.6.3",
+        "node-red-contrib-image-tools": "2.0.4",
+        "node-red-contrib-tfjs-coco-ssd": "1.0.5"
+    },
+    "node-red": {
+        "settings": {
+            "flowFile": "flows.json",
+            "credentialsFile": "flows_cred.json"
+        }
+    }
+}
