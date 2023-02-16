@@ -7,7 +7,8 @@
         "node-red-contrib-image-output": "0.6.3",
         "node-red-contrib-image-tools": "2.0.4",
         "node-red-contrib-tfjs-coco-ssd": "1.0.5",
-        "@kevingodell/node-red-ffmpeg": "0.1.1-beta.3"
+        "@kevingodell/node-red-ffmpeg": "0.1.1-beta.3",
+        "@kevingodell/node-red-mp4frag": "0.1.1-beta.1"
     },
     "node-red": {
         "settings": {
