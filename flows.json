@@ -891,7 +891,8 @@
         "y": 540,
         "wires": [
             [
-                "8ed8a4c6f3591c24"
+                "8ed8a4c6f3591c24",
+                "6ab4b119eebb5b97"
             ]
         ]
     },
@@ -910,6 +911,21 @@
         "x": 480,
         "y": 660,
         "wires": []
+    },
+    {
+        "id": "6ab4b119eebb5b97",
+        "type": "image viewer",
+        "z": "efd97995f8a02a42",
+        "name": "",
+        "width": 160,
+        "data": "payload",
+        "dataType": "msg",
+        "active": true,
+        "x": 230,
+        "y": 640,
+        "wires": [
+            []
+        ]
     },
     {
         "id": "46999a1f.6657d4",
