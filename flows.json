@@ -628,7 +628,7 @@
         "preBuffer": "5",
         "timeLimit": "-1",
         "repeated": "false",
-        "statusData": "all",
+        "statusData": "playlist",
         "x": 600,
         "y": 280,
         "wires": [
