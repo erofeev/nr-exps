@@ -275,7 +275,7 @@
             "description": "Just loads the image.",
             "parameters": []
         },
-        "x": 150,
+        "x": 230,
         "y": 100,
         "wires": [
             [
@@ -294,7 +294,7 @@
             "88f6a4efc8ea9bbb"
         ],
         "x": 80,
-        "y": 40,
+        "y": 280,
         "wires": [
             [
                 "9df99b28bee8d82e"
