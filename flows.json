@@ -474,6 +474,7 @@
         "randomLast": "5",
         "randomUnits": "seconds",
         "drop": false,
+        "allowrate": false,
         "outputs": 1,
         "x": 390,
         "y": 200,
@@ -824,21 +825,6 @@
         "x": 1069,
         "y": 165,
         "wires": []
-    },
-    {
-        "id": "9a5d4f6b67028127",
-        "type": "watch",
-        "z": "efd97995f8a02a42",
-        "name": "isCamera inserted",
-        "files": "/dev/video0",
-        "recursive": "",
-        "x": 470,
-        "y": 660,
-        "wires": [
-            [
-                "6dfce461afdf457d"
-            ]
-        ]
     },
     {
         "id": "46999a1f.6657d4",
