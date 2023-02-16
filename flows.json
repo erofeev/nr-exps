@@ -932,7 +932,7 @@
         "z": "efd97995f8a02a42",
         "name": "",
         "data": "payload",
-        "dataType": "msg",
+        "dataType": "bin",
         "ret": "buf",
         "parameter1": "",
         "parameter1Type": "msg",
