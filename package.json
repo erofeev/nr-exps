@@ -10,7 +10,8 @@
         "@kevingodell/node-red-ffmpeg": "0.1.1-beta.3",
         "@kevingodell/node-red-mp4frag": "0.1.1-beta.1",
         "node-red-contrib-aedes": "0.6.0",
-        "node-red-contrib-onvif-nodes": "0.0.1-beta.16"
+        "node-red-contrib-onvif-nodes": "0.0.1-beta.16",
+        "node-red-dashboard": "3.3.1"
     },
     "node-red": {
         "settings": {
