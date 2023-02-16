@@ -404,8 +404,7 @@
                 "a78f06978ef3f20b"
             ],
             [
-                "b8166871d2e90f18",
-                "a78f06978ef3f20b"
+                "b8166871d2e90f18"
             ],
             [
                 "9abd766b2a9d4ba9"
@@ -413,7 +412,9 @@
             [
                 "ca48a481054a8787"
             ],
-            []
+            [
+                "a78f06978ef3f20b"
+            ]
         ]
     },
     {
@@ -627,7 +628,7 @@
         "preBuffer": "5",
         "timeLimit": "-1",
         "repeated": "false",
-        "statusData": "playlist",
+        "statusData": "all",
         "x": 600,
         "y": 280,
         "wires": [
