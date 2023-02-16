@@ -660,9 +660,9 @@
         "controls": "true",
         "muted": "false",
         "players": [
+            "hls.js",
             "hls",
             "mp4",
-            "hls.js",
             "socket.io"
         ],
         "x": 890,
