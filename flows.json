@@ -392,9 +392,26 @@
         "y": 460,
         "wires": [
             [
-                "c265da553e912d6e"
+                "c265da553e912d6e",
+                "1f758bca6b793e11"
             ]
         ]
+    },
+    {
+        "id": "1f758bca6b793e11",
+        "type": "image",
+        "z": "d7ec3041.ef1a7",
+        "name": "",
+        "width": "400",
+        "data": "annotatedInput",
+        "dataType": "msg",
+        "thumbnail": true,
+        "active": false,
+        "pass": false,
+        "outputs": 0,
+        "x": 580,
+        "y": 620,
+        "wires": []
     },
     {
         "id": "055a7ba886404441",
