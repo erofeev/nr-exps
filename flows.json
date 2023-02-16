@@ -31,6 +31,14 @@
         "env": []
     },
     {
+        "id": "e00d584b4e2e74af",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "5e1c22f8.d65d2c",
         "type": "ui_group",
         "name": "group 2",
@@ -404,7 +412,7 @@
         "name": "",
         "outputs": 5,
         "cmdPath": "ffmpeg",
-        "cmdArgs": "[\"-loglevel\",\"+level+error\",\"-hide_banner\",\"-nostats\",\"-s\",\"640x480\",\"-re\",\"-f\",\"video4linux2\",\"-i\",\"/dev/video0\",\"-f\",\"image2pipe\",\"pipe:1\",\"-progress\",\"pipe:3\",\"-s\",\"640x480\",\"-f\",\"mp4\",\"-movflags\",\"+frag_keyframe+empty_moov+default_base_moof\",\"pipe:4\"]",
+        "cmdArgs": "[\"-loglevel\",\"+level+error\",\"-hide_banner\",\"-nostats\",\"-s\",\"640x480\",\"-re\",\"-f\",\"video4linux2\",\"-i\",\"/dev/video0\",\"-f\",\"image2pipe\",\"pipe:1\",\"-progress\",\"pipe:3\",\"-c:v\",\"h264_v4l2m2m\",\"-s\",\"640x480\",\"-f\",\"mp4\",\"-movflags\",\"+frag_keyframe+empty_moov+default_base_moof\",\"pipe:4\"]",
         "cmdOutputs": 4,
         "killSignal": "SIGTERM",
         "x": 360,
@@ -1178,6 +1186,28 @@
         "y": 160,
         "wires": [
             [],
+            []
+        ]
+    },
+    {
+        "id": "03d74989bb8028d8",
+        "type": "http request",
+        "z": "e00d584b4e2e74af",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "http://127.0.0.1:1880/auth",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 230,
+        "y": 100,
+        "wires": [
             []
         ]
     }
