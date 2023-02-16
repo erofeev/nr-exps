@@ -234,7 +234,7 @@
         "data": "image",
         "dataType": "msg",
         "thumbnail": false,
-        "active": false,
+        "active": true,
         "pass": false,
         "outputs": 0,
         "x": 640,
@@ -279,7 +279,8 @@
         "y": 100,
         "wires": [
             [
-                "88f6a4efc8ea9bbb"
+                "88f6a4efc8ea9bbb",
+                "f96cb4ed58471387"
             ]
         ]
     },
@@ -348,6 +349,19 @@
             [
                 "c5ba02f2fa3237c2",
                 "c41f3ce662f9f4bb"
+            ]
+        ]
+    },
+    {
+        "id": "f96cb4ed58471387",
+        "type": "mobilenet",
+        "z": "d7ec3041.ef1a7",
+        "name": "",
+        "x": 320,
+        "y": 380,
+        "wires": [
+            [
+                "815ff9a0c37df769"
             ]
         ]
     },
