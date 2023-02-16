@@ -194,7 +194,7 @@
         "type": "debug",
         "z": "d7ec3041.ef1a7",
         "name": "Recognized Objects",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -233,7 +233,7 @@
         "data": "image",
         "dataType": "msg",
         "thumbnail": false,
-        "active": true,
+        "active": false,
         "pass": false,
         "outputs": 0,
         "x": 640,
@@ -279,7 +279,8 @@
         "wires": [
             [
                 "88f6a4efc8ea9bbb",
-                "f96cb4ed58471387"
+                "f96cb4ed58471387",
+                "671877d63b6bc7e4"
             ]
         ]
     },
@@ -381,6 +382,19 @@
         "x": 660,
         "y": 540,
         "wires": []
+    },
+    {
+        "id": "671877d63b6bc7e4",
+        "type": "cocossd",
+        "z": "d7ec3041.ef1a7",
+        "name": "",
+        "x": 340,
+        "y": 460,
+        "wires": [
+            [
+                "c265da553e912d6e"
+            ]
+        ]
     },
     {
         "id": "055a7ba886404441",
