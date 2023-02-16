@@ -202,8 +202,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 540,
-        "y": 440,
+        "x": 800,
+        "y": 400,
         "wires": []
     },
     {
@@ -221,8 +221,7 @@
             [
                 "815ff9a0c37df769",
                 "9df99b28bee8d82e",
-                "fbb4690cad4548e3",
-                "6b8388034103a39b"
+                "fbb4690cad4548e3"
             ]
         ]
     },
@@ -328,7 +327,7 @@
         "links": [
             "b180c51d784367aa"
         ],
-        "x": 655,
+        "x": 705,
         "y": 340,
         "wires": []
     },
@@ -336,38 +335,19 @@
         "id": "fbb4690cad4548e3",
         "type": "function",
         "z": "d7ec3041.ef1a7",
-        "name": "function 1",
+        "name": "Set MQTT topic",
         "func": "var l_payload = msg.classes;\ndelete msg.payload;\nmsg.payload = msg.classes;\nmsg.topic = \"edge/00001/image/recognition/objects\";\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 540,
+        "x": 560,
         "y": 340,
         "wires": [
             [
                 "c5ba02f2fa3237c2",
                 "c41f3ce662f9f4bb"
-            ]
-        ]
-    },
-    {
-        "id": "6b8388034103a39b",
-        "type": "function",
-        "z": "d7ec3041.ef1a7",
-        "name": "function 2",
-        "func": "var l_payload = msg.classes;\ndelete msg.payload;\nmsg.payload = msg.classes;\nmsg.topic = \"edge/00001/image/recognition\";\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 560,
-        "y": 300,
-        "wires": [
-            [
-                "c5ba02f2fa3237c2"
             ]
         ]
     },
