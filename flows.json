@@ -1214,27 +1214,5 @@
             [],
             []
         ]
-    },
-    {
-        "id": "03d74989bb8028d8",
-        "type": "http request",
-        "z": "e00d584b4e2e74af",
-        "name": "",
-        "method": "GET",
-        "ret": "txt",
-        "paytoqs": "ignore",
-        "url": "http://127.0.0.1:1880/auth",
-        "tls": "",
-        "persist": false,
-        "proxy": "",
-        "insecureHTTPParser": false,
-        "authType": "",
-        "senderr": false,
-        "headers": [],
-        "x": 230,
-        "y": 100,
-        "wires": [
-            []
-        ]
     }
 ]
