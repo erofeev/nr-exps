@@ -220,7 +220,8 @@
         "wires": [
             [
                 "fbb4690cad4548e3",
-                "815ff9a0c37df769"
+                "815ff9a0c37df769",
+                "9df99b28bee8d82e"
             ]
         ]
     },
@@ -356,43 +357,26 @@
         "id": "f96cb4ed58471387",
         "type": "mobilenet",
         "z": "d7ec3041.ef1a7",
+        "d": true,
         "name": "",
         "x": 320,
         "y": 380,
         "wires": [
             [
-                "c265da553e912d6e",
                 "9df99b28bee8d82e"
             ]
         ]
     },
     {
-        "id": "c265da553e912d6e",
-        "type": "debug",
-        "z": "d7ec3041.ef1a7",
-        "name": "debug 1",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 660,
-        "y": 540,
-        "wires": []
-    },
-    {
         "id": "671877d63b6bc7e4",
         "type": "cocossd",
         "z": "d7ec3041.ef1a7",
+        "d": true,
         "name": "",
         "x": 340,
         "y": 460,
         "wires": [
             [
-                "c265da553e912d6e",
                 "1f758bca6b793e11"
             ]
         ]
