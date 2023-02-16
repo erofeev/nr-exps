@@ -365,7 +365,7 @@
         "statusVal": "status",
         "statusType": "msg",
         "x": 870,
-        "y": 380,
+        "y": 360,
         "wires": []
     },
     {
