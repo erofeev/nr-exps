@@ -430,8 +430,7 @@
                 "9abd766b2a9d4ba9"
             ],
             [
-                "ca48a481054a8787",
-                "6dfce461afdf457d"
+                "ca48a481054a8787"
             ],
             [
                 "a78f06978ef3f20b"
@@ -566,7 +565,7 @@
         "type": "debug",
         "z": "efd97995f8a02a42",
         "name": "",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
