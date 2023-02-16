@@ -892,7 +892,8 @@
         "wires": [
             [
                 "8ed8a4c6f3591c24",
-                "6ab4b119eebb5b97"
+                "6ab4b119eebb5b97",
+                "f514d9a5e233edc8"
             ]
         ]
     },
@@ -925,6 +926,43 @@
         "y": 640,
         "wires": [
             []
+        ]
+    },
+    {
+        "id": "f514d9a5e233edc8",
+        "type": "jimp-image",
+        "z": "efd97995f8a02a42",
+        "name": "",
+        "data": "payload",
+        "dataType": "msg",
+        "ret": "img",
+        "parameter1": "",
+        "parameter1Type": "msg",
+        "parameter2": "",
+        "parameter2Type": "msg",
+        "parameter3": "",
+        "parameter3Type": "msg",
+        "parameter4": "",
+        "parameter4Type": "msg",
+        "parameter5": "",
+        "parameter5Type": "msg",
+        "parameter6": "",
+        "parameter6Type": "msg",
+        "parameter7": "",
+        "parameter7Type": "msg",
+        "parameter8": "",
+        "parameter8Type": "msg",
+        "sendProperty": "payload",
+        "sendPropertyType": "msg",
+        "parameterCount": 0,
+        "jimpFunction": "none",
+        "selectedJimpFunction": {},
+        "x": 130,
+        "y": 720,
+        "wires": [
+            [
+                "8ed8a4c6f3591c24"
+            ]
         ]
     },
     {
