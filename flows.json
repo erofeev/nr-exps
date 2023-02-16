@@ -392,7 +392,7 @@
         "name": "",
         "outputs": 5,
         "cmdPath": "ffmpeg",
-        "cmdArgs": "[\"-loglevel\",\"+level+error\",\"-hide_banner\",\"-nostats\",\"-s\",\"320x200\",\"-re\",\"-f\",\"video4linux2\",\"-hwaccel\",\"rpi\",\"-i\",\"/dev/video0\",\"-f\",\"image2pipe\",\"-b:v\",\"128M\",\"pipe:1\",\"-progress\",\"pipe:3\",\"-s\",\"320x200\",\"-f\",\"mp4\",\"-b:v\",\"128M\",\"-movflags\",\"+frag_keyframe+empty_moov+default_base_moof\",\"pipe:4\"]",
+        "cmdArgs": "[\"-loglevel\",\"+level+error\",\"-hide_banner\",\"-nostats\",\"-s\",\"320x200\",\"-re\",\"-f\",\"video4linux2\",\"-hwaccel\",\"rpi\",\"-i\",\"/dev/video0\",\"-f\",\"image2pipe\",\"-b:v\",\"128M\",\"pipe:1\",\"-progress\",\"pipe:3\",\"-s\",\"320x200\",\"-c:v\",\"copy\",\"-f\",\"mp4\",\"-b:v\",\"128M\",\"-movflags\",\"+frag_keyframe+empty_moov+default_base_moof\",\"pipe:4\"]",
         "cmdOutputs": 4,
         "killSignal": "SIGTERM",
         "x": 360,
