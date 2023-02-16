@@ -935,7 +935,7 @@
         "name": "",
         "data": "payload",
         "dataType": "msg",
-        "ret": "img",
+        "ret": "buf",
         "parameter1": "",
         "parameter1Type": "msg",
         "parameter2": "",
@@ -956,7 +956,12 @@
         "sendPropertyType": "msg",
         "parameterCount": 0,
         "jimpFunction": "none",
-        "selectedJimpFunction": {},
+        "selectedJimpFunction": {
+            "name": "none",
+            "fn": "none",
+            "description": "Just loads the image.",
+            "parameters": []
+        },
         "x": 130,
         "y": 720,
         "wires": [
