@@ -234,7 +234,7 @@
         "data": "image",
         "dataType": "msg",
         "thumbnail": false,
-        "active": true,
+        "active": false,
         "pass": false,
         "outputs": 0,
         "x": 640,
