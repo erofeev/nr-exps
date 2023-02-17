@@ -2,12 +2,5 @@
     "8896a3f1d2a677fd": {},
     "5c987343a5458a93": {},
     "4bd4c4a3bf0645b2": {},
-    "fc887ea3e2399bf0": {},
-    "dae57f828276bffb": {
-        "email": "andy.erofeev@yandex.ru",
-        "password": "KNP4FJD-ZkdUrO7",
-        "token": "{\"access_token\":\"y0_AgAAAAAFzAxpAAbkfgAAAADce4OAMmA8zsJ2TrC5VraTwKryg04ul-I\",\"expires_in\":31536000,\"refresh_token\":\"1:YT2RPTOFEbV8rtYo:kaiR_8cMCmalQCK2_OBoSzzoJyAlJS08H5FEHuRqubpu10Bq79XR0-wyOgUzPeg7zfmU68PJUSfwJQ:gTtiDEZ3qsM-JienjPlyJA\",\"token_type\":\"bearer\"}",
-        "id": "arequucipl42rc3v21tk"
-    },
-    "ae58705da84ce137": {}
+    "fc887ea3e2399bf0": {}
 }

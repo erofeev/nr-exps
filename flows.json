@@ -181,26 +181,6 @@
         "sessionExpiry": ""
     },
     {
-        "id": "dae57f828276bffb",
-        "type": "alice-service",
-        "name": "andy.erofeev@yandex.ru"
-    },
-    {
-        "id": "d9f5bc657b369a9b",
-        "type": "alice-device",
-        "service": "dae57f828276bffb",
-        "name": "test",
-        "description": "",
-        "room": "ДЕВАЙС1",
-        "dtype": "devices.types.other"
-    },
-    {
-        "id": "ae58705da84ce137",
-        "type": "yandex-login",
-        "name": "",
-        "debugFlag": false
-    },
-    {
         "id": "c41f3ce662f9f4bb",
         "type": "debug",
         "z": "d7ec3041.ef1a7",
