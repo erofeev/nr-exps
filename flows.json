@@ -1256,7 +1256,8 @@
             [
                 "68b8a17323f8d77f",
                 "c00a77987f3a51ae",
-                "e520cc66f3ba56b1"
+                "e520cc66f3ba56b1",
+                "ab7eb7f899887d40"
             ]
         ]
     },
@@ -1298,14 +1299,14 @@
         "type": "Event",
         "z": "e00d584b4e2e74af",
         "device": "d9f5bc657b369a9b",
-        "name": "Комната:test:open",
+        "name": "ЕУЕУ:test:open",
         "stype": "devices.properties.event",
         "instance": "open",
         "events": [
             "opened",
             "closed"
         ],
-        "x": 430,
+        "x": 420,
         "y": 440,
         "wires": []
     },
