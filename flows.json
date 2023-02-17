@@ -1190,5 +1190,23 @@
             [],
             []
         ]
+    },
+    {
+        "id": "92cc5f79a059ec31",
+        "type": "config",
+        "z": "e00d584b4e2e74af",
+        "name": "",
+        "properties": [
+            {
+                "p": "",
+                "pt": "flow",
+                "to": "",
+                "tot": "str"
+            }
+        ],
+        "active": true,
+        "x": 130,
+        "y": 60,
+        "wires": []
     }
 ]
