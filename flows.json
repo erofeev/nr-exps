@@ -1234,34 +1234,26 @@
         ]
     },
     {
-        "id": "12a5850dd510a67e",
-        "type": "wifiscan",
-        "z": "e00d584b4e2e74af",
-        "name": "",
-        "x": 230,
-        "y": 120,
-        "wires": [
-            [
-                "c38d3697b48b73c6"
-            ]
-        ]
-    },
-    {
         "id": "84d0211bf859d237",
         "type": "inject",
         "z": "e00d584b4e2e74af",
         "name": "",
-        "props": [],
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
         "repeat": "",
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "x": 90,
+        "payload": "Привет Андрей",
+        "payloadType": "str",
+        "x": 120,
         "y": 40,
         "wires": [
             [
-                "12a5850dd510a67e",
                 "68b8a17323f8d77f"
             ]
         ]
