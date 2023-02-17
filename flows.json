@@ -1254,7 +1254,6 @@
         "y": 40,
         "wires": [
             [
-                "68b8a17323f8d77f",
                 "c00a77987f3a51ae"
             ]
         ]
@@ -1290,124 +1289,6 @@
             [
                 "c38d3697b48b73c6"
             ]
-        ]
-    },
-    {
-        "id": "ca40b4eb0ca365d9",
-        "type": "alice-local-in",
-        "z": "e00d584b4e2e74af",
-        "name": "",
-        "token": "",
-        "uniqueFlag": false,
-        "debugFlag": false,
-        "homekitFormat": "speaker",
-        "x": 150,
-        "y": 580,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "fa5f7870a33bf88d",
-        "type": "alice-local-out",
-        "z": "e00d584b4e2e74af",
-        "name": "",
-        "debugFlag": false,
-        "input": "command",
-        "payload": "payload",
-        "payloadType": "msg",
-        "volumeFlag": false,
-        "stopListening": true,
-        "pauseMusic": false,
-        "whisper": false,
-        "ttsVoice": null,
-        "ttsEffect": null,
-        "x": 840,
-        "y": 500,
-        "wires": []
-    },
-    {
-        "id": "6d78c859bc866e5c",
-        "type": "alice-local-station",
-        "z": "e00d584b4e2e74af",
-        "name": "",
-        "token": "35d2ad98436f4b47",
-        "debugFlag": false,
-        "connectionFlag": false,
-        "sheduler": [
-            {
-                "active": true,
-                "from": "0",
-                "to": "15",
-                "phrase": "",
-                "dayNumber": 1
-            },
-            {
-                "active": true,
-                "from": "0",
-                "to": "15",
-                "phrase": "",
-                "dayNumber": 2
-            },
-            {
-                "active": true,
-                "from": "0",
-                "to": "15",
-                "phrase": "",
-                "dayNumber": 3
-            },
-            {
-                "active": true,
-                "from": "0",
-                "to": "15",
-                "phrase": "",
-                "dayNumber": 4
-            },
-            {
-                "active": true,
-                "from": "0",
-                "to": "15",
-                "phrase": "",
-                "dayNumber": 5
-            },
-            {
-                "active": true,
-                "from": "0",
-                "to": "15",
-                "phrase": "",
-                "dayNumber": 6
-            },
-            {
-                "active": true,
-                "from": "0",
-                "to": "15",
-                "phrase": "",
-                "dayNumber": 0
-            }
-        ],
-        "network": {
-            "mode": "manual",
-            "address": "",
-            "port": ""
-        },
-        "fixedAddress": "",
-        "fixedPort": "",
-        "phrase": "",
-        "x": 400,
-        "y": 520,
-        "wires": []
-    },
-    {
-        "id": "68b8a17323f8d77f",
-        "type": "alice-send",
-        "z": "e00d584b4e2e74af",
-        "name": "",
-        "login": "f19f317bbf6a07ad",
-        "command_type": "tts",
-        "x": 250,
-        "y": 220,
-        "wires": [
-            []
         ]
     }
 ]
