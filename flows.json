@@ -1254,7 +1254,8 @@
         "y": 40,
         "wires": [
             [
-                "68b8a17323f8d77f"
+                "68b8a17323f8d77f",
+                "c00a77987f3a51ae"
             ]
         ]
     },
@@ -1286,7 +1287,9 @@
         "x": 320,
         "y": 320,
         "wires": [
-            []
+            [
+                "c38d3697b48b73c6"
+            ]
         ]
     },
     {
@@ -1355,8 +1358,8 @@
         "whisper": false,
         "ttsVoice": null,
         "ttsEffect": null,
-        "x": 400,
-        "y": 620,
+        "x": 840,
+        "y": 500,
         "wires": []
     },
     {
@@ -1370,50 +1373,50 @@
         "sheduler": [
             {
                 "active": true,
-                "from": null,
-                "to": null,
+                "from": "0",
+                "to": "15",
                 "phrase": "",
                 "dayNumber": 1
             },
             {
                 "active": true,
-                "from": null,
-                "to": null,
+                "from": "0",
+                "to": "15",
                 "phrase": "",
                 "dayNumber": 2
             },
             {
                 "active": true,
-                "from": null,
-                "to": null,
+                "from": "0",
+                "to": "15",
                 "phrase": "",
                 "dayNumber": 3
             },
             {
                 "active": true,
-                "from": null,
-                "to": null,
+                "from": "0",
+                "to": "15",
                 "phrase": "",
                 "dayNumber": 4
             },
             {
                 "active": true,
-                "from": null,
-                "to": null,
+                "from": "0",
+                "to": "15",
                 "phrase": "",
                 "dayNumber": 5
             },
             {
                 "active": true,
-                "from": null,
-                "to": null,
+                "from": "0",
+                "to": "15",
                 "phrase": "",
                 "dayNumber": 6
             },
             {
                 "active": true,
-                "from": null,
-                "to": null,
+                "from": "0",
+                "to": "15",
                 "phrase": "",
                 "dayNumber": 0
             }
