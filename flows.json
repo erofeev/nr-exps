@@ -320,7 +320,7 @@
         "links": [
             "b180c51d784367aa"
         ],
-        "x": 705,
+        "x": 885,
         "y": 340,
         "wires": []
     },
@@ -339,8 +339,8 @@
         "y": 340,
         "wires": [
             [
-                "c5ba02f2fa3237c2",
-                "c41f3ce662f9f4bb"
+                "c41f3ce662f9f4bb",
+                "9f783883155c7d07"
             ]
         ]
     },
@@ -387,6 +387,26 @@
         "x": 580,
         "y": 620,
         "wires": []
+    },
+    {
+        "id": "9f783883155c7d07",
+        "type": "rbe",
+        "z": "d7ec3041.ef1a7",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 770,
+        "y": 340,
+        "wires": [
+            [
+                "c5ba02f2fa3237c2"
+            ]
+        ]
     },
     {
         "id": "055a7ba886404441",
