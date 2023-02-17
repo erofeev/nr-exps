@@ -1293,26 +1293,6 @@
         ]
     },
     {
-        "id": "25683482d964a737",
-        "type": "Mode",
-        "z": "e00d584b4e2e74af",
-        "device": "46428bde3a47ba76",
-        "name": "Комната:дев1",
-        "instance": "swing",
-        "modes": [
-            "auto",
-            "horizontal",
-            "stationary",
-            "vertical"
-        ],
-        "response": true,
-        "x": 200,
-        "y": 520,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "ca40b4eb0ca365d9",
         "type": "alice-local-in",
         "z": "e00d584b4e2e74af",
@@ -1413,8 +1393,8 @@
         "fixedAddress": "",
         "fixedPort": "",
         "phrase": "",
-        "x": 740,
-        "y": 240,
+        "x": 400,
+        "y": 520,
         "wires": []
     },
     {
@@ -1427,27 +1407,6 @@
         "x": 250,
         "y": 220,
         "wires": [
-            []
-        ]
-    },
-    {
-        "id": "a5a18a4932ca50ba",
-        "type": "Color",
-        "z": "e00d584b4e2e74af",
-        "device": "",
-        "name": "Add new alice-device...",
-        "color_support": true,
-        "scheme": "rgb_normal",
-        "response": true,
-        "temperature_k": false,
-        "temperature_min": 2000,
-        "temperature_max": 9000,
-        "color_scene": [],
-        "x": 660,
-        "y": 340,
-        "wires": [
-            [],
-            [],
             []
         ]
     }
