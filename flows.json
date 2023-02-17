@@ -1255,7 +1255,8 @@
         "wires": [
             [
                 "68b8a17323f8d77f",
-                "c00a77987f3a51ae"
+                "c00a77987f3a51ae",
+                "e520cc66f3ba56b1"
             ]
         ]
     },
@@ -1322,8 +1323,8 @@
             "vertical"
         ],
         "response": true,
-        "x": 300,
-        "y": 360,
+        "x": 200,
+        "y": 420,
         "wires": [
             []
         ]
@@ -1445,5 +1446,39 @@
         "wires": [
             []
         ]
+    },
+    {
+        "id": "a5a18a4932ca50ba",
+        "type": "Color",
+        "z": "e00d584b4e2e74af",
+        "device": "",
+        "name": "Add new alice-device...",
+        "color_support": true,
+        "scheme": "rgb_normal",
+        "response": true,
+        "temperature_k": false,
+        "temperature_min": 2000,
+        "temperature_max": 9000,
+        "color_scene": [],
+        "x": 660,
+        "y": 340,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "e520cc66f3ba56b1",
+        "type": "Sensor",
+        "z": "e00d584b4e2e74af",
+        "device": "d9f5bc657b369a9b",
+        "name": "Комната:test:Battery level",
+        "stype": "devices.properties.float",
+        "instance": "battery_level",
+        "unit": "unit.percent",
+        "x": 370,
+        "y": 380,
+        "wires": []
     }
 ]
