@@ -1050,8 +1050,7 @@
         "y": 440,
         "wires": [
             [
-                "54f8a64322b58018",
-                "0e218797ea7e49bf"
+                "54f8a64322b58018"
             ]
         ]
     },
@@ -1065,6 +1064,9 @@
         "console": false,
         "tostatus": false,
         "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
         "x": 710,
         "y": 440,
         "wires": []
@@ -1078,43 +1080,6 @@
         "separate": true,
         "x": 350,
         "y": 440,
-        "wires": [
-            [
-                "d7fa8c2570aac4a3"
-            ]
-        ]
-    },
-    {
-        "id": "0e218797ea7e49bf",
-        "type": "onvif-device",
-        "z": "3bea6f7023caaec9",
-        "name": "",
-        "deviceConfig": "82dc3c9e74cfad72",
-        "action": "getServiceCapabilities",
-        "x": 340,
-        "y": 520,
-        "wires": [
-            [
-                "a11e82ca53830309"
-            ]
-        ]
-    },
-    {
-        "id": "a11e82ca53830309",
-        "type": "onvif-media",
-        "z": "3bea6f7023caaec9",
-        "name": "",
-        "deviceConfig": "82dc3c9e74cfad72",
-        "profileToken": "",
-        "profileName": "",
-        "videoEncoderConfigToken": "",
-        "videoEncoderConfigName": "",
-        "videoEncoderConfigEncoding": "",
-        "action": "getStreamUri",
-        "protocol": "HTTP",
-        "stream": "RTP-Unicast",
-        "x": 560,
-        "y": 520,
         "wires": [
             [
                 "d7fa8c2570aac4a3"
