@@ -214,7 +214,7 @@
         "cookies": "",
         "scenario_id": "",
         "speaker_id": "",
-        "debug_enable": false
+        "debug_enable": true
     },
     {
         "id": "35d2ad98436f4b47",
