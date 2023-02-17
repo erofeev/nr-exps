@@ -191,8 +191,8 @@
         "service": "dae57f828276bffb",
         "name": "test",
         "description": "",
-        "room": "ЕУЕУ",
-        "dtype": "devices.types.thermostat"
+        "room": "ДЕВАЙС1",
+        "dtype": "devices.types.other"
     },
     {
         "id": "c41f3ce662f9f4bb",
@@ -1252,10 +1252,10 @@
         "type": "On_Off",
         "z": "e00d584b4e2e74af",
         "device": "d9f5bc657b369a9b",
-        "name": "ЕУЕУ:test",
+        "name": "ДЕВАЙС1:test",
         "retrievable": true,
         "response": true,
-        "x": 310,
+        "x": 320,
         "y": 320,
         "wires": [
             [
