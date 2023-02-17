@@ -195,15 +195,6 @@
         "dtype": "devices.types.thermostat"
     },
     {
-        "id": "46428bde3a47ba76",
-        "type": "alice-device",
-        "service": "dae57f828276bffb",
-        "name": "дев1",
-        "description": "",
-        "room": "Комната",
-        "dtype": "devices.types.camera"
-    },
-    {
         "id": "f19f317bbf6a07ad",
         "type": "yandex-alice-login",
         "name": "",
