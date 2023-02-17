@@ -191,7 +191,7 @@
         "service": "dae57f828276bffb",
         "name": "test",
         "description": "",
-        "room": "Комната",
+        "room": "ЕУЕУ",
         "dtype": "devices.types.thermostat"
     },
     {
@@ -1282,10 +1282,10 @@
         "type": "On_Off",
         "z": "e00d584b4e2e74af",
         "device": "d9f5bc657b369a9b",
-        "name": "Комната:test",
+        "name": "ЕУЕУ:test",
         "retrievable": true,
         "response": true,
-        "x": 320,
+        "x": 310,
         "y": 320,
         "wires": [
             [
@@ -1473,7 +1473,7 @@
         "type": "Sensor",
         "z": "e00d584b4e2e74af",
         "device": "d9f5bc657b369a9b",
-        "name": "Комната:test:Battery level",
+        "name": "ЕУЕУ:test:Battery level",
         "stype": "devices.properties.float",
         "instance": "battery_level",
         "unit": "unit.percent",
