@@ -1190,5 +1190,63 @@
             [],
             []
         ]
+    },
+    {
+        "id": "12a5850dd510a67e",
+        "type": "wifiscan",
+        "z": "e00d584b4e2e74af",
+        "name": "",
+        "x": 230,
+        "y": 120,
+        "wires": [
+            [
+                "c38d3697b48b73c6"
+            ]
+        ]
+    },
+    {
+        "id": "84d0211bf859d237",
+        "type": "inject",
+        "z": "e00d584b4e2e74af",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 100,
+        "y": 40,
+        "wires": [
+            [
+                "12a5850dd510a67e"
+            ]
+        ]
+    },
+    {
+        "id": "c38d3697b48b73c6",
+        "type": "debug",
+        "z": "e00d584b4e2e74af",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 500,
+        "y": 120,
+        "wires": []
     }
 ]
