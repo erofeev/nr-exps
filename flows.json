@@ -195,6 +195,12 @@
         "dtype": "devices.types.other"
     },
     {
+        "id": "ae58705da84ce137",
+        "type": "yandex-login",
+        "name": "",
+        "debugFlag": false
+    },
+    {
         "id": "c41f3ce662f9f4bb",
         "type": "debug",
         "z": "d7ec3041.ef1a7",
@@ -1203,64 +1209,6 @@
         "wires": [
             [],
             []
-        ]
-    },
-    {
-        "id": "84d0211bf859d237",
-        "type": "inject",
-        "z": "e00d584b4e2e74af",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "Привет Андрей",
-        "payloadType": "str",
-        "x": 120,
-        "y": 40,
-        "wires": [
-            [
-                "c00a77987f3a51ae"
-            ]
-        ]
-    },
-    {
-        "id": "c38d3697b48b73c6",
-        "type": "debug",
-        "z": "e00d584b4e2e74af",
-        "name": "debug 1",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 500,
-        "y": 120,
-        "wires": []
-    },
-    {
-        "id": "c00a77987f3a51ae",
-        "type": "On_Off",
-        "z": "e00d584b4e2e74af",
-        "device": "d9f5bc657b369a9b",
-        "name": "ДЕВАЙС1:test",
-        "retrievable": true,
-        "response": true,
-        "x": 320,
-        "y": 320,
-        "wires": [
-            [
-                "c38d3697b48b73c6"
-            ]
         ]
     }
 ]
