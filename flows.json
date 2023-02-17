@@ -1054,7 +1054,7 @@
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "payload",
+        "complete": "payload.XAddrs",
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
