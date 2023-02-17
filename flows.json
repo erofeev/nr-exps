@@ -217,6 +217,12 @@
         "debug_enable": false
     },
     {
+        "id": "35d2ad98436f4b47",
+        "type": "yandex-login",
+        "name": "",
+        "debugFlag": false
+    },
+    {
         "id": "c41f3ce662f9f4bb",
         "type": "debug",
         "z": "d7ec3041.ef1a7",
@@ -1255,7 +1261,8 @@
         "y": 40,
         "wires": [
             [
-                "12a5850dd510a67e"
+                "12a5850dd510a67e",
+                "68b8a17323f8d77f"
             ]
         ]
     },
@@ -1364,7 +1371,7 @@
         "type": "alice-local-station",
         "z": "e00d584b4e2e74af",
         "name": "",
-        "token": "",
+        "token": "35d2ad98436f4b47",
         "debugFlag": false,
         "connectionFlag": false,
         "sheduler": [
@@ -1437,10 +1444,12 @@
         "name": "",
         "login": "f19f317bbf6a07ad",
         "command_type": "tts",
-        "x": 730,
-        "y": 540,
+        "x": 250,
+        "y": 220,
         "wires": [
-            []
+            [
+                "c38d3697b48b73c6"
+            ]
         ]
     }
 ]
