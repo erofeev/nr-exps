@@ -1087,7 +1087,7 @@
         "type": "onvif-discovery",
         "z": "3bea6f7023caaec9",
         "name": "",
-        "timeout": 5,
+        "timeout": "10",
         "separate": true,
         "x": 350,
         "y": 440,
