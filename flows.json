@@ -678,7 +678,7 @@
         "outputs": 2,
         "basePath": "abcfr",
         "serveHttp": "true",
-        "serveIo": "false",
+        "serveIo": "true",
         "hlsPlaylistSize": "10",
         "hlsPlaylistExtra": "10",
         "autoStart": "true",
