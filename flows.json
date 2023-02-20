@@ -895,7 +895,7 @@
         "id": "46999a1f.6657d4",
         "type": "exec",
         "z": "3bea6f7023caaec9",
-        "command": "ffmpeg -f rtsp -i \"rtsp://192.168.1.178:6554/stream_0\" -f image2pipe pipe:1",
+        "command": "ffmpeg -f rtsp -i \"rtsp://192.168.1.166:554/stream_0\" -f image2pipe pipe:1",
         "addpay": false,
         "append": "",
         "useSpawn": "true",
