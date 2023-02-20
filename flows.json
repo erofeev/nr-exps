@@ -225,7 +225,7 @@
         "data": "image",
         "dataType": "msg",
         "thumbnail": false,
-        "active": true,
+        "active": false,
         "pass": false,
         "outputs": 0,
         "x": 640,
@@ -717,9 +717,9 @@
         "controls": "true",
         "muted": "false",
         "players": [
+            "mp4",
             "hls.js",
             "hls",
-            "mp4",
             "socket.io"
         ],
         "x": 890,
