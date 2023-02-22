@@ -1477,7 +1477,7 @@
         "type": "function",
         "z": "267f0896c2544dd9",
         "name": "function 1",
-        "func": "const match = 'in';\nconst modifier = \"i\";\nconst pattern = new RegExp(match, modifier);\nmsg.topic = msg.target.replace(pattern, '/status');\n\nreturn msg;",
+        "func": "const match = '\\/in$';\nconst modifier = \"i\";\nconst pattern = new RegExp(match, modifier);\nmsg.topic = msg.target.replace(pattern, '/status');\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
