@@ -1098,42 +1098,6 @@
         ]
     },
     {
-        "id": "a26975b782e7fe17",
-        "type": "mqtt in",
-        "z": "3bea6f7023caaec9",
-        "name": "",
-        "topic": "",
-        "qos": "2",
-        "datatype": "auto-detect",
-        "nl": false,
-        "rap": true,
-        "rh": 0,
-        "inputs": 0,
-        "x": 490,
-        "y": 240,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "ef23790e3e22a4dc",
-        "type": "mqtt out",
-        "z": "3bea6f7023caaec9",
-        "name": "",
-        "topic": "",
-        "qos": "",
-        "retain": "",
-        "respTopic": "",
-        "contentType": "",
-        "userProps": "",
-        "correl": "",
-        "expiry": "",
-        "broker": "4bd4c4a3bf0645b2",
-        "x": 490,
-        "y": 300,
-        "wires": []
-    },
-    {
         "id": "fb2a20dd98f121f5",
         "type": "config",
         "z": "3bea6f7023caaec9",
@@ -1173,43 +1137,10 @@
         "y": 40,
         "wires": [
             [
-                "fb2a20dd98f121f5"
-            ]
-        ]
-    },
-    {
-        "id": "fe9afd72.aaacd",
-        "type": "inject",
-        "z": "3bea6f7023caaec9",
-        "name": "",
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 300,
-        "y": 160,
-        "wires": [
-            [
+                "fb2a20dd98f121f5",
                 "923975943ca2ece1"
             ]
         ]
-    },
-    {
-        "id": "4615c07d.81d37",
-        "type": "debug",
-        "z": "3bea6f7023caaec9",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "x": 810,
-        "y": 160,
-        "wires": []
     },
     {
         "id": "923975943ca2ece1",
@@ -1223,13 +1154,25 @@
         "finalize": "",
         "libs": [],
         "x": 360,
-        "y": 60,
+        "y": 120,
         "wires": [
             [
-                "4615c07d.81d37",
-                "ef23790e3e22a4dc"
+                "ec28546240731dd5"
             ]
         ]
+    },
+    {
+        "id": "ec28546240731dd5",
+        "type": "link out",
+        "z": "3bea6f7023caaec9",
+        "name": "link out 2",
+        "mode": "link",
+        "links": [
+            "bf7a1b67e986bfff"
+        ],
+        "x": 575,
+        "y": 120,
+        "wires": []
     },
     {
         "id": "4019db48604e3b0f",
@@ -1245,7 +1188,7 @@
         "correl": "",
         "expiry": "",
         "broker": "4bd4c4a3bf0645b2",
-        "x": 470,
+        "x": 390,
         "y": 160,
         "wires": []
     },
@@ -1257,51 +1200,13 @@
         "links": [
             "c5ba02f2fa3237c2"
         ],
-        "x": 335,
+        "x": 225,
         "y": 160,
         "wires": [
             [
                 "4019db48604e3b0f"
             ]
         ]
-    },
-    {
-        "id": "15f048506bec9542",
-        "type": "mqtt in",
-        "z": "267f0896c2544dd9",
-        "name": "",
-        "topic": "$SYS",
-        "qos": "2",
-        "datatype": "auto-detect",
-        "broker": "4bd4c4a3bf0645b2",
-        "nl": false,
-        "rap": true,
-        "rh": 0,
-        "inputs": 0,
-        "x": 410,
-        "y": 280,
-        "wires": [
-            [
-                "a913b1be0f7c09f5"
-            ]
-        ]
-    },
-    {
-        "id": "a913b1be0f7c09f5",
-        "type": "debug",
-        "z": "267f0896c2544dd9",
-        "name": "MQTT debug",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 610,
-        "y": 280,
-        "wires": []
     },
     {
         "id": "fc887ea3e2399bf0",
@@ -1323,6 +1228,22 @@
         "wires": [
             [],
             []
+        ]
+    },
+    {
+        "id": "bf7a1b67e986bfff",
+        "type": "link in",
+        "z": "267f0896c2544dd9",
+        "name": "Send_to_local_MQTT",
+        "links": [
+            "ec28546240731dd5"
+        ],
+        "x": 225,
+        "y": 260,
+        "wires": [
+            [
+                "4019db48604e3b0f"
+            ]
         ]
     }
 ]
