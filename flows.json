@@ -1481,7 +1481,7 @@
         "z": "267f0896c2544dd9",
         "name": "",
         "topic": "+/cmd",
-        "qos": "2",
+        "qos": "0",
         "datatype": "auto-detect",
         "broker": "4bd4c4a3bf0645b2",
         "nl": false,
@@ -1492,8 +1492,7 @@
         "y": 460,
         "wires": [
             [
-                "4162f68ac00b62b1",
-                "e7062c6b88f1dc9a"
+                "4162f68ac00b62b1"
             ]
         ]
     },
