@@ -1378,11 +1378,11 @@
         "links": [
             "ec28546240731dd5"
         ],
-        "x": 715,
+        "x": 575,
         "y": 300,
         "wires": [
             [
-                "4019db48604e3b0f"
+                "2fedcb5b29dfe4fd"
             ]
         ]
     },
@@ -1584,6 +1584,25 @@
         ]
     },
     {
+        "id": "2fedcb5b29dfe4fd",
+        "type": "function",
+        "z": "267f0896c2544dd9",
+        "name": "Add root path (EDGE id)",
+        "func": "msg.topic = global.get('thing.id') + '/' + msg.topic;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 750,
+        "y": 300,
+        "wires": [
+            [
+                "4019db48604e3b0f"
+            ]
+        ]
+    },
+    {
         "id": "0ba2c92a5d328e69",
         "type": "link in",
         "z": "e00d584b4e2e74af",
@@ -1672,7 +1691,7 @@
         "name": "",
         "properties": [
             {
-                "p": "device.id",
+                "p": "thing.id",
                 "pt": "global",
                 "to": "000-edge-001",
                 "tot": "str"
