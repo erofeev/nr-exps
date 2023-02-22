@@ -1150,7 +1150,7 @@
         "type": "function",
         "z": "3bea6f7023caaec9",
         "name": "Get device config",
-        "func": "msg.qos = 2;\nmsg.retain = true;\nmsg.payload = flow.get('thing');\nmsg.topic = global.get('thing.id') + flow.get('thing.id') + '/config';\nreturn msg;",
+        "func": "msg.qos = 2;\nmsg.retain = true;\nmsg.payload = flow.get('thing');\nmsg.topic = flow.get('thing.id') + '/config';\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -1467,7 +1467,7 @@
         "links": [],
         "linkType": "dynamic",
         "timeout": "5",
-        "x": 600,
+        "x": 640,
         "y": 460,
         "wires": [
             [
@@ -1538,7 +1538,7 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 620,
+        "x": 380,
         "y": 500,
         "wires": []
     },
