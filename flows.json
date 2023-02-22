@@ -1159,7 +1159,8 @@
         "y": 200,
         "wires": [
             [
-                "ec28546240731dd5"
+                "ec28546240731dd5",
+                "cfbecc2286942f4a"
             ]
         ]
     },
@@ -1289,6 +1290,25 @@
         "wires": [
             [
                 "14884d7fe480e97e"
+            ]
+        ]
+    },
+    {
+        "id": "cfbecc2286942f4a",
+        "type": "function",
+        "z": "3bea6f7023caaec9",
+        "name": "Status = Ready",
+        "func": "msg.topic = flow.get('device.id') + '/status';\nmsp.payload = \"READY\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 360,
+        "y": 240,
+        "wires": [
+            [
+                "ec28546240731dd5"
             ]
         ]
     },
