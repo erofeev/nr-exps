@@ -1140,25 +1140,19 @@
         "name": "",
         "properties": [
             {
-                "p": "deviceId",
+                "p": "device.id",
                 "pt": "flow",
                 "to": "000-onvif-cam-001",
                 "tot": "str"
             },
             {
-                "p": "type",
+                "p": "device.type",
                 "pt": "flow",
                 "to": "onvif",
                 "tot": "str"
             },
             {
-                "p": "rtsp_url",
-                "pt": "flow",
-                "to": "",
-                "tot": "str"
-            },
-            {
-                "p": "",
+                "p": "device.rtsp_url",
                 "pt": "flow",
                 "to": "",
                 "tot": "str"
@@ -1283,6 +1277,9 @@
         "func": "var key = msg.payload;\nvar val = flow.get(key);\nmsg.payload = {\"variable name\":key, \"value\":val};\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
         "x": 670,
         "y": 160,
         "wires": [
