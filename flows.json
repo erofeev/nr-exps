@@ -1224,7 +1224,6 @@
         "id": "fc887ea3e2399bf0",
         "type": "aedes broker",
         "z": "267f0896c2544dd9",
-        "d": true,
         "name": "",
         "mqtt_port": 1883,
         "mqtt_ws_bind": "port",
