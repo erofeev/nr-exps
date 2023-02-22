@@ -1216,7 +1216,7 @@
         "type": "function",
         "z": "3bea6f7023caaec9",
         "name": "Get device config keys",
-        "func": "\nmsg.payload = flow.get(this);\n\nreturn msg;",
+        "func": "\nmsg.payload = flow.get('device');\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
