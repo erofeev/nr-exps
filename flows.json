@@ -1477,7 +1477,7 @@
         "type": "function",
         "z": "267f0896c2544dd9",
         "name": "function 1",
-        "func": "var a = msg.target;\nconst regex = '/\\/in/i';\na.replace(regex, '/status');\nmsg.topic = a;\n\nreturn msg;",
+        "func": "var a = msg.target;\nconst match = '\\/in$';\nconst modifier = \"i\";\nconst pattern = new RegExp(match, modifier);\na.replace(pattern, '/status');\nmsg.topic = a;\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
