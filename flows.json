@@ -1187,6 +1187,16 @@
         "wires": []
     },
     {
+        "id": "d4a1ecf6f329c7bc",
+        "type": "comment",
+        "z": "3bea6f7023caaec9",
+        "name": "MQTT in:",
+        "info": "",
+        "x": 120,
+        "y": 260,
+        "wires": []
+    },
+    {
         "id": "4019db48604e3b0f",
         "type": "mqtt out",
         "z": "267f0896c2544dd9",
@@ -1332,6 +1342,58 @@
         ]
     },
     {
+        "id": "587a4ef624957e11",
+        "type": "link call",
+        "z": "267f0896c2544dd9",
+        "name": "MQTT in:",
+        "links": [],
+        "linkType": "dynamic",
+        "timeout": "30",
+        "x": 320,
+        "y": 460,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "097fdd596ec3e4e2",
+        "type": "mqtt in",
+        "z": "267f0896c2544dd9",
+        "name": "",
+        "topic": "",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "4bd4c4a3bf0645b2",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 1,
+        "x": 150,
+        "y": 460,
+        "wires": [
+            [
+                "587a4ef624957e11",
+                "c39cf34624824f88"
+            ]
+        ]
+    },
+    {
+        "id": "c39cf34624824f88",
+        "type": "debug",
+        "z": "267f0896c2544dd9",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 280,
+        "y": 560,
+        "wires": []
+    },
+    {
         "id": "0ba2c92a5d328e69",
         "type": "link in",
         "z": "e00d584b4e2e74af",
@@ -1366,7 +1428,7 @@
         "z": "e00d584b4e2e74af",
         "name": "Local MQTT broker is up, send notifications",
         "info": "",
-        "x": 750,
+        "x": 740,
         "y": 100,
         "wires": []
     },
