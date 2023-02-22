@@ -1664,5 +1664,23 @@
         "x": 530,
         "y": 40,
         "wires": []
+    },
+    {
+        "id": "69dc7cb90b77d21a",
+        "type": "config",
+        "z": "e00d584b4e2e74af",
+        "name": "",
+        "properties": [
+            {
+                "p": "device.id",
+                "pt": "global",
+                "to": "000-edge-001",
+                "tot": "str"
+            }
+        ],
+        "active": true,
+        "x": 110,
+        "y": 60,
+        "wires": []
     }
 ]
