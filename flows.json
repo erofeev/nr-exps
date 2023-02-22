@@ -1480,7 +1480,7 @@
         "type": "mqtt in",
         "z": "267f0896c2544dd9",
         "name": "",
-        "topic": "#/cmd",
+        "topic": "/#/cmd",
         "qos": "2",
         "datatype": "auto-detect",
         "broker": "4bd4c4a3bf0645b2",
