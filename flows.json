@@ -1254,8 +1254,8 @@
         "z": "267f0896c2544dd9",
         "name": "",
         "scope": [
-            "fc887ea3e2399bf0",
-            "4019db48604e3b0f"
+            "4019db48604e3b0f",
+            "fc887ea3e2399bf0"
         ],
         "x": 140,
         "y": 340,
@@ -1278,23 +1278,17 @@
                 "t": "eq",
                 "v": "node-red:common.status.connected",
                 "vt": "str"
-            },
-            {
-                "t": "eq",
-                "v": "",
-                "vt": "str"
             }
         ],
         "checkall": "true",
         "repair": false,
-        "outputs": 2,
+        "outputs": 1,
         "x": 340,
         "y": 340,
         "wires": [
             [
                 "51082209407ed8ee"
-            ],
-            []
+            ]
         ]
     },
     {
