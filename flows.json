@@ -903,8 +903,8 @@
         "winHide": false,
         "oldrc": false,
         "name": "Decode RTSP stream",
-        "x": 620,
-        "y": 220,
+        "x": 640,
+        "y": 440,
         "wires": [
             [
                 "47938011.f1a51"
@@ -925,8 +925,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 130,
-        "y": 220,
+        "x": 150,
+        "y": 440,
         "wires": [
             [
                 "46999a1f.6657d4"
@@ -945,8 +945,8 @@
         "active": true,
         "pass": false,
         "outputs": 0,
-        "x": 850,
-        "y": 200,
+        "x": 870,
+        "y": 420,
         "wires": []
     },
     {
@@ -961,8 +961,8 @@
         "topic": "",
         "payload": "SIGSTOP",
         "payloadType": "str",
-        "x": 150,
-        "y": 260,
+        "x": 170,
+        "y": 480,
         "wires": [
             [
                 "8e3a27b3.abf538"
@@ -981,8 +981,8 @@
         "topic": "",
         "payload": "SIGCONT",
         "payloadType": "str",
-        "x": 150,
-        "y": 300,
+        "x": 170,
+        "y": 520,
         "wires": [
             [
                 "8e3a27b3.abf538"
@@ -1008,8 +1008,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 370,
-        "y": 260,
+        "x": 390,
+        "y": 480,
         "wires": [
             [
                 "46999a1f.6657d4"
@@ -1028,8 +1028,8 @@
         "topic": "",
         "payload": "SIGTERM",
         "payloadType": "str",
-        "x": 140,
-        "y": 340,
+        "x": 160,
+        "y": 560,
         "wires": [
             [
                 "8e3a27b3.abf538"
@@ -1057,8 +1057,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 140,
-        "y": 440,
+        "x": 160,
+        "y": 660,
         "wires": [
             [
                 "54f8a64322b58018"
@@ -1078,8 +1078,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 710,
-        "y": 440,
+        "x": 730,
+        "y": 660,
         "wires": []
     },
     {
@@ -1089,13 +1089,48 @@
         "name": "",
         "timeout": "10",
         "separate": true,
-        "x": 350,
-        "y": 440,
+        "x": 370,
+        "y": 660,
         "wires": [
             [
                 "d7fa8c2570aac4a3"
             ]
         ]
+    },
+    {
+        "id": "a26975b782e7fe17",
+        "type": "mqtt in",
+        "z": "3bea6f7023caaec9",
+        "name": "",
+        "topic": "",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 110,
+        "y": 60,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ef23790e3e22a4dc",
+        "type": "mqtt out",
+        "z": "3bea6f7023caaec9",
+        "name": "",
+        "topic": "",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "x": 110,
+        "y": 120,
+        "wires": []
     },
     {
         "id": "4019db48604e3b0f",
