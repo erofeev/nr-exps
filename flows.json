@@ -1197,6 +1197,18 @@
         "wires": []
     },
     {
+        "id": "5dce578ba41c555c",
+        "type": "link in",
+        "z": "3bea6f7023caaec9",
+        "name": "${{flow.device.id}}",
+        "links": [],
+        "x": 85,
+        "y": 320,
+        "wires": [
+            []
+        ]
+    },
+    {
         "id": "4019db48604e3b0f",
         "type": "mqtt out",
         "z": "267f0896c2544dd9",
@@ -1313,7 +1325,7 @@
         "id": "068316fd09142359",
         "type": "link out",
         "z": "267f0896c2544dd9",
-        "name": "link out 3",
+        "name": "Notify Systemd",
         "mode": "link",
         "links": [
             "0ba2c92a5d328e69"
@@ -1368,30 +1380,13 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 150,
+        "x": 130,
         "y": 460,
         "wires": [
             [
-                "c39cf34624824f88",
                 "4162f68ac00b62b1"
             ]
         ]
-    },
-    {
-        "id": "c39cf34624824f88",
-        "type": "debug",
-        "z": "267f0896c2544dd9",
-        "name": "debug 1",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 280,
-        "y": 560,
-        "wires": []
     },
     {
         "id": "4162f68ac00b62b1",
