@@ -1275,6 +1275,48 @@
         "y": 360,
         "wires": [
             [
+                "a14761a42b1e8c33"
+            ]
+        ]
+    },
+    {
+        "id": "47c9cdd81f3fabd4",
+        "type": "function",
+        "z": "267f0896c2544dd9",
+        "name": "function 1",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a14761a42b1e8c33",
+        "type": "switch",
+        "z": "267f0896c2544dd9",
+        "name": "",
+        "property": "payload.status.text",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "\"node-red:common.status.connected\"",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 270,
+        "y": 440,
+        "wires": [
+            [
                 "71204f6b6325aafe"
             ]
         ]
