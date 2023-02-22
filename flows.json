@@ -1409,7 +1409,7 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 670,
+        "x": 510,
         "y": 40,
         "wires": []
     }
