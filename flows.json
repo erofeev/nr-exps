@@ -1301,7 +1301,7 @@
         "type": "switch",
         "z": "267f0896c2544dd9",
         "name": "",
-        "property": "payload.status.text",
+        "property": "status.text",
         "propertyType": "msg",
         "rules": [
             {
