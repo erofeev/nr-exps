@@ -1329,7 +1329,7 @@
         "links": [
             "068316fd09142359"
         ],
-        "x": 385,
+        "x": 345,
         "y": 340,
         "wires": [
             [
@@ -1377,12 +1377,30 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 490,
+        "x": 450,
         "y": 340,
         "wires": [
             [
-                "e1e41d7a50c87ccd"
+                "e1e41d7a50c87ccd",
+                "bdfc7041caa5282f"
             ]
         ]
+    },
+    {
+        "id": "bdfc7041caa5282f",
+        "type": "debug",
+        "z": "e00d584b4e2e74af",
+        "name": "Systemd Events",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 660,
+        "y": 40,
+        "wires": []
     }
 ]
