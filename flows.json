@@ -1109,8 +1109,8 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 110,
-        "y": 60,
+        "x": 490,
+        "y": 240,
         "wires": [
             []
         ]
@@ -1128,9 +1128,147 @@
         "userProps": "",
         "correl": "",
         "expiry": "",
-        "x": 110,
+        "broker": "4bd4c4a3bf0645b2",
+        "x": 490,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "fb2a20dd98f121f5",
+        "type": "config",
+        "z": "3bea6f7023caaec9",
+        "name": "",
+        "properties": [
+            {
+                "p": "deviceId",
+                "pt": "flow",
+                "to": "000-onvif-cam-001",
+                "tot": "str"
+            }
+        ],
+        "active": true,
+        "x": 130,
         "y": 120,
         "wires": []
+    },
+    {
+        "id": "6bb356f31f3d79ae",
+        "type": "link in",
+        "z": "3bea6f7023caaec9",
+        "name": "Startup",
+        "links": [],
+        "x": 95,
+        "y": 40,
+        "wires": [
+            [
+                "fb2a20dd98f121f5"
+            ]
+        ]
+    },
+    {
+        "id": "923975943ca2ece1",
+        "type": "function",
+        "z": "3bea6f7023caaec9",
+        "name": "Get device config keys",
+        "func": "\nmsg.payload = flow.keys();\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 360,
+        "y": 60,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "fe9afd72.aaacd",
+        "type": "inject",
+        "z": "3bea6f7023caaec9",
+        "name": "",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 300,
+        "y": 160,
+        "wires": [
+            [
+                "fe191abf.dd706"
+            ]
+        ]
+    },
+    {
+        "id": "fe191abf.dd706",
+        "type": "function",
+        "z": "3bea6f7023caaec9",
+        "name": "",
+        "func": "msg.payload = flow.keys();\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 430,
+        "y": 160,
+        "wires": [
+            [
+                "7d3aa3bd.491114"
+            ]
+        ]
+    },
+    {
+        "id": "4615c07d.81d37",
+        "type": "debug",
+        "z": "3bea6f7023caaec9",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 810,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "7d3aa3bd.491114",
+        "type": "split",
+        "z": "3bea6f7023caaec9",
+        "name": "",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 550,
+        "y": 160,
+        "wires": [
+            [
+                "d9b8dd89.1c1fa8"
+            ]
+        ]
+    },
+    {
+        "id": "d9b8dd89.1c1fa8",
+        "type": "function",
+        "z": "3bea6f7023caaec9",
+        "name": "",
+        "func": "var key = msg.payload;\nvar val = flow.get(key);\nmsg.payload = {\"variable name\":key, \"value\":val};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 670,
+        "y": 160,
+        "wires": [
+            [
+                "4615c07d.81d37"
+            ]
+        ]
     },
     {
         "id": "4019db48604e3b0f",
