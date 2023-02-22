@@ -1205,8 +1205,26 @@
         "x": 85,
         "y": 320,
         "wires": [
-            []
+            [
+                "723b8f7ca5e70e4e"
+            ]
         ]
+    },
+    {
+        "id": "723b8f7ca5e70e4e",
+        "type": "debug",
+        "z": "3bea6f7023caaec9",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 200,
+        "y": 320,
+        "wires": []
     },
     {
         "id": "4019db48604e3b0f",
@@ -1411,9 +1429,27 @@
         "y": 460,
         "wires": [
             [
-                "587a4ef624957e11"
+                "587a4ef624957e11",
+                "e7062c6b88f1dc9a"
             ]
         ]
+    },
+    {
+        "id": "e7062c6b88f1dc9a",
+        "type": "debug",
+        "z": "267f0896c2544dd9",
+        "name": "DBG: MQTT in received",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "target",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 610,
+        "y": 500,
+        "wires": []
     },
     {
         "id": "0ba2c92a5d328e69",
