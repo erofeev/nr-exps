@@ -1308,7 +1308,7 @@
         "links": [
             "068316fd09142359"
         ],
-        "x": 175,
+        "x": 155,
         "y": 120,
         "wires": [
             [
@@ -1325,7 +1325,7 @@
         "links": [
             "6bb356f31f3d79ae"
         ],
-        "x": 345,
+        "x": 485,
         "y": 120,
         "wires": []
     },
@@ -1333,9 +1333,9 @@
         "id": "7acadede580cc365",
         "type": "comment",
         "z": "e00d584b4e2e74af",
-        "name": "",
+        "name": "Local MQTT broker is up, send notifications to all",
         "info": "Local MQTT broker is up, send notifications to all",
-        "x": 200,
+        "x": 320,
         "y": 80,
         "wires": []
     }
