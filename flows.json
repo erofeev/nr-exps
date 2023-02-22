@@ -25,7 +25,7 @@
     {
         "id": "267f0896c2544dd9",
         "type": "tab",
-        "label": "Send to local MQTT",
+        "label": "Local MQTT broker",
         "disabled": false,
         "info": "",
         "env": []
@@ -1283,7 +1283,7 @@
         "y": 340,
         "wires": [
             [
-                "068316fd09142359"
+                "51082209407ed8ee"
             ]
         ]
     },
@@ -1296,9 +1296,28 @@
         "links": [
             "0ba2c92a5d328e69"
         ],
-        "x": 505,
+        "x": 675,
         "y": 340,
         "wires": []
+    },
+    {
+        "id": "51082209407ed8ee",
+        "type": "function",
+        "z": "267f0896c2544dd9",
+        "name": "Notify to Systemd",
+        "func": "msg.payload = \"local_MQTT_broker_is_up\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 590,
+        "y": 340,
+        "wires": [
+            [
+                "068316fd09142359"
+            ]
+        ]
     },
     {
         "id": "0ba2c92a5d328e69",
