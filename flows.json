@@ -33,7 +33,7 @@
     {
         "id": "e00d584b4e2e74af",
         "type": "tab",
-        "label": "Flow 1",
+        "label": "Systemd",
         "disabled": false,
         "info": "",
         "env": []
@@ -1133,7 +1133,9 @@
         "z": "3bea6f7023caaec9",
         "name": "Startup",
         "links": [
-            "076a286064473c0d"
+            "076a286064473c0d",
+            "ea2d310e38f36fd5",
+            "e1e41d7a50c87ccd"
         ],
         "x": 95,
         "y": 40,
@@ -1249,23 +1251,21 @@
         ]
     },
     {
-        "id": "a87748c9f5828e1b",
+        "id": "d32cd5e5a783811b",
         "type": "status",
         "z": "267f0896c2544dd9",
         "name": "",
-        "scope": [
-            "fc887ea3e2399bf0"
-        ],
+        "scope": [],
         "x": 140,
-        "y": 360,
+        "y": 340,
         "wires": [
             [
-                "a14761a42b1e8c33"
+                "2d2255866d5a97a8"
             ]
         ]
     },
     {
-        "id": "a14761a42b1e8c33",
+        "id": "2d2255866d5a97a8",
         "type": "switch",
         "z": "267f0896c2544dd9",
         "name": "if MQTT broker is UP",
@@ -1282,24 +1282,53 @@
         "repair": false,
         "outputs": 1,
         "x": 340,
-        "y": 360,
+        "y": 340,
         "wires": [
             [
-                "076a286064473c0d"
+                "068316fd09142359"
             ]
         ]
     },
     {
-        "id": "076a286064473c0d",
+        "id": "068316fd09142359",
         "type": "link out",
         "z": "267f0896c2544dd9",
         "name": "link out 3",
         "mode": "link",
         "links": [
-            "6bb356f31f3d79ae"
+            "0ba2c92a5d328e69"
         ],
         "x": 505,
-        "y": 360,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "0ba2c92a5d328e69",
+        "type": "link in",
+        "z": "e00d584b4e2e74af",
+        "name": "MQTT broker is UP",
+        "links": [
+            "068316fd09142359"
+        ],
+        "x": 175,
+        "y": 120,
+        "wires": [
+            [
+                "e1e41d7a50c87ccd"
+            ]
+        ]
+    },
+    {
+        "id": "e1e41d7a50c87ccd",
+        "type": "link out",
+        "z": "e00d584b4e2e74af",
+        "name": "link out 4",
+        "mode": "link",
+        "links": [
+            "6bb356f31f3d79ae"
+        ],
+        "x": 345,
+        "y": 120,
         "wires": []
     }
 ]
