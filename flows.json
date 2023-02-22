@@ -1133,8 +1133,6 @@
         "z": "3bea6f7023caaec9",
         "name": "Startup",
         "links": [
-            "076a286064473c0d",
-            "ea2d310e38f36fd5",
             "e1e41d7a50c87ccd"
         ],
         "x": 95,
@@ -1322,13 +1320,23 @@
         "id": "e1e41d7a50c87ccd",
         "type": "link out",
         "z": "e00d584b4e2e74af",
-        "name": "link out 4",
+        "name": "Stage - MQTT broker is UP",
         "mode": "link",
         "links": [
             "6bb356f31f3d79ae"
         ],
         "x": 345,
         "y": 120,
+        "wires": []
+    },
+    {
+        "id": "7acadede580cc365",
+        "type": "comment",
+        "z": "e00d584b4e2e74af",
+        "name": "",
+        "info": "Local MQTT broker is up, send notifications to all",
+        "x": 200,
+        "y": 80,
         "wires": []
     }
 ]
