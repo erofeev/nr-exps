@@ -1416,7 +1416,7 @@
                 "t": "set",
                 "p": "target",
                 "pt": "msg",
-                "to": "payload",
+                "to": "topic",
                 "tot": "msg",
                 "dc": true
             }
