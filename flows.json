@@ -1144,6 +1144,24 @@
                 "pt": "flow",
                 "to": "000-onvif-cam-001",
                 "tot": "str"
+            },
+            {
+                "p": "type",
+                "pt": "flow",
+                "to": "onvif",
+                "tot": "str"
+            },
+            {
+                "p": "rtsp_url",
+                "pt": "flow",
+                "to": "",
+                "tot": "str"
+            },
+            {
+                "p": "",
+                "pt": "flow",
+                "to": "",
+                "tot": "str"
             }
         ],
         "active": true,
