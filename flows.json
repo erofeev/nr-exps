@@ -1206,7 +1206,7 @@
         "y": 320,
         "wires": [
             [
-                "309c3c0de69fd49a"
+                "3d4460359254d2fd"
             ]
         ]
     },
@@ -1251,23 +1251,6 @@
                 "58923331abb375c3"
             ],
             [
-                "58923331abb375c3"
-            ]
-        ]
-    },
-    {
-        "id": "309c3c0de69fd49a",
-        "type": "json",
-        "z": "3bea6f7023caaec9",
-        "name": "",
-        "property": "payload",
-        "action": "str",
-        "pretty": false,
-        "x": 210,
-        "y": 320,
-        "wires": [
-            [
-                "3d4460359254d2fd",
                 "58923331abb375c3"
             ]
         ]
