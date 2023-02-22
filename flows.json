@@ -1132,7 +1132,9 @@
         "type": "link in",
         "z": "3bea6f7023caaec9",
         "name": "Startup",
-        "links": [],
+        "links": [
+            "076a286064473c0d"
+        ],
         "x": 95,
         "y": 40,
         "wires": [
@@ -1247,23 +1249,6 @@
         ]
     },
     {
-        "id": "71204f6b6325aafe",
-        "type": "debug",
-        "z": "267f0896c2544dd9",
-        "name": "debug 1",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "status.text",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 420,
-        "y": 60,
-        "wires": []
-    },
-    {
         "id": "a87748c9f5828e1b",
         "type": "status",
         "z": "267f0896c2544dd9",
@@ -1280,27 +1265,10 @@
         ]
     },
     {
-        "id": "47c9cdd81f3fabd4",
-        "type": "function",
-        "z": "267f0896c2544dd9",
-        "name": "function 1",
-        "func": "\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 320,
-        "y": 360,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "a14761a42b1e8c33",
         "type": "switch",
         "z": "267f0896c2544dd9",
-        "name": "",
+        "name": "if MQTT broker is UP",
         "property": "status.text",
         "propertyType": "msg",
         "rules": [
@@ -1313,12 +1281,25 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 270,
-        "y": 440,
+        "x": 340,
+        "y": 360,
         "wires": [
             [
-                "71204f6b6325aafe"
+                "076a286064473c0d"
             ]
         ]
+    },
+    {
+        "id": "076a286064473c0d",
+        "type": "link out",
+        "z": "267f0896c2544dd9",
+        "name": "link out 3",
+        "mode": "link",
+        "links": [
+            "6bb356f31f3d79ae"
+        ],
+        "x": 505,
+        "y": 360,
+        "wires": []
     }
 ]
