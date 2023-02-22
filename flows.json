@@ -1211,29 +1211,13 @@
         ]
     },
     {
-        "id": "723b8f7ca5e70e4e",
-        "type": "debug",
-        "z": "3bea6f7023caaec9",
-        "name": "debug 1",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 240,
-        "y": 360,
-        "wires": []
-    },
-    {
         "id": "14884d7fe480e97e",
         "type": "link out",
         "z": "3bea6f7023caaec9",
         "name": "link out 2",
         "mode": "return",
         "links": [],
-        "x": 405,
+        "x": 385,
         "y": 320,
         "wires": []
     },
@@ -1245,12 +1229,11 @@
         "property": "payload",
         "action": "str",
         "pretty": false,
-        "x": 230,
+        "x": 190,
         "y": 320,
         "wires": [
             [
-                "14884d7fe480e97e",
-                "723b8f7ca5e70e4e"
+                "14884d7fe480e97e"
             ]
         ]
     },
@@ -1447,6 +1430,13 @@
                 "to": "topic",
                 "tot": "msg",
                 "dc": true
+            },
+            {
+                "t": "set",
+                "p": "received",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
             }
         ],
         "action": "",
@@ -1479,6 +1469,23 @@
         "x": 610,
         "y": 500,
         "wires": []
+    },
+    {
+        "id": "662dd542f44b6b9e",
+        "type": "function",
+        "z": "267f0896c2544dd9",
+        "name": "function 1",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 720,
+        "y": 460,
+        "wires": [
+            []
+        ]
     },
     {
         "id": "0ba2c92a5d328e69",
