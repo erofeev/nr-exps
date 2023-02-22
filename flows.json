@@ -1552,7 +1552,7 @@
         "type": "function",
         "z": "267f0896c2544dd9",
         "name": "Set result: /status ",
-        "func": "const match = '\\/cmd$';\nconst modifier = \"i\";\nconst pattern = new RegExp(match, modifier);\nmsg.topic = msg.target.replace(pattern, '/status');\n\nif (msg.error) {\n    msg.payload = msg.error.message;\n}\n\nreturn msg;",
+        "func": "const match = '\\/cmd$';\nconst modifier = \"i\";\nconst pattern = new RegExp(match, modifier);\n\nif (!msg.target) {\n    return;\n}\n\nmsg.topic = msg.target.replace(pattern, '/status');\n\nif (msg.error) {\n    msg.payload = msg.error.message;\n}\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
