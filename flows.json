@@ -1306,7 +1306,7 @@
         "rules": [
             {
                 "t": "eq",
-                "v": "\"node-red:common.status.connected\"",
+                "v": "node-red:common.status.connected",
                 "vt": "str"
             }
         ],
