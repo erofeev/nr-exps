@@ -1365,7 +1365,7 @@
         "type": "comment",
         "z": "e00d584b4e2e74af",
         "name": "Local MQTT broker is up, send notifications to all",
-        "info": "Local MQTT broker is up, send notifications to all",
+        "info": "Local MQTT broker is up, send notifications to ...",
         "x": 770,
         "y": 100,
         "wires": []
