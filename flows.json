@@ -1349,7 +1349,7 @@
         "links": [],
         "linkType": "dynamic",
         "timeout": "30",
-        "x": 320,
+        "x": 560,
         "y": 460,
         "wires": [
             []
@@ -1372,8 +1372,8 @@
         "y": 460,
         "wires": [
             [
-                "587a4ef624957e11",
-                "c39cf34624824f88"
+                "c39cf34624824f88",
+                "4162f68ac00b62b1"
             ]
         ]
     },
@@ -1392,6 +1392,33 @@
         "x": 280,
         "y": 560,
         "wires": []
+    },
+    {
+        "id": "4162f68ac00b62b1",
+        "type": "change",
+        "z": "267f0896c2544dd9",
+        "name": "Target call = topic name",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "msg.target",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 350,
+        "y": 460,
+        "wires": [
+            [
+                "587a4ef624957e11"
+            ]
+        ]
     },
     {
         "id": "0ba2c92a5d328e69",
