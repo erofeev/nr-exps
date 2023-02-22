@@ -1477,7 +1477,7 @@
         "type": "function",
         "z": "267f0896c2544dd9",
         "name": "function 1",
-        "func": "var a = msg.target.toString();\n\nconst regex = '/\\/in$/i';\na.replace(regex, '/status');\n\nmsg.topic = a;\nmsp.payload = 'received:' + msg.received + msg.payload;\nreturn msg;",
+        "func": "var a = msg.target.toString();\n\nconst regex = '/\\/in$/i';\na.replace(regex, '/status');\n\nmsg.topic = a;\nmsg.payload = 'received:' + msg.received + msg.payload;\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
