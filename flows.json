@@ -1201,7 +1201,7 @@
         "id": "5dce578ba41c555c",
         "type": "link in",
         "z": "3bea6f7023caaec9",
-        "name": "000-onvif-cam-001/in",
+        "name": "000-onvif-cam-001/cmd",
         "links": [],
         "x": 85,
         "y": 320,
