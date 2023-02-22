@@ -1466,7 +1466,7 @@
         "name": "Send cmd to executor",
         "links": [],
         "linkType": "dynamic",
-        "timeout": "30",
+        "timeout": "5",
         "x": 600,
         "y": 460,
         "wires": [
