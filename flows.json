@@ -1304,15 +1304,15 @@
         "id": "0ba2c92a5d328e69",
         "type": "link in",
         "z": "e00d584b4e2e74af",
-        "name": "MQTT broker is UP",
+        "name": "Systemd Events",
         "links": [
             "068316fd09142359"
         ],
-        "x": 155,
-        "y": 120,
+        "x": 385,
+        "y": 340,
         "wires": [
             [
-                "e1e41d7a50c87ccd"
+                "9cb525760f88f618"
             ]
         ]
     },
@@ -1325,8 +1325,8 @@
         "links": [
             "6bb356f31f3d79ae"
         ],
-        "x": 485,
-        "y": 120,
+        "x": 615,
+        "y": 140,
         "wires": []
     },
     {
@@ -1335,8 +1335,33 @@
         "z": "e00d584b4e2e74af",
         "name": "Local MQTT broker is up, send notifications to all",
         "info": "Local MQTT broker is up, send notifications to all",
-        "x": 320,
-        "y": 80,
+        "x": 770,
+        "y": 100,
         "wires": []
+    },
+    {
+        "id": "9cb525760f88f618",
+        "type": "switch",
+        "z": "e00d584b4e2e74af",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "local_MQTT_borker_is_up",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 490,
+        "y": 340,
+        "wires": [
+            [
+                "e1e41d7a50c87ccd"
+            ]
+        ]
     }
 ]
