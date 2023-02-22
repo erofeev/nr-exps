@@ -1217,7 +1217,7 @@
         "name": "link out 2",
         "mode": "return",
         "links": [],
-        "x": 385,
+        "x": 565,
         "y": 320,
         "wires": []
     },
@@ -1230,6 +1230,25 @@
         "action": "str",
         "pretty": false,
         "x": 190,
+        "y": 320,
+        "wires": [
+            [
+                "ab06db7d3d31a2c0"
+            ]
+        ]
+    },
+    {
+        "id": "ab06db7d3d31a2c0",
+        "type": "function",
+        "z": "3bea6f7023caaec9",
+        "name": "function 2",
+        "func": "msg.payload = 1;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 380,
         "y": 320,
         "wires": [
             [
