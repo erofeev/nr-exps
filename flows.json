@@ -1178,25 +1178,6 @@
         ]
     },
     {
-        "id": "923975943ca2ece1",
-        "type": "function",
-        "z": "3bea6f7023caaec9",
-        "name": "Get device config keys",
-        "func": "\nmsg.payload = flow.keys();\n\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 360,
-        "y": 60,
-        "wires": [
-            [
-                "4615c07d.81d37"
-            ]
-        ]
-    },
-    {
         "id": "fe9afd72.aaacd",
         "type": "inject",
         "z": "3bea6f7023caaec9",
@@ -1212,27 +1193,7 @@
         "y": 160,
         "wires": [
             [
-                "fe191abf.dd706",
                 "923975943ca2ece1"
-            ]
-        ]
-    },
-    {
-        "id": "fe191abf.dd706",
-        "type": "function",
-        "z": "3bea6f7023caaec9",
-        "name": "",
-        "func": "msg.payload = flow.keys();\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 430,
-        "y": 160,
-        "wires": [
-            [
-                "7d3aa3bd.491114"
             ]
         ]
     },
@@ -1251,37 +1212,18 @@
         "wires": []
     },
     {
-        "id": "7d3aa3bd.491114",
-        "type": "split",
-        "z": "3bea6f7023caaec9",
-        "name": "",
-        "splt": "\\n",
-        "spltType": "str",
-        "arraySplt": 1,
-        "arraySpltType": "len",
-        "stream": false,
-        "addname": "",
-        "x": 550,
-        "y": 160,
-        "wires": [
-            [
-                "d9b8dd89.1c1fa8"
-            ]
-        ]
-    },
-    {
-        "id": "d9b8dd89.1c1fa8",
+        "id": "923975943ca2ece1",
         "type": "function",
         "z": "3bea6f7023caaec9",
-        "name": "",
-        "func": "var key = msg.payload;\nvar val = flow.get(key);\nmsg.payload = {\"variable name\":key, \"value\":val};\nreturn msg;",
+        "name": "Get device config keys",
+        "func": "\nmsg.payload = flow.get(this);\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 670,
-        "y": 160,
+        "x": 360,
+        "y": 60,
         "wires": [
             [
                 "4615c07d.81d37"
