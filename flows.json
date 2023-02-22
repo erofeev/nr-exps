@@ -1261,7 +1261,8 @@
         "y": 340,
         "wires": [
             [
-                "2d2255866d5a97a8"
+                "2d2255866d5a97a8",
+                "577d64c790afa003"
             ]
         ]
     },
@@ -1277,17 +1278,23 @@
                 "t": "eq",
                 "v": "node-red:common.status.connected",
                 "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "",
+                "vt": "str"
             }
         ],
         "checkall": "true",
         "repair": false,
-        "outputs": 1,
+        "outputs": 2,
         "x": 340,
         "y": 340,
         "wires": [
             [
                 "51082209407ed8ee"
-            ]
+            ],
+            []
         ]
     },
     {
@@ -1321,6 +1328,22 @@
                 "068316fd09142359"
             ]
         ]
+    },
+    {
+        "id": "577d64c790afa003",
+        "type": "debug",
+        "z": "267f0896c2544dd9",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 340,
+        "y": 460,
+        "wires": []
     },
     {
         "id": "0ba2c92a5d328e69",
