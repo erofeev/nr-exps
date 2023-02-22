@@ -1267,9 +1267,7 @@
         "type": "complete",
         "z": "267f0896c2544dd9",
         "name": "",
-        "scope": [
-            "fc887ea3e2399bf0"
-        ],
+        "scope": [],
         "uncaught": false,
         "x": 370,
         "y": 400,
