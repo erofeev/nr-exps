@@ -1414,9 +1414,9 @@
         "rules": [
             {
                 "t": "set",
-                "p": "payload",
+                "p": "target",
                 "pt": "msg",
-                "to": "target",
+                "to": "payload",
                 "tot": "msg",
                 "dc": true
             }
