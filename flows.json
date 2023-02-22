@@ -1253,7 +1253,9 @@
         "type": "status",
         "z": "267f0896c2544dd9",
         "name": "",
-        "scope": [],
+        "scope": [
+            "fc887ea3e2399bf0"
+        ],
         "x": 140,
         "y": 340,
         "wires": [
