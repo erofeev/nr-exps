@@ -1416,8 +1416,9 @@
                 "t": "set",
                 "p": "payload",
                 "pt": "msg",
-                "to": "msg.target",
-                "tot": "str"
+                "to": "target",
+                "tot": "msg",
+                "dc": true
             }
         ],
         "action": "",
