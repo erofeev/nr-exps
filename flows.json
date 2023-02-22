@@ -1509,13 +1509,6 @@
                 "to": "topic",
                 "tot": "msg",
                 "dc": true
-            },
-            {
-                "t": "set",
-                "p": "received",
-                "pt": "msg",
-                "to": "payload",
-                "tot": "msg"
             }
         ],
         "action": "",
