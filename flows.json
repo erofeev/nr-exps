@@ -1206,7 +1206,7 @@
         "y": 320,
         "wires": [
             [
-                "643c453efbe06822"
+                "309c3c0de69fd49a"
             ]
         ]
     },
@@ -1222,37 +1222,44 @@
         "wires": []
     },
     {
-        "id": "643c453efbe06822",
+        "id": "3d4460359254d2fd",
+        "type": "switch",
+        "z": "3bea6f7023caaec9",
+        "name": "",
+        "property": "payload.cmd",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "Start",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 350,
+        "y": 320,
+        "wires": [
+            [
+                "14884d7fe480e97e",
+                "46999a1f.6657d4"
+            ]
+        ]
+    },
+    {
+        "id": "309c3c0de69fd49a",
         "type": "json",
         "z": "3bea6f7023caaec9",
         "name": "",
         "property": "payload",
         "action": "str",
         "pretty": false,
-        "x": 190,
+        "x": 210,
         "y": 320,
         "wires": [
             [
-                "ab06db7d3d31a2c0"
-            ]
-        ]
-    },
-    {
-        "id": "ab06db7d3d31a2c0",
-        "type": "function",
-        "z": "3bea6f7023caaec9",
-        "name": "function 2",
-        "func": "msg.payload = 1;\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 380,
-        "y": 320,
-        "wires": [
-            [
-                "14884d7fe480e97e"
+                "3d4460359254d2fd"
             ]
         ]
     },
