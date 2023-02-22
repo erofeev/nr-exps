@@ -1148,14 +1148,14 @@
         "id": "923975943ca2ece1",
         "type": "function",
         "z": "3bea6f7023caaec9",
-        "name": "Get device config keys",
+        "name": "Get device config",
         "func": "msg.qos = 2;\nmsg.retain = true;\nmsg.payload = flow.get('device');\nmsg.topic = flow.get('device.id') + '/config';\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 360,
+        "x": 350,
         "y": 120,
         "wires": [
             [
@@ -1167,7 +1167,7 @@
         "id": "ec28546240731dd5",
         "type": "link out",
         "z": "3bea6f7023caaec9",
-        "name": "link out 2",
+        "name": "Send out config",
         "mode": "link",
         "links": [
             "bf7a1b67e986bfff"
