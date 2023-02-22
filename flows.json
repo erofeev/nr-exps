@@ -1105,19 +1105,19 @@
         "name": "",
         "properties": [
             {
-                "p": "device.id",
+                "p": "thing.id",
                 "pt": "flow",
                 "to": "000-onvif-cam-001",
                 "tot": "str"
             },
             {
-                "p": "device.type",
+                "p": "thing.type",
                 "pt": "flow",
                 "to": "onvif",
                 "tot": "str"
             },
             {
-                "p": "device.rtsp_url",
+                "p": "thing.rtsp_url",
                 "pt": "flow",
                 "to": "",
                 "tot": "str"
@@ -1150,7 +1150,7 @@
         "type": "function",
         "z": "3bea6f7023caaec9",
         "name": "Get device config",
-        "func": "msg.qos = 2;\nmsg.retain = true;\nmsg.payload = flow.get('device');\nmsg.topic = flow.get('device.id') + '/config';\nreturn msg;",
+        "func": "msg.qos = 2;\nmsg.retain = true;\nmsg.payload = flow.get('thing');\nmsg.topic = global.get('thing.id') + flow.get('thing.id') + '/config';\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -1378,11 +1378,11 @@
         "links": [
             "ec28546240731dd5"
         ],
-        "x": 575,
+        "x": 715,
         "y": 300,
         "wires": [
             [
-                "2fedcb5b29dfe4fd"
+                "4019db48604e3b0f"
             ]
         ]
     },
@@ -1577,25 +1577,6 @@
         ]
     },
     {
-        "id": "2fedcb5b29dfe4fd",
-        "type": "function",
-        "z": "267f0896c2544dd9",
-        "name": "Add root prefix (EDGE id)",
-        "func": "msg.topic = global.get('thing.id') + '/' + msg.topic;\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 750,
-        "y": 300,
-        "wires": [
-            [
-                "4019db48604e3b0f"
-            ]
-        ]
-    },
-    {
         "id": "15d6f38ecd4d4eca",
         "type": "mqtt in",
         "z": "267f0896c2544dd9",
@@ -1609,25 +1590,6 @@
         "rh": 0,
         "inputs": 0,
         "x": 140,
-        "y": 540,
-        "wires": [
-            [
-                "b5e3f396af54a923"
-            ]
-        ]
-    },
-    {
-        "id": "b5e3f396af54a923",
-        "type": "function",
-        "z": "267f0896c2544dd9",
-        "name": "Del root prefix",
-        "func": "const match = '^'+global.get('thing.id') + '/';\nconst modifier = \"i\";\nconst pattern = new RegExp(match, modifier);\n\nmsg.topic = msg.topic.replace(pattern, '');\n\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 320,
         "y": 540,
         "wires": [
             [
