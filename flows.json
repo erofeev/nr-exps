@@ -1264,16 +1264,15 @@
         "wires": []
     },
     {
-        "id": "50e0dfe6344e7867",
-        "type": "complete",
+        "id": "a87748c9f5828e1b",
+        "type": "status",
         "z": "267f0896c2544dd9",
         "name": "",
         "scope": [
             "fc887ea3e2399bf0"
         ],
-        "uncaught": false,
-        "x": 370,
-        "y": 400,
+        "x": 140,
+        "y": 360,
         "wires": [
             [
                 "71204f6b6325aafe"
