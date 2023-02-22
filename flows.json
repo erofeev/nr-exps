@@ -1529,6 +1529,21 @@
         "wires": []
     },
     {
+        "id": "afc9c1bb895e4fcc",
+        "type": "catch",
+        "z": "267f0896c2544dd9",
+        "name": "",
+        "scope": null,
+        "uncaught": false,
+        "x": 400,
+        "y": 620,
+        "wires": [
+            [
+                "45e7021ad04761cd"
+            ]
+        ]
+    },
+    {
         "id": "0ba2c92a5d328e69",
         "type": "link in",
         "z": "e00d584b4e2e74af",
