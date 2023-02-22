@@ -1400,7 +1400,7 @@
         "id": "bdfc7041caa5282f",
         "type": "debug",
         "z": "e00d584b4e2e74af",
-        "name": "Systemd Events",
+        "name": "DBG: Systemd Events",
         "active": true,
         "tosidebar": true,
         "console": true,
@@ -1409,7 +1409,7 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 510,
+        "x": 530,
         "y": 40,
         "wires": []
     }
