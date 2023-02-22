@@ -1580,7 +1580,7 @@
         "id": "2fedcb5b29dfe4fd",
         "type": "function",
         "z": "267f0896c2544dd9",
-        "name": "Add root path (EDGE id)",
+        "name": "Add root prefix (EDGE id)",
         "func": "msg.topic = global.get('thing.id') + '/' + msg.topic;\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
@@ -1609,7 +1609,26 @@
         "rh": 0,
         "inputs": 0,
         "x": 140,
-        "y": 520,
+        "y": 540,
+        "wires": [
+            [
+                "b5e3f396af54a923"
+            ]
+        ]
+    },
+    {
+        "id": "b5e3f396af54a923",
+        "type": "function",
+        "z": "267f0896c2544dd9",
+        "name": "Del root prefix",
+        "func": "const match = '^'+global.get(thing.id) + '/';\nconst modifier = \"i\";\nconst pattern = new RegExp(match, modifier);\n\nmsg.topic = msg.topic.replace(pattern, '');\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 1,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 540,
         "wires": [
             [
                 "4162f68ac00b62b1"
