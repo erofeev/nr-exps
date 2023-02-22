@@ -1123,8 +1123,8 @@
             }
         ],
         "active": true,
-        "x": 130,
-        "y": 120,
+        "x": 350,
+        "y": 140,
         "wires": []
     },
     {
@@ -1135,8 +1135,8 @@
         "links": [
             "e1e41d7a50c87ccd"
         ],
-        "x": 95,
-        "y": 40,
+        "x": 185,
+        "y": 140,
         "wires": [
             [
                 "fb2a20dd98f121f5",
@@ -1155,8 +1155,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 350,
-        "y": 120,
+        "x": 370,
+        "y": 200,
         "wires": [
             [
                 "ec28546240731dd5"
@@ -1172,8 +1172,18 @@
         "links": [
             "bf7a1b67e986bfff"
         ],
-        "x": 575,
-        "y": 120,
+        "x": 595,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "fcf6c8fbeed6de3d",
+        "type": "comment",
+        "z": "3bea6f7023caaec9",
+        "name": "Systemd event: local MQTT is up and running",
+        "info": "",
+        "x": 230,
+        "y": 80,
         "wires": []
     },
     {
