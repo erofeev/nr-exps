@@ -1520,13 +1520,6 @@
                 "to": "topic",
                 "tot": "msg",
                 "dc": true
-            },
-            {
-                "t": "set",
-                "p": "Timeout",
-                "pt": "msg",
-                "to": "payload.timeout",
-                "tot": "msg"
             }
         ],
         "action": "",
