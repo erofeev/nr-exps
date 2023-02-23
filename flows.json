@@ -201,7 +201,6 @@
         "id": "88f6a4efc8ea9bbb",
         "type": "tensorflowCoco",
         "z": "d7ec3041.ef1a7",
-        "d": true,
         "name": "",
         "modelUrl": "http://127.0.0.1:1880/coco/model.json",
         "scoreThreshold": 0.5,
