@@ -237,7 +237,7 @@
         "type": "jimp-image",
         "z": "d7ec3041.ef1a7",
         "name": "",
-        "data": "http://192.168.1.194:1880/pipe2jpeg/flow02/image.jpeg",
+        "data": "http://127.0.0.1:1880/pipe2jpeg/flow02/image.jpeg",
         "dataType": "str",
         "ret": "buf",
         "parameter1": "",
