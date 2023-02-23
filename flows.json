@@ -1298,7 +1298,7 @@
         "type": "function",
         "z": "3bea6f7023caaec9",
         "name": "Status = Ready",
-        "func": "msg.topic = flow.get('device.id') + '/status';\nmsg.payload = \"READY\";\nreturn msg;",
+        "func": "msg.topic = flow.get('thing.id') + '/status';\nmsg.payload = \"READY\";\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
