@@ -1601,7 +1601,7 @@
         "name": "",
         "filename": "/sys/firmware/devicetree/base/serial-number",
         "filenameType": "str",
-        "format": "lines",
+        "format": "utf8",
         "chunk": false,
         "sendError": false,
         "encoding": "binary",
