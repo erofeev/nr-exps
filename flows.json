@@ -1645,9 +1645,7 @@
         "y": 300,
         "wires": [
             [
-                "06ff0c34faecfd85",
-                "4019db48604e3b0f",
-                "a5ade3ca8dadbacd"
+                "06ff0c34faecfd85"
             ]
         ]
     },
@@ -1655,7 +1653,6 @@
         "id": "06ff0c34faecfd85",
         "type": "function",
         "z": "267f0896c2544dd9",
-        "d": true,
         "name": "Set retained for /config",
         "func": "const match = '\\/config$';\nconst topic = msg.topic;\nconst found = topic.match(match);\n\nif (found) {\n    msg.qos = 2;\n    msg.retain = true;\n}\n\nreturn msg;",
         "outputs": 1,
@@ -1663,31 +1660,13 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 700,
-        "y": 320,
+        "x": 720,
+        "y": 300,
         "wires": [
             [
-                "4019db48604e3b0f",
-                "a5ade3ca8dadbacd"
+                "4019db48604e3b0f"
             ]
         ]
-    },
-    {
-        "id": "a5ade3ca8dadbacd",
-        "type": "debug",
-        "z": "267f0896c2544dd9",
-        "name": "debug 1",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 820,
-        "y": 360,
-        "wires": []
     },
     {
         "id": "0ba2c92a5d328e69",
