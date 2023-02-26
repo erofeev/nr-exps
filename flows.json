@@ -1570,22 +1570,22 @@
         "links": [
             "0ba2c92a5d328e69"
         ],
-        "x": 755,
-        "y": 260,
+        "x": 645,
+        "y": 240,
         "wires": []
     },
     {
         "id": "cf9b69588739a06e",
         "type": "function",
         "z": "267f0896c2544dd9",
-        "name": "Notify to Systemd",
+        "name": "Set broker id and Notify to Systemd",
         "func": "if (msg.payload) {\n    global.set(\"broker.id\", msg.payload);\n    msg.payload = \"local_MQTT_broker_is_up\";\n} else {\n    return;\n}\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 750,
+        "x": 700,
         "y": 200,
         "wires": [
             [
@@ -1609,27 +1609,9 @@
         "y": 140,
         "wires": [
             [
-                "cf9b69588739a06e",
-                "b2ce93845dd9a1b5"
+                "cf9b69588739a06e"
             ]
         ]
-    },
-    {
-        "id": "b2ce93845dd9a1b5",
-        "type": "debug",
-        "z": "267f0896c2544dd9",
-        "name": "debug 2",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 420,
-        "y": 240,
-        "wires": []
     },
     {
         "id": "a0076fb0726b831f",
