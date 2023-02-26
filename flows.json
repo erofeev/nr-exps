@@ -1542,7 +1542,9 @@
         "type": "status",
         "z": "267f0896c2544dd9",
         "name": "Status of [MQTT out] node",
-        "scope": [],
+        "scope": [
+            "b8e38a6f72213e9e"
+        ],
         "x": 170,
         "y": 140,
         "wires": [
@@ -1572,7 +1574,8 @@
         "y": 140,
         "wires": [
             [
-                "52ac9877505a0655"
+                "52ac9877505a0655",
+                "b2ce93845dd9a1b5"
             ]
         ]
     },
