@@ -1355,7 +1355,7 @@
         "y": 300,
         "wires": [
             [
-                "4019db48604e3b0f"
+                "e6ab12f7e6dee274"
             ]
         ]
     },
@@ -1447,7 +1447,7 @@
         "type": "function",
         "z": "267f0896c2544dd9",
         "name": "Set result: /status ",
-        "func": "const match = '\\/cmd$';\nconst modifier = \"i\";\nconst pattern = new RegExp(match, modifier);\n\nif (!msg.target) {\n    return;\n}\n\nmsg.topic = msg.target.replace(pattern, '/status');\n\nif (msg.error) {\n    msg.payload = msg.error.message + ' cmd=' + JSON.stringify(msg.payload);\n}\n\nreturn msg;",
+        "func": "if (!msg.target) {\n    return;\n}\n\nconst match = '\\/cmd$';\nconst modifier = \"i\";\nconst pattern = new RegExp(match, modifier);\n\nmsg.topic = msg.target.replace(pattern, '/status');\n\nif (msg.error) {\n    msg.payload = msg.error.message + ' cmd=' + JSON.stringify(msg.payload);\n}\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -1629,6 +1629,25 @@
         "x": 390,
         "y": 400,
         "wires": []
+    },
+    {
+        "id": "e6ab12f7e6dee274",
+        "type": "function",
+        "z": "267f0896c2544dd9",
+        "name": "Add /broker-id",
+        "func": "msg.topic = global.get(\"borker.id\") + msg.topic;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 620,
+        "y": 300,
+        "wires": [
+            [
+                "4019db48604e3b0f"
+            ]
+        ]
     },
     {
         "id": "0ba2c92a5d328e69",
