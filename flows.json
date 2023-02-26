@@ -1603,7 +1603,7 @@
         "format": "utf8",
         "chunk": false,
         "sendError": false,
-        "encoding": "none",
+        "encoding": "ascii",
         "allProps": false,
         "x": 670,
         "y": 140,
