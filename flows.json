@@ -1716,7 +1716,7 @@
         "propertyType": "msg",
         "rules": [
             {
-                "t": "eq",
+                "t": "cont",
                 "v": "local_MQTT_broker_is_up",
                 "vt": "str"
             }
