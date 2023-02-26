@@ -1604,7 +1604,7 @@
         "format": "lines",
         "chunk": false,
         "sendError": false,
-        "encoding": "none",
+        "encoding": "binary",
         "allProps": false,
         "x": 670,
         "y": 140,
