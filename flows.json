@@ -1598,7 +1598,7 @@
         "type": "file in",
         "z": "267f0896c2544dd9",
         "name": "",
-        "filename": "/sys/firmware/1devicetree/base/serial-number",
+        "filename": "/sys/firmware/devicetree/base/serial-number",
         "filenameType": "str",
         "format": "utf8",
         "chunk": false,
