@@ -1654,7 +1654,7 @@
         "type": "function",
         "z": "267f0896c2544dd9",
         "name": "Set retained for /config",
-        "func": "const match = '\\/config$';\nconst topic = msg.topic;\nconst found = topic.match(match);\n\nif (found) {\n    msg.qos = 2;\n    msg.retain = true;\n}\nmsg.topic = \"rpi10000000ffebcc55/000-onvif-cam-001/config\"\nreturn msg;",
+        "func": "const match = '\\/config$';\nconst topic = msg.topic;\nconst found = topic.match(match);\n\nif (found) {\n    msg.qos = 2;\n    msg.retain = true;\n}\n//msg.topic = \"rpi10000000ffebcc55/000-onvif-cam-001/config\"\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
