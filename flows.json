@@ -1596,7 +1596,7 @@
         "type": "function",
         "z": "267f0896c2544dd9",
         "name": "Notify to Systemd",
-        "func": "global.broker.id = msg.payload;\n\nif (global.broker.id) {\n    msg.payload = \"local_MQTT_broker_is_up\";\n} else {\n    return;\n}\n\nreturn msg;",
+        "func": "if (msg.payload) {\n    global.set(\"broker.id\", msg.payload);\n    msg.payload = \"local_MQTT_broker_is_up\";\n} else {\n    return;\n}\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -1654,8 +1654,6 @@
         "z": "e00d584b4e2e74af",
         "name": "Systemd Events",
         "links": [
-            "068316fd09142359",
-            "53aba28c6f0a2de5",
             "8946a46bf7bb1901"
         ],
         "x": 355,
