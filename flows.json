@@ -1636,7 +1636,7 @@
         "type": "function",
         "z": "267f0896c2544dd9",
         "name": "Add /broker-id",
-        "func": "msg.topic = global.get(\"broker.id\") + '/' + msg.topic;\n\n\n\n\nreturn msg;",
+        "func": "msg.topic = '/sdfsdf/' + msg.topic;\n//global.get(\"broker.id\")\n\n\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
