@@ -1635,13 +1635,32 @@
         "type": "function",
         "z": "267f0896c2544dd9",
         "name": "Add /broker-id",
-        "func": "msg.topic = global.get(\"broker.id\") + '/' + msg.topic;\n\nreturn msg;",
+        "func": "msg.topic = global.get(\"broker.id\") + '/' + msg.topic;\n\n\n\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 620,
+        "x": 480,
+        "y": 300,
+        "wires": [
+            [
+                "06ff0c34faecfd85"
+            ]
+        ]
+    },
+    {
+        "id": "06ff0c34faecfd85",
+        "type": "function",
+        "z": "267f0896c2544dd9",
+        "name": "Set retained for /config",
+        "func": "const match = '\\/config$';\nconst found = msg.topic.match(match);\n\nmsg.payload = found;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 700,
         "y": 300,
         "wires": [
             [
