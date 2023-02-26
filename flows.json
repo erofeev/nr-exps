@@ -1499,23 +1499,6 @@
         ]
     },
     {
-        "id": "a0076fb0726b831f",
-        "type": "debug",
-        "z": "267f0896c2544dd9",
-        "name": "debug 1",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 440,
-        "y": 680,
-        "wires": []
-    },
-    {
         "id": "b8e38a6f72213e9e",
         "type": "aedes broker",
         "z": "267f0896c2544dd9",
@@ -1646,6 +1629,23 @@
         "statusType": "auto",
         "x": 420,
         "y": 240,
+        "wires": []
+    },
+    {
+        "id": "a0076fb0726b831f",
+        "type": "debug",
+        "z": "267f0896c2544dd9",
+        "name": "Flow errors",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 390,
+        "y": 400,
         "wires": []
     },
     {
