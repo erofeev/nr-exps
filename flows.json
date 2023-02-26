@@ -1329,7 +1329,7 @@
         "id": "4019db48604e3b0f",
         "type": "mqtt out",
         "z": "267f0896c2544dd9",
-        "name": "",
+        "name": "Local MQTT",
         "topic": "",
         "qos": "",
         "retain": "",
@@ -1339,8 +1339,8 @@
         "correl": "",
         "expiry": "",
         "broker": "4bd4c4a3bf0645b2",
-        "x": 990,
-        "y": 340,
+        "x": 950,
+        "y": 300,
         "wires": []
     },
     {
