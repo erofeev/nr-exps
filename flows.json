@@ -25,7 +25,7 @@
     {
         "id": "267f0896c2544dd9",
         "type": "tab",
-        "label": "Local send if",
+        "label": "Local broker",
         "disabled": false,
         "info": "",
         "env": []
