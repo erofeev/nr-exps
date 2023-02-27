@@ -2018,12 +2018,6 @@
                 "keyValue": "Node-RED-Deployment-Type",
                 "valueType": "other",
                 "valueValue": "full"
-            },
-            {
-                "keyType": "other",
-                "keyValue": "dfgdfg",
-                "valueType": "other",
-                "valueValue": "sdfgsdf"
             }
         ],
         "x": 630,
