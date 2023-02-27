@@ -1419,7 +1419,7 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 380,
+        "x": 400,
         "y": 500,
         "wires": []
     },
@@ -1668,43 +1668,6 @@
         "wires": []
     },
     {
-        "id": "5e31512d01e5af98",
-        "type": "function",
-        "z": "267f0896c2544dd9",
-        "name": "Remove broker namespace",
-        "func": "const match = new RegExp('^' + global.get(\"broker.id\") + '/');\nconst topic = msg.topic.replace(match, \"\");\nmsg.target = topic;\n\n\nreturn  msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 380,
-        "y": 540,
-        "wires": [
-            [
-                "c9f46ea0a2d72fcc",
-                "68016243801ac5b5"
-            ]
-        ]
-    },
-    {
-        "id": "c9f46ea0a2d72fcc",
-        "type": "debug",
-        "z": "267f0896c2544dd9",
-        "name": "debug 3",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 640,
-        "y": 540,
-        "wires": []
-    },
-    {
         "id": "68016243801ac5b5",
         "type": "function",
         "z": "267f0896c2544dd9",
@@ -1719,7 +1682,8 @@
         "y": 460,
         "wires": [
             [
-                "587a4ef624957e11"
+                "587a4ef624957e11",
+                "e7062c6b88f1dc9a"
             ]
         ]
     },
