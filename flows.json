@@ -1970,7 +1970,7 @@
         "type": "function",
         "z": "4074d230f2e616af",
         "name": "cmd = SetFlow",
-        "func": "msg.payload = msg.payload.data.flows;\nreturn msg;",
+        "func": "msg.payload = msg.payload.data;\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -2011,7 +2011,7 @@
                 "keyType": "other",
                 "keyValue": "Node-RED-API-Version",
                 "valueType": "other",
-                "valueValue": "v1"
+                "valueValue": "v2"
             },
             {
                 "keyType": "other",
