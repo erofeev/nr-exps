@@ -1377,7 +1377,7 @@
         "links": [],
         "linkType": "dynamic",
         "timeout": "3",
-        "x": 640,
+        "x": 720,
         "y": 460,
         "wires": [
             [
@@ -1590,8 +1590,7 @@
         "y": 140,
         "wires": [
             [
-                "cf9b69588739a06e",
-                "32128edea84bfa20"
+                "cf9b69588739a06e"
             ]
         ]
     },
@@ -1651,34 +1650,17 @@
         ]
     },
     {
-        "id": "32128edea84bfa20",
-        "type": "debug",
-        "z": "267f0896c2544dd9",
-        "name": "debug 1",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 920,
-        "y": 80,
-        "wires": []
-    },
-    {
         "id": "68016243801ac5b5",
         "type": "function",
         "z": "267f0896c2544dd9",
-        "name": "Remove broker namespace",
+        "name": "Remove broker namespace and set target",
         "func": "const match = new RegExp('^' + global.get(\"broker.id\") + '/');\nconst topic = msg.topic.replace(match, \"\");\nmsg.target = topic;\n\nreturn  msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 360,
+        "x": 400,
         "y": 460,
         "wires": [
             [
