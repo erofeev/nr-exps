@@ -1,13 +1,13 @@
 [
     {
-        "id": "d7ec3041.ef1a7",
+        "id": "c5511a26687b7408",
         "type": "tab",
         "label": "Video stream - analytics",
         "disabled": false,
         "info": ""
     },
     {
-        "id": "efd97995f8a02a42",
+        "id": "5c4ee4d8d1ed06e6",
         "type": "tab",
         "label": "Video stream - ffmpeg on /dev/video0",
         "disabled": false,
@@ -15,7 +15,7 @@
         "env": []
     },
     {
-        "id": "3bea6f7023caaec9",
+        "id": "ad23bd66d9ba1ebc",
         "type": "tab",
         "label": "Video from Onvif",
         "disabled": false,
@@ -23,7 +23,7 @@
         "env": []
     },
     {
-        "id": "267f0896c2544dd9",
+        "id": "0a5ac1dcb64b7376",
         "type": "tab",
         "label": "Local broker",
         "disabled": false,
@@ -31,7 +31,7 @@
         "env": []
     },
     {
-        "id": "e00d584b4e2e74af",
+        "id": "7dad7a056c3e824a",
         "type": "tab",
         "label": "Systemd",
         "disabled": false,
@@ -39,12 +39,45 @@
         "env": []
     },
     {
-        "id": "4074d230f2e616af",
+        "id": "244d1c7c92f9ed23",
         "type": "tab",
         "label": "NR-thing",
         "disabled": false,
         "info": "",
         "env": []
+    },
+    {
+        "id": "ef8a80e9c499bb4e",
+        "type": "subflow",
+        "name": "Zip-64",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 60,
+                "y": 160,
+                "wires": [
+                    {
+                        "id": "2b65109daddacd99"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 660,
+                "y": 160,
+                "wires": [
+                    {
+                        "id": "82c8c3f3ba6e95db",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [],
+        "meta": {},
+        "color": "#DDAA99"
     },
     {
         "id": "5e1c22f8.d65d2c",
@@ -189,9 +222,55 @@
         "sessionExpiry": ""
     },
     {
-        "id": "c41f3ce662f9f4bb",
+        "id": "2b65109daddacd99",
+        "type": "json",
+        "z": "ef8a80e9c499bb4e",
+        "name": "",
+        "property": "payload",
+        "action": "str",
+        "pretty": false,
+        "x": 170,
+        "y": 160,
+        "wires": [
+            [
+                "065c1f970061c074"
+            ]
+        ]
+    },
+    {
+        "id": "065c1f970061c074",
+        "type": "zip",
+        "z": "ef8a80e9c499bb4e",
+        "name": "",
+        "mode": "compress",
+        "filename": "",
+        "compressionlevel": "9",
+        "outasstring": false,
+        "x": 320,
+        "y": 160,
+        "wires": [
+            [
+                "82c8c3f3ba6e95db"
+            ]
+        ]
+    },
+    {
+        "id": "82c8c3f3ba6e95db",
+        "type": "base64",
+        "z": "ef8a80e9c499bb4e",
+        "name": "",
+        "action": "",
+        "property": "payload",
+        "x": 500,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4c6b4c62a8ed88f6",
         "type": "debug",
-        "z": "d7ec3041.ef1a7",
+        "z": "c5511a26687b7408",
         "name": "Recognized Objects",
         "active": false,
         "tosidebar": true,
@@ -206,9 +285,9 @@
         "wires": []
     },
     {
-        "id": "88f6a4efc8ea9bbb",
+        "id": "4308d9ead8d8e1f4",
         "type": "tensorflowCoco",
-        "z": "d7ec3041.ef1a7",
+        "z": "c5511a26687b7408",
         "name": "",
         "modelUrl": "http://127.0.0.1:1880/coco/model.json",
         "scoreThreshold": 0.5,
@@ -218,16 +297,16 @@
         "y": 220,
         "wires": [
             [
-                "fbb4690cad4548e3",
-                "815ff9a0c37df769",
-                "9df99b28bee8d82e"
+                "d76d65a1f77108a3",
+                "953e0fa554546fda",
+                "89919261e43461f9"
             ]
         ]
     },
     {
-        "id": "815ff9a0c37df769",
+        "id": "953e0fa554546fda",
         "type": "image",
-        "z": "d7ec3041.ef1a7",
+        "z": "c5511a26687b7408",
         "name": "",
         "width": "400",
         "data": "image",
@@ -241,9 +320,9 @@
         "wires": []
     },
     {
-        "id": "9df99b28bee8d82e",
+        "id": "89919261e43461f9",
         "type": "jimp-image",
-        "z": "d7ec3041.ef1a7",
+        "z": "c5511a26687b7408",
         "name": "",
         "data": "http://127.0.0.1:1880/pipe2jpeg/flow02/image.jpeg",
         "dataType": "str",
@@ -278,32 +357,32 @@
         "y": 100,
         "wires": [
             [
-                "88f6a4efc8ea9bbb",
-                "f96cb4ed58471387",
-                "671877d63b6bc7e4"
+                "4308d9ead8d8e1f4",
+                "7ca000e9f1df1cc6",
+                "6ceab159093ddba6"
             ]
         ]
     },
     {
-        "id": "9d1d5ede42d0a8f4",
+        "id": "1ead1fe45dca8334",
         "type": "status",
-        "z": "d7ec3041.ef1a7",
+        "z": "c5511a26687b7408",
         "name": "",
         "scope": [
-            "88f6a4efc8ea9bbb"
+            "4308d9ead8d8e1f4"
         ],
         "x": 80,
         "y": 280,
         "wires": [
             [
-                "9df99b28bee8d82e"
+                "89919261e43461f9"
             ]
         ]
     },
     {
-        "id": "4b87ca93a622df07",
+        "id": "300aaa4bd8811f25",
         "type": "inject",
-        "z": "d7ec3041.ef1a7",
+        "z": "c5511a26687b7408",
         "name": "Start [Manual]",
         "props": [],
         "repeat": "",
@@ -315,14 +394,14 @@
         "y": 220,
         "wires": [
             [
-                "9df99b28bee8d82e"
+                "89919261e43461f9"
             ]
         ]
     },
     {
-        "id": "c5ba02f2fa3237c2",
+        "id": "11c316ffd640fe82",
         "type": "link out",
-        "z": "d7ec3041.ef1a7",
+        "z": "c5511a26687b7408",
         "name": "link out 1",
         "mode": "link",
         "links": [
@@ -333,9 +412,9 @@
         "wires": []
     },
     {
-        "id": "fbb4690cad4548e3",
+        "id": "d76d65a1f77108a3",
         "type": "function",
-        "z": "d7ec3041.ef1a7",
+        "z": "c5511a26687b7408",
         "name": "Set MQTT topic",
         "func": "var l_payload = msg.classes;\ndelete msg.payload;\nmsg.payload = msg.classes;\nmsg.topic = \"edge/00001/image/recognition/objects\";\nreturn msg;",
         "outputs": 1,
@@ -347,43 +426,43 @@
         "y": 340,
         "wires": [
             [
-                "c41f3ce662f9f4bb",
-                "9f783883155c7d07"
+                "4c6b4c62a8ed88f6",
+                "654d0b8537cb27e7"
             ]
         ]
     },
     {
-        "id": "f96cb4ed58471387",
+        "id": "7ca000e9f1df1cc6",
         "type": "mobilenet",
-        "z": "d7ec3041.ef1a7",
+        "z": "c5511a26687b7408",
         "d": true,
         "name": "",
         "x": 320,
         "y": 380,
         "wires": [
             [
-                "9df99b28bee8d82e"
+                "89919261e43461f9"
             ]
         ]
     },
     {
-        "id": "671877d63b6bc7e4",
+        "id": "6ceab159093ddba6",
         "type": "cocossd",
-        "z": "d7ec3041.ef1a7",
+        "z": "c5511a26687b7408",
         "d": true,
         "name": "",
         "x": 340,
         "y": 460,
         "wires": [
             [
-                "1f758bca6b793e11"
+                "e289920a755f583b"
             ]
         ]
     },
     {
-        "id": "1f758bca6b793e11",
+        "id": "e289920a755f583b",
         "type": "image",
-        "z": "d7ec3041.ef1a7",
+        "z": "c5511a26687b7408",
         "name": "",
         "width": "400",
         "data": "annotatedInput",
@@ -397,9 +476,9 @@
         "wires": []
     },
     {
-        "id": "9f783883155c7d07",
+        "id": "654d0b8537cb27e7",
         "type": "rbe",
-        "z": "d7ec3041.ef1a7",
+        "z": "c5511a26687b7408",
         "name": "",
         "func": "rbe",
         "gap": "",
@@ -412,14 +491,14 @@
         "y": 340,
         "wires": [
             [
-                "c5ba02f2fa3237c2"
+                "11c316ffd640fe82"
             ]
         ]
     },
     {
-        "id": "055a7ba886404441",
+        "id": "0a927ee38d9eb797",
         "type": "debug",
-        "z": "efd97995f8a02a42",
+        "z": "5c4ee4d8d1ed06e6",
         "name": "playlist",
         "active": true,
         "tosidebar": true,
@@ -434,9 +513,9 @@
         "wires": []
     },
     {
-        "id": "b8166871d2e90f18",
+        "id": "582bc462badab651",
         "type": "pipe2jpeg",
-        "z": "efd97995f8a02a42",
+        "z": "5c4ee4d8d1ed06e6",
         "name": "",
         "basePath": "flow02",
         "serveHttp": "true",
@@ -445,15 +524,15 @@
         "y": 380,
         "wires": [
             [
-                "055a7ba886404441"
+                "0a927ee38d9eb797"
             ],
             []
         ]
     },
     {
-        "id": "8896a3f1d2a677fd",
+        "id": "8e5c93727d697b65",
         "type": "ffmpeg",
-        "z": "efd97995f8a02a42",
+        "z": "5c4ee4d8d1ed06e6",
         "name": "",
         "outputs": 5,
         "cmdPath": "ffmpeg",
@@ -464,28 +543,28 @@
         "y": 420,
         "wires": [
             [
-                "b8166871d2e90f18",
-                "44b1b897f58b75f7",
-                "a78f06978ef3f20b"
+                "582bc462badab651",
+                "91e39e733be8cc42",
+                "2a6282a64a69cfa6"
             ],
             [
-                "b8166871d2e90f18"
+                "582bc462badab651"
             ],
             [
-                "9abd766b2a9d4ba9"
+                "448249ed3bfcbeb9"
             ],
             [
-                "ca48a481054a8787"
+                "cc0c4be63dbb7130"
             ],
             [
-                "a78f06978ef3f20b"
+                "2a6282a64a69cfa6"
             ]
         ]
     },
     {
-        "id": "c8c671e45a54c0eb",
+        "id": "e48b5139096d44e1",
         "type": "inject",
-        "z": "efd97995f8a02a42",
+        "z": "5c4ee4d8d1ed06e6",
         "name": "start",
         "props": [
             {
@@ -503,14 +582,14 @@
         "y": 380,
         "wires": [
             [
-                "8896a3f1d2a677fd"
+                "8e5c93727d697b65"
             ]
         ]
     },
     {
-        "id": "5e34010713868508",
+        "id": "7f9bd3bf9d7cecae",
         "type": "inject",
-        "z": "efd97995f8a02a42",
+        "z": "5c4ee4d8d1ed06e6",
         "name": "stop",
         "props": [
             {
@@ -528,14 +607,14 @@
         "y": 440,
         "wires": [
             [
-                "8896a3f1d2a677fd"
+                "8e5c93727d697b65"
             ]
         ]
     },
     {
-        "id": "90a2f579ed47f783",
+        "id": "3fb5bdd5b271cc2d",
         "type": "delay",
-        "z": "efd97995f8a02a42",
+        "z": "5c4ee4d8d1ed06e6",
         "name": "delay",
         "pauseType": "delayv",
         "timeout": "1",
@@ -553,14 +632,14 @@
         "y": 200,
         "wires": [
             [
-                "8896a3f1d2a677fd"
+                "8e5c93727d697b65"
             ]
         ]
     },
     {
-        "id": "44b1b897f58b75f7",
+        "id": "91e39e733be8cc42",
         "type": "function",
-        "z": "efd97995f8a02a42",
+        "z": "5c4ee4d8d1ed06e6",
         "name": "restart",
         "func": "const { status, code, signal, killed } = msg.payload;\n\n\nif (status === 'close' && killed === false) {\n    return { action: { command: 'start' }, delay: 5000 };\n}\n\nreturn;",
         "outputs": 1,
@@ -572,14 +651,14 @@
         "y": 200,
         "wires": [
             [
-                "90a2f579ed47f783"
+                "3fb5bdd5b271cc2d"
             ]
         ]
     },
     {
-        "id": "001afdd2a1c4672b",
+        "id": "9fc4a18ac87396e0",
         "type": "comment",
-        "z": "efd97995f8a02a42",
+        "z": "5c4ee4d8d1ed06e6",
         "name": "- - - - - daemonize - - - - -",
         "info": "",
         "x": 330,
@@ -587,9 +666,9 @@
         "wires": []
     },
     {
-        "id": "ca48a481054a8787",
+        "id": "cc0c4be63dbb7130",
         "type": "function",
-        "z": "efd97995f8a02a42",
+        "z": "5c4ee4d8d1ed06e6",
         "name": "progress",
         "func": "const props = msg.payload.toString().split('\\n');\n\nconst progress = {};\n\nprops.forEach(item => {\n    \n    const [name, value] = item.split('=');\n    \n    if (name && value) {\n    \n        progress[name] = value;\n\n    }\n    \n});\n\nconst color = progress['progress'] === 'continue' ? 'green' : 'red';\n\nconst message = `fps: ${progress['fps']}, bitrate: ${progress['bitrate']}`;\n\nnode.status({ fill: color, shape: 'dot', text: message });\n\nreturn { payload: progress };",
         "outputs": 1,
@@ -601,14 +680,14 @@
         "y": 580,
         "wires": [
             [
-                "6dfce461afdf457d"
+                "a7bc704d39f09df6"
             ]
         ]
     },
     {
-        "id": "6dfce461afdf457d",
+        "id": "a7bc704d39f09df6",
         "type": "debug",
-        "z": "efd97995f8a02a42",
+        "z": "5c4ee4d8d1ed06e6",
         "name": "",
         "active": false,
         "tosidebar": true,
@@ -623,9 +702,9 @@
         "wires": []
     },
     {
-        "id": "f52a02df124f3dc6",
+        "id": "8acecafd1c145bc0",
         "type": "comment",
-        "z": "efd97995f8a02a42",
+        "z": "5c4ee4d8d1ed06e6",
         "name": "- - - - - progress logs - - - - -",
         "info": "",
         "x": 739,
@@ -633,9 +712,9 @@
         "wires": []
     },
     {
-        "id": "732965e797096e92",
+        "id": "9e8b63c333b9a099",
         "type": "debug",
-        "z": "efd97995f8a02a42",
+        "z": "5c4ee4d8d1ed06e6",
         "name": "",
         "active": false,
         "tosidebar": true,
@@ -650,9 +729,9 @@
         "wires": []
     },
     {
-        "id": "9abd766b2a9d4ba9",
+        "id": "448249ed3bfcbeb9",
         "type": "function",
-        "z": "efd97995f8a02a42",
+        "z": "5c4ee4d8d1ed06e6",
         "name": "errors",
         "func": "const { payload } = msg;\n\nreturn { payload: payload.toString() };",
         "outputs": 1,
@@ -664,14 +743,14 @@
         "y": 480,
         "wires": [
             [
-                "732965e797096e92"
+                "9e8b63c333b9a099"
             ]
         ]
     },
     {
-        "id": "8eb81085b8fbbb55",
+        "id": "1701d80f603364df",
         "type": "comment",
-        "z": "efd97995f8a02a42",
+        "z": "5c4ee4d8d1ed06e6",
         "name": "- - - - - error logs - - - - -",
         "info": "",
         "x": 728,
@@ -679,9 +758,9 @@
         "wires": []
     },
     {
-        "id": "a78f06978ef3f20b",
+        "id": "2a6282a64a69cfa6",
         "type": "mp4frag",
-        "z": "efd97995f8a02a42",
+        "z": "5c4ee4d8d1ed06e6",
         "name": "",
         "outputs": 2,
         "basePath": "abcfr",
@@ -698,19 +777,19 @@
         "y": 280,
         "wires": [
             [
-                "055a7ba886404441",
-                "c84ce4ca5e7f8d0f"
+                "0a927ee38d9eb797",
+                "d522b653166c3e04"
             ],
             [
-                "1772c49f6618b474",
-                "5c987343a5458a93"
+                "8a7dd43df97ee231",
+                "b4c851af1799eb37"
             ]
         ]
     },
     {
-        "id": "c84ce4ca5e7f8d0f",
+        "id": "d522b653166c3e04",
         "type": "ui_mp4frag",
-        "z": "efd97995f8a02a42",
+        "z": "5c4ee4d8d1ed06e6",
         "name": "",
         "group": "5e1c22f8.d65d2c",
         "order": 1,
@@ -737,9 +816,9 @@
         ]
     },
     {
-        "id": "3d62f9d0ab9a3834",
+        "id": "c8ba55c8da1afa8d",
         "type": "comment",
-        "z": "efd97995f8a02a42",
+        "z": "5c4ee4d8d1ed06e6",
         "name": "- view mp4 -",
         "info": "",
         "x": 889,
@@ -747,9 +826,9 @@
         "wires": []
     },
     {
-        "id": "26bdc4fec40db095",
+        "id": "fc90ed7a9aefdb33",
         "type": "function",
-        "z": "efd97995f8a02a42",
+        "z": "5c4ee4d8d1ed06e6",
         "name": "filename",
         "func": "const { payload } = msg;\n\nif (Buffer.isBuffer(payload)) {\n\n    msg.filename = context.get('filename');\n    \n    return msg;\n}\n\nconst { status } = payload;\n\nif (status === 'spawn') {\n\n    context.set('filename', `/tmp/A${Date.now()}.mp4`);\n\n    \n} else if (status === 'close') {\n    \n    context.set('filename', undefined);\n\n}\n\nreturn;",
         "outputs": 1,
@@ -761,14 +840,14 @@
         "y": 200,
         "wires": [
             [
-                "03f87bdfe99842e6"
+                "b661874b2ce68313"
             ]
         ]
     },
     {
-        "id": "5c987343a5458a93",
+        "id": "b4c851af1799eb37",
         "type": "ffmpeg",
-        "z": "efd97995f8a02a42",
+        "z": "5c4ee4d8d1ed06e6",
         "d": true,
         "name": "",
         "outputs": 2,
@@ -780,17 +859,17 @@
         "y": 200,
         "wires": [
             [
-                "26bdc4fec40db095"
+                "fc90ed7a9aefdb33"
             ],
             [
-                "26bdc4fec40db095"
+                "fc90ed7a9aefdb33"
             ]
         ]
     },
     {
-        "id": "03f87bdfe99842e6",
+        "id": "b661874b2ce68313",
         "type": "file",
-        "z": "efd97995f8a02a42",
+        "z": "5c4ee4d8d1ed06e6",
         "name": "",
         "filename": "filename",
         "filenameType": "msg",
@@ -802,14 +881,14 @@
         "y": 200,
         "wires": [
             [
-                "9a87fcc25edf1911"
+                "8c3c142cfc2a8f86"
             ]
         ]
     },
     {
-        "id": "9a87fcc25edf1911",
+        "id": "8c3c142cfc2a8f86",
         "type": "debug",
-        "z": "efd97995f8a02a42",
+        "z": "5c4ee4d8d1ed06e6",
         "name": "",
         "active": false,
         "tosidebar": true,
@@ -824,9 +903,9 @@
         "wires": []
     },
     {
-        "id": "1772c49f6618b474",
+        "id": "8a7dd43df97ee231",
         "type": "function",
-        "z": "efd97995f8a02a42",
+        "z": "5c4ee4d8d1ed06e6",
         "d": true,
         "name": "filename",
         "func": "const { payload, action } = msg;\n\nif (Buffer.isBuffer(payload)) {\n\n    msg.filename = context.get('filename');\n    \n    return msg;\n}\n\nif (typeof action === 'object') {\n    const { command } = action;\n    \n    if (command === 'start') {\n        \n        context.set('filename', `/tmp/AR${Date.now()}.mp4`);\n        \n    } else if (command === 'stop') {\n        \n        context.set('filename', undefined);\n        \n    }\n}\n\nreturn;",
@@ -839,14 +918,14 @@
         "y": 300,
         "wires": [
             [
-                "502c640200b5836e"
+                "4742bddba9dfd7be"
             ]
         ]
     },
     {
-        "id": "502c640200b5836e",
+        "id": "4742bddba9dfd7be",
         "type": "file",
-        "z": "efd97995f8a02a42",
+        "z": "5c4ee4d8d1ed06e6",
         "name": "",
         "filename": "filename",
         "filenameType": "msg",
@@ -858,14 +937,14 @@
         "y": 300,
         "wires": [
             [
-                "dfe68fb4694e26c6"
+                "c89a174f9fdbba06"
             ]
         ]
     },
     {
-        "id": "dfe68fb4694e26c6",
+        "id": "c89a174f9fdbba06",
         "type": "debug",
-        "z": "efd97995f8a02a42",
+        "z": "5c4ee4d8d1ed06e6",
         "name": "",
         "active": false,
         "tosidebar": true,
@@ -880,9 +959,9 @@
         "wires": []
     },
     {
-        "id": "c7807cb9bd513866",
+        "id": "9019366cb7e6fbab",
         "type": "comment",
-        "z": "efd97995f8a02a42",
+        "z": "5c4ee4d8d1ed06e6",
         "name": "- - - - - - - - - save raw mp4 files - - - - - - - - - -",
         "info": "",
         "x": 990,
@@ -890,9 +969,9 @@
         "wires": []
     },
     {
-        "id": "3b0f1f970f3af297",
+        "id": "90834c0b9aebc74a",
         "type": "comment",
-        "z": "efd97995f8a02a42",
+        "z": "5c4ee4d8d1ed06e6",
         "name": "- - - - - - - - - - - - - - - - - save processed mp4 files - - - - - - - - - - - - - - - - - ",
         "info": "",
         "x": 1069,
@@ -900,9 +979,9 @@
         "wires": []
     },
     {
-        "id": "46999a1f.6657d4",
+        "id": "e24401fbd1d10059",
         "type": "exec",
-        "z": "3bea6f7023caaec9",
+        "z": "ad23bd66d9ba1ebc",
         "command": "ffmpeg -f rtsp -i \"rtsp://192.168.1.166:554/stream.sdp\" -f image2pipe pipe:1",
         "addpay": false,
         "append": "",
@@ -915,16 +994,16 @@
         "y": 440,
         "wires": [
             [
-                "47938011.f1a51"
+                "b8b8225b596d722b"
             ],
             [],
             []
         ]
     },
     {
-        "id": "996a1c4.7436de",
+        "id": "60aaa246fc59eb74",
         "type": "inject",
-        "z": "3bea6f7023caaec9",
+        "z": "ad23bd66d9ba1ebc",
         "name": "Start stream",
         "repeat": "",
         "crontab": "",
@@ -937,14 +1016,14 @@
         "y": 440,
         "wires": [
             [
-                "46999a1f.6657d4"
+                "e24401fbd1d10059"
             ]
         ]
     },
     {
-        "id": "47938011.f1a51",
+        "id": "b8b8225b596d722b",
         "type": "image",
-        "z": "3bea6f7023caaec9",
+        "z": "ad23bd66d9ba1ebc",
         "name": "",
         "width": "400",
         "data": "payload",
@@ -958,9 +1037,9 @@
         "wires": []
     },
     {
-        "id": "4cf9fc06.acfb84",
+        "id": "6709590698aec4c4",
         "type": "inject",
-        "z": "3bea6f7023caaec9",
+        "z": "ad23bd66d9ba1ebc",
         "name": "Pause all streams",
         "repeat": "",
         "crontab": "",
@@ -973,14 +1052,14 @@
         "y": 480,
         "wires": [
             [
-                "8e3a27b3.abf538"
+                "a5d9f6ed392f938f"
             ]
         ]
     },
     {
-        "id": "cf50c10.31f664",
+        "id": "b0f0bea8b2498b9e",
         "type": "inject",
-        "z": "3bea6f7023caaec9",
+        "z": "ad23bd66d9ba1ebc",
         "name": "Resume all streams",
         "repeat": "",
         "crontab": "",
@@ -993,14 +1072,14 @@
         "y": 520,
         "wires": [
             [
-                "8e3a27b3.abf538"
+                "a5d9f6ed392f938f"
             ]
         ]
     },
     {
-        "id": "8e3a27b3.abf538",
+        "id": "a5d9f6ed392f938f",
         "type": "change",
-        "z": "3bea6f7023caaec9",
+        "z": "ad23bd66d9ba1ebc",
         "name": "",
         "rules": [
             {
@@ -1020,14 +1099,14 @@
         "y": 480,
         "wires": [
             [
-                "46999a1f.6657d4"
+                "e24401fbd1d10059"
             ]
         ]
     },
     {
-        "id": "a359a2e3.a4f51",
+        "id": "7b8259a61f72f811",
         "type": "inject",
-        "z": "3bea6f7023caaec9",
+        "z": "ad23bd66d9ba1ebc",
         "name": "Stop all streams",
         "repeat": "",
         "crontab": "",
@@ -1040,14 +1119,14 @@
         "y": 560,
         "wires": [
             [
-                "8e3a27b3.abf538"
+                "a5d9f6ed392f938f"
             ]
         ]
     },
     {
-        "id": "381559b021d17294",
+        "id": "46cf100259112d0b",
         "type": "inject",
-        "z": "3bea6f7023caaec9",
+        "z": "ad23bd66d9ba1ebc",
         "name": "Start searching",
         "props": [
             {
@@ -1069,14 +1148,14 @@
         "y": 660,
         "wires": [
             [
-                "54f8a64322b58018"
+                "05c30ea4192cd11a"
             ]
         ]
     },
     {
-        "id": "d7fa8c2570aac4a3",
+        "id": "477452a55992e768",
         "type": "debug",
-        "z": "3bea6f7023caaec9",
+        "z": "ad23bd66d9ba1ebc",
         "name": "Onvif devices",
         "active": true,
         "tosidebar": true,
@@ -1091,9 +1170,9 @@
         "wires": []
     },
     {
-        "id": "54f8a64322b58018",
+        "id": "05c30ea4192cd11a",
         "type": "onvif-discovery",
-        "z": "3bea6f7023caaec9",
+        "z": "ad23bd66d9ba1ebc",
         "name": "",
         "timeout": "10",
         "separate": true,
@@ -1101,14 +1180,14 @@
         "y": 660,
         "wires": [
             [
-                "d7fa8c2570aac4a3"
+                "477452a55992e768"
             ]
         ]
     },
     {
-        "id": "fb2a20dd98f121f5",
+        "id": "6a15f912273b7310",
         "type": "config",
-        "z": "3bea6f7023caaec9",
+        "z": "ad23bd66d9ba1ebc",
         "name": "",
         "properties": [
             {
@@ -1136,26 +1215,26 @@
         "wires": []
     },
     {
-        "id": "6bb356f31f3d79ae",
+        "id": "cb55b82ff1831db4",
         "type": "link in",
-        "z": "3bea6f7023caaec9",
+        "z": "ad23bd66d9ba1ebc",
         "name": "Startup",
         "links": [
-            "e1e41d7a50c87ccd"
+            "7fd78dc7b1f6d400"
         ],
         "x": 185,
         "y": 140,
         "wires": [
             [
-                "fb2a20dd98f121f5",
-                "923975943ca2ece1"
+                "6a15f912273b7310",
+                "ed9c805b277886bc"
             ]
         ]
     },
     {
-        "id": "923975943ca2ece1",
+        "id": "ed9c805b277886bc",
         "type": "function",
-        "z": "3bea6f7023caaec9",
+        "z": "ad23bd66d9ba1ebc",
         "name": "Get device config",
         "func": "msg.payload = flow.get('thing');\nmsg.topic = flow.get('thing.id') + '/config';\nreturn msg;",
         "outputs": 1,
@@ -1167,28 +1246,28 @@
         "y": 200,
         "wires": [
             [
-                "ec28546240731dd5",
-                "cfbecc2286942f4a"
+                "2ee7d7c6e6cb2b90",
+                "1d1dda9e6cd73349"
             ]
         ]
     },
     {
-        "id": "ec28546240731dd5",
+        "id": "2ee7d7c6e6cb2b90",
         "type": "link out",
-        "z": "3bea6f7023caaec9",
+        "z": "ad23bd66d9ba1ebc",
         "name": "Send out config",
         "mode": "link",
         "links": [
-            "bf7a1b67e986bfff"
+            "0c0aceacf53dbdb2"
         ],
         "x": 595,
         "y": 200,
         "wires": []
     },
     {
-        "id": "fcf6c8fbeed6de3d",
+        "id": "48c0cad249bb0bd3",
         "type": "comment",
-        "z": "3bea6f7023caaec9",
+        "z": "ad23bd66d9ba1ebc",
         "name": "Systemd event: local MQTT is up and running",
         "info": "",
         "x": 230,
@@ -1196,9 +1275,9 @@
         "wires": []
     },
     {
-        "id": "d4a1ecf6f329c7bc",
+        "id": "ab1ccc6060ed9ec9",
         "type": "comment",
-        "z": "3bea6f7023caaec9",
+        "z": "ad23bd66d9ba1ebc",
         "name": "MQTT cmd:",
         "info": "",
         "x": 130,
@@ -1206,23 +1285,23 @@
         "wires": []
     },
     {
-        "id": "5dce578ba41c555c",
+        "id": "fd52a5a3f8150eea",
         "type": "link in",
-        "z": "3bea6f7023caaec9",
+        "z": "ad23bd66d9ba1ebc",
         "name": "000-onvif-cam-001/cmd",
         "links": [],
         "x": 85,
         "y": 320,
         "wires": [
             [
-                "3d4460359254d2fd"
+                "98c921b4ad0436f4"
             ]
         ]
     },
     {
-        "id": "14884d7fe480e97e",
+        "id": "dbe54dabd3af311c",
         "type": "link out",
-        "z": "3bea6f7023caaec9",
+        "z": "ad23bd66d9ba1ebc",
         "name": "link out 2",
         "mode": "return",
         "links": [],
@@ -1231,9 +1310,9 @@
         "wires": []
     },
     {
-        "id": "3d4460359254d2fd",
+        "id": "98c921b4ad0436f4",
         "type": "switch",
-        "z": "3bea6f7023caaec9",
+        "z": "ad23bd66d9ba1ebc",
         "name": "",
         "property": "payload.cmd",
         "propertyType": "msg",
@@ -1256,17 +1335,17 @@
         "y": 320,
         "wires": [
             [
-                "69d18fc08a731612"
+                "2578c9c776b0b5bb"
             ],
             [
-                "8fbd3a3514bc5856"
+                "fa66381b69b5290f"
             ]
         ]
     },
     {
-        "id": "69d18fc08a731612",
+        "id": "2578c9c776b0b5bb",
         "type": "function",
-        "z": "3bea6f7023caaec9",
+        "z": "ad23bd66d9ba1ebc",
         "name": "cmd = Start",
         "func": "msg.payload = \"Started\";\nreturn msg;",
         "outputs": 1,
@@ -1278,14 +1357,14 @@
         "y": 300,
         "wires": [
             [
-                "d50479f9a521a6be"
+                "41999a673447a990"
             ]
         ]
     },
     {
-        "id": "8fbd3a3514bc5856",
+        "id": "fa66381b69b5290f",
         "type": "function",
-        "z": "3bea6f7023caaec9",
+        "z": "ad23bd66d9ba1ebc",
         "name": "cmd = Stop",
         "func": "msg.payload = \"Stopped\";\nreturn msg;",
         "outputs": 1,
@@ -1297,14 +1376,14 @@
         "y": 340,
         "wires": [
             [
-                "14884d7fe480e97e"
+                "dbe54dabd3af311c"
             ]
         ]
     },
     {
-        "id": "cfbecc2286942f4a",
+        "id": "1d1dda9e6cd73349",
         "type": "function",
-        "z": "3bea6f7023caaec9",
+        "z": "ad23bd66d9ba1ebc",
         "name": "Status = Ready",
         "func": "msg.topic = flow.get('thing.id') + '/status';\nmsg.payload = \"READY\";\nreturn msg;",
         "outputs": 1,
@@ -1316,27 +1395,27 @@
         "y": 240,
         "wires": [
             [
-                "ec28546240731dd5"
+                "2ee7d7c6e6cb2b90"
             ]
         ]
     },
     {
-        "id": "d50479f9a521a6be",
+        "id": "41999a673447a990",
         "type": "wifiscan",
-        "z": "3bea6f7023caaec9",
+        "z": "ad23bd66d9ba1ebc",
         "name": "",
         "x": 410,
         "y": 580,
         "wires": [
             [
-                "14884d7fe480e97e"
+                "dbe54dabd3af311c"
             ]
         ]
     },
     {
-        "id": "4019db48604e3b0f",
+        "id": "d39a2a12003b3d0c",
         "type": "mqtt out",
-        "z": "267f0896c2544dd9",
+        "z": "0a5ac1dcb64b7376",
         "name": "Local MQTT",
         "topic": "",
         "qos": "",
@@ -1352,43 +1431,43 @@
         "wires": []
     },
     {
-        "id": "bf7a1b67e986bfff",
+        "id": "0c0aceacf53dbdb2",
         "type": "link in",
-        "z": "267f0896c2544dd9",
+        "z": "0a5ac1dcb64b7376",
         "name": "Send_to_local_MQTT",
         "links": [
-            "ec28546240731dd5",
+            "2ee7d7c6e6cb2b90",
             "44dcc6e937ddcf2f",
-            "b352ec85cf6e5886"
+            "d0ebda896319b268"
         ],
         "x": 355,
         "y": 300,
         "wires": [
             [
-                "e6ab12f7e6dee274"
+                "b222876faf3dbe44"
             ]
         ]
     },
     {
-        "id": "587a4ef624957e11",
+        "id": "7a03b0e09e17a739",
         "type": "link call",
-        "z": "267f0896c2544dd9",
+        "z": "0a5ac1dcb64b7376",
         "name": "Send cmd to executor",
         "links": [],
         "linkType": "dynamic",
         "timeout": "3",
-        "x": 720,
-        "y": 460,
+        "x": 700,
+        "y": 520,
         "wires": [
             [
-                "662dd542f44b6b9e"
+                "31ab7a164df227b3"
             ]
         ]
     },
     {
-        "id": "097fdd596ec3e4e2",
+        "id": "605ff753aaa2ec37",
         "type": "mqtt in",
-        "z": "267f0896c2544dd9",
+        "z": "0a5ac1dcb64b7376",
         "name": "",
         "topic": "+/cmd",
         "qos": "0",
@@ -1398,18 +1477,18 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 130,
-        "y": 460,
+        "x": 110,
+        "y": 520,
         "wires": [
             [
-                "68016243801ac5b5"
+                "e92e95bfe589b71a"
             ]
         ]
     },
     {
-        "id": "e7062c6b88f1dc9a",
+        "id": "7efe4d813240b6e5",
         "type": "debug",
-        "z": "267f0896c2544dd9",
+        "z": "0a5ac1dcb64b7376",
         "name": "DBG: MQTT CMD received",
         "active": true,
         "tosidebar": true,
@@ -1419,14 +1498,14 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 400,
-        "y": 500,
+        "x": 380,
+        "y": 560,
         "wires": []
     },
     {
-        "id": "662dd542f44b6b9e",
+        "id": "31ab7a164df227b3",
         "type": "function",
-        "z": "267f0896c2544dd9",
+        "z": "0a5ac1dcb64b7376",
         "name": "Set result: /status ",
         "func": "if (!msg.target) {\n    return;\n}\nmsg.target = msg.topic;\n\nconst match = '\\/cmd$';\nconst modifier = \"i\";\nconst pattern = new RegExp(match, modifier);\n\nmsg.topic = msg.target.replace(pattern, '/status');\n\nif (msg.error) {\n    msg.payload = msg.error.message + ' cmd=' + JSON.stringify(msg.payload);\n}\n\nreturn msg;",
         "outputs": 1,
@@ -1434,34 +1513,34 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 810,
+        "x": 790,
         "y": 400,
         "wires": [
             [
-                "4019db48604e3b0f"
+                "d39a2a12003b3d0c"
             ]
         ]
     },
     {
-        "id": "afc9c1bb895e4fcc",
+        "id": "98cdc9feea4db013",
         "type": "catch",
-        "z": "267f0896c2544dd9",
+        "z": "0a5ac1dcb64b7376",
         "name": "",
         "scope": null,
         "uncaught": false,
-        "x": 140,
+        "x": 120,
         "y": 400,
         "wires": [
             [
-                "a0076fb0726b831f",
-                "662dd542f44b6b9e"
+                "12e05052ec68dc2b",
+                "31ab7a164df227b3"
             ]
         ]
     },
     {
-        "id": "15d6f38ecd4d4eca",
+        "id": "fb8852506dcc978d",
         "type": "mqtt in",
-        "z": "267f0896c2544dd9",
+        "z": "0a5ac1dcb64b7376",
         "name": "",
         "topic": "+/+/cmd",
         "qos": "2",
@@ -1471,18 +1550,18 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 140,
-        "y": 540,
+        "x": 120,
+        "y": 600,
         "wires": [
             [
-                "68016243801ac5b5"
+                "e92e95bfe589b71a"
             ]
         ]
     },
     {
-        "id": "b8e38a6f72213e9e",
+        "id": "688bd8fae41ef688",
         "type": "aedes broker",
-        "z": "267f0896c2544dd9",
+        "z": "0a5ac1dcb64b7376",
         "name": "",
         "mqtt_port": 1883,
         "mqtt_ws_bind": "port",
@@ -1495,32 +1574,32 @@
         "dburl": "",
         "usetls": false,
         "x": 150,
-        "y": 80,
+        "y": 40,
         "wires": [
             [],
             []
         ]
     },
     {
-        "id": "652e35c69955d976",
+        "id": "f66169967adecccd",
         "type": "status",
-        "z": "267f0896c2544dd9",
+        "z": "0a5ac1dcb64b7376",
         "name": "Status of [MQTT out] node",
         "scope": [
-            "b8e38a6f72213e9e"
+            "688bd8fae41ef688"
         ],
         "x": 170,
         "y": 140,
         "wires": [
             [
-                "e5e523e43551d1fc"
+                "6e2c4bf97dc377c7"
             ]
         ]
     },
     {
-        "id": "e5e523e43551d1fc",
+        "id": "6e2c4bf97dc377c7",
         "type": "switch",
-        "z": "267f0896c2544dd9",
+        "z": "0a5ac1dcb64b7376",
         "name": "if connected",
         "property": "status.text",
         "propertyType": "msg",
@@ -1538,27 +1617,27 @@
         "y": 140,
         "wires": [
             [
-                "52ac9877505a0655"
+                "522595dc6450492c"
             ]
         ]
     },
     {
-        "id": "8946a46bf7bb1901",
+        "id": "f11d4ba78ac67aba",
         "type": "link out",
-        "z": "267f0896c2544dd9",
+        "z": "0a5ac1dcb64b7376",
         "name": "Notify Systemd",
         "mode": "link",
         "links": [
-            "0ba2c92a5d328e69"
+            "3379f24a2db7b97f"
         ],
-        "x": 645,
-        "y": 240,
+        "x": 755,
+        "y": 200,
         "wires": []
     },
     {
-        "id": "cf9b69588739a06e",
+        "id": "f65c24a2e8699276",
         "type": "function",
-        "z": "267f0896c2544dd9",
+        "z": "0a5ac1dcb64b7376",
         "name": "Set broker id and Notify to Systemd",
         "func": "const serialId = msg.payload.replace(/\\0.*$/, \"\");\n\nif (serialId) {\n    global.set(\"broker.id\", serialId);\n    msg.payload = \"local_MQTT_broker_is_up [\" + serialId + ']';\n    return msg;\n}\n\nreturn null;",
         "outputs": 1,
@@ -1566,18 +1645,18 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 700,
+        "x": 560,
         "y": 200,
         "wires": [
             [
-                "8946a46bf7bb1901"
+                "f11d4ba78ac67aba"
             ]
         ]
     },
     {
-        "id": "52ac9877505a0655",
+        "id": "522595dc6450492c",
         "type": "file in",
-        "z": "267f0896c2544dd9",
+        "z": "0a5ac1dcb64b7376",
         "name": "",
         "filename": "/sys/firmware/devicetree/base/serial-number",
         "filenameType": "str",
@@ -1590,14 +1669,14 @@
         "y": 140,
         "wires": [
             [
-                "cf9b69588739a06e"
+                "f65c24a2e8699276"
             ]
         ]
     },
     {
-        "id": "a0076fb0726b831f",
+        "id": "12e05052ec68dc2b",
         "type": "debug",
-        "z": "267f0896c2544dd9",
+        "z": "0a5ac1dcb64b7376",
         "name": "Flow errors",
         "active": true,
         "tosidebar": true,
@@ -1607,14 +1686,14 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 350,
+        "x": 330,
         "y": 400,
         "wires": []
     },
     {
-        "id": "e6ab12f7e6dee274",
+        "id": "b222876faf3dbe44",
         "type": "function",
-        "z": "267f0896c2544dd9",
+        "z": "0a5ac1dcb64b7376",
         "name": "Add /broker-id",
         "func": "msg.topic = global.get(\"broker.id\") + \"/\" + msg.topic;\n\n\n\nreturn msg;",
         "outputs": 1,
@@ -1626,14 +1705,14 @@
         "y": 300,
         "wires": [
             [
-                "06ff0c34faecfd85"
+                "0fe1e5eb67cef2d4"
             ]
         ]
     },
     {
-        "id": "06ff0c34faecfd85",
+        "id": "0fe1e5eb67cef2d4",
         "type": "function",
-        "z": "267f0896c2544dd9",
+        "z": "0a5ac1dcb64b7376",
         "name": "Set retained for /config",
         "func": "const match = '\\/config$';\nconst topic = msg.topic;\nconst found = topic.match(match);\n\nif (found) {\n    msg.qos = 2;\n    msg.retain = true;\n}\ndelete msg.topic;\nmsg.topic = topic;//\"rpi10000000ffebcc55/000-onvif-cam-001/config\"\nreturn msg;",
         "outputs": 1,
@@ -1645,14 +1724,14 @@
         "y": 300,
         "wires": [
             [
-                "4019db48604e3b0f"
+                "d39a2a12003b3d0c"
             ]
         ]
     },
     {
-        "id": "68016243801ac5b5",
+        "id": "e92e95bfe589b71a",
         "type": "function",
-        "z": "267f0896c2544dd9",
+        "z": "0a5ac1dcb64b7376",
         "name": "Remove broker namespace and set target",
         "func": "const match = new RegExp('^' + global.get(\"broker.id\") + '/');\nconst topic = msg.topic.replace(match, \"\");\nmsg.target = topic;\n\nreturn  msg;",
         "outputs": 1,
@@ -1660,49 +1739,89 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 400,
-        "y": 460,
+        "x": 380,
+        "y": 520,
         "wires": [
             [
-                "587a4ef624957e11",
-                "e7062c6b88f1dc9a"
+                "7a03b0e09e17a739",
+                "7efe4d813240b6e5"
             ]
         ]
     },
     {
-        "id": "0ba2c92a5d328e69",
+        "id": "a5483cba60e1e74b",
+        "type": "comment",
+        "z": "0a5ac1dcb64b7376",
+        "name": "On boot (when MQTT broker becomes accessible) we send notification to Systemd",
+        "info": "",
+        "x": 350,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "9e56d6f66f14364d",
+        "type": "comment",
+        "z": "0a5ac1dcb64b7376",
+        "name": "Publisher interface",
+        "info": "",
+        "x": 150,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "1da4282812077bda",
+        "type": "comment",
+        "z": "0a5ac1dcb64b7376",
+        "name": "Report error status of cmd execution",
+        "info": "",
+        "x": 200,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "e56a58b82d7ed0ec",
+        "type": "comment",
+        "z": "0a5ac1dcb64b7376",
+        "name": "Subscribe for cmd, execute and report user status of cmd execution",
+        "info": "",
+        "x": 300,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "3379f24a2db7b97f",
         "type": "link in",
-        "z": "e00d584b4e2e74af",
+        "z": "7dad7a056c3e824a",
         "name": "Systemd Events",
         "links": [
-            "8946a46bf7bb1901"
+            "f11d4ba78ac67aba"
         ],
         "x": 355,
         "y": 340,
         "wires": [
             [
-                "9cb525760f88f618"
+                "b233b21f97fd0586"
             ]
         ]
     },
     {
-        "id": "e1e41d7a50c87ccd",
+        "id": "7fd78dc7b1f6d400",
         "type": "link out",
-        "z": "e00d584b4e2e74af",
+        "z": "7dad7a056c3e824a",
         "name": "Stage - MQTT broker is UP",
         "mode": "link",
         "links": [
-            "6bb356f31f3d79ae",
-            "5b292c5534d77568"
+            "cb55b82ff1831db4",
+            "ae96a900f52429fb"
         ],
         "x": 695,
         "y": 140,
         "wires": []
     },
     {
-        "id": "7acadede580cc365",
+        "id": "a685559a453cb2db",
         "type": "comment",
-        "z": "e00d584b4e2e74af",
+        "z": "7dad7a056c3e824a",
         "name": "Local MQTT broker is up, send notifications",
         "info": "",
         "x": 740,
@@ -1710,9 +1829,9 @@
         "wires": []
     },
     {
-        "id": "9cb525760f88f618",
+        "id": "b233b21f97fd0586",
         "type": "switch",
-        "z": "e00d584b4e2e74af",
+        "z": "7dad7a056c3e824a",
         "name": "",
         "property": "payload",
         "propertyType": "msg",
@@ -1730,15 +1849,15 @@
         "y": 340,
         "wires": [
             [
-                "e1e41d7a50c87ccd",
-                "bdfc7041caa5282f"
+                "7fd78dc7b1f6d400",
+                "7bc41172cc2c35d1"
             ]
         ]
     },
     {
-        "id": "bdfc7041caa5282f",
+        "id": "7bc41172cc2c35d1",
         "type": "debug",
-        "z": "e00d584b4e2e74af",
+        "z": "7dad7a056c3e824a",
         "name": "DBG: Systemd Events",
         "active": true,
         "tosidebar": true,
@@ -1753,9 +1872,9 @@
         "wires": []
     },
     {
-        "id": "573aabbfcad3bea4",
+        "id": "2ecd957924ab53da",
         "type": "config",
-        "z": "4074d230f2e616af",
+        "z": "244d1c7c92f9ed23",
         "name": "",
         "properties": [
             {
@@ -1777,26 +1896,26 @@
         "wires": []
     },
     {
-        "id": "5b292c5534d77568",
+        "id": "ae96a900f52429fb",
         "type": "link in",
-        "z": "4074d230f2e616af",
+        "z": "244d1c7c92f9ed23",
         "name": "Startup",
         "links": [
-            "e1e41d7a50c87ccd"
+            "7fd78dc7b1f6d400"
         ],
         "x": 165,
         "y": 100,
         "wires": [
             [
-                "573aabbfcad3bea4",
-                "7cc310d61bc0aa0c"
+                "2ecd957924ab53da",
+                "914739e285571d1a"
             ]
         ]
     },
     {
-        "id": "198791de571b405a",
+        "id": "d9c1a6e37b884cf3",
         "type": "function",
-        "z": "4074d230f2e616af",
+        "z": "244d1c7c92f9ed23",
         "name": "Get device config",
         "func": "msg.topic = flow.get('thing.id') + '/config';\nreturn msg;",
         "outputs": 1,
@@ -1808,28 +1927,28 @@
         "y": 160,
         "wires": [
             [
-                "b352ec85cf6e5886",
-                "558f62c0ecdd2c81"
+                "d0ebda896319b268",
+                "ed0b91cbe912541f"
             ]
         ]
     },
     {
-        "id": "b352ec85cf6e5886",
+        "id": "d0ebda896319b268",
         "type": "link out",
-        "z": "4074d230f2e616af",
+        "z": "244d1c7c92f9ed23",
         "name": "Send out config",
         "mode": "link",
         "links": [
-            "bf7a1b67e986bfff"
+            "0c0aceacf53dbdb2"
         ],
         "x": 685,
         "y": 160,
         "wires": []
     },
     {
-        "id": "558f62c0ecdd2c81",
+        "id": "ed0b91cbe912541f",
         "type": "function",
-        "z": "4074d230f2e616af",
+        "z": "244d1c7c92f9ed23",
         "name": "Status = Ready",
         "func": "msg.topic = flow.get('thing.id') + '/status';\nmsg.payload = \"READY\";\nreturn msg;",
         "outputs": 1,
@@ -1841,14 +1960,14 @@
         "y": 200,
         "wires": [
             [
-                "b352ec85cf6e5886"
+                "d0ebda896319b268"
             ]
         ]
     },
     {
-        "id": "7cc310d61bc0aa0c",
+        "id": "914739e285571d1a",
         "type": "http request",
-        "z": "4074d230f2e616af",
+        "z": "244d1c7c92f9ed23",
         "name": "Get all flows",
         "method": "GET",
         "ret": "obj",
@@ -1872,14 +1991,14 @@
         "y": 160,
         "wires": [
             [
-                "198791de571b405a"
+                "d9c1a6e37b884cf3"
             ]
         ]
     },
     {
-        "id": "fb6cbea9f8feee1b",
+        "id": "97a1788f30bd8ac5",
         "type": "comment",
-        "z": "4074d230f2e616af",
+        "z": "244d1c7c92f9ed23",
         "name": "MQTT cmd:",
         "info": "",
         "x": 210,
@@ -1887,23 +2006,23 @@
         "wires": []
     },
     {
-        "id": "db6f46b4821e5876",
+        "id": "d61cd4f325847874",
         "type": "link in",
-        "z": "4074d230f2e616af",
+        "z": "244d1c7c92f9ed23",
         "name": "node-red:000-000-001/cmd",
         "links": [],
         "x": 165,
         "y": 340,
         "wires": [
             [
-                "3183799529a841aa"
+                "670cb22e39c0d632"
             ]
         ]
     },
     {
-        "id": "194612cb31eb08e8",
+        "id": "3425f2cc13bd6388",
         "type": "link out",
-        "z": "4074d230f2e616af",
+        "z": "244d1c7c92f9ed23",
         "name": "link out 3",
         "mode": "return",
         "links": [],
@@ -1912,9 +2031,9 @@
         "wires": []
     },
     {
-        "id": "3183799529a841aa",
+        "id": "670cb22e39c0d632",
         "type": "switch",
-        "z": "4074d230f2e616af",
+        "z": "244d1c7c92f9ed23",
         "name": "",
         "property": "payload.cmd",
         "propertyType": "msg",
@@ -1932,14 +2051,14 @@
         "y": 340,
         "wires": [
             [
-                "c75542bc819108a9"
+                "77c23579e0ae95c7"
             ]
         ]
     },
     {
-        "id": "c75542bc819108a9",
+        "id": "77c23579e0ae95c7",
         "type": "function",
-        "z": "4074d230f2e616af",
+        "z": "244d1c7c92f9ed23",
         "name": "cmd = Execute",
         "func": "msg.payload = msg.payload.data.flows;\nreturn msg;",
         "outputs": 1,
@@ -1951,15 +2070,14 @@
         "y": 340,
         "wires": [
             [
-                "5716fa9935aa8590",
-                "c88363cd0c30dcb2"
+                "5eb406c2febcc77c"
             ]
         ]
     },
     {
-        "id": "5716fa9935aa8590",
+        "id": "5eb406c2febcc77c",
         "type": "http request",
-        "z": "4074d230f2e616af",
+        "z": "244d1c7c92f9ed23",
         "name": "",
         "method": "POST",
         "ret": "txt",
@@ -1995,25 +2113,8 @@
         "y": 340,
         "wires": [
             [
-                "194612cb31eb08e8",
-                "c88363cd0c30dcb2"
+                "3425f2cc13bd6388"
             ]
         ]
-    },
-    {
-        "id": "c88363cd0c30dcb2",
-        "type": "debug",
-        "z": "4074d230f2e616af",
-        "name": "debug 2",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 760,
-        "y": 400,
-        "wires": []
     }
 ]
