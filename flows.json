@@ -1402,35 +1402,7 @@
         "y": 460,
         "wires": [
             [
-                "4162f68ac00b62b1"
-            ]
-        ]
-    },
-    {
-        "id": "4162f68ac00b62b1",
-        "type": "change",
-        "z": "267f0896c2544dd9",
-        "name": "Target call = topic name",
-        "rules": [
-            {
-                "t": "set",
-                "p": "target",
-                "pt": "msg",
-                "to": "topic",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 350,
-        "y": 460,
-        "wires": [
-            [
-                "587a4ef624957e11",
-                "e7062c6b88f1dc9a"
+                "68016243801ac5b5"
             ]
         ]
     },
@@ -1710,8 +1682,8 @@
         "y": 540,
         "wires": [
             [
-                "4162f68ac00b62b1",
-                "c9f46ea0a2d72fcc"
+                "c9f46ea0a2d72fcc",
+                "68016243801ac5b5"
             ]
         ]
     },
@@ -1731,6 +1703,25 @@
         "x": 640,
         "y": 540,
         "wires": []
+    },
+    {
+        "id": "68016243801ac5b5",
+        "type": "function",
+        "z": "267f0896c2544dd9",
+        "name": "Remove broker namespace",
+        "func": "msg.target = msg.topic;\n\nreturn  msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 360,
+        "y": 460,
+        "wires": [
+            [
+                "587a4ef624957e11"
+            ]
+        ]
     },
     {
         "id": "0ba2c92a5d328e69",
