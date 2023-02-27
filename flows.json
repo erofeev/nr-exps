@@ -2015,7 +2015,7 @@
                 "keyType": "other",
                 "keyValue": "Node-RED-Deployment-Type",
                 "valueType": "other",
-                "valueValue": "reload"
+                "valueValue": "full"
             }
         ],
         "x": 630,
