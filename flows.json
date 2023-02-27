@@ -1428,7 +1428,7 @@
         "type": "function",
         "z": "267f0896c2544dd9",
         "name": "Set result: /status ",
-        "func": "if (!msg.target) {\n    return;\n}\n\nconst match = '\\/cmd$';\nconst modifier = \"i\";\nconst pattern = new RegExp(match, modifier);\n\nmsg.topic = msg.target.replace(pattern, '/status');\n\nif (msg.error) {\n    msg.payload = msg.error.message + ' cmd=' + JSON.stringify(msg.payload);\n}\n\nreturn msg;",
+        "func": "if (!msg.target) {\n    return;\n}\nmsg.target = msg.topic;\n\nconst match = '\\/cmd$';\nconst modifier = \"i\";\nconst pattern = new RegExp(match, modifier);\n\nmsg.topic = msg.target.replace(pattern, '/status');\n\nif (msg.error) {\n    msg.payload = msg.error.message + ' cmd=' + JSON.stringify(msg.payload);\n}\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
