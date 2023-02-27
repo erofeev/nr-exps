@@ -39,6 +39,14 @@
         "env": []
     },
     {
+        "id": "4074d230f2e616af",
+        "type": "tab",
+        "label": "NR-thing",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "5e1c22f8.d65d2c",
         "type": "ui_group",
         "name": "group 2",
@@ -1349,7 +1357,9 @@
         "z": "267f0896c2544dd9",
         "name": "Send_to_local_MQTT",
         "links": [
-            "ec28546240731dd5"
+            "ec28546240731dd5",
+            "44dcc6e937ddcf2f",
+            "b352ec85cf6e5886"
         ],
         "x": 355,
         "y": 300,
@@ -1709,7 +1719,8 @@
         "name": "Stage - MQTT broker is UP",
         "mode": "link",
         "links": [
-            "6bb356f31f3d79ae"
+            "6bb356f31f3d79ae",
+            "5b292c5534d77568"
         ],
         "x": 695,
         "y": 140,
@@ -1767,5 +1778,135 @@
         "x": 530,
         "y": 40,
         "wires": []
+    },
+    {
+        "id": "573aabbfcad3bea4",
+        "type": "config",
+        "z": "4074d230f2e616af",
+        "name": "",
+        "properties": [
+            {
+                "p": "thing.id",
+                "pt": "flow",
+                "to": "onvif:000-000-001",
+                "tot": "str"
+            },
+            {
+                "p": "thing.type",
+                "pt": "flow",
+                "to": "onvif",
+                "tot": "str"
+            },
+            {
+                "p": "thing.rtsp_url",
+                "pt": "flow",
+                "to": "",
+                "tot": "str"
+            }
+        ],
+        "active": true,
+        "x": 330,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "5b292c5534d77568",
+        "type": "link in",
+        "z": "4074d230f2e616af",
+        "name": "Startup",
+        "links": [
+            "e1e41d7a50c87ccd"
+        ],
+        "x": 165,
+        "y": 40,
+        "wires": [
+            [
+                "573aabbfcad3bea4",
+                "7cc310d61bc0aa0c"
+            ]
+        ]
+    },
+    {
+        "id": "198791de571b405a",
+        "type": "function",
+        "z": "4074d230f2e616af",
+        "name": "Get device config",
+        "func": "msg.topic = flow.get('thing.id') + '/config';\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 490,
+        "y": 100,
+        "wires": [
+            [
+                "b352ec85cf6e5886",
+                "558f62c0ecdd2c81"
+            ]
+        ]
+    },
+    {
+        "id": "b352ec85cf6e5886",
+        "type": "link out",
+        "z": "4074d230f2e616af",
+        "name": "Send out config",
+        "mode": "link",
+        "links": [
+            "bf7a1b67e986bfff"
+        ],
+        "x": 685,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "558f62c0ecdd2c81",
+        "type": "function",
+        "z": "4074d230f2e616af",
+        "name": "Status = Ready",
+        "func": "msg.topic = flow.get('thing.id') + '/status';\nmsg.payload = \"READY\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 520,
+        "y": 140,
+        "wires": [
+            [
+                "b352ec85cf6e5886"
+            ]
+        ]
+    },
+    {
+        "id": "7cc310d61bc0aa0c",
+        "type": "http request",
+        "z": "4074d230f2e616af",
+        "name": "Get all flows",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "localhost:1880/flows",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [
+            {
+                "keyType": "other",
+                "keyValue": "Node-RED-API-Version",
+                "valueType": "other",
+                "valueValue": "v2"
+            }
+        ],
+        "x": 290,
+        "y": 100,
+        "wires": [
+            [
+                "198791de571b405a"
+            ]
+        ]
     }
 ]
