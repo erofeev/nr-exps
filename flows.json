@@ -1699,14 +1699,14 @@
         "id": "5e31512d01e5af98",
         "type": "function",
         "z": "267f0896c2544dd9",
-        "name": "Set broker id and Notify to Systemd",
+        "name": "Remove broker namespace",
         "func": "const match = '^' + global.get(\"broker.id\") + '/';\nconst topic = msg.topic.replace(match, \"\");\nmsg.topic = topic;\n\nreturn  msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 400,
+        "x": 380,
         "y": 540,
         "wires": [
             [
