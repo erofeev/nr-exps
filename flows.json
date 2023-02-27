@@ -1504,7 +1504,7 @@
         "y": 540,
         "wires": [
             [
-                "4162f68ac00b62b1"
+                "5e31512d01e5af98"
             ]
         ]
     },
@@ -1695,6 +1695,25 @@
         "x": 920,
         "y": 80,
         "wires": []
+    },
+    {
+        "id": "5e31512d01e5af98",
+        "type": "function",
+        "z": "267f0896c2544dd9",
+        "name": "Set broker id and Notify to Systemd",
+        "func": "const serialId = global.get(\"broker.id\");\nconst topic = msg.topic.replace(\"^\"+ serialId, \"\");\nmsg.topic = topic;\n\nreturn  msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 400,
+        "y": 540,
+        "wires": [
+            [
+                "4162f68ac00b62b1"
+            ]
+        ]
     },
     {
         "id": "0ba2c92a5d328e69",
