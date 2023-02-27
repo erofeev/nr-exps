@@ -1417,8 +1417,7 @@
                 "p": "target",
                 "pt": "msg",
                 "to": "topic",
-                "tot": "msg",
-                "dc": true
+                "tot": "msg"
             }
         ],
         "action": "",
