@@ -1454,7 +1454,7 @@
         "wires": [
             [
                 "a0076fb0726b831f",
-                "a5d3729c3774fc4d"
+                "662dd542f44b6b9e"
             ]
         ]
     },
@@ -1684,25 +1684,6 @@
             [
                 "587a4ef624957e11",
                 "e7062c6b88f1dc9a"
-            ]
-        ]
-    },
-    {
-        "id": "a5d3729c3774fc4d",
-        "type": "function",
-        "z": "267f0896c2544dd9",
-        "name": "Add /broker-id",
-        "func": "msg.topic = global.get(\"broker.id\") + \"/\" + msg.topic;\n\n\n\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 600,
-        "y": 400,
-        "wires": [
-            [
-                "662dd542f44b6b9e"
             ]
         ]
     },
