@@ -1376,7 +1376,7 @@
         "name": "Send cmd to executor",
         "links": [],
         "linkType": "dynamic",
-        "timeout": "7",
+        "timeout": "3",
         "x": 640,
         "y": 460,
         "wires": [
@@ -1923,8 +1923,7 @@
         "y": 340,
         "wires": [
             [
-                "3183799529a841aa",
-                "c88363cd0c30dcb2"
+                "3183799529a841aa"
             ]
         ]
     },
@@ -1949,7 +1948,7 @@
         "rules": [
             {
                 "t": "eq",
-                "v": "execute",
+                "v": "SetFlow",
                 "vt": "str"
             }
         ],
@@ -1960,8 +1959,7 @@
         "y": 340,
         "wires": [
             [
-                "c75542bc819108a9",
-                "c88363cd0c30dcb2"
+                "c75542bc819108a9"
             ]
         ]
     },
@@ -1970,7 +1968,7 @@
         "type": "function",
         "z": "4074d230f2e616af",
         "name": "cmd = SetFlow",
-        "func": "msg.payload = msg.payload.data.flows;\nreturn msg;",
+        "func": "msg.payload = msg.payload.data;\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -1991,7 +1989,7 @@
         "z": "4074d230f2e616af",
         "name": "",
         "method": "POST",
-        "ret": "obj",
+        "ret": "txt",
         "paytoqs": "ignore",
         "url": "localhost:1880/flows",
         "tls": "",
@@ -2011,7 +2009,7 @@
                 "keyType": "other",
                 "keyValue": "Node-RED-API-Version",
                 "valueType": "other",
-                "valueValue": "v1"
+                "valueValue": "v2"
             },
             {
                 "keyType": "other",
@@ -2038,8 +2036,7 @@
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
+        "complete": "false",
         "statusVal": "",
         "statusType": "auto",
         "x": 760,
