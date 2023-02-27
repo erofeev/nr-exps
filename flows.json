@@ -2017,7 +2017,7 @@
                 "keyType": "other",
                 "keyValue": "Node-RED-Deployment-Type",
                 "valueType": "other",
-                "valueValue": "reload"
+                "valueValue": "full"
             }
         ],
         "x": 630,
@@ -2038,7 +2038,8 @@
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "false",
+        "complete": "payload",
+        "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
         "x": 760,
