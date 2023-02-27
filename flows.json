@@ -1,13 +1,5 @@
 [
     {
-        "id": "244d1c7c92f9ed23",
-        "type": "tab",
-        "label": "NR-thing",
-        "disabled": false,
-        "info": "",
-        "env": []
-    },
-    {
         "id": "bd2732f3b93f0891",
         "type": "tab",
         "label": "Video stream - analytics",
