@@ -1788,19 +1788,13 @@
             {
                 "p": "thing.id",
                 "pt": "flow",
-                "to": "onvif:000-000-001",
+                "to": "node-red:000-000-001",
                 "tot": "str"
             },
             {
                 "p": "thing.type",
                 "pt": "flow",
-                "to": "onvif",
-                "tot": "str"
-            },
-            {
-                "p": "thing.rtsp_url",
-                "pt": "flow",
-                "to": "",
+                "to": "node-red",
                 "tot": "str"
             }
         ],
