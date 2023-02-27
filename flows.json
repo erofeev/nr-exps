@@ -1106,7 +1106,7 @@
             {
                 "p": "thing.id",
                 "pt": "flow",
-                "to": "000-onvif-cam-001",
+                "to": "onvif:000-000-001",
                 "tot": "str"
             },
             {
