@@ -47,14 +47,6 @@
         "env": []
     },
     {
-        "id": "adde3238c7dc65e0",
-        "type": "tab",
-        "label": "Flow 1",
-        "disabled": false,
-        "info": "",
-        "env": []
-    },
-    {
         "id": "5e1c22f8.d65d2c",
         "type": "ui_group",
         "name": "group 2",
@@ -2071,93 +2063,5 @@
         "x": 760,
         "y": 400,
         "wires": []
-    },
-    {
-        "id": "909b7ed048c46e24",
-        "type": "serial in",
-        "z": "adde3238c7dc65e0",
-        "name": "",
-        "serial": "a22b5e6d9712d94a",
-        "x": 160,
-        "y": 220,
-        "wires": [
-            [
-                "2b9b3aa9902d2a80",
-                "b34c7bbda775fb4d"
-            ]
-        ]
-    },
-    {
-        "id": "2b9b3aa9902d2a80",
-        "type": "debug",
-        "z": "adde3238c7dc65e0",
-        "name": "debug 3",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 540,
-        "y": 180,
-        "wires": []
-    },
-    {
-        "id": "150b92c506a2dd8a",
-        "type": "mqtt out",
-        "z": "adde3238c7dc65e0",
-        "name": "",
-        "topic": "",
-        "qos": "",
-        "retain": "",
-        "respTopic": "",
-        "contentType": "",
-        "userProps": "",
-        "correl": "",
-        "expiry": "",
-        "broker": "4bd4c4a3bf0645b2",
-        "x": 590,
-        "y": 80,
-        "wires": []
-    },
-    {
-        "id": "b34c7bbda775fb4d",
-        "type": "function",
-        "z": "adde3238c7dc65e0",
-        "name": "function 1",
-        "func": "msg.topic = 'something';\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 420,
-        "y": 120,
-        "wires": [
-            [
-                "150b92c506a2dd8a"
-            ]
-        ]
-    },
-    {
-        "id": "5c7f8f1d97d47f87",
-        "type": "exec",
-        "z": "adde3238c7dc65e0",
-        "command": "",
-        "addpay": "",
-        "append": "",
-        "useSpawn": "false",
-        "timer": "",
-        "winHide": false,
-        "oldrc": false,
-        "name": "",
-        "x": 610,
-        "y": 360,
-        "wires": [
-            [],
-            [],
-            []
-        ]
     }
 ]
