@@ -2008,7 +2008,7 @@
                 "keyType": "other",
                 "keyValue": "Node-RED-API-Version",
                 "valueType": "other",
-                "valueValue": "v2"
+                "valueValue": "v1"
             },
             {
                 "keyType": "other",
