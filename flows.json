@@ -2011,13 +2011,13 @@
                 "keyType": "other",
                 "keyValue": "Node-RED-API-Version",
                 "valueType": "other",
-                "valueValue": "v2"
+                "valueValue": "v1"
             },
             {
                 "keyType": "other",
                 "keyValue": "Node-RED-Deployment-Type",
                 "valueType": "other",
-                "valueValue": "full"
+                "valueValue": "reload"
             }
         ],
         "x": 630,
