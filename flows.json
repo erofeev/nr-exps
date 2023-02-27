@@ -8,6 +8,53 @@
         "env": []
     },
     {
+        "id": "bd2732f3b93f0891",
+        "type": "tab",
+        "label": "Video stream - analytics",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "1534403a2ae17ded",
+        "type": "tab",
+        "label": "Video stream - ffmpeg on /dev/video0",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "b8d2b8c74ebf667c",
+        "type": "tab",
+        "label": "Video from Onvif",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "336297f20d958d14",
+        "type": "tab",
+        "label": "Local broker",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "1363678a5a35dcfd",
+        "type": "tab",
+        "label": "Systemd",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "e77e618e5ced1a23",
+        "type": "tab",
+        "label": "NR-thing",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "ef8a80e9c499bb4e",
         "type": "subflow",
         "name": "Zip-64",
@@ -39,6 +86,148 @@
         "env": [],
         "meta": {},
         "color": "#DDAA99"
+    },
+    {
+        "id": "72d286b06009cc76",
+        "type": "ui_group",
+        "name": "group 2",
+        "tab": "5f8f6e4fc15f7cd9",
+        "order": 2,
+        "disp": false,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "5f8f6e4fc15f7cd9",
+        "type": "ui_tab",
+        "name": "Video Recogn",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "74a205b01477cb26",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "dd19481bb15a7a95",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "127.0.0.1",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
     },
     {
         "id": "2b65109daddacd99",
@@ -84,6 +273,1856 @@
         "y": 160,
         "wires": [
             []
+        ]
+    },
+    {
+        "id": "87ec482cd4f37d41",
+        "type": "debug",
+        "z": "bd2732f3b93f0891",
+        "name": "Recognized Objects",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "classes",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 800,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "4dfdc0c78eb4a26c",
+        "type": "tensorflowCoco",
+        "z": "bd2732f3b93f0891",
+        "name": "",
+        "modelUrl": "http://127.0.0.1:1880/coco/model.json",
+        "scoreThreshold": 0.5,
+        "passthru": "bbox",
+        "lineColour": "magenta",
+        "x": 370,
+        "y": 220,
+        "wires": [
+            [
+                "a2c986f6b4de3a53",
+                "c4dcb048a6084816",
+                "03075c04bef53cc3"
+            ]
+        ]
+    },
+    {
+        "id": "c4dcb048a6084816",
+        "type": "image",
+        "z": "bd2732f3b93f0891",
+        "name": "",
+        "width": "400",
+        "data": "image",
+        "dataType": "msg",
+        "thumbnail": false,
+        "active": false,
+        "pass": false,
+        "outputs": 0,
+        "x": 640,
+        "y": 20,
+        "wires": []
+    },
+    {
+        "id": "03075c04bef53cc3",
+        "type": "jimp-image",
+        "z": "bd2732f3b93f0891",
+        "name": "",
+        "data": "http://127.0.0.1:1880/pipe2jpeg/flow02/image.jpeg",
+        "dataType": "str",
+        "ret": "buf",
+        "parameter1": "",
+        "parameter1Type": "msg",
+        "parameter2": "",
+        "parameter2Type": "msg",
+        "parameter3": "",
+        "parameter3Type": "msg",
+        "parameter4": "",
+        "parameter4Type": "msg",
+        "parameter5": "",
+        "parameter5Type": "msg",
+        "parameter6": "",
+        "parameter6Type": "msg",
+        "parameter7": "",
+        "parameter7Type": "msg",
+        "parameter8": "",
+        "parameter8Type": "msg",
+        "sendProperty": "payload",
+        "sendPropertyType": "msg",
+        "parameterCount": 0,
+        "jimpFunction": "none",
+        "selectedJimpFunction": {
+            "name": "none",
+            "fn": "none",
+            "description": "Just loads the image.",
+            "parameters": []
+        },
+        "x": 230,
+        "y": 100,
+        "wires": [
+            [
+                "4dfdc0c78eb4a26c",
+                "f595e70d49919e04",
+                "c7fbaa996bca5c3d"
+            ]
+        ]
+    },
+    {
+        "id": "0d33745d30758ba1",
+        "type": "status",
+        "z": "bd2732f3b93f0891",
+        "name": "",
+        "scope": [
+            "4dfdc0c78eb4a26c"
+        ],
+        "x": 80,
+        "y": 280,
+        "wires": [
+            [
+                "03075c04bef53cc3"
+            ]
+        ]
+    },
+    {
+        "id": "7ec7874d255ccd91",
+        "type": "inject",
+        "z": "bd2732f3b93f0891",
+        "name": "Start [Manual]",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 110,
+        "y": 220,
+        "wires": [
+            [
+                "03075c04bef53cc3"
+            ]
+        ]
+    },
+    {
+        "id": "954825e2e04ee705",
+        "type": "link out",
+        "z": "bd2732f3b93f0891",
+        "name": "link out 1",
+        "mode": "link",
+        "links": [
+            "b180c51d784367aa"
+        ],
+        "x": 885,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "a2c986f6b4de3a53",
+        "type": "function",
+        "z": "bd2732f3b93f0891",
+        "name": "Set MQTT topic",
+        "func": "var l_payload = msg.classes;\ndelete msg.payload;\nmsg.payload = msg.classes;\nmsg.topic = \"edge/00001/image/recognition/objects\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 560,
+        "y": 340,
+        "wires": [
+            [
+                "87ec482cd4f37d41",
+                "b19f042c295dfc1b"
+            ]
+        ]
+    },
+    {
+        "id": "f595e70d49919e04",
+        "type": "mobilenet",
+        "z": "bd2732f3b93f0891",
+        "d": true,
+        "name": "",
+        "x": 320,
+        "y": 380,
+        "wires": [
+            [
+                "03075c04bef53cc3"
+            ]
+        ]
+    },
+    {
+        "id": "c7fbaa996bca5c3d",
+        "type": "cocossd",
+        "z": "bd2732f3b93f0891",
+        "d": true,
+        "name": "",
+        "x": 340,
+        "y": 460,
+        "wires": [
+            [
+                "0b88dc75e07f3d5a"
+            ]
+        ]
+    },
+    {
+        "id": "0b88dc75e07f3d5a",
+        "type": "image",
+        "z": "bd2732f3b93f0891",
+        "name": "",
+        "width": "400",
+        "data": "annotatedInput",
+        "dataType": "msg",
+        "thumbnail": true,
+        "active": false,
+        "pass": false,
+        "outputs": 0,
+        "x": 580,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "b19f042c295dfc1b",
+        "type": "rbe",
+        "z": "bd2732f3b93f0891",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 770,
+        "y": 340,
+        "wires": [
+            [
+                "954825e2e04ee705"
+            ]
+        ]
+    },
+    {
+        "id": "e3e39d73614a6551",
+        "type": "debug",
+        "z": "1534403a2ae17ded",
+        "name": "playlist",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "status",
+        "statusType": "msg",
+        "x": 870,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "038bf84d533d1642",
+        "type": "pipe2jpeg",
+        "z": "1534403a2ae17ded",
+        "name": "",
+        "basePath": "flow02",
+        "serveHttp": "true",
+        "bufferType": "array",
+        "x": 610,
+        "y": 380,
+        "wires": [
+            [
+                "e3e39d73614a6551"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "9ce10784b8281062",
+        "type": "ffmpeg",
+        "z": "1534403a2ae17ded",
+        "name": "",
+        "outputs": 5,
+        "cmdPath": "ffmpeg",
+        "cmdArgs": "[\"-loglevel\",\"+level+error\",\"-hide_banner\",\"-nostats\",\"-s\",\"320x200\",\"-re\",\"-f\",\"video4linux2\",\"-hwaccel\",\"rpi\",\"-re\",\"-i\",\"/dev/video0\",\"-f\",\"image2pipe\",\"-b:v\",\"128M\",\"pipe:1\",\"-progress\",\"pipe:3\",\"-s\",\"320x200\",\"-f\",\"mp4\",\"-b:v\",\"128M\",\"-movflags\",\"+frag_keyframe+empty_moov+default_base_moof\",\"pipe:4\"]",
+        "cmdOutputs": 4,
+        "killSignal": "SIGTERM",
+        "x": 360,
+        "y": 420,
+        "wires": [
+            [
+                "038bf84d533d1642",
+                "9d20435c85d8f1b4",
+                "d0ffc50d1836b71a"
+            ],
+            [
+                "038bf84d533d1642"
+            ],
+            [
+                "da8c25a31fc847c8"
+            ],
+            [
+                "4e22735a825ec265"
+            ],
+            [
+                "d0ffc50d1836b71a"
+            ]
+        ]
+    },
+    {
+        "id": "5135479e3b3f9031",
+        "type": "inject",
+        "z": "1534403a2ae17ded",
+        "name": "start",
+        "props": [
+            {
+                "p": "action",
+                "v": "{\"command\":\"start\"}",
+                "vt": "json"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 150,
+        "y": 380,
+        "wires": [
+            [
+                "9ce10784b8281062"
+            ]
+        ]
+    },
+    {
+        "id": "1f0e9bd408ddd4ee",
+        "type": "inject",
+        "z": "1534403a2ae17ded",
+        "name": "stop",
+        "props": [
+            {
+                "p": "action",
+                "v": "{\"command\":\"stop\"}",
+                "vt": "json"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 150,
+        "y": 440,
+        "wires": [
+            [
+                "9ce10784b8281062"
+            ]
+        ]
+    },
+    {
+        "id": "076c3ccf8ed93518",
+        "type": "delay",
+        "z": "1534403a2ae17ded",
+        "name": "delay",
+        "pauseType": "delayv",
+        "timeout": "1",
+        "timeoutUnits": "milliseconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 390,
+        "y": 200,
+        "wires": [
+            [
+                "9ce10784b8281062"
+            ]
+        ]
+    },
+    {
+        "id": "9d20435c85d8f1b4",
+        "type": "function",
+        "z": "1534403a2ae17ded",
+        "name": "restart",
+        "func": "const { status, code, signal, killed } = msg.payload;\n\n\nif (status === 'close' && killed === false) {\n    return { action: { command: 'start' }, delay: 5000 };\n}\n\nreturn;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 270,
+        "y": 200,
+        "wires": [
+            [
+                "076c3ccf8ed93518"
+            ]
+        ]
+    },
+    {
+        "id": "03cd2ef7ae3581df",
+        "type": "comment",
+        "z": "1534403a2ae17ded",
+        "name": "- - - - - daemonize - - - - -",
+        "info": "",
+        "x": 330,
+        "y": 165,
+        "wires": []
+    },
+    {
+        "id": "4e22735a825ec265",
+        "type": "function",
+        "z": "1534403a2ae17ded",
+        "name": "progress",
+        "func": "const props = msg.payload.toString().split('\\n');\n\nconst progress = {};\n\nprops.forEach(item => {\n    \n    const [name, value] = item.split('=');\n    \n    if (name && value) {\n    \n        progress[name] = value;\n\n    }\n    \n});\n\nconst color = progress['progress'] === 'continue' ? 'green' : 'red';\n\nconst message = `fps: ${progress['fps']}, bitrate: ${progress['bitrate']}`;\n\nnode.status({ fill: color, shape: 'dot', text: message });\n\nreturn { payload: progress };",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 680,
+        "y": 580,
+        "wires": [
+            [
+                "0c7d54472467819f"
+            ]
+        ]
+    },
+    {
+        "id": "0c7d54472467819f",
+        "type": "debug",
+        "z": "1534403a2ae17ded",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 810,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "2d8743124cd944c2",
+        "type": "comment",
+        "z": "1534403a2ae17ded",
+        "name": "- - - - - progress logs - - - - -",
+        "info": "",
+        "x": 739,
+        "y": 545,
+        "wires": []
+    },
+    {
+        "id": "b3dcb6f7363d0d79",
+        "type": "debug",
+        "z": "1534403a2ae17ded",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 790,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "da8c25a31fc847c8",
+        "type": "function",
+        "z": "1534403a2ae17ded",
+        "name": "errors",
+        "func": "const { payload } = msg;\n\nreturn { payload: payload.toString() };",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 670,
+        "y": 480,
+        "wires": [
+            [
+                "b3dcb6f7363d0d79"
+            ]
+        ]
+    },
+    {
+        "id": "a860ae46a6760c8b",
+        "type": "comment",
+        "z": "1534403a2ae17ded",
+        "name": "- - - - - error logs - - - - -",
+        "info": "",
+        "x": 728,
+        "y": 445,
+        "wires": []
+    },
+    {
+        "id": "d0ffc50d1836b71a",
+        "type": "mp4frag",
+        "z": "1534403a2ae17ded",
+        "name": "",
+        "outputs": 2,
+        "basePath": "abcfr",
+        "serveHttp": "true",
+        "serveIo": "true",
+        "hlsPlaylistSize": "10",
+        "hlsPlaylistExtra": "10",
+        "autoStart": "true",
+        "preBuffer": "5",
+        "timeLimit": "-1",
+        "repeated": "false",
+        "statusData": "playlist",
+        "x": 600,
+        "y": 280,
+        "wires": [
+            [
+                "e3e39d73614a6551",
+                "d703e2b682b7eab3"
+            ],
+            [
+                "fb32afac15134721",
+                "e9b0913924ccb36d"
+            ]
+        ]
+    },
+    {
+        "id": "d703e2b682b7eab3",
+        "type": "ui_mp4frag",
+        "z": "1534403a2ae17ded",
+        "name": "",
+        "group": "72d286b06009cc76",
+        "order": 1,
+        "width": 6,
+        "height": 4,
+        "readyPoster": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAyAAAAJYCAMAAACtqHJCAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2hpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDowMzgwMTE3NDA3MjA2ODExODIyQUIzREQ3RTA0MDAyNCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpGRkU5MkM4RDJCNTkxMUVCQjJCOTg0MEQ0QThCQ0YyQyIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpGRkU5MkM4QzJCNTkxMUVCQjJCOTg0MEQ0QThCQ0YyQyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M2IChNYWNpbnRvc2gpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6Rjc3RjExNzQwNzIwNjgxMTgyMkFDQTkzQjdGQkY1MzAiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6MDM4MDExNzQwNzIwNjgxMTgyMkFCM0REN0UwNDAwMjQiLz4gPC9yZGY6RGVzY3Jp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",
+        "errorPoster": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAyAAAAJYCAMAAACtqHJCAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2hpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDowMzgwMTE3NDA3MjA2ODExODIyQUIzREQ3RTA0MDAyNCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpGRkU5MkM5MTJCNTkxMUVCQjJCOTg0MEQ0QThCQ0YyQyIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpGRkU5MkM5MDJCNTkxMUVCQjJCOTg0MEQ0QThCQ0YyQyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M2IChNYWNpbnRvc2gpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6Rjc3RjExNzQwNzIwNjgxMTgyMkFDQTkzQjdGQkY1MzAiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6MDM4MDExNzQwNzIwNjgxMTgyMkFCM0REN0UwNDAwMjQiLz4gPC9yZGY6RGVzY3Jp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",
+        "hlsJsConfig": "{\"liveDurationInfinity\":true,\"liveBackBufferLength\":5,\"maxBufferLength\":10,\"manifestLoadingTimeOut\":1000,\"manifestLoadingMaxRetry\":10,\"manifestLoadingRetryDelay\":500}",
+        "autoplay": "true",
+        "unload": "true",
+        "threshold": 0.5,
+        "controls": "true",
+        "muted": "false",
+        "players": [
+            "mp4",
+            "hls.js",
+            "hls",
+            "socket.io"
+        ],
+        "x": 890,
+        "y": 100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4c9a7b58c5f188ad",
+        "type": "comment",
+        "z": "1534403a2ae17ded",
+        "name": "- view mp4 -",
+        "info": "",
+        "x": 889,
+        "y": 65,
+        "wires": []
+    },
+    {
+        "id": "65912132e9b98b63",
+        "type": "function",
+        "z": "1534403a2ae17ded",
+        "name": "filename",
+        "func": "const { payload } = msg;\n\nif (Buffer.isBuffer(payload)) {\n\n    msg.filename = context.get('filename');\n    \n    return msg;\n}\n\nconst { status } = payload;\n\nif (status === 'spawn') {\n\n    context.set('filename', `/tmp/A${Date.now()}.mp4`);\n\n    \n} else if (status === 'close') {\n    \n    context.set('filename', undefined);\n\n}\n\nreturn;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "// Code added here will be run once\n// whenever the node is deployed.\n\ncontext.set('filename', undefined);",
+        "finalize": "// Code added here will be run when the\n// node is being stopped or re-deployed.\n\ncontext.set('filename', undefined);",
+        "libs": [],
+        "x": 1040,
+        "y": 200,
+        "wires": [
+            [
+                "7674ef53567f22c9"
+            ]
+        ]
+    },
+    {
+        "id": "e9b0913924ccb36d",
+        "type": "ffmpeg",
+        "z": "1534403a2ae17ded",
+        "d": true,
+        "name": "",
+        "outputs": 2,
+        "cmdPath": "",
+        "cmdArgs": "[\"-f\",\"mp4\",\"-i\",\"pipe:0\",\"-c:v\",\"copy\",\"-c:a\",\"copy\",\"-f\",\"mp4\",\"-movflags\",\"+faststart+empty_moov\",\"pipe:1\"]",
+        "cmdOutputs": 1,
+        "killSignal": "SIGTERM",
+        "x": 879,
+        "y": 200,
+        "wires": [
+            [
+                "65912132e9b98b63"
+            ],
+            [
+                "65912132e9b98b63"
+            ]
+        ]
+    },
+    {
+        "id": "7674ef53567f22c9",
+        "type": "file",
+        "z": "1534403a2ae17ded",
+        "name": "",
+        "filename": "filename",
+        "filenameType": "msg",
+        "appendNewline": false,
+        "createDir": true,
+        "overwriteFile": "false",
+        "encoding": "none",
+        "x": 1180,
+        "y": 200,
+        "wires": [
+            [
+                "98124159338a4cf2"
+            ]
+        ]
+    },
+    {
+        "id": "98124159338a4cf2",
+        "type": "debug",
+        "z": "1534403a2ae17ded",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1310,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "fb32afac15134721",
+        "type": "function",
+        "z": "1534403a2ae17ded",
+        "d": true,
+        "name": "filename",
+        "func": "const { payload, action } = msg;\n\nif (Buffer.isBuffer(payload)) {\n\n    msg.filename = context.get('filename');\n    \n    return msg;\n}\n\nif (typeof action === 'object') {\n    const { command } = action;\n    \n    if (command === 'start') {\n        \n        context.set('filename', `/tmp/AR${Date.now()}.mp4`);\n        \n    } else if (command === 'stop') {\n        \n        context.set('filename', undefined);\n        \n    }\n}\n\nreturn;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "// Code added here will be run once\n// whenever the node is deployed.\n\ncontext.set('filename', undefined);",
+        "finalize": "// Code added here will be run when the\n// node is being stopped or re-deployed.\n\ncontext.set('filename', undefined);",
+        "libs": [],
+        "x": 880,
+        "y": 300,
+        "wires": [
+            [
+                "9758abd53e976101"
+            ]
+        ]
+    },
+    {
+        "id": "9758abd53e976101",
+        "type": "file",
+        "z": "1534403a2ae17ded",
+        "name": "",
+        "filename": "filename",
+        "filenameType": "msg",
+        "appendNewline": false,
+        "createDir": true,
+        "overwriteFile": "false",
+        "encoding": "none",
+        "x": 1020,
+        "y": 300,
+        "wires": [
+            [
+                "6cc53065bf7dcab3"
+            ]
+        ]
+    },
+    {
+        "id": "6cc53065bf7dcab3",
+        "type": "debug",
+        "z": "1534403a2ae17ded",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1150,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "0b32cb499c189073",
+        "type": "comment",
+        "z": "1534403a2ae17ded",
+        "name": "- - - - - - - - - save raw mp4 files - - - - - - - - - -",
+        "info": "",
+        "x": 990,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "e6371a496cf9ea4c",
+        "type": "comment",
+        "z": "1534403a2ae17ded",
+        "name": "- - - - - - - - - - - - - - - - - save processed mp4 files - - - - - - - - - - - - - - - - - ",
+        "info": "",
+        "x": 1069,
+        "y": 165,
+        "wires": []
+    },
+    {
+        "id": "9f7763c4ec06b32e",
+        "type": "exec",
+        "z": "b8d2b8c74ebf667c",
+        "command": "ffmpeg -f rtsp -i \"rtsp://192.168.1.166:554/stream.sdp\" -f image2pipe pipe:1",
+        "addpay": false,
+        "append": "",
+        "useSpawn": "true",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "Decode RTSP stream",
+        "x": 640,
+        "y": 440,
+        "wires": [
+            [
+                "030fed8db421ad41"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "8d02a25a9ed994a8",
+        "type": "inject",
+        "z": "b8d2b8c74ebf667c",
+        "name": "Start stream",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 150,
+        "y": 440,
+        "wires": [
+            [
+                "9f7763c4ec06b32e"
+            ]
+        ]
+    },
+    {
+        "id": "030fed8db421ad41",
+        "type": "image",
+        "z": "b8d2b8c74ebf667c",
+        "name": "",
+        "width": "400",
+        "data": "payload",
+        "dataType": "msg",
+        "thumbnail": false,
+        "active": true,
+        "pass": false,
+        "outputs": 0,
+        "x": 870,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "a1fd34630faac9d6",
+        "type": "inject",
+        "z": "b8d2b8c74ebf667c",
+        "name": "Pause all streams",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "SIGSTOP",
+        "payloadType": "str",
+        "x": 170,
+        "y": 480,
+        "wires": [
+            [
+                "a71040327384eb81"
+            ]
+        ]
+    },
+    {
+        "id": "aba2c46619ed318c",
+        "type": "inject",
+        "z": "b8d2b8c74ebf667c",
+        "name": "Resume all streams",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "SIGCONT",
+        "payloadType": "str",
+        "x": 170,
+        "y": 520,
+        "wires": [
+            [
+                "a71040327384eb81"
+            ]
+        ]
+    },
+    {
+        "id": "a71040327384eb81",
+        "type": "change",
+        "z": "b8d2b8c74ebf667c",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "kill",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 390,
+        "y": 480,
+        "wires": [
+            [
+                "9f7763c4ec06b32e"
+            ]
+        ]
+    },
+    {
+        "id": "374263ea42a49ed7",
+        "type": "inject",
+        "z": "b8d2b8c74ebf667c",
+        "name": "Stop all streams",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "SIGTERM",
+        "payloadType": "str",
+        "x": 160,
+        "y": 560,
+        "wires": [
+            [
+                "a71040327384eb81"
+            ]
+        ]
+    },
+    {
+        "id": "f7740bbca25a26f4",
+        "type": "inject",
+        "z": "b8d2b8c74ebf667c",
+        "name": "Start searching",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 160,
+        "y": 660,
+        "wires": [
+            [
+                "d157acb9279ab871"
+            ]
+        ]
+    },
+    {
+        "id": "3cc236b124b9c95c",
+        "type": "debug",
+        "z": "b8d2b8c74ebf667c",
+        "name": "Onvif devices",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload.XAddrs",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 730,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "d157acb9279ab871",
+        "type": "onvif-discovery",
+        "z": "b8d2b8c74ebf667c",
+        "name": "",
+        "timeout": "10",
+        "separate": true,
+        "x": 370,
+        "y": 660,
+        "wires": [
+            [
+                "3cc236b124b9c95c"
+            ]
+        ]
+    },
+    {
+        "id": "b9c06e17c22b3224",
+        "type": "config",
+        "z": "b8d2b8c74ebf667c",
+        "name": "",
+        "properties": [
+            {
+                "p": "thing.id",
+                "pt": "flow",
+                "to": "onvif:000-000-001",
+                "tot": "str"
+            },
+            {
+                "p": "thing.type",
+                "pt": "flow",
+                "to": "onvif",
+                "tot": "str"
+            },
+            {
+                "p": "thing.rtsp_url",
+                "pt": "flow",
+                "to": "",
+                "tot": "str"
+            }
+        ],
+        "active": true,
+        "x": 350,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "c9d22397f7f31713",
+        "type": "link in",
+        "z": "b8d2b8c74ebf667c",
+        "name": "Startup",
+        "links": [
+            "78b317af685d439e"
+        ],
+        "x": 185,
+        "y": 140,
+        "wires": [
+            [
+                "b9c06e17c22b3224",
+                "59fad143945f9008"
+            ]
+        ]
+    },
+    {
+        "id": "59fad143945f9008",
+        "type": "function",
+        "z": "b8d2b8c74ebf667c",
+        "name": "Get device config",
+        "func": "msg.payload = flow.get('thing');\nmsg.topic = flow.get('thing.id') + '/config';\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 370,
+        "y": 200,
+        "wires": [
+            [
+                "d64805ba37a7e042",
+                "af2f00457bc913d3"
+            ]
+        ]
+    },
+    {
+        "id": "d64805ba37a7e042",
+        "type": "link out",
+        "z": "b8d2b8c74ebf667c",
+        "name": "Send out config",
+        "mode": "link",
+        "links": [
+            "e10b9649c435d348"
+        ],
+        "x": 595,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "da9fe9a524393e5f",
+        "type": "comment",
+        "z": "b8d2b8c74ebf667c",
+        "name": "Systemd event: local MQTT is up and running",
+        "info": "",
+        "x": 230,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "a6514a171a73fcf9",
+        "type": "comment",
+        "z": "b8d2b8c74ebf667c",
+        "name": "MQTT cmd:",
+        "info": "",
+        "x": 130,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "019a7bf4c73e0e25",
+        "type": "link in",
+        "z": "b8d2b8c74ebf667c",
+        "name": "000-onvif-cam-001/cmd",
+        "links": [],
+        "x": 85,
+        "y": 320,
+        "wires": [
+            [
+                "d1008471e2f02a2c"
+            ]
+        ]
+    },
+    {
+        "id": "9cda48c4db81f3dc",
+        "type": "link out",
+        "z": "b8d2b8c74ebf667c",
+        "name": "link out 2",
+        "mode": "return",
+        "links": [],
+        "x": 575,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "d1008471e2f02a2c",
+        "type": "switch",
+        "z": "b8d2b8c74ebf667c",
+        "name": "",
+        "property": "payload.cmd",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "Start",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "Stop",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 210,
+        "y": 320,
+        "wires": [
+            [
+                "b1448ae40b9190f1"
+            ],
+            [
+                "14b4f3e259d8f82b"
+            ]
+        ]
+    },
+    {
+        "id": "b1448ae40b9190f1",
+        "type": "function",
+        "z": "b8d2b8c74ebf667c",
+        "name": "cmd = Start",
+        "func": "msg.payload = \"Started\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 390,
+        "y": 300,
+        "wires": [
+            [
+                "0bb6ef4de2c54cf9"
+            ]
+        ]
+    },
+    {
+        "id": "14b4f3e259d8f82b",
+        "type": "function",
+        "z": "b8d2b8c74ebf667c",
+        "name": "cmd = Stop",
+        "func": "msg.payload = \"Stopped\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 390,
+        "y": 340,
+        "wires": [
+            [
+                "9cda48c4db81f3dc"
+            ]
+        ]
+    },
+    {
+        "id": "af2f00457bc913d3",
+        "type": "function",
+        "z": "b8d2b8c74ebf667c",
+        "name": "Status = Ready",
+        "func": "msg.topic = flow.get('thing.id') + '/status';\nmsg.payload = \"READY\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 360,
+        "y": 240,
+        "wires": [
+            [
+                "d64805ba37a7e042"
+            ]
+        ]
+    },
+    {
+        "id": "0bb6ef4de2c54cf9",
+        "type": "wifiscan",
+        "z": "b8d2b8c74ebf667c",
+        "name": "",
+        "x": 410,
+        "y": 580,
+        "wires": [
+            [
+                "9cda48c4db81f3dc"
+            ]
+        ]
+    },
+    {
+        "id": "cbc4fecc8f9cfe2f",
+        "type": "mqtt out",
+        "z": "336297f20d958d14",
+        "name": "Local MQTT",
+        "topic": "",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "dd19481bb15a7a95",
+        "x": 950,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "e10b9649c435d348",
+        "type": "link in",
+        "z": "336297f20d958d14",
+        "name": "Send_to_local_MQTT",
+        "links": [
+            "d64805ba37a7e042",
+            "44dcc6e937ddcf2f",
+            "d16f6be4f73dba2c"
+        ],
+        "x": 355,
+        "y": 300,
+        "wires": [
+            [
+                "06332b19ce124c07"
+            ]
+        ]
+    },
+    {
+        "id": "e04b0167df40bf6c",
+        "type": "link call",
+        "z": "336297f20d958d14",
+        "name": "Send cmd to executor",
+        "links": [],
+        "linkType": "dynamic",
+        "timeout": "3",
+        "x": 700,
+        "y": 520,
+        "wires": [
+            [
+                "aa6a4f4d9b6e46a8"
+            ]
+        ]
+    },
+    {
+        "id": "1c4c01fdc4a938c2",
+        "type": "mqtt in",
+        "z": "336297f20d958d14",
+        "name": "",
+        "topic": "+/cmd",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "dd19481bb15a7a95",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 110,
+        "y": 520,
+        "wires": [
+            [
+                "81491cdeed08c287"
+            ]
+        ]
+    },
+    {
+        "id": "30d4fe43c96c0c41",
+        "type": "debug",
+        "z": "336297f20d958d14",
+        "name": "DBG: MQTT CMD received",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "target",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 380,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "aa6a4f4d9b6e46a8",
+        "type": "function",
+        "z": "336297f20d958d14",
+        "name": "Set result: /status ",
+        "func": "if (!msg.target) {\n    return;\n}\nmsg.target = msg.topic;\n\nconst match = '\\/cmd$';\nconst modifier = \"i\";\nconst pattern = new RegExp(match, modifier);\n\nmsg.topic = msg.target.replace(pattern, '/status');\n\nif (msg.error) {\n    msg.payload = msg.error.message + ' cmd=' + JSON.stringify(msg.payload);\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 790,
+        "y": 400,
+        "wires": [
+            [
+                "cbc4fecc8f9cfe2f"
+            ]
+        ]
+    },
+    {
+        "id": "cc10d35fdb56164b",
+        "type": "catch",
+        "z": "336297f20d958d14",
+        "name": "",
+        "scope": null,
+        "uncaught": false,
+        "x": 120,
+        "y": 400,
+        "wires": [
+            [
+                "20d840d2e9996dfd",
+                "aa6a4f4d9b6e46a8"
+            ]
+        ]
+    },
+    {
+        "id": "653b7ea3a68f43ac",
+        "type": "mqtt in",
+        "z": "336297f20d958d14",
+        "name": "",
+        "topic": "+/+/cmd",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "dd19481bb15a7a95",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 120,
+        "y": 600,
+        "wires": [
+            [
+                "81491cdeed08c287"
+            ]
+        ]
+    },
+    {
+        "id": "7df8b3a50124ddcc",
+        "type": "aedes broker",
+        "z": "336297f20d958d14",
+        "name": "",
+        "mqtt_port": 1883,
+        "mqtt_ws_bind": "port",
+        "mqtt_ws_port": "",
+        "mqtt_ws_path": "",
+        "cert": "",
+        "key": "",
+        "certname": "",
+        "keyname": "",
+        "dburl": "",
+        "usetls": false,
+        "x": 150,
+        "y": 40,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "ca927e7c0b1d4c3c",
+        "type": "status",
+        "z": "336297f20d958d14",
+        "name": "Status of [MQTT out] node",
+        "scope": [
+            "7df8b3a50124ddcc"
+        ],
+        "x": 170,
+        "y": 140,
+        "wires": [
+            [
+                "6e708f4da89dbf67"
+            ]
+        ]
+    },
+    {
+        "id": "6e708f4da89dbf67",
+        "type": "switch",
+        "z": "336297f20d958d14",
+        "name": "if connected",
+        "property": "status.text",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "node-red:common.status.connected",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 390,
+        "y": 140,
+        "wires": [
+            [
+                "082f4dcc2283e5ab"
+            ]
+        ]
+    },
+    {
+        "id": "63a1e394f8fa695f",
+        "type": "link out",
+        "z": "336297f20d958d14",
+        "name": "Notify Systemd",
+        "mode": "link",
+        "links": [
+            "34eee57efe087129"
+        ],
+        "x": 755,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "eac08960e38eac0a",
+        "type": "function",
+        "z": "336297f20d958d14",
+        "name": "Set broker id and Notify to Systemd",
+        "func": "const serialId = msg.payload.replace(/\\0.*$/, \"\");\n\nif (serialId) {\n    global.set(\"broker.id\", serialId);\n    msg.payload = \"local_MQTT_broker_is_up [\" + serialId + ']';\n    return msg;\n}\n\nreturn null;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 560,
+        "y": 200,
+        "wires": [
+            [
+                "63a1e394f8fa695f"
+            ]
+        ]
+    },
+    {
+        "id": "082f4dcc2283e5ab",
+        "type": "file in",
+        "z": "336297f20d958d14",
+        "name": "",
+        "filename": "/sys/firmware/devicetree/base/serial-number",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 670,
+        "y": 140,
+        "wires": [
+            [
+                "eac08960e38eac0a"
+            ]
+        ]
+    },
+    {
+        "id": "20d840d2e9996dfd",
+        "type": "debug",
+        "z": "336297f20d958d14",
+        "name": "Flow errors",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 330,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "06332b19ce124c07",
+        "type": "function",
+        "z": "336297f20d958d14",
+        "name": "Add /broker-id",
+        "func": "msg.topic = global.get(\"broker.id\") + \"/\" + msg.topic;\n\n\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 480,
+        "y": 300,
+        "wires": [
+            [
+                "f3cd0076b07d7871"
+            ]
+        ]
+    },
+    {
+        "id": "f3cd0076b07d7871",
+        "type": "function",
+        "z": "336297f20d958d14",
+        "name": "Set retained for /config",
+        "func": "const match = '\\/config$';\nconst topic = msg.topic;\nconst found = topic.match(match);\n\nif (found) {\n    msg.qos = 2;\n    msg.retain = true;\n}\ndelete msg.topic;\nmsg.topic = topic;//\"rpi10000000ffebcc55/000-onvif-cam-001/config\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 700,
+        "y": 300,
+        "wires": [
+            [
+                "cbc4fecc8f9cfe2f"
+            ]
+        ]
+    },
+    {
+        "id": "81491cdeed08c287",
+        "type": "function",
+        "z": "336297f20d958d14",
+        "name": "Remove broker namespace and set target",
+        "func": "const match = new RegExp('^' + global.get(\"broker.id\") + '/');\nconst topic = msg.topic.replace(match, \"\");\nmsg.target = topic;\n\nreturn  msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 380,
+        "y": 520,
+        "wires": [
+            [
+                "e04b0167df40bf6c",
+                "30d4fe43c96c0c41"
+            ]
+        ]
+    },
+    {
+        "id": "d5821080a61347e0",
+        "type": "comment",
+        "z": "336297f20d958d14",
+        "name": "On boot (when MQTT broker becomes accessible) we send notification to Systemd",
+        "info": "",
+        "x": 350,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "ead185ba4b3f621d",
+        "type": "comment",
+        "z": "336297f20d958d14",
+        "name": "Publisher interface",
+        "info": "",
+        "x": 150,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "6a187f7d0d3dfc09",
+        "type": "comment",
+        "z": "336297f20d958d14",
+        "name": "Report error status of cmd execution",
+        "info": "",
+        "x": 200,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "d81cbe4d9a1d6429",
+        "type": "comment",
+        "z": "336297f20d958d14",
+        "name": "Subscribe for cmd, execute and report user status of cmd execution",
+        "info": "",
+        "x": 300,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "34eee57efe087129",
+        "type": "link in",
+        "z": "1363678a5a35dcfd",
+        "name": "Systemd Events",
+        "links": [
+            "63a1e394f8fa695f"
+        ],
+        "x": 355,
+        "y": 340,
+        "wires": [
+            [
+                "383d4ff513702ba1"
+            ]
+        ]
+    },
+    {
+        "id": "78b317af685d439e",
+        "type": "link out",
+        "z": "1363678a5a35dcfd",
+        "name": "Stage - MQTT broker is UP",
+        "mode": "link",
+        "links": [
+            "c9d22397f7f31713",
+            "b9c9d310fa478fbe"
+        ],
+        "x": 695,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "8b2a27df9c8a3d73",
+        "type": "comment",
+        "z": "1363678a5a35dcfd",
+        "name": "Local MQTT broker is up, send notifications",
+        "info": "",
+        "x": 740,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "383d4ff513702ba1",
+        "type": "switch",
+        "z": "1363678a5a35dcfd",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "cont",
+                "v": "local_MQTT_broker_is_up",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 450,
+        "y": 340,
+        "wires": [
+            [
+                "78b317af685d439e",
+                "867ea4696b2e46a8"
+            ]
+        ]
+    },
+    {
+        "id": "867ea4696b2e46a8",
+        "type": "debug",
+        "z": "1363678a5a35dcfd",
+        "name": "DBG: Systemd Events",
+        "active": true,
+        "tosidebar": true,
+        "console": true,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 530,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "d9380525b360e94f",
+        "type": "config",
+        "z": "e77e618e5ced1a23",
+        "name": "",
+        "properties": [
+            {
+                "p": "thing.id",
+                "pt": "flow",
+                "to": "node-red:000-000-001",
+                "tot": "str"
+            },
+            {
+                "p": "thing.type",
+                "pt": "flow",
+                "to": "node-red",
+                "tot": "str"
+            }
+        ],
+        "active": true,
+        "x": 330,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "b9c9d310fa478fbe",
+        "type": "link in",
+        "z": "e77e618e5ced1a23",
+        "name": "Startup",
+        "links": [
+            "78b317af685d439e"
+        ],
+        "x": 165,
+        "y": 100,
+        "wires": [
+            [
+                "d9380525b360e94f",
+                "510fd79d10c95818"
+            ]
+        ]
+    },
+    {
+        "id": "aed8ed15653dab0c",
+        "type": "function",
+        "z": "e77e618e5ced1a23",
+        "name": "Get device config",
+        "func": "msg.topic = flow.get('thing.id') + '/config';\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 490,
+        "y": 160,
+        "wires": [
+            [
+                "d16f6be4f73dba2c",
+                "101297d1bbc651f5"
+            ]
+        ]
+    },
+    {
+        "id": "d16f6be4f73dba2c",
+        "type": "link out",
+        "z": "e77e618e5ced1a23",
+        "name": "Send out config",
+        "mode": "link",
+        "links": [
+            "e10b9649c435d348"
+        ],
+        "x": 685,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "101297d1bbc651f5",
+        "type": "function",
+        "z": "e77e618e5ced1a23",
+        "name": "Status = Ready",
+        "func": "msg.topic = flow.get('thing.id') + '/status';\nmsg.payload = \"READY\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 520,
+        "y": 200,
+        "wires": [
+            [
+                "d16f6be4f73dba2c"
+            ]
+        ]
+    },
+    {
+        "id": "510fd79d10c95818",
+        "type": "http request",
+        "z": "e77e618e5ced1a23",
+        "name": "Get all flows",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "localhost:1880/flows",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [
+            {
+                "keyType": "other",
+                "keyValue": "Node-RED-API-Version",
+                "valueType": "other",
+                "valueValue": "v2"
+            }
+        ],
+        "x": 290,
+        "y": 160,
+        "wires": [
+            [
+                "aed8ed15653dab0c"
+            ]
+        ]
+    },
+    {
+        "id": "829806d4fa66eb12",
+        "type": "comment",
+        "z": "e77e618e5ced1a23",
+        "name": "MQTT cmd:",
+        "info": "",
+        "x": 210,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "657d42e5e446fc1f",
+        "type": "link in",
+        "z": "e77e618e5ced1a23",
+        "name": "node-red:000-000-001/cmd",
+        "links": [],
+        "x": 165,
+        "y": 340,
+        "wires": [
+            [
+                "c3fc830448e221bd"
+            ]
+        ]
+    },
+    {
+        "id": "5abb3e39f07ba2c1",
+        "type": "link out",
+        "z": "e77e618e5ced1a23",
+        "name": "link out 3",
+        "mode": "return",
+        "links": [],
+        "x": 765,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "c3fc830448e221bd",
+        "type": "switch",
+        "z": "e77e618e5ced1a23",
+        "name": "",
+        "property": "payload.cmd",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "execute",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 270,
+        "y": 340,
+        "wires": [
+            [
+                "ad1ed29f9f587b3d"
+            ]
+        ]
+    },
+    {
+        "id": "ad1ed29f9f587b3d",
+        "type": "function",
+        "z": "e77e618e5ced1a23",
+        "name": "cmd = Execute",
+        "func": "msg.payload = msg.payload.data.flows;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 440,
+        "y": 340,
+        "wires": [
+            [
+                "6a4c45e17f982640"
+            ]
+        ]
+    },
+    {
+        "id": "6a4c45e17f982640",
+        "type": "http request",
+        "z": "e77e618e5ced1a23",
+        "name": "",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "localhost:1880/flows",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [
+            {
+                "keyType": "other",
+                "keyValue": "Content-type",
+                "valueType": "other",
+                "valueValue": "application/json"
+            },
+            {
+                "keyType": "other",
+                "keyValue": "Node-RED-API-Version",
+                "valueType": "other",
+                "valueValue": "v1"
+            },
+            {
+                "keyType": "other",
+                "keyValue": "Node-RED-Deployment-Type",
+                "valueType": "other",
+                "valueValue": "full"
+            }
+        ],
+        "x": 630,
+        "y": 340,
+        "wires": [
+            [
+                "5abb3e39f07ba2c1"
+            ]
         ]
     }
 ]
