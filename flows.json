@@ -2159,7 +2159,7 @@
         "type": "debug",
         "z": "6f858e2bc48be764",
         "name": "debug 1",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -2185,7 +2185,9 @@
         "x": 280,
         "y": 160,
         "wires": [
-            []
+            [
+                "c0bc003626a9912a"
+            ]
         ]
     },
     {
