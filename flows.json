@@ -2176,8 +2176,8 @@
         "z": "6f858e2bc48be764",
         "name": "",
         "property": "payload",
-        "pattern": "",
-        "x": 410,
+        "pattern": "b8 => len",
+        "x": 430,
         "y": 160,
         "wires": [
             [
