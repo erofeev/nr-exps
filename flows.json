@@ -2220,8 +2220,7 @@
         "y": 240,
         "wires": [
             [
-                "0f17beb4bd743cff",
-                "a1f85a62dec15f16"
+                "0f17beb4bd743cff"
             ]
         ]
     },
@@ -2294,7 +2293,7 @@
         "msgProperty": "payload",
         "msgPropertyType": "str",
         "x": 290,
-        "y": 360,
+        "y": 440,
         "wires": [
             [
                 "f716a2e5c716cabc"
