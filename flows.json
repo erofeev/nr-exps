@@ -2220,7 +2220,8 @@
         "y": 240,
         "wires": [
             [
-                "0f17beb4bd743cff"
+                "0f17beb4bd743cff",
+                "a1f85a62dec15f16"
             ]
         ]
     },
@@ -2262,6 +2263,38 @@
         "pattern": "x8,  b8 => len,  l24a => id,  b8[4] => tag,  b8 => status,  b16 => volt,  b16 => temp,  b8 => hum,  b8 => crc,  x8",
         "x": 450,
         "y": 240,
+        "wires": [
+            [
+                "f716a2e5c716cabc"
+            ]
+        ]
+    },
+    {
+        "id": "a1f85a62dec15f16",
+        "type": "buffer-maker",
+        "z": "6f858e2bc48be764",
+        "name": "",
+        "specification": "spec",
+        "specificationType": "ui",
+        "items": [
+            {
+                "name": "item1",
+                "type": "int16be",
+                "length": 1,
+                "dataType": "msg",
+                "data": "payload"
+            }
+        ],
+        "swap1": "",
+        "swap2": "",
+        "swap3": "",
+        "swap1Type": "swap",
+        "swap2Type": "swap",
+        "swap3Type": "swap",
+        "msgProperty": "payload",
+        "msgPropertyType": "str",
+        "x": 290,
+        "y": 360,
         "wires": [
             [
                 "f716a2e5c716cabc"
