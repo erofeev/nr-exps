@@ -47,6 +47,14 @@
         "env": []
     },
     {
+        "id": "6f858e2bc48be764",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "ef8a80e9c499bb4e",
         "type": "subflow",
         "name": "Zip-64",
@@ -2114,6 +2122,85 @@
         "wires": [
             [
                 "194612cb31eb08e8"
+            ]
+        ]
+    },
+    {
+        "id": "1b7da4426da512f4",
+        "type": "inject",
+        "z": "6f858e2bc48be764",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 160,
+        "wires": [
+            [
+                "aff443103656fc1b"
+            ]
+        ]
+    },
+    {
+        "id": "f716a2e5c716cabc",
+        "type": "debug",
+        "z": "6f858e2bc48be764",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 600,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "4bdeb478b6357cac",
+        "type": "binary",
+        "z": "6f858e2bc48be764",
+        "name": "",
+        "property": "payload",
+        "pattern": "",
+        "x": 410,
+        "y": 160,
+        "wires": [
+            [
+                "f716a2e5c716cabc"
+            ]
+        ]
+    },
+    {
+        "id": "aff443103656fc1b",
+        "type": "function",
+        "z": "6f858e2bc48be764",
+        "name": "function 1",
+        "func": "msg.payload = '{\n    len: 13,\n    id: [0x12, 0x34, 0x56],\n    tag: [0xde, 0xad, 0xbe, 0xef]],\n    status: 0,\n    volt: 3600,\n    temp: 236,\n    hum: 79,\n    crc: 114\n}';\nreturn msg;",
+        "outputs": 1,
+        "noerr": 25,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 280,
+        "y": 160,
+        "wires": [
+            [
+                "4bdeb478b6357cac"
             ]
         ]
     }
