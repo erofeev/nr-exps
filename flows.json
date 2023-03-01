@@ -2220,7 +2220,7 @@
         "z": "6f858e2bc48be764",
         "name": "",
         "property": "payload",
-        "pattern": "x8 => rer,  b8 => len2,  l24a => id,  b8[4] => tag,  b8 => status,  b16 => volt,  b16 => temp,  b8 => hum,  b8 => crc,  x8",
+        "pattern": "b8 => rer,  b8 => len2,  l24a => id,  b8[4] => tag,  b8 => status,  b16 => volt,  b16 => temp,  b8 => hum,  b8 => crc,  x8",
         "x": 350,
         "y": 240,
         "wires": [
