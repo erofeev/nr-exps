@@ -2176,7 +2176,7 @@
         "type": "function",
         "z": "6f858e2bc48be764",
         "name": "function 1",
-        "func": "msg.payload.len = 100;\n\nreturn msg;",
+        "func": "msg.payload.len = 4;\n\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
