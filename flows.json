@@ -2269,7 +2269,7 @@
         "z": "6f858e2bc48be764",
         "name": "",
         "property": "payload",
-        "pattern": "b8 => len  ",
+        "pattern": "b8 => len",
         "x": 450,
         "y": 160,
         "wires": [
