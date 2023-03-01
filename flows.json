@@ -2189,25 +2189,6 @@
         ]
     },
     {
-        "id": "761c35c0a88c786d",
-        "type": "function",
-        "z": "6f858e2bc48be764",
-        "name": "function 2",
-        "func": "msg.payload = \"7e0d123456deadbeef000e1000ec4f7203\";\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 280,
-        "y": 240,
-        "wires": [
-            [
-                "0f17beb4bd743cff"
-            ]
-        ]
-    },
-    {
         "id": "6617d4b74414d0e2",
         "type": "inject",
         "z": "6f858e2bc48be764",
@@ -2228,8 +2209,8 @@
         "y": 240,
         "wires": [
             [
-                "761c35c0a88c786d",
-                "a1f85a62dec15f16"
+                "a1f85a62dec15f16",
+                "0f17beb4bd743cff"
             ]
         ]
     },
@@ -2240,7 +2221,7 @@
         "name": "",
         "property": "payload",
         "pattern": "x8 => rer,  b8 => len2,  l24a => id,  b8[4] => tag,  b8 => status,  b16 => volt,  b16 => temp,  b8 => hum,  b8 => crc,  x8",
-        "x": 450,
+        "x": 350,
         "y": 240,
         "wires": [
             [
