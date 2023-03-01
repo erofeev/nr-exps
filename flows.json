@@ -2150,7 +2150,8 @@
         "y": 160,
         "wires": [
             [
-                "aff443103656fc1b"
+                "aff443103656fc1b",
+                "761c35c0a88c786d"
             ]
         ]
     },
@@ -2168,7 +2169,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 600,
-        "y": 160,
+        "y": 200,
         "wires": []
     },
     {
@@ -2179,7 +2180,7 @@
         "property": "payload",
         "pattern": "x8,  b8 => len,  l24a => id,  b8[4] => tag,  b8 => status,  b16 => volt,  b16 => temp,  b8 => hum,  b8 => crc,  x8",
         "x": 450,
-        "y": 160,
+        "y": 200,
         "wires": [
             [
                 "f716a2e5c716cabc"
@@ -2199,6 +2200,25 @@
         "libs": [],
         "x": 280,
         "y": 160,
+        "wires": [
+            [
+                "4bdeb478b6357cac"
+            ]
+        ]
+    },
+    {
+        "id": "761c35c0a88c786d",
+        "type": "function",
+        "z": "6f858e2bc48be764",
+        "name": "function 2",
+        "func": "msg.payload = \"7e0d123456deadbeef000e1000ec4f7203\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 280,
+        "y": 240,
         "wires": [
             [
                 "4bdeb478b6357cac"
