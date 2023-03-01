@@ -2179,7 +2179,7 @@
         "property": "payload",
         "pattern": "x8,  b8 => len,  l24a => id,  b8[4] => tag,  b8 => status,  b16 => volt,  b16 => temp,  b8 => hum,  b8 => crc,  x8",
         "x": 450,
-        "y": 200,
+        "y": 160,
         "wires": [
             [
                 "f716a2e5c716cabc"
@@ -2220,7 +2220,7 @@
         "y": 240,
         "wires": [
             [
-                "4bdeb478b6357cac"
+                "0f17beb4bd743cff"
             ]
         ]
     },
@@ -2250,6 +2250,21 @@
         "wires": [
             [
                 "761c35c0a88c786d"
+            ]
+        ]
+    },
+    {
+        "id": "0f17beb4bd743cff",
+        "type": "binary",
+        "z": "6f858e2bc48be764",
+        "name": "",
+        "property": "payload",
+        "pattern": "x8,  b8 => len,  l24a => id,  b8[4] => tag,  b8 => status,  b16 => volt,  b16 => temp,  b8 => hum,  b8 => crc,  x8",
+        "x": 450,
+        "y": 240,
+        "wires": [
+            [
+                "f716a2e5c716cabc"
             ]
         ]
     }
