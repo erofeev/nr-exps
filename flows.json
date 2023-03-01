@@ -2176,7 +2176,7 @@
         "type": "function",
         "z": "6f858e2bc48be764",
         "name": "function 1",
-        "func": "var msg = { payload: { integer: 1, float: 2.5 } }\n\n\nreturn msg;",
+        "func": "var msg = { payload: { integer: 1, float1: 2.5 } }\n\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -2269,7 +2269,7 @@
         "z": "6f858e2bc48be764",
         "name": "",
         "property": "payload",
-        "pattern": "b16 => float",
+        "pattern": "b16 => float1",
         "x": 450,
         "y": 160,
         "wires": [
