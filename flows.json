@@ -2279,7 +2279,7 @@
         "items": [
             {
                 "name": "item1",
-                "type": "int16be",
+                "type": "int32le",
                 "length": 1,
                 "dataType": "msg",
                 "data": "payload"
