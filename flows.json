@@ -2150,8 +2150,7 @@
         "y": 160,
         "wires": [
             [
-                "aff443103656fc1b",
-                "761c35c0a88c786d"
+                "aff443103656fc1b"
             ]
         ]
     },
@@ -2222,6 +2221,35 @@
         "wires": [
             [
                 "4bdeb478b6357cac"
+            ]
+        ]
+    },
+    {
+        "id": "6617d4b74414d0e2",
+        "type": "inject",
+        "z": "6f858e2bc48be764",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 240,
+        "wires": [
+            [
+                "761c35c0a88c786d"
             ]
         ]
     }
