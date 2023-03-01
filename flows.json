@@ -2211,7 +2211,7 @@
         "type": "function",
         "z": "6f858e2bc48be764",
         "name": "function 2",
-        "func": "msg.payload = \"7e0d123456deadbeef000e1000ec4f7203\";\nreturn msg;",
+        "func": "msg.buffer = \"7e0d123456deadbeef000e1000ec4f7203\";\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
