@@ -2269,7 +2269,7 @@
         "z": "6f858e2bc48be764",
         "name": "",
         "property": "payload",
-        "pattern": "b16 => float1",
+        "pattern": "b32 <= float1",
         "x": 450,
         "y": 160,
         "wires": [
