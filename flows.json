@@ -2159,7 +2159,7 @@
         "type": "debug",
         "z": "6f858e2bc48be764",
         "name": "debug 1",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -2260,5 +2260,36 @@
                 "f716a2e5c716cabc"
             ]
         ]
+    },
+    {
+        "id": "c0bc003626a9912a",
+        "type": "binary",
+        "z": "6f858e2bc48be764",
+        "name": "",
+        "property": "payload",
+        "pattern": "b8 => rer,  b8 => len2,  l24a => id,  b8[4] => tag,  b8 => status,  b16 => volt,  b16 => temp,  b8 => hum,  b8 => crc,  x8",
+        "x": 410,
+        "y": 160,
+        "wires": [
+            [
+                "e38bb13b46063efb"
+            ]
+        ]
+    },
+    {
+        "id": "e38bb13b46063efb",
+        "type": "debug",
+        "z": "6f858e2bc48be764",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 600,
+        "y": 160,
+        "wires": []
     }
 ]
