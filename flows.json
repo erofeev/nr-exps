@@ -2271,6 +2271,11 @@
                 "p": "broker",
                 "v": "{\"broker\":\"127.0.0.1\",\"port\":1883,\"force\":true}",
                 "vt": "json"
+            },
+            {
+                "p": "clientid",
+                "v": "client1",
+                "vt": "str"
             }
         ],
         "repeat": "",
