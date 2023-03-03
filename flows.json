@@ -1427,7 +1427,6 @@
         "id": "4019db48604e3b0f",
         "type": "mqtt out",
         "z": "267f0896c2544dd9",
-        "d": true,
         "name": "Local MQTT",
         "topic": "",
         "qos": "",
