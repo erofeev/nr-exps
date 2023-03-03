@@ -828,7 +828,7 @@
         "type": "function",
         "z": "4778c81a96bb6f95",
         "name": "function 2",
-        "func": "flow.set(\"inputMsg.payload\", msg.payload);\nflow.set(\"inputMsg.payload\", msg.topic);\n\nreturn msg;",
+        "func": "flow.set(\"inputMsg.payload\", msg.payload);\nflow.set(\"inputMsg.topic\", msg.topic);\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
