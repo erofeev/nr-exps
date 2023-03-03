@@ -672,7 +672,7 @@
         "type": "function",
         "z": "4778c81a96bb6f95",
         "name": "Status",
-        "func": "msg.payload = \"Disconnected\";\nreturn msg;",
+        "func": "msg.payload = \"Disconnected\";\nmsg.status = \"$T#$ER\";\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
