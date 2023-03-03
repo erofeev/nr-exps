@@ -586,7 +586,7 @@
         "type": "function",
         "z": "4778c81a96bb6f95",
         "name": "Ready to send now, restore payload",
-        "func": "msg.payload = context.get(\"tempp\"); \nmsg.topic = context.get(\"tempt\");\n\nif (!msg.payload) return;\nif (!msg.topic) return;\n\nreturn msg;",
+        "func": "msg.payload = flow.get(\"tempp\"); \nmsg.topic = flow.get(\"tempt\");\n\n//if (!msg.payload) return;\n//if (!msg.topic) return;\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
