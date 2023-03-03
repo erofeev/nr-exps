@@ -143,7 +143,7 @@
                 "y": 140,
                 "wires": [
                     {
-                        "id": "670bc3abf3c15aeb"
+                        "id": "035f3a521200f3a0"
                     }
                 ]
             }
@@ -642,7 +642,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 560,
+        "x": 660,
         "y": 140,
         "wires": [
             [
@@ -820,44 +820,6 @@
         "wires": [
             [
                 "7900684ebb193bc4"
-            ]
-        ]
-    },
-    {
-        "id": "670bc3abf3c15aeb",
-        "type": "function",
-        "z": "4778c81a96bb6f95",
-        "name": "function 2",
-        "func": "flow.set(\"inputMsg.payload\", msg.payload);\nflow.set(\"inputMsg.topic\", msg.topic);\n\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 180,
-        "y": 140,
-        "wires": [
-            [
-                "62f82ce3d938f6bd"
-            ]
-        ]
-    },
-    {
-        "id": "62f82ce3d938f6bd",
-        "type": "function",
-        "z": "4778c81a96bb6f95",
-        "name": "function 3",
-        "func": "msg.payload = flow.get(\"inputMsg.payload\") || null;\nmsg.topic   = flow.get(\"inputMsg.topic\") || null;\n\nflow.set(\"inputMsg.payload\", undefined);\nflow.set(\"inputMsg.topic\", undefined);\n\nif (!msg.topic) return null;\nif (!msg.payload) return null;\n\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 380,
-        "y": 140,
-        "wires": [
-            [
-                "035f3a521200f3a0"
             ]
         ]
     },
