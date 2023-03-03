@@ -129,10 +129,7 @@
                 "y": 140,
                 "wires": [
                     {
-                        "id": "ce41bfd1eeb41e0b"
-                    },
-                    {
-                        "id": "4eaf604588322d5c"
+                        "id": "007ac6afefe97d9c"
                     }
                 ]
             }
@@ -497,7 +494,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 350,
+        "x": 650,
         "y": 140,
         "wires": [
             [
@@ -557,8 +554,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 760,
-        "y": 200,
+        "x": 700,
+        "y": 260,
         "wires": [
             [
                 "7900684ebb193bc4",
@@ -584,27 +581,18 @@
         "wires": []
     },
     {
-        "id": "4eaf604588322d5c",
-        "type": "join",
+        "id": "d6179bcbad65c75b",
+        "type": "function",
         "z": "4778c81a96bb6f95",
-        "name": "If Ready to send",
-        "mode": "custom",
-        "build": "string",
-        "property": "payload",
-        "propertyType": "msg",
-        "key": "payload",
-        "joiner": "\\n",
-        "joinerType": "str",
-        "accumulate": false,
-        "timeout": "",
-        "count": "",
-        "reduceRight": false,
-        "reduceExp": "",
-        "reduceInit": "",
-        "reduceInitType": "",
-        "reduceFixup": "",
-        "x": 540,
-        "y": 200,
+        "name": "Ready to send now, restore payload",
+        "func": "msg.payload = flow.get(\"tempp\") || {}; \nmsg.topic = flow.get(\"tempt\") || {};\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 440,
+        "y": 260,
         "wires": [
             [
                 "035f3a521200f3a0"
@@ -612,35 +600,22 @@
         ]
     },
     {
-        "id": "d6179bcbad65c75b",
+        "id": "007ac6afefe97d9c",
         "type": "function",
         "z": "4778c81a96bb6f95",
-        "name": "Ready to send now",
-        "func": "msg.complete = true;\nmsg.payload = {t: 1}\n\nreturn msg;",
+        "name": "Save payload and topic to flow",
+        "func": "flow.set (\"tempp\", msg.payload);\nflow.set (\"tempt\", msg.topic);\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 270,
-        "y": 300,
+        "x": 370,
+        "y": 140,
         "wires": [
             [
-                "4eaf604588322d5c"
+                "ce41bfd1eeb41e0b"
             ]
-        ]
-    },
-    {
-        "id": "c84c3179ca3d29bf",
-        "type": "catch",
-        "z": "4778c81a96bb6f95",
-        "name": "",
-        "scope": null,
-        "uncaught": false,
-        "x": 220,
-        "y": 420,
-        "wires": [
-            []
         ]
     },
     {
