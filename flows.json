@@ -212,7 +212,7 @@
         "autoConnect": true,
         "usetls": false,
         "protocolVersion": "4",
-        "keepalive": "60",
+        "keepalive": "1",
         "cleansession": true,
         "birthTopic": "config",
         "birthQos": "2",
