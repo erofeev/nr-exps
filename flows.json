@@ -2434,7 +2434,7 @@
             {
                 "p": "thing.id",
                 "pt": "flow",
-                "to": "node-red:000-000-001",
+                "to": "000-000-001",
                 "tot": "str"
             },
             {
@@ -2471,7 +2471,7 @@
         "type": "function",
         "z": "4074d230f2e616af",
         "name": "Get device config",
-        "func": "msg.topic = flow.get('thing.id') + '/config';\nreturn msg;",
+        "func": "flow.set(\"thing.flows\", msg.payload);\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -2481,40 +2481,7 @@
         "y": 160,
         "wires": [
             [
-                "b352ec85cf6e5886",
-                "558f62c0ecdd2c81"
-            ]
-        ]
-    },
-    {
-        "id": "b352ec85cf6e5886",
-        "type": "link out",
-        "z": "4074d230f2e616af",
-        "name": "Send out config",
-        "mode": "link",
-        "links": [
-            "bf7a1b67e986bfff"
-        ],
-        "x": 685,
-        "y": 160,
-        "wires": []
-    },
-    {
-        "id": "558f62c0ecdd2c81",
-        "type": "function",
-        "z": "4074d230f2e616af",
-        "name": "Status = Ready",
-        "func": "msg.topic = flow.get('thing.id') + '/status';\nmsg.payload = \"READY\";\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 520,
-        "y": 200,
-        "wires": [
-            [
-                "b352ec85cf6e5886"
+                "45909591c6a48acc"
             ]
         ]
     },
@@ -2670,6 +2637,15 @@
                 "194612cb31eb08e8"
             ]
         ]
+    },
+    {
+        "id": "45909591c6a48acc",
+        "type": "subflow:c1aee611e52a8323",
+        "z": "4074d230f2e616af",
+        "name": "",
+        "x": 730,
+        "y": 160,
+        "wires": []
     },
     {
         "id": "1b7da4426da512f4",
