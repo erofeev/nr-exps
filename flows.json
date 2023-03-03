@@ -479,7 +479,7 @@
         "correl": "",
         "expiry": "",
         "broker": "4bd4c4a3bf0645b2",
-        "x": 690,
+        "x": 730,
         "y": 140,
         "wires": []
     },
@@ -513,11 +513,12 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 580,
-        "y": 280,
+        "x": 560,
+        "y": 240,
         "wires": [
             [
-                "ec5cc63d181d9ef1"
+                "ec5cc63d181d9ef1",
+                "7900684ebb193bc4"
             ]
         ]
     },
