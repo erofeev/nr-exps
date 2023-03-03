@@ -785,7 +785,7 @@
         "type": "function",
         "z": "4778c81a96bb6f95",
         "name": "Connect to local broker",
-        "func": "flow.set(\"cachedMsg.p\", msg.payload);\nflow.set(\"cachedMsg.t\", msg.topic);\n\nmsg.action = \"connect\";\nmsg.broker = {}\nmsg.broker.broker = \"127.0.0.1\";\nmsg.broker.port   = 1883;\nmsg.broker.force  = true;\nmsg.broker.clientid = flow.get(\"$parent.thing.type\") || \"na\";\nmsg.broker.clientid = msg.broker.clientid + ':d:';\nmsg.broker.clientid = msg.broker.clientid + flow.get(\"$parent.thing.id\") || \"na\";\n\nreturn msg;",
+        "func": "flow.set(\"cachedMsg.p\", msg.payload);\nflow.set(\"cachedMsg.t\", msg.topic);\nmsg.topic = undefined;\nmsg.payload = undefined;\n\nmsg.action = \"connect\";\nmsg.broker = {}\nmsg.broker.broker = \"127.0.0.1\";\nmsg.broker.port   = 1883;\nmsg.broker.force  = true;\nmsg.broker.clientid = flow.get(\"$parent.thing.type\") || \"na\";\nmsg.broker.clientid = msg.broker.clientid + ':d:';\nmsg.broker.clientid = msg.broker.clientid + flow.get(\"$parent.thing.id\") || \"na\";\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "// Code added here will be run once\n// whenever the node is started.\nflow.set(\"Status\", undefined);",
