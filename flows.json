@@ -2874,7 +2874,7 @@
         ],
         "repeat": "1",
         "crontab": "",
-        "once": false,
+        "once": true,
         "onceDelay": 0.1,
         "topic": "temperature",
         "payload": "",
