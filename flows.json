@@ -615,7 +615,8 @@
         "wires": [
             [
                 "7900684ebb193bc4",
-                "ec5cc63d181d9ef1"
+                "ec5cc63d181d9ef1",
+                "79132b36783da0b0"
             ]
         ]
     },
@@ -627,10 +628,10 @@
         "active": true,
         "tosidebar": true,
         "console": false,
-        "tostatus": true,
+        "tostatus": false,
         "complete": "true",
         "targetType": "full",
-        "statusVal": "payload",
+        "statusVal": "",
         "statusType": "auto",
         "x": 800,
         "y": 320,
@@ -749,6 +750,23 @@
         "libs": [],
         "x": 810,
         "y": 620,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "79132b36783da0b0",
+        "type": "function",
+        "z": "4778c81a96bb6f95",
+        "name": "Status",
+        "func": "msg.payload = \"Sent\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 810,
+        "y": 500,
         "wires": [
             []
         ]
