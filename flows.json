@@ -540,6 +540,21 @@
         "wires": []
     },
     {
+        "id": "a9e8f5a4693c3810",
+        "type": "catch",
+        "z": "4778c81a96bb6f95",
+        "name": "",
+        "scope": null,
+        "uncaught": false,
+        "x": 460,
+        "y": 300,
+        "wires": [
+            [
+                "ec5cc63d181d9ef1"
+            ]
+        ]
+    },
+    {
         "id": "c41f3ce662f9f4bb",
         "type": "debug",
         "z": "d7ec3041.ef1a7",
