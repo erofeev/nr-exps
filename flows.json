@@ -482,7 +482,7 @@
         "correl": "",
         "expiry": "",
         "broker": "4bd4c4a3bf0645b2",
-        "x": 890,
+        "x": 930,
         "y": 140,
         "wires": []
     },
@@ -557,7 +557,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 700,
+        "x": 760,
         "y": 200,
         "wires": [
             [
@@ -587,7 +587,7 @@
         "id": "4eaf604588322d5c",
         "type": "join",
         "z": "4778c81a96bb6f95",
-        "name": "",
+        "name": "If Ready to send",
         "mode": "custom",
         "build": "merged",
         "property": "",
@@ -603,7 +603,7 @@
         "reduceInit": "",
         "reduceInitType": "",
         "reduceFixup": "",
-        "x": 530,
+        "x": 540,
         "y": 200,
         "wires": [
             [
@@ -616,7 +616,7 @@
         "type": "function",
         "z": "4778c81a96bb6f95",
         "name": "Ready to send now",
-        "func": "msg.complete = 1;\nreturn msg;",
+        "func": "msg.complete = true;\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
