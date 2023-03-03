@@ -2903,7 +2903,7 @@
         "id": "65ee833ee7ebf8b1",
         "type": "config",
         "z": "6f858e2bc48be764",
-        "name": "",
+        "name": "GLOBAL CONFIG",
         "properties": [
             {
                 "p": "LocalBroker.host",
@@ -2931,7 +2931,7 @@
             }
         ],
         "active": true,
-        "x": 210,
+        "x": 250,
         "y": 80,
         "wires": []
     },
