@@ -580,7 +580,7 @@
                 "t": "set",
                 "p": "payload",
                 "pt": "msg",
-                "to": "Disconnected",
+                "to": "status",
                 "tot": "str"
             }
         ],
