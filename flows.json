@@ -593,7 +593,7 @@
         "name": "",
         "mode": "custom",
         "build": "merged",
-        "property": "payload",
+        "property": "topic",
         "propertyType": "msg",
         "key": "payload",
         "joiner": "\\n",
