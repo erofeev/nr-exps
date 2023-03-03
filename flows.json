@@ -2849,6 +2849,73 @@
         "wires": []
     },
     {
+        "id": "3c814825faa28b79",
+        "type": "inject",
+        "z": "6f858e2bc48be764",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "0.1",
+        "topic": "temperature",
+        "payload": "",
+        "payloadType": "date",
+        "x": 170,
+        "y": 500,
+        "wires": [
+            [
+                "0124323b39e2930f"
+            ]
+        ]
+    },
+    {
+        "id": "0124323b39e2930f",
+        "type": "subflow:4778c81a96bb6f95",
+        "z": "6f858e2bc48be764",
+        "name": "",
+        "x": 660,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "bf36080ad835e702",
+        "type": "inject",
+        "z": "6f858e2bc48be764",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "0.1",
+        "topic": "custom2222",
+        "payload": "",
+        "payloadType": "date",
+        "x": 170,
+        "y": 580,
+        "wires": [
+            [
+                "0124323b39e2930f"
+            ]
+        ]
+    },
+    {
         "id": "735e991389a3fbb6",
         "type": "config",
         "z": "dff79c811a7ad221",
