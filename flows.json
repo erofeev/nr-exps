@@ -115,12 +115,7 @@
         "out": [],
         "env": [],
         "meta": {},
-        "color": "#DDAA99",
-        "status": {
-            "x": 100,
-            "y": 300,
-            "wires": []
-        }
+        "color": "#DDAA99"
     },
     {
         "id": "5e1c22f8.d65d2c",
