@@ -2512,7 +2512,7 @@
         "type": "function",
         "z": "ef9af4852e9b934c",
         "name": "Thing Model Description",
-        "func": "flow.set(\"thing.topic.custom1\", \"\");\nflow.set(\"thing.topic.custom2\", \"\");\nflow.set(\"thing.topic.custom3\", \"\");\nflow.set(\"thing.topic.custom4\", \"\");\nflow.set(\"thing.topic.custom5\", \"\");\nflow.set(\"thing.topic.custom6\", \"\");\nflow.set(\"thing.topic.cmd\", \"cmdblock\");\n\nmsg.payload = flow.get(\"thing\");\nreturn msg;",
+        "func": "flow.set(\"thing.topics.custom1\", \"\");\nflow.set(\"thing.topics.custom2\", \"\");\nflow.set(\"thing.topics.custom3\", \"\");\nflow.set(\"thing.topics.custom4\", \"\");\nflow.set(\"thing.topics.custom5\", \"\");\nflow.set(\"thing.topics.custom6\", \"\");\nflow.set(\"thing.topics.cmd\", \"cmdblock\");\n\nmsg.payload = flow.get(\"thing\");\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
