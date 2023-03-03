@@ -322,7 +322,7 @@
         "correl": "",
         "expiry": "",
         "broker": "4bd4c4a3bf0645b2",
-        "x": 550,
+        "x": 590,
         "y": 120,
         "wires": []
     },
@@ -330,14 +330,14 @@
         "id": "17ecd211e1e1c8e8",
         "type": "function",
         "z": "c1aee611e52a8323",
-        "name": "Set broker to Local",
+        "name": "Connect to local broker",
         "func": "msg.action = \"connect\";\nmsg.broker = { broker: \"\", port: \"\"}\nmsg.broker.broker = \"127.0.0.1\";\nmsg.broker.port   = 1883;\nmsg.broker.force  = true;\nmsg.broker.clientid = flow.get(\"$parent.thing.type\") || \"na\";\nmsg.broker.clientid = msg.broker.clientid + ':';\nmsg.broker.clientid = msg.broker.clientid + flow.get(\"$parent.thing.id\") || \"na\";\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 310,
+        "x": 290,
         "y": 120,
         "wires": [
             [
@@ -397,12 +397,11 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 420,
-        "y": 340,
+        "x": 460,
+        "y": 260,
         "wires": [
             [
-                "ec8731f6d8a6586a",
-                "559cc6808a6dbf0a"
+                "ec8731f6d8a6586a"
             ]
         ]
     },
@@ -411,17 +410,17 @@
         "type": "function",
         "z": "c1aee611e52a8323",
         "name": "Set retained for /config",
-        "func": "const match = '\\/config$';\nconst topic = msg.topic;\nconst found = topic.match(match);\n\nif (found) {\n    msg.qos = 2;\n    msg.retain = true;\n}\ndelete msg.topic;\nmsg.topic = topic;//\"rpi10000000ffebcc55/000-onvif-cam-001/config\"\nreturn msg;",
+        "func": "const match = '\\/config$';\nconst topic = msg.topic;\nconst found = topic.match(match);\n\nif (found) {\n    msg.qos = 2;\n    msg.retain = true;\n}\ndelete msg.topic;\nmsg.topic = topic;\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 640,
-        "y": 340,
+        "x": 540,
+        "y": 320,
         "wires": [
             [
-                "bde91433c23beff0"
+                "b46b7daaabf2b455"
             ]
         ]
     },
@@ -441,6 +440,25 @@
         "x": 620,
         "y": 480,
         "wires": []
+    },
+    {
+        "id": "b46b7daaabf2b455",
+        "type": "function",
+        "z": "c1aee611e52a8323",
+        "name": "Set retained for /config",
+        "func": "msg.payload = flow.get(\"$parent.thing\") || '';\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 660,
+        "y": 380,
+        "wires": [
+            [
+                "bde91433c23beff0"
+            ]
+        ]
     },
     {
         "id": "c41f3ce662f9f4bb",
