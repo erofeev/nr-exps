@@ -341,8 +341,7 @@
         "y": 120,
         "wires": [
             [
-                "bde91433c23beff0",
-                "8e283dbb97b225b0"
+                "bde91433c23beff0"
             ]
         ]
     },
@@ -383,26 +382,47 @@
         "y": 200,
         "wires": [
             [
-                "8e283dbb97b225b0"
+                "5fc47634bd218b98"
             ]
         ]
     },
     {
-        "id": "8e283dbb97b225b0",
-        "type": "debug",
+        "id": "5fc47634bd218b98",
+        "type": "function",
         "z": "c1aee611e52a8323",
-        "name": "debug 4",
-        "active": true,
-        "tosidebar": true,
-        "console": true,
-        "tostatus": true,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "payload",
-        "statusType": "auto",
-        "x": 630,
-        "y": 200,
-        "wires": []
+        "name": "Add /broker-id",
+        "func": "msg.topic = global.get(\"broker.id\") + \"/\" + msg.topic;\n\n\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 340,
+        "wires": [
+            [
+                "ec8731f6d8a6586a"
+            ]
+        ]
+    },
+    {
+        "id": "ec8731f6d8a6586a",
+        "type": "function",
+        "z": "c1aee611e52a8323",
+        "name": "Set retained for /config",
+        "func": "const match = '\\/config$';\nconst topic = msg.topic;\nconst found = topic.match(match);\n\nif (found) {\n    msg.qos = 2;\n    msg.retain = true;\n}\ndelete msg.topic;\nmsg.topic = topic;//\"rpi10000000ffebcc55/000-onvif-cam-001/config\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 640,
+        "y": 340,
+        "wires": [
+            [
+                "bde91433c23beff0"
+            ]
+        ]
     },
     {
         "id": "c41f3ce662f9f4bb",
