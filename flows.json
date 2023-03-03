@@ -291,12 +291,12 @@
         }
     },
     {
-        "id": "a58919243427f84c",
+        "id": "9b9ea97fbd86e279",
         "type": "mqtt-broker",
         "z": "c1aee611e52a8323",
         "name": "",
-        "broker": "cfg",
-        "port": "0000",
+        "broker": "localhost",
+        "port": "1883",
         "clientid": "",
         "autoConnect": false,
         "usetls": false,
@@ -377,7 +377,7 @@
         "userProps": "",
         "correl": "",
         "expiry": "",
-        "broker": "a58919243427f84c",
+        "broker": "9b9ea97fbd86e279",
         "x": 590,
         "y": 120,
         "wires": []
