@@ -143,7 +143,7 @@
                 "y": 140,
                 "wires": [
                     {
-                        "id": "035f3a521200f3a0"
+                        "id": "670bc3abf3c15aeb"
                     }
                 ]
             }
@@ -642,11 +642,10 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 320,
-        "y": 140,
+        "x": 300,
+        "y": 700,
         "wires": [
             [
-                "7900684ebb193bc4",
                 "79132b36783da0b0",
                 "465987cb9c45597c"
             ]
@@ -695,7 +694,8 @@
         "y": 240,
         "wires": [
             [
-                "2172e85f166a5cf4"
+                "2172e85f166a5cf4",
+                "62f82ce3d938f6bd"
             ],
             [
                 "d8827288e46a3dc3",
@@ -815,7 +815,45 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 750,
+        "x": 410,
+        "y": 140,
+        "wires": [
+            [
+                "7900684ebb193bc4"
+            ]
+        ]
+    },
+    {
+        "id": "670bc3abf3c15aeb",
+        "type": "function",
+        "z": "4778c81a96bb6f95",
+        "name": "function 2",
+        "func": "flow.set(\"inputMsg.payload\", msg.payload);\nflow.set(\"inputMsg.payload\", msg.topic);\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 180,
+        "y": 140,
+        "wires": [
+            [
+                "d56a36dac6057458"
+            ]
+        ]
+    },
+    {
+        "id": "62f82ce3d938f6bd",
+        "type": "function",
+        "z": "4778c81a96bb6f95",
+        "name": "function 3",
+        "func": "msg.payload = flow.get(\"inputMsg.payload\") || {};\nmsg.topic   = flow.get(\"inputMsg.topic\") || {};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 580,
         "y": 220,
         "wires": [
             [
