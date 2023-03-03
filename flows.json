@@ -609,7 +609,7 @@
         "type": "function",
         "z": "4778c81a96bb6f95",
         "name": "Add /broker-id",
-        "func": "var dataTopic = flow.get(\"$parent.thing.type\") || \"na\";\ndataTopic = dataTopic + ':';\ndataTopic = dataTopic + flow.get(\"$parent.thing.id\") || \"na\";\n\nif (!msg.topic) return;\n\nmsg.topic = global.get(\"broker.id\") + \"/\" + dataTopic +  \"/\" + msg.topic;\n\nreturn msg;",
+        "func": "var p = flow.get(\"cachedMsg.p\") || undefined;\nvar t = flow.get(\"cachedMsg.t\") || undefined;\n\nif (p) {\n    flow.set(\"cachedMsg.p\", undefined);\n    if (t) {\n        flow.set(\"cachedMsg.t\", undefined)\n        msg.payload = p;\n        msg.topic = t;\n    }\n}\n\n\nvar dataTopic = flow.get(\"$parent.thing.type\") || \"na\";\ndataTopic = dataTopic + ':';\ndataTopic = dataTopic + flow.get(\"$parent.thing.id\") || \"na\";\n\nif (!msg.topic) return;\n\nmsg.topic = global.get(\"broker.id\") + \"/\" + dataTopic +  \"/\" + msg.topic;\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -783,8 +783,8 @@
         "type": "function",
         "z": "4778c81a96bb6f95",
         "name": "Connect to local broker",
-        "func": "var msg2 = {};\nmsg2.payload = msg.payload;\nmsg2.topic = msg.topic;\n\nmsg.action = \"connect\";\nmsg.broker = { broker: \"\", port: \"\"}\nmsg.broker.broker = \"127.0.0.1\";\nmsg.broker.port   = 1883;\nmsg.broker.force  = true;\nmsg.broker.clientid = flow.get(\"$parent.thing.type\") || \"na\";\nmsg.broker.clientid = msg.broker.clientid + ':d:';\nmsg.broker.clientid = msg.broker.clientid + flow.get(\"$parent.thing.id\") || \"na\";\n\nreturn [msg, msg2];",
-        "outputs": 2,
+        "func": "flow.set(\"cachedMsg.p\", msg.payload);\nflow.set(\"cachedMsg.t\", msg.topic);\n\nmsg.action = \"connect\";\nmsg.broker = { broker: \"\", port: \"\"}\nmsg.broker.broker = \"127.0.0.1\";\nmsg.broker.port   = 1883;\nmsg.broker.force  = true;\nmsg.broker.clientid = flow.get(\"$parent.thing.type\") || \"na\";\nmsg.broker.clientid = msg.broker.clientid + ':d:';\nmsg.broker.clientid = msg.broker.clientid + flow.get(\"$parent.thing.id\") || \"na\";\n\nreturn msg;",
+        "outputs": 1,
         "noerr": 0,
         "initialize": "// Code added here will be run once\n// whenever the node is started.\nflow.set(\"Status\", undefined);",
         "finalize": "",
@@ -795,9 +795,6 @@
             [
                 "7900684ebb193bc4",
                 "465987cb9c45597c"
-            ],
-            [
-                "035f3a521200f3a0"
             ]
         ]
     },
