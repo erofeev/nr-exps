@@ -581,7 +581,7 @@
                 "p": "payload",
                 "pt": "msg",
                 "to": "status",
-                "tot": "str"
+                "tot": "msg"
             }
         ],
         "action": "",
