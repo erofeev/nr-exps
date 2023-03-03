@@ -130,6 +130,9 @@
                 "wires": [
                     {
                         "id": "007ac6afefe97d9c"
+                    },
+                    {
+                        "id": "035f3a521200f3a0"
                     }
                 ]
             }
@@ -503,48 +506,6 @@
         ]
     },
     {
-        "id": "90e741c7533ed291",
-        "type": "status",
-        "z": "4778c81a96bb6f95",
-        "name": "Status of [MQTT out] node",
-        "scope": [
-            "7900684ebb193bc4"
-        ],
-        "x": 170,
-        "y": 220,
-        "wires": [
-            [
-                "1ae291c68d5965a4"
-            ]
-        ]
-    },
-    {
-        "id": "1ae291c68d5965a4",
-        "type": "switch",
-        "z": "4778c81a96bb6f95",
-        "name": "if connected",
-        "property": "status.text",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "eq",
-                "v": "node-red:common.status.connected",
-                "vt": "str"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 1,
-        "x": 190,
-        "y": 260,
-        "wires": [
-            [
-                "d6179bcbad65c75b",
-                "ec5cc63d181d9ef1"
-            ]
-        ]
-    },
-    {
         "id": "035f3a521200f3a0",
         "type": "function",
         "z": "4778c81a96bb6f95",
@@ -555,8 +516,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 700,
-        "y": 260,
+        "x": 680,
+        "y": 200,
         "wires": [
             [
                 "7900684ebb193bc4",
@@ -580,25 +541,6 @@
         "x": 800,
         "y": 320,
         "wires": []
-    },
-    {
-        "id": "d6179bcbad65c75b",
-        "type": "function",
-        "z": "4778c81a96bb6f95",
-        "name": "Ready to send now, restore payload",
-        "func": "msg.payload = flow.get(\"tempp\"); \nmsg.topic = flow.get(\"tempt\");\n\n//if (!msg.payload) return;\n//if (!msg.topic) return;\n\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 440,
-        "y": 260,
-        "wires": [
-            [
-                "035f3a521200f3a0"
-            ]
-        ]
     },
     {
         "id": "007ac6afefe97d9c",
