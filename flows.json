@@ -783,8 +783,8 @@
         "type": "function",
         "z": "4778c81a96bb6f95",
         "name": "Connect to local broker",
-        "func": "msg.action = \"connect\";\nmsg.broker = { broker: \"\", port: \"\"}\nmsg.broker.broker = \"127.0.0.1\";\nmsg.broker.port   = 1883;\nmsg.broker.force  = true;\nmsg.broker.clientid = flow.get(\"$parent.thing.type\") || \"na\";\nmsg.broker.clientid = msg.broker.clientid + ':d:';\nmsg.broker.clientid = msg.broker.clientid + flow.get(\"$parent.thing.id\") || \"na\";\n\nreturn msg;",
-        "outputs": 1,
+        "func": "var msg2 = msg;\nmsg.action = \"connect\";\nmsg.broker = { broker: \"\", port: \"\"}\nmsg.broker.broker = \"127.0.0.1\";\nmsg.broker.port   = 1883;\nmsg.broker.force  = true;\nmsg.broker.clientid = flow.get(\"$parent.thing.type\") || \"na\";\nmsg.broker.clientid = msg.broker.clientid + ':d:';\nmsg.broker.clientid = msg.broker.clientid + flow.get(\"$parent.thing.id\") || \"na\";\n\nreturn [msg, msg2];",
+        "outputs": 2,
         "noerr": 0,
         "initialize": "// Code added here will be run once\n// whenever the node is started.\nflow.set(\"Status\", undefined);",
         "finalize": "",
@@ -795,6 +795,9 @@
             [
                 "7900684ebb193bc4",
                 "465987cb9c45597c"
+            ],
+            [
+                "7900684ebb193bc4"
             ]
         ]
     },
