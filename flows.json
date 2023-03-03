@@ -428,7 +428,7 @@
         "id": "b46b7daaabf2b455",
         "type": "function",
         "z": "c1aee611e52a8323",
-        "name": "Set retained for /config",
+        "name": "Popoluate /config data",
         "func": "msg.payload = flow.get(\"$parent.thing\") || '';\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
