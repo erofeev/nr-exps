@@ -55,6 +55,14 @@
         "env": []
     },
     {
+        "id": "ef9af4852e9b934c",
+        "type": "tab",
+        "label": "Flow 2",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "ef8a80e9c499bb4e",
         "type": "subflow",
         "name": "Zip-64",
@@ -2355,6 +2363,30 @@
         "statusType": "auto",
         "x": 620,
         "y": 540,
+        "wires": []
+    },
+    {
+        "id": "3c0afb41a463885d",
+        "type": "config",
+        "z": "ef9af4852e9b934c",
+        "name": "",
+        "properties": [
+            {
+                "p": "thing.id",
+                "pt": "flow",
+                "to": "001",
+                "tot": "str"
+            },
+            {
+                "p": "thing.type",
+                "pt": "flow",
+                "to": "sensor",
+                "tot": "str"
+            }
+        ],
+        "active": true,
+        "x": 170,
+        "y": 100,
         "wires": []
     }
 ]
