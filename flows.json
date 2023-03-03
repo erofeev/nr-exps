@@ -391,7 +391,7 @@
         "type": "function",
         "z": "c1aee611e52a8323",
         "name": "Add /broker-id",
-        "func": "msg.topic = global.get(\"broker.id\") + \"/\" + msg.topic;\n\n\n\nreturn msg;",
+        "func": "var cfgTopic = flow.get(\"$parent.thing.type\") || \"na\";\ncfgTopic = cfgTopic + ':';\ncfgTopic = cfgTopic + flow.get(\"$parent.thing.id\") || \"na\";\ncfgTopic = cfgTopic + '/topic';\n\n\nmsg.topic = global.get(\"broker.id\") + \"/\" + cfgTopic;\n\n\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
