@@ -680,9 +680,11 @@
         "type": "catch",
         "z": "4778c81a96bb6f95",
         "name": "",
-        "scope": null,
+        "scope": [
+            "7900684ebb193bc4"
+        ],
         "uncaught": false,
-        "x": 140,
+        "x": 130,
         "y": 380,
         "wires": [
             [
@@ -713,7 +715,7 @@
         "type": "function",
         "z": "4778c81a96bb6f95",
         "name": "Status",
-        "func": "msg.payload = \"Disconnected\";\nflow.set(\"Status\", \"disconnected\");\nreturn msg;",
+        "func": "msg.payload = \"Disconnected\";\nflow.set(\"Status\", undefined);\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -730,7 +732,7 @@
         "type": "function",
         "z": "4778c81a96bb6f95",
         "name": "Status",
-        "func": "msg.payload = \"Error\";\nreturn msg;",
+        "func": "msg.payload = \"Error\";\nflow.set(\"Status\", undefined);\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
