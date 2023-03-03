@@ -425,23 +425,6 @@
         ]
     },
     {
-        "id": "559cc6808a6dbf0a",
-        "type": "debug",
-        "z": "c1aee611e52a8323",
-        "name": "debug 4",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 620,
-        "y": 480,
-        "wires": []
-    },
-    {
         "id": "b46b7daaabf2b455",
         "type": "function",
         "z": "c1aee611e52a8323",
