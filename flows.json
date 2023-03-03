@@ -589,9 +589,9 @@
         "z": "4778c81a96bb6f95",
         "name": "If Ready to send",
         "mode": "custom",
-        "build": "merged",
-        "property": "",
-        "propertyType": "full",
+        "build": "object",
+        "property": "payload",
+        "propertyType": "msg",
         "key": "payload",
         "joiner": "\\n",
         "joinerType": "str",
@@ -616,7 +616,7 @@
         "type": "function",
         "z": "4778c81a96bb6f95",
         "name": "Ready to send now",
-        "func": "msg.complete = true;\nreturn msg;",
+        "func": "msg.complete = true;\nmsg.payload = {}\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -628,6 +628,19 @@
             [
                 "4eaf604588322d5c"
             ]
+        ]
+    },
+    {
+        "id": "c84c3179ca3d29bf",
+        "type": "catch",
+        "z": "4778c81a96bb6f95",
+        "name": "",
+        "scope": null,
+        "uncaught": false,
+        "x": 220,
+        "y": 420,
+        "wires": [
+            []
         ]
     },
     {
