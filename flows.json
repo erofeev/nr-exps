@@ -605,7 +605,7 @@
         "type": "function",
         "z": "4778c81a96bb6f95",
         "name": "Save payload and topic to flow",
-        "func": "context.set (\"tempp\", msg.payload);\ncontext.set (\"tempt\", msg.topic);\n\nreturn msg;",
+        "func": "flow.set (\"tempp\", msg.payload);\nflow.set (\"tempt\", msg.topic);\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
