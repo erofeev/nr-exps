@@ -498,7 +498,7 @@
         "y": 140,
         "wires": [
             [
-                "035f3a521200f3a0"
+                "8c17938fb4d5bab6"
             ]
         ]
     },
@@ -507,17 +507,16 @@
         "type": "function",
         "z": "4778c81a96bb6f95",
         "name": "Add /broker-id",
-        "func": "var dataTopic = flow.get(\"$parent.thing.type\") || \"na\";\ndataTopic = dataTopic + ':';\ndataTopic = dataTopic + flow.get(\"$parent.thing.id\") || \"na\";\n\nif (!msg.topic) return;\n\nmsg.topic = global.get(\"broker.id\") + \"/\" + dataTopic +  \"/\" + msg.topic;\n\n\n\nreturn msg;",
+        "func": "context.data = context.data || {};\nif (!context.data.topic) return;\n\nmsg.data.payload = context.data.payload;\nmsg.data.topic = context.data.topic;\nmsg.data.qos = context.data.qos;\nmsg.data.retain = context.data.retain;\n\ncontext.data = {};\n\n\nvar dataTopic = flow.get(\"$parent.thing.type\") || \"na\";\ndataTopic = dataTopic + ':';\ndataTopic = dataTopic + flow.get(\"$parent.thing.id\") || \"na\";\n\nif (!msg.topic) return;\n\nmsg.topic = global.get(\"broker.id\") + \"/\" + dataTopic +  \"/\" + msg.topic;\n\n\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 480,
-        "y": 140,
+        "x": 580,
+        "y": 280,
         "wires": [
             [
-                "7900684ebb193bc4",
                 "ec5cc63d181d9ef1"
             ]
         ]
@@ -540,17 +539,62 @@
         "wires": []
     },
     {
-        "id": "a9e8f5a4693c3810",
-        "type": "catch",
+        "id": "742707dd24e2e159",
+        "type": "status",
         "z": "4778c81a96bb6f95",
-        "name": "",
-        "scope": null,
-        "uncaught": false,
-        "x": 460,
-        "y": 300,
+        "name": "Status of [MQTT out] node",
+        "scope": [
+            "bde91433c23beff0"
+        ],
+        "x": 150,
+        "y": 240,
         "wires": [
             [
-                "ec5cc63d181d9ef1"
+                "6c86a741afdf2dff"
+            ]
+        ]
+    },
+    {
+        "id": "6c86a741afdf2dff",
+        "type": "switch",
+        "z": "4778c81a96bb6f95",
+        "name": "if connected",
+        "property": "status.text",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "node-red:common.status.connected",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 370,
+        "y": 240,
+        "wires": [
+            [
+                "035f3a521200f3a0"
+            ]
+        ]
+    },
+    {
+        "id": "8c17938fb4d5bab6",
+        "type": "function",
+        "z": "4778c81a96bb6f95",
+        "name": "Save context",
+        "func": "context.data = context.data || {};\ncontext.data.payload = msg.payload;\ncontext.data.topic   = msg.topic;\ncontext.data.qos     = msg.qos;\ncontext.data.retain  = msg.retain;\n\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 470,
+        "y": 140,
+        "wires": [
+            [
+                "7900684ebb193bc4"
             ]
         ]
     },
