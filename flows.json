@@ -551,7 +551,8 @@
         "y": 240,
         "wires": [
             [
-                "6c86a741afdf2dff"
+                "6c86a741afdf2dff",
+                "ec5cc63d181d9ef1"
             ]
         ]
     },
