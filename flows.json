@@ -209,7 +209,7 @@
         "broker": "127.0.0.1",
         "port": "1883",
         "clientid": "",
-        "autoConnect": true,
+        "autoConnect": false,
         "usetls": false,
         "protocolVersion": "4",
         "keepalive": "60",
@@ -2237,5 +2237,82 @@
         "x": 600,
         "y": 160,
         "wires": []
+    },
+    {
+        "id": "f5e01658181058ae",
+        "type": "mqtt out",
+        "z": "6f858e2bc48be764",
+        "name": "",
+        "topic": "",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "4bd4c4a3bf0645b2",
+        "x": 390,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "c3bb5b982a433cef",
+        "type": "inject",
+        "z": "6f858e2bc48be764",
+        "name": "",
+        "props": [
+            {
+                "p": "action",
+                "v": "connect",
+                "vt": "str"
+            },
+            {
+                "p": "broker",
+                "v": "{\"broker\":\"127.0.0.1\",\"port\":1883,\"force\":true}",
+                "vt": "json"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 110,
+        "y": 400,
+        "wires": [
+            [
+                "f5e01658181058ae"
+            ]
+        ]
+    },
+    {
+        "id": "0764786fd983646b",
+        "type": "inject",
+        "z": "6f858e2bc48be764",
+        "name": "",
+        "props": [
+            {
+                "p": "action",
+                "v": "subscribe",
+                "vt": "str"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "$SYS/#",
+        "x": 120,
+        "y": 520,
+        "wires": [
+            [
+                "f5e01658181058ae"
+            ]
+        ]
     }
 ]
