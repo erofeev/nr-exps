@@ -479,7 +479,7 @@
         "correl": "",
         "expiry": "",
         "broker": "4bd4c4a3bf0645b2",
-        "x": 650,
+        "x": 810,
         "y": 140,
         "wires": []
     },
@@ -549,52 +549,14 @@
         "type": "function",
         "z": "4778c81a96bb6f95",
         "name": "Add /broker-id",
-        "func": "var cfgTopic = flow.get(\"$parent.thing.type\") || \"na\";\ncfgTopic = cfgTopic + ':';\ncfgTopic = cfgTopic + flow.get(\"$parent.thing.id\") || \"na\";\ncfgTopic = cfgTopic + '/config';\n\n\nmsg.topic = global.get(\"broker.id\") + \"/\" + cfgTopic;\n\n\n\nreturn msg;",
+        "func": "var dataTopic = flow.get(\"$parent.thing.type\") || \"na\";\ndataTopic = dataTopic + ':';\ndataTopic = dataTopic + flow.get(\"$parent.thing.id\") || \"na\";\n\nif (!msg.topic) return;\n\nmsg.topic = global.get(\"broker.id\") + dataTopic +  \"/\" + msg.topic;\n\n\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 520,
-        "y": 280,
-        "wires": [
-            [
-                "f13fe86bcaed351c"
-            ]
-        ]
-    },
-    {
-        "id": "f13fe86bcaed351c",
-        "type": "function",
-        "z": "4778c81a96bb6f95",
-        "name": "Set retained for /config",
-        "func": "const match = '\\/config$';\nconst topic = msg.topic;\nconst found = topic.match(match);\n\nif (found) {\n    msg.qos = 2;\n    msg.retain = true;\n}\ndelete msg.topic;\nmsg.topic = topic;\n\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 600,
-        "y": 340,
-        "wires": [
-            [
-                "fab37f8738c6149b"
-            ]
-        ]
-    },
-    {
-        "id": "fab37f8738c6149b",
-        "type": "function",
-        "z": "4778c81a96bb6f95",
-        "name": "Popoluate /config data",
-        "func": "msg.payload = flow.get(\"$parent.thing\") || '';\n\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 720,
-        "y": 400,
+        "x": 620,
+        "y": 220,
         "wires": [
             [
                 "7900684ebb193bc4"
@@ -2723,6 +2685,44 @@
         "name": "",
         "x": 690,
         "y": 140,
+        "wires": []
+    },
+    {
+        "id": "822904f93bbd5633",
+        "type": "inject",
+        "z": "dff79c811a7ad221",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 260,
+        "wires": [
+            [
+                "b8df0b3c831978c3"
+            ]
+        ]
+    },
+    {
+        "id": "b8df0b3c831978c3",
+        "type": "subflow:4778c81a96bb6f95",
+        "z": "dff79c811a7ad221",
+        "name": "",
+        "x": 680,
+        "y": 260,
         "wires": []
     }
 ]
