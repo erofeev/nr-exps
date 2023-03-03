@@ -3111,7 +3111,7 @@
         "z": "a3ba71e6b430d658",
         "name": "OnStart",
         "props": [],
-        "repeat": "",
+        "repeat": "1",
         "crontab": "",
         "once": true,
         "onceDelay": 0.1,
