@@ -2900,6 +2900,42 @@
         ]
     },
     {
+        "id": "65ee833ee7ebf8b1",
+        "type": "config",
+        "z": "6f858e2bc48be764",
+        "name": "",
+        "properties": [
+            {
+                "p": "LocalBroker.host",
+                "pt": "global",
+                "to": "413bc8ac8d2849b7bf0706f84800f7a8.s2.eu.hivemq.cloud",
+                "tot": "str"
+            },
+            {
+                "p": "LocalBroker.port",
+                "pt": "global",
+                "to": "8883",
+                "tot": "str"
+            },
+            {
+                "p": "LocalBroker.user",
+                "pt": "global",
+                "to": "devicemqtt",
+                "tot": "str"
+            },
+            {
+                "p": "LocalBroker.pswd",
+                "pt": "global",
+                "to": "devicemqtt",
+                "tot": "str"
+            }
+        ],
+        "active": true,
+        "x": 210,
+        "y": 80,
+        "wires": []
+    },
+    {
         "id": "735e991389a3fbb6",
         "type": "config",
         "z": "dff79c811a7ad221",
