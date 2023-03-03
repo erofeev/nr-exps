@@ -589,7 +589,7 @@
         "z": "4778c81a96bb6f95",
         "name": "If Ready to send",
         "mode": "custom",
-        "build": "object",
+        "build": "merged",
         "property": "payload",
         "propertyType": "msg",
         "key": "payload",
