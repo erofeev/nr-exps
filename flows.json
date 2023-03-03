@@ -616,7 +616,7 @@
         "type": "function",
         "z": "4778c81a96bb6f95",
         "name": "Ready to send now",
-        "func": "msg.complete = true;\nmsg.payload = {}\n\nreturn msg;",
+        "func": "msg.complete = true;\nmsg.payload = {t: 1}\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
