@@ -2528,7 +2528,7 @@
         "func": "flow.set(\"thing.topics.cust1\", \"\");\nflow.set(\"thing.topics.cust2\", \"\");\nflow.set(\"thing.topics.cust3\", \"\");\nflow.set(\"thing.topics.cust4\", \"\");\nflow.set(\"thing.topics.cust5\", \"\");\nflow.set(\"thing.topics.cust6\", \"\");\nflow.set(\"thing.topics.cmd\", \"cmdblock1\");\n\nmsg.payload = flow.get(\"thing\");\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "initialize": "// Code added here will be run once\n// whenever the node is started.\nflow.set(\"thing\",\"\");",
+        "initialize": "",
         "finalize": "",
         "libs": [],
         "x": 350,
