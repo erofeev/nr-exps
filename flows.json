@@ -2522,8 +2522,7 @@
         "y": 160,
         "wires": [
             [
-                "352d7bbaec40fa04",
-                "d6f9b9a290aca018"
+                "352d7bbaec40fa04"
             ]
         ]
     },
@@ -2557,12 +2556,75 @@
         "wires": []
     },
     {
-        "id": "d6f9b9a290aca018",
+        "id": "56714d1ffd23af18",
+        "type": "config",
+        "z": "ef9af4852e9b934c",
+        "name": "",
+        "properties": [
+            {
+                "p": "thing.id",
+                "pt": "flow",
+                "to": "002",
+                "tot": "str"
+            },
+            {
+                "p": "thing.type",
+                "pt": "flow",
+                "to": "sensor",
+                "tot": "str"
+            }
+        ],
+        "active": true,
+        "x": 390,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "db8f260ddf03057a",
+        "type": "function",
+        "z": "ef9af4852e9b934c",
+        "name": "Thing Model Description",
+        "func": "flow.set(\"thing.topics.custom1\", \"\");\nflow.set(\"thing.topics.custom2\", \"\");\nflow.set(\"thing.topics.custom3\", \"\");\nflow.set(\"thing.topics.custom4\", \"\");\nflow.set(\"thing.topics.custom5\", \"\");\nflow.set(\"thing.topics.custom6\", \"\");\nflow.set(\"thing.topics.cmd\", \"cmdblock\");\n\nmsg.payload = flow.get(\"thing\");\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 450,
+        "y": 340,
+        "wires": [
+            [
+                "cf5d67fb1b0f1d0d"
+            ]
+        ]
+    },
+    {
+        "id": "87437553f76f6f38",
+        "type": "inject",
+        "z": "ef9af4852e9b934c",
+        "name": "OnStart",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 140,
+        "y": 300,
+        "wires": [
+            [
+                "56714d1ffd23af18",
+                "db8f260ddf03057a"
+            ]
+        ]
+    },
+    {
+        "id": "cf5d67fb1b0f1d0d",
         "type": "subflow:c1aee611e52a8323",
         "z": "ef9af4852e9b934c",
         "name": "",
         "x": 670,
-        "y": 220,
+        "y": 340,
         "wires": []
     }
 ]
