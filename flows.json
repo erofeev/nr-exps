@@ -2497,7 +2497,7 @@
         "wires": []
     },
     {
-        "id": "3c0afb41a463885d",
+        "id": "c419d2b0c758b017",
         "type": "config",
         "z": "ef9af4852e9b934c",
         "name": "",
@@ -2516,31 +2516,31 @@
             }
         ],
         "active": true,
-        "x": 290,
+        "x": 390,
         "y": 60,
         "wires": []
     },
     {
-        "id": "4ff82774a846dec9",
+        "id": "e4ab98f951fc2378",
         "type": "function",
         "z": "ef9af4852e9b934c",
         "name": "Thing Model Description",
-        "func": "flow.set(\"thing.topics.cust1\", \"\");\nflow.set(\"thing.topics.cust2\", \"\");\nflow.set(\"thing.topics.cust3\", \"\");\nflow.set(\"thing.topics.cust4\", \"\");\nflow.set(\"thing.topics.cust5\", \"\");\nflow.set(\"thing.topics.cust6\", \"\");\nflow.set(\"thing.topics.cmd\", \"cmdblock1\");\n\nmsg.payload = flow.get(\"thing\");\nreturn msg;",
+        "func": "flow.set(\"thing.topics.custom1\", \"\");\nflow.set(\"thing.topics.custom2\", \"\");\nflow.set(\"thing.topics.custom3\", \"\");\nflow.set(\"thing.topics.custom4\", \"\");\nflow.set(\"thing.topics.custom5\", \"\");\nflow.set(\"thing.topics.custom6\", \"\");\nflow.set(\"thing.topics.cmd\", \"cmdblock\");\n\nmsg.payload = flow.get(\"thing\");\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 350,
+        "x": 450,
         "y": 120,
         "wires": [
             [
-                "352d7bbaec40fa04"
+                "e5dfee9f3a3e4f6b"
             ]
         ]
     },
     {
-        "id": "3b04a77d6e2f36bd",
+        "id": "ba914c4ff8ed3129",
         "type": "inject",
         "z": "ef9af4852e9b934c",
         "name": "OnStart",
@@ -2551,21 +2551,21 @@
         "onceDelay": 0.1,
         "topic": "",
         "x": 140,
-        "y": 120,
+        "y": 80,
         "wires": [
             [
-                "4ff82774a846dec9",
-                "3c0afb41a463885d"
+                "c419d2b0c758b017",
+                "e4ab98f951fc2378"
             ]
         ]
     },
     {
-        "id": "352d7bbaec40fa04",
+        "id": "e5dfee9f3a3e4f6b",
         "type": "subflow:c1aee611e52a8323",
         "z": "ef9af4852e9b934c",
         "name": "",
         "x": 670,
-        "y": 160,
+        "y": 120,
         "wires": []
     }
 ]
