@@ -2705,10 +2705,10 @@
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
-        "topic": "",
+        "topic": "temperature",
         "payload": "",
         "payloadType": "date",
-        "x": 140,
+        "x": 180,
         "y": 260,
         "wires": [
             [
