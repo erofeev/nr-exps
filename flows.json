@@ -118,6 +118,28 @@
         "color": "#DDAA99"
     },
     {
+        "id": "4778c81a96bb6f95",
+        "type": "subflow",
+        "name": "SendData",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 60,
+                "y": 140,
+                "wires": [
+                    {
+                        "id": "ce41bfd1eeb41e0b"
+                    }
+                ]
+            }
+        ],
+        "out": [],
+        "env": [],
+        "meta": {},
+        "color": "#DDAA99"
+    },
+    {
         "id": "5e1c22f8.d65d2c",
         "type": "ui_group",
         "name": "group 2",
@@ -242,7 +264,7 @@
         "autoConnect": false,
         "usetls": false,
         "protocolVersion": "4",
-        "keepalive": "1",
+        "keepalive": "60",
         "cleansession": true,
         "birthTopic": "",
         "birthQos": "2",
@@ -442,6 +464,159 @@
                 "bde91433c23beff0"
             ]
         ]
+    },
+    {
+        "id": "7900684ebb193bc4",
+        "type": "mqtt out",
+        "z": "4778c81a96bb6f95",
+        "name": "",
+        "topic": "",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "4bd4c4a3bf0645b2",
+        "x": 650,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "ce41bfd1eeb41e0b",
+        "type": "function",
+        "z": "4778c81a96bb6f95",
+        "name": "Connect to local broker",
+        "func": "msg.action = \"connect\";\nmsg.broker = { broker: \"\", port: \"\"}\nmsg.broker.broker = \"127.0.0.1\";\nmsg.broker.port   = 1883;\nmsg.broker.force  = false;\nmsg.broker.clientid = flow.get(\"$parent.thing.type\") || \"na\";\nmsg.broker.clientid = msg.broker.clientid + ':';\nmsg.broker.clientid = msg.broker.clientid + flow.get(\"$parent.thing.id\") || \"na\";\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 350,
+        "y": 140,
+        "wires": [
+            [
+                "7900684ebb193bc4"
+            ]
+        ]
+    },
+    {
+        "id": "90e741c7533ed291",
+        "type": "status",
+        "z": "4778c81a96bb6f95",
+        "name": "Status of [MQTT out] node",
+        "scope": [
+            "7900684ebb193bc4"
+        ],
+        "x": 210,
+        "y": 220,
+        "wires": [
+            [
+                "1ae291c68d5965a4",
+                "ec5cc63d181d9ef1"
+            ]
+        ]
+    },
+    {
+        "id": "1ae291c68d5965a4",
+        "type": "switch",
+        "z": "4778c81a96bb6f95",
+        "name": "if connected",
+        "property": "status.text",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "node-red:common.status.connected",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 430,
+        "y": 220,
+        "wires": [
+            [
+                "035f3a521200f3a0"
+            ]
+        ]
+    },
+    {
+        "id": "035f3a521200f3a0",
+        "type": "function",
+        "z": "4778c81a96bb6f95",
+        "name": "Add /broker-id",
+        "func": "var cfgTopic = flow.get(\"$parent.thing.type\") || \"na\";\ncfgTopic = cfgTopic + ':';\ncfgTopic = cfgTopic + flow.get(\"$parent.thing.id\") || \"na\";\ncfgTopic = cfgTopic + '/config';\n\n\nmsg.topic = global.get(\"broker.id\") + \"/\" + cfgTopic;\n\n\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 520,
+        "y": 280,
+        "wires": [
+            [
+                "f13fe86bcaed351c"
+            ]
+        ]
+    },
+    {
+        "id": "f13fe86bcaed351c",
+        "type": "function",
+        "z": "4778c81a96bb6f95",
+        "name": "Set retained for /config",
+        "func": "const match = '\\/config$';\nconst topic = msg.topic;\nconst found = topic.match(match);\n\nif (found) {\n    msg.qos = 2;\n    msg.retain = true;\n}\ndelete msg.topic;\nmsg.topic = topic;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 600,
+        "y": 340,
+        "wires": [
+            [
+                "fab37f8738c6149b"
+            ]
+        ]
+    },
+    {
+        "id": "fab37f8738c6149b",
+        "type": "function",
+        "z": "4778c81a96bb6f95",
+        "name": "Popoluate /config data",
+        "func": "msg.payload = flow.get(\"$parent.thing\") || '';\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 720,
+        "y": 400,
+        "wires": [
+            [
+                "7900684ebb193bc4"
+            ]
+        ]
+    },
+    {
+        "id": "ec5cc63d181d9ef1",
+        "type": "debug",
+        "z": "4778c81a96bb6f95",
+        "name": "debug 3",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 300,
+        "y": 340,
+        "wires": []
     },
     {
         "id": "c41f3ce662f9f4bb",
