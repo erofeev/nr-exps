@@ -143,10 +143,7 @@
                 "y": 140,
                 "wires": [
                     {
-                        "id": "035f3a521200f3a0"
-                    },
-                    {
-                        "id": "d56a36dac6057458"
+                        "id": "764e3089229af422"
                     }
                 ]
             }
@@ -645,8 +642,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 660,
-        "y": 140,
+        "x": 480,
+        "y": 80,
         "wires": [
             [
                 "79132b36783da0b0",
@@ -726,7 +723,7 @@
         "type": "function",
         "z": "4778c81a96bb6f95",
         "name": "Status",
-        "func": "msg.payload = \"Connected\";\nreturn msg;",
+        "func": "msg.payload = \"Connected\";\nflow.set(\"Status\", \"connected\");\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -743,7 +740,7 @@
         "type": "function",
         "z": "4778c81a96bb6f95",
         "name": "Status",
-        "func": "msg.payload = \"Disconnected\";\nreturn msg;",
+        "func": "msg.payload = \"Disconnected\";\nflow.set(\"Status\", \"disconnected\");\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -817,11 +814,44 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 590,
-        "y": 200,
+        "x": 490,
+        "y": 160,
         "wires": [
             [
                 "7900684ebb193bc4"
+            ]
+        ]
+    },
+    {
+        "id": "764e3089229af422",
+        "type": "switch",
+        "z": "4778c81a96bb6f95",
+        "name": "if connected",
+        "property": "Status",
+        "propertyType": "flow",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "connected",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "disconnected",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 230,
+        "y": 140,
+        "wires": [
+            [
+                "035f3a521200f3a0"
+            ],
+            [
+                "d56a36dac6057458"
             ]
         ]
     },
