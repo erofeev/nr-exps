@@ -621,7 +621,6 @@
         "y": 80,
         "wires": [
             [
-                "79132b36783da0b0",
                 "7900684ebb193bc4"
             ]
         ]
@@ -703,8 +702,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 810,
-        "y": 540,
+        "x": 550,
+        "y": 220,
         "wires": [
             [
                 "764e3089229af422"
@@ -722,8 +721,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 810,
-        "y": 580,
+        "x": 550,
+        "y": 260,
         "wires": [
             []
         ]
@@ -741,23 +740,6 @@
         "libs": [],
         "x": 810,
         "y": 620,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "79132b36783da0b0",
-        "type": "function",
-        "z": "4778c81a96bb6f95",
-        "name": "Status",
-        "func": "msg.payload = \"Sent\";\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 810,
-        "y": 500,
         "wires": [
             []
         ]
