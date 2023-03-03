@@ -319,34 +319,6 @@
         "sessionExpiry": ""
     },
     {
-        "id": "1ac13a1f28a3a2f7",
-        "type": "mqtt-broker",
-        "z": "4778c81a96bb6f95",
-        "name": "",
-        "broker": "send",
-        "port": "0000",
-        "clientid": "",
-        "autoConnect": false,
-        "usetls": false,
-        "protocolVersion": "4",
-        "keepalive": "60",
-        "cleansession": true,
-        "birthTopic": "",
-        "birthQos": "0",
-        "birthPayload": "",
-        "birthMsg": {},
-        "closeTopic": "",
-        "closeQos": "0",
-        "closePayload": "",
-        "closeMsg": {},
-        "willTopic": "",
-        "willQos": "0",
-        "willPayload": "",
-        "willMsg": {},
-        "userProps": "",
-        "sessionExpiry": ""
-    },
-    {
         "id": "2b65109daddacd99",
         "type": "json",
         "z": "ef8a80e9c499bb4e",
@@ -599,7 +571,7 @@
         "userProps": "",
         "correl": "",
         "expiry": "",
-        "broker": "1ac13a1f28a3a2f7",
+        "broker": "",
         "x": 730,
         "y": 140,
         "wires": []
@@ -2931,7 +2903,8 @@
         "y": 260,
         "wires": [
             [
-                "b8df0b3c831978c3"
+                "b8df0b3c831978c3",
+                "1ae4ad010a9b787d"
             ]
         ]
     },
@@ -2942,6 +2915,24 @@
         "name": "",
         "x": 680,
         "y": 260,
+        "wires": []
+    },
+    {
+        "id": "1ae4ad010a9b787d",
+        "type": "mqtt out",
+        "z": "dff79c811a7ad221",
+        "name": "",
+        "topic": "",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "",
+        "x": 530,
+        "y": 360,
         "wires": []
     }
 ]
