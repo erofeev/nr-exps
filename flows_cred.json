@@ -1,5 +1,8 @@
 {
     "b8e38a6f72213e9e": {},
-    "9b9ea97fbd86e279": {},
+    "9b9ea97fbd86e279": {
+        "user": "devicemqtt",
+        "password": "devicemqtt"
+    },
     "6843187ae988fdc8": {}
 }
