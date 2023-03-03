@@ -259,7 +259,7 @@
         "type": "mqtt-broker",
         "name": "",
         "broker": "127.0.0.1",
-        "port": "1883",
+        "port": "999",
         "clientid": "",
         "autoConnect": false,
         "usetls": false,
