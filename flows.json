@@ -3015,7 +3015,7 @@
         "type": "mqtt out",
         "z": "dff79c811a7ad221",
         "name": "",
-        "topic": "",
+        "topic": "/test",
         "qos": "",
         "retain": "",
         "respTopic": "",
