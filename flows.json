@@ -63,6 +63,14 @@
         "env": []
     },
     {
+        "id": "a3ba71e6b430d658",
+        "type": "tab",
+        "label": "Flow 3",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "ef8a80e9c499bb4e",
         "type": "subflow",
         "name": "Zip-64",
@@ -3051,6 +3059,145 @@
         "wires": [
             [
                 "b8df0b3c831978c3"
+            ]
+        ]
+    },
+    {
+        "id": "90c04bdaf7e90773",
+        "type": "config",
+        "z": "a3ba71e6b430d658",
+        "name": "",
+        "properties": [
+            {
+                "p": "thing.id",
+                "pt": "flow",
+                "to": "1",
+                "tot": "str"
+            },
+            {
+                "p": "thing.type",
+                "pt": "flow",
+                "to": "tv",
+                "tot": "str"
+            }
+        ],
+        "active": true,
+        "x": 410,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "dec9452877568190",
+        "type": "function",
+        "z": "a3ba71e6b430d658",
+        "name": "Thing Model Description",
+        "func": "flow.set(\"thing.topics.custom1\", \"\");\nflow.set(\"thing.topics.custom2\", \"\");\nflow.set(\"thing.topics.custom3\", \"\");\nflow.set(\"thing.topics.custom4\", \"\");\nflow.set(\"thing.topics.custom5\", \"\");\nflow.set(\"thing.topics.custom6\", \"\");\nflow.set(\"thing.topics.cmd\", \"cmdblock\");\n\nmsg.payload = flow.get(\"thing\");\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 470,
+        "y": 160,
+        "wires": [
+            [
+                "7b5e6e7e72371ce1"
+            ]
+        ]
+    },
+    {
+        "id": "3cc6ba66d0943248",
+        "type": "inject",
+        "z": "a3ba71e6b430d658",
+        "name": "OnStart",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 160,
+        "y": 120,
+        "wires": [
+            [
+                "90c04bdaf7e90773",
+                "dec9452877568190"
+            ]
+        ]
+    },
+    {
+        "id": "7b5e6e7e72371ce1",
+        "type": "subflow:c1aee611e52a8323",
+        "z": "a3ba71e6b430d658",
+        "name": "",
+        "x": 690,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "95e3c1d308e39126",
+        "type": "inject",
+        "z": "a3ba71e6b430d658",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "0.1",
+        "topic": "temperature",
+        "payload": "",
+        "payloadType": "date",
+        "x": 210,
+        "y": 280,
+        "wires": [
+            [
+                "c2a54a41bc5646a3"
+            ]
+        ]
+    },
+    {
+        "id": "c2a54a41bc5646a3",
+        "type": "subflow:4778c81a96bb6f95",
+        "z": "a3ba71e6b430d658",
+        "name": "",
+        "x": 700,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "267c514201cc5782",
+        "type": "inject",
+        "z": "a3ba71e6b430d658",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "0.1",
+        "topic": "custom2222",
+        "payload": "",
+        "payloadType": "date",
+        "x": 210,
+        "y": 360,
+        "wires": [
+            [
+                "c2a54a41bc5646a3"
             ]
         ]
     }
