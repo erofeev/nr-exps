@@ -818,7 +818,8 @@
         "y": 160,
         "wires": [
             [
-                "7900684ebb193bc4"
+                "7900684ebb193bc4",
+                "465987cb9c45597c"
             ]
         ]
     },
@@ -836,9 +837,7 @@
                 "vt": "str"
             },
             {
-                "t": "eq",
-                "v": "disconnected",
-                "vt": "str"
+                "t": "empty"
             }
         ],
         "checkall": "true",
