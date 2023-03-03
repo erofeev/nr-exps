@@ -129,7 +129,7 @@
                 "y": 140,
                 "wires": [
                     {
-                        "id": "ce41bfd1eeb41e0b"
+                        "id": "035f3a521200f3a0"
                     }
                 ]
             }
@@ -144,6 +144,10 @@
             "wires": [
                 {
                     "id": "2ae424ce32e1cbfe",
+                    "port": 0
+                },
+                {
+                    "id": "6c86a741afdf2dff",
                     "port": 0
                 }
             ]
@@ -529,11 +533,11 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 230,
-        "y": 140,
+        "x": 590,
+        "y": 280,
         "wires": [
             [
-                "8c17938fb4d5bab6"
+                "7900684ebb193bc4"
             ]
         ]
     },
@@ -548,11 +552,10 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 560,
-        "y": 240,
+        "x": 420,
+        "y": 140,
         "wires": [
             [
-                "ec5cc63d181d9ef1",
                 "7900684ebb193bc4"
             ]
         ]
@@ -602,35 +605,22 @@
                 "t": "eq",
                 "v": "node-red:common.status.connected",
                 "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "node-red:common.status.disconnected",
+                "vt": "str"
             }
         ],
         "checkall": "true",
         "repair": false,
-        "outputs": 1,
+        "outputs": 2,
         "x": 370,
         "y": 240,
         "wires": [
+            [],
             [
-                "035f3a521200f3a0"
-            ]
-        ]
-    },
-    {
-        "id": "8c17938fb4d5bab6",
-        "type": "function",
-        "z": "4778c81a96bb6f95",
-        "name": "Save context",
-        "func": "context.data = context.data || {};\ncontext.data.payload = msg.payload;\ncontext.data.topic   = msg.topic;\ncontext.data.qos     = msg.qos;\ncontext.data.retain  = msg.retain;\n\n\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 470,
-        "y": 140,
-        "wires": [
-            [
-                "7900684ebb193bc4"
+                "ce41bfd1eeb41e0b"
             ]
         ]
     },
