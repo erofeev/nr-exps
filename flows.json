@@ -2498,8 +2498,8 @@
             }
         ],
         "active": true,
-        "x": 390,
-        "y": 100,
+        "x": 290,
+        "y": 60,
         "wires": []
     },
     {
@@ -2510,11 +2510,11 @@
         "func": "flow.set(\"thing.topics.custom1\", \"\");\nflow.set(\"thing.topics.custom2\", \"\");\nflow.set(\"thing.topics.custom3\", \"\");\nflow.set(\"thing.topics.custom4\", \"\");\nflow.set(\"thing.topics.custom5\", \"\");\nflow.set(\"thing.topics.custom6\", \"\");\nflow.set(\"thing.topics.cmd\", \"cmdblock\");\n\nmsg.payload = flow.get(\"thing\");\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "initialize": "",
+        "initialize": "// Code added here will be run once\n// whenever the node is started.\nflow.set(\"thing\",\"\");",
         "finalize": "",
         "libs": [],
-        "x": 450,
-        "y": 160,
+        "x": 350,
+        "y": 120,
         "wires": [
             [
                 "352d7bbaec40fa04"
@@ -2536,8 +2536,8 @@
         "y": 120,
         "wires": [
             [
-                "3c0afb41a463885d",
-                "4ff82774a846dec9"
+                "4ff82774a846dec9",
+                "3c0afb41a463885d"
             ]
         ]
     },
