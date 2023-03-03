@@ -331,7 +331,7 @@
         "type": "function",
         "z": "c1aee611e52a8323",
         "name": "Set broker to Local",
-        "func": "msg.action = \"connect\";\nmsg.broker = \"\";\nmsg.broker.broker = \"127.0.0.1\";\nmsg.broker.port   = 1883;\nmsg.broker.force  = true;\nmsg.broker.clientid = flow.get(\"thing.type\") || \"na\";\nmsg.broker.clientid = msg.broker.clientid + ':';\nmsg.broker.clientid = msg.broker.clientid + flow.get(\"thing.id\") || \"na\";\n\nreturn msg;",
+        "func": "msg.action = \"connect\";\nmsg.broker = { broker: \"\", port: \"\"}\nmsg.broker.broker = \"127.0.0.1\";\nmsg.broker.port   = 1883;\nmsg.broker.force  = true;\nmsg.broker.clientid = flow.get(\"thing.type\") || \"na\";\nmsg.broker.clientid = msg.broker.clientid + ':';\nmsg.broker.clientid = msg.broker.clientid + flow.get(\"thing.id\") || \"na\";\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
