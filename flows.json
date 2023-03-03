@@ -135,9 +135,20 @@
             }
         ],
         "out": [],
-        "env": [],
+        "env": [
+            {
+                "name": "n",
+                "type": "str",
+                "value": "1"
+            }
+        ],
         "meta": {},
-        "color": "#DDAA99"
+        "color": "#DDAA99",
+        "status": {
+            "x": 340,
+            "y": 440,
+            "wires": []
+        }
     },
     {
         "id": "5e1c22f8.d65d2c",
