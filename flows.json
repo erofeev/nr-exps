@@ -555,8 +555,8 @@
                 "t": "set",
                 "p": "payload",
                 "pt": "msg",
-                "to": "Connected",
-                "tot": "str"
+                "to": "status",
+                "tot": "msg"
             }
         ],
         "action": "",
