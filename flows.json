@@ -208,7 +208,7 @@
         "name": "",
         "broker": "127.0.0.1",
         "port": "1883",
-        "clientid": "",
+        "clientid": "local",
         "autoConnect": false,
         "usetls": false,
         "protocolVersion": "4",
