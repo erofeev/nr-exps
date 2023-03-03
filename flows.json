@@ -130,9 +130,6 @@
                 "wires": [
                     {
                         "id": "035f3a521200f3a0"
-                    },
-                    {
-                        "id": "ce41bfd1eeb41e0b"
                     }
                 ]
             }
@@ -283,7 +280,7 @@
         "broker": "local",
         "port": "1883",
         "clientid": "",
-        "autoConnect": false,
+        "autoConnect": true,
         "usetls": false,
         "protocolVersion": "4",
         "keepalive": "60",
@@ -528,26 +525,6 @@
         "x": 730,
         "y": 140,
         "wires": []
-    },
-    {
-        "id": "ce41bfd1eeb41e0b",
-        "type": "function",
-        "z": "4778c81a96bb6f95",
-        "name": "Connect to local broker",
-        "func": "msg.action = \"connect\";\nmsg.broker = { broker: \"\", port: \"\"}\nmsg.broker.broker = \"127.0.0.1\";\nmsg.broker.port   = 1883;\nmsg.broker.force  = false;\nmsg.broker.clientid = flow.get(\"$parent.thing.type\") || \"na\";\nmsg.broker.clientid = msg.broker.clientid + ':';\nmsg.broker.clientid = msg.broker.clientid + flow.get(\"$parent.thing.id\") || \"na\";\n\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 790,
-        "y": 220,
-        "wires": [
-            [
-                "7900684ebb193bc4",
-                "ec5cc63d181d9ef1"
-            ]
-        ]
     },
     {
         "id": "035f3a521200f3a0",
