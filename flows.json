@@ -642,7 +642,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 480,
+        "x": 560,
         "y": 80,
         "wires": [
             [
@@ -814,7 +814,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 490,
+        "x": 470,
         "y": 160,
         "wires": [
             [
@@ -2989,8 +2989,7 @@
         "y": 260,
         "wires": [
             [
-                "b8df0b3c831978c3",
-                "1ae4ad010a9b787d"
+                "b8df0b3c831978c3"
             ]
         ]
     },
@@ -3001,24 +3000,6 @@
         "name": "",
         "x": 680,
         "y": 260,
-        "wires": []
-    },
-    {
-        "id": "1ae4ad010a9b787d",
-        "type": "mqtt out",
-        "z": "dff79c811a7ad221",
-        "name": "",
-        "topic": "/test",
-        "qos": "",
-        "retain": "",
-        "respTopic": "",
-        "contentType": "",
-        "userProps": "",
-        "correl": "",
-        "expiry": "",
-        "broker": "2af8996acbf6caeb",
-        "x": 530,
-        "y": 360,
         "wires": []
     }
 ]
