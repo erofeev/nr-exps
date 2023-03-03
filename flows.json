@@ -129,10 +129,10 @@
                 "y": 140,
                 "wires": [
                     {
-                        "id": "007ac6afefe97d9c"
+                        "id": "035f3a521200f3a0"
                     },
                     {
-                        "id": "035f3a521200f3a0"
+                        "id": "ce41bfd1eeb41e0b"
                     }
                 ]
             }
@@ -541,25 +541,6 @@
         "x": 800,
         "y": 320,
         "wires": []
-    },
-    {
-        "id": "007ac6afefe97d9c",
-        "type": "function",
-        "z": "4778c81a96bb6f95",
-        "name": "Save payload and topic to flow",
-        "func": "flow.set (\"tempp\", msg.payload);\nflow.set (\"tempt\", msg.topic);\n\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 370,
-        "y": 140,
-        "wires": [
-            [
-                "ce41bfd1eeb41e0b"
-            ]
-        ]
     },
     {
         "id": "c41f3ce662f9f4bb",
