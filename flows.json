@@ -326,7 +326,7 @@
         "broker": "localhost",
         "port": "1883",
         "clientid": "",
-        "autoConnect": true,
+        "autoConnect": false,
         "usetls": false,
         "protocolVersion": "4",
         "keepalive": "60",
@@ -710,8 +710,8 @@
         "name": "",
         "scope": null,
         "uncaught": false,
-        "x": 380,
-        "y": 280,
+        "x": 140,
+        "y": 380,
         "wires": [
             [
                 "78856c2f21be9618",
@@ -815,8 +815,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 430,
-        "y": 500,
+        "x": 750,
+        "y": 220,
         "wires": [
             [
                 "7900684ebb193bc4"
