@@ -139,15 +139,19 @@
         "meta": {},
         "color": "#DDAA99",
         "status": {
-            "x": 600,
-            "y": 460,
+            "x": 960,
+            "y": 580,
             "wires": [
                 {
-                    "id": "2ae424ce32e1cbfe",
+                    "id": "2172e85f166a5cf4",
                     "port": 0
                 },
                 {
-                    "id": "6c86a741afdf2dff",
+                    "id": "d8827288e46a3dc3",
+                    "port": 0
+                },
+                {
+                    "id": "78856c2f21be9618",
                     "port": 0
                 }
             ]
@@ -621,10 +625,12 @@
         "y": 240,
         "wires": [
             [
-                "ec5cc63d181d9ef1"
+                "ec5cc63d181d9ef1",
+                "2172e85f166a5cf4"
             ],
             [
-                "ce41bfd1eeb41e0b"
+                "ce41bfd1eeb41e0b",
+                "d8827288e46a3dc3"
             ]
         ]
     },
@@ -639,8 +645,60 @@
         "y": 360,
         "wires": [
             [
-                "ec5cc63d181d9ef1"
+                "ec5cc63d181d9ef1",
+                "78856c2f21be9618"
             ]
+        ]
+    },
+    {
+        "id": "2172e85f166a5cf4",
+        "type": "function",
+        "z": "4778c81a96bb6f95",
+        "name": "Status",
+        "func": "msg.payload = \"Connected\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 810,
+        "y": 580,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d8827288e46a3dc3",
+        "type": "function",
+        "z": "4778c81a96bb6f95",
+        "name": "Status",
+        "func": "msg.payload = \"Disconnected\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 810,
+        "y": 540,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "78856c2f21be9618",
+        "type": "function",
+        "z": "4778c81a96bb6f95",
+        "name": "Status",
+        "func": "msg.payload = \"Error\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 810,
+        "y": 620,
+        "wires": [
+            []
         ]
     },
     {
