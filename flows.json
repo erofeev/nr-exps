@@ -2007,9 +2007,9 @@
         "id": "fb6cbea9f8feee1b",
         "type": "comment",
         "z": "4074d230f2e616af",
-        "name": "MQTT cmd:",
+        "name": "MQTT cmd: node-red:000-000-001/cmd",
         "info": "",
-        "x": 210,
+        "x": 290,
         "y": 280,
         "wires": []
     },
