@@ -3295,5 +3295,58 @@
                 "995ab22438ad7180"
             ]
         ]
+    },
+    {
+        "id": "14e877d88869cf40",
+        "type": "BLE scanner",
+        "z": "a3ba71e6b430d658",
+        "name": "",
+        "services": "",
+        "servicesType": "str",
+        "continuous": false,
+        "x": 230,
+        "y": 480,
+        "wires": [
+            [
+                "f5b97a70f335797f"
+            ]
+        ]
+    },
+    {
+        "id": "1a63417d07befce9",
+        "type": "inject",
+        "z": "a3ba71e6b430d658",
+        "name": "",
+        "props": [
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "0.1",
+        "topic": "start",
+        "x": 90,
+        "y": 420,
+        "wires": [
+            [
+                "14e877d88869cf40"
+            ]
+        ]
+    },
+    {
+        "id": "f5b97a70f335797f",
+        "type": "BLE device",
+        "z": "a3ba71e6b430d658",
+        "name": "",
+        "x": 410,
+        "y": 480,
+        "wires": [
+            [
+                "4c51bb34a42f65e2"
+            ]
+        ]
     }
 ]
