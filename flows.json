@@ -3225,19 +3225,6 @@
         "wires": []
     },
     {
-        "id": "ae428c81cfb336c9",
-        "type": "BLE Scan",
-        "z": "a3ba71e6b430d658",
-        "name": "",
-        "x": 120,
-        "y": 560,
-        "wires": [
-            [
-                "995ab22438ad7180"
-            ]
-        ]
-    },
-    {
         "id": "995ab22438ad7180",
         "type": "switch",
         "z": "a3ba71e6b430d658",
