@@ -296,7 +296,7 @@
         "tls": "",
         "clientid": "",
         "autoConnect": false,
-        "usetls": false,
+        "usetls": true,
         "protocolVersion": "4",
         "keepalive": "60",
         "cleansession": true,
