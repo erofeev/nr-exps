@@ -3282,7 +3282,7 @@
         "type": "function",
         "z": "a3ba71e6b430d658",
         "name": "function 2",
-        "func": "msg.address = msg.payload.address;\nmsg.peripheralId = msg.payload.id;\nmsg.payload = msg.payload.advertisement.serviceData[0].data;\nreturn msg;",
+        "func": "msg.address = msg.payload.address;\nmsg.peripheral = msg.payload.id;\nmsg.payload = msg.payload.advertisement.serviceData[0].data;\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -3291,7 +3291,9 @@
         "x": 520,
         "y": 560,
         "wires": [
-            []
+            [
+                "6f8cedb39c0d3850"
+            ]
         ]
     },
     {
@@ -3319,52 +3321,6 @@
         "wires": [
             [
                 "4c51bb34a42f65e2"
-            ]
-        ]
-    },
-    {
-        "id": "9fa435dc272b60c2",
-        "type": "BLE scanner",
-        "z": "a3ba71e6b430d658",
-        "name": "",
-        "services": "",
-        "servicesType": "str",
-        "continuous": false,
-        "x": 250,
-        "y": 480,
-        "wires": [
-            [
-                "6f8cedb39c0d3850",
-                "4c51bb34a42f65e2"
-            ]
-        ]
-    },
-    {
-        "id": "9e2509b2d744296d",
-        "type": "inject",
-        "z": "a3ba71e6b430d658",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 100,
-        "y": 440,
-        "wires": [
-            [
-                "9fa435dc272b60c2"
             ]
         ]
     }
