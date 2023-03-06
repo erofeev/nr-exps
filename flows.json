@@ -3267,7 +3267,7 @@
         "type": "binary",
         "z": "a3ba71e6b430d658",
         "name": "",
-        "property": "payload.data",
+        "property": "payload",
         "pattern": "b8 => qw1, b8 => qw2",
         "x": 610,
         "y": 560,
