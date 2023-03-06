@@ -3220,8 +3220,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 780,
-        "y": 620,
+        "x": 900,
+        "y": 460,
         "wires": []
     },
     {
@@ -3258,7 +3258,8 @@
         "y": 560,
         "wires": [
             [
-                "323f783d44c24f88"
+                "323f783d44c24f88",
+                "3840ef34887dfda1"
             ]
         ]
     },
@@ -3269,8 +3270,8 @@
         "name": "",
         "property": "payload",
         "pattern": "b24 => sensorType, \nb8 => packetNumber,\nb48 => mac,\nb16 => qw4",
-        "x": 610,
-        "y": 560,
+        "x": 730,
+        "y": 660,
         "wires": [
             [
                 "4c51bb34a42f65e2"
@@ -3288,11 +3289,22 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 440,
+        "x": 520,
         "y": 560,
         "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3840ef34887dfda1",
+        "type": "BLE device",
+        "z": "a3ba71e6b430d658",
+        "name": "",
+        "x": 450,
+        "y": 460,
+        "wires": [
             [
-                "868f578e4866d1e6"
+                "4c51bb34a42f65e2"
             ]
         ]
     }
