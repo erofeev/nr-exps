@@ -3167,8 +3167,40 @@
         "y": 360,
         "wires": [
             [
-                "c2a54a41bc5646a3"
+                "c2a54a41bc5646a3",
+                "cf237327f911d7d5"
             ]
         ]
+    },
+    {
+        "id": "cf237327f911d7d5",
+        "type": "Xiaomi BLE",
+        "z": "a3ba71e6b430d658",
+        "name": "",
+        "address": "",
+        "scanningTimeout": 60,
+        "x": 310,
+        "y": 460,
+        "wires": [
+            [
+                "4c51bb34a42f65e2"
+            ]
+        ]
+    },
+    {
+        "id": "4c51bb34a42f65e2",
+        "type": "debug",
+        "z": "a3ba71e6b430d658",
+        "name": "debug 3",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 460,
+        "y": 460,
+        "wires": []
     }
 ]
