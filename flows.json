@@ -3231,7 +3231,7 @@
         "z": "a3ba71e6b430d658",
         "name": "",
         "address": "",
-        "scanningTimeout": 60,
+        "scanningTimeout": "5",
         "x": 310,
         "y": 460,
         "wires": [
@@ -3320,7 +3320,7 @@
         "props": [
             {
                 "p": "address",
-                "v": "A4:C1:38:87:F3:DB ",
+                "v": "a4:c1:38:87:f3:db",
                 "vt": "str"
             }
         ],
