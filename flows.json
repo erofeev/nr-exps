@@ -3348,5 +3348,28 @@
                 "8c490d4b037515d3"
             ]
         ]
+    },
+    {
+        "id": "1e42574b251c41dc",
+        "type": "inject",
+        "z": "a3ba71e6b430d658",
+        "name": "",
+        "props": [
+            {
+                "p": "payload.scan",
+                "v": "true",
+                "vt": "bool"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 90,
+        "y": 640,
+        "wires": [
+            []
+        ]
     }
 ]
