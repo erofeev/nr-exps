@@ -3219,7 +3219,7 @@
         "type": "function",
         "z": "a3ba71e6b430d658",
         "name": "Obtain T,H,B",
-        "func": "var id = msg.payload.noteId;\nvar r1 = msg.payload.r1;\nvar r2 = msg.payload.r2;\nvar r3 = msg.payload.r3;\ndelete msg.payload;\ndelete msg.original;\n\nvar nmsg1 = {};\nvar nmsg2 = {};\nvar nmsg3 = {};\n\nif (id == 13) {\n    nmsg1.payload = r2/10;\n    nmsg1.topic = msg.localName + \"/temperature\";\n    nmsg2.payload = r3 / 10;\n    nmsg2.topic = msg.localName + \"/humidity\";\n    nmsg3 = null;\n}\nif (id == 10) {\n    nmsg1 = null;\n    nmsg2 = null;\n    nmsg3.payload = r2;\n    nmsg3.topic = msg.localName + \"/battery\";\n}\n\n\nreturn nmsg1, nmsg2, nmsg3;",
+        "func": "var id = msg.payload.noteId;\nvar r1 = msg.payload.r1;\nvar r2 = msg.payload.r2;\nvar r3 = msg.payload.r3;\ndelete msg.payload;\ndelete msg.original;\n\nvar nmsg1 = {};\nvar nmsg2 = {};\nvar nmsg3 = {};\n\nif (id == 13) {\n    nmsg1.payload = r2/10;\n    nmsg1.topic = msg.localName + \"/temperature\";\n    nmsg2.payload = r3 / 10;\n    nmsg2.topic = msg.localName + \"/humidity\";\n    nmsg3 = null;\n}\nif (id == 10) {\n    nmsg1 = null;\n    nmsg2 = null;\n    nmsg3.payload = r2;\n    nmsg3.topic = msg.localName + \"/battery\";\n}\n\n\nreturn [nmsg1, nmsg2, nmsg3];",
         "outputs": 3,
         "noerr": 0,
         "initialize": "",
