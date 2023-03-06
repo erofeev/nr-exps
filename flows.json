@@ -3208,23 +3208,6 @@
         ]
     },
     {
-        "id": "4c51bb34a42f65e2",
-        "type": "debug",
-        "z": "a3ba71e6b430d658",
-        "name": "debug 3",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 900,
-        "y": 460,
-        "wires": []
-    },
-    {
         "id": "995ab22438ad7180",
         "type": "switch",
         "z": "a3ba71e6b430d658",
@@ -3261,12 +3244,12 @@
         "z": "a3ba71e6b430d658",
         "name": "",
         "property": "payload",
-        "pattern": "x88 => sensorType, \nb8 => packetNumber,\nl16=> r1,\nl16 => temp,\nl16 => hum\n",
-        "x": 670,
-        "y": 440,
+        "pattern": "x88 => sensorType, \nb8 => noteId,\nl16=> r1,\nl16 => r2,\nl16 => r3\n",
+        "x": 610,
+        "y": 560,
         "wires": [
             [
-                "4c51bb34a42f65e2"
+                "d96fbd05d3d4769c"
             ]
         ]
     },
@@ -3281,12 +3264,11 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 520,
+        "x": 460,
         "y": 560,
         "wires": [
             [
-                "868f578e4866d1e6",
-                "4c51bb34a42f65e2"
+                "868f578e4866d1e6"
             ]
         ]
     },
@@ -3302,5 +3284,40 @@
                 "995ab22438ad7180"
             ]
         ]
+    },
+    {
+        "id": "d96fbd05d3d4769c",
+        "type": "function",
+        "z": "a3ba71e6b430d658",
+        "name": "Obtain T,H,B",
+        "func": "\nif (msg.payload.noteId == 13) {\nmsg.temperature = msg.payload.r2/10;\nmsg.temperature = msg.payload.r3/10;\n}\nif (msg.payload.noteId == 10) {\n    msg.battery = msg.payload.r2;\n}\nmsg.payload = {};\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 770,
+        "y": 560,
+        "wires": [
+            [
+                "f0b87857e46ef01f"
+            ]
+        ]
+    },
+    {
+        "id": "f0b87857e46ef01f",
+        "type": "debug",
+        "z": "a3ba71e6b430d658",
+        "name": "debug 3",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 940,
+        "y": 560,
+        "wires": []
     }
 ]
