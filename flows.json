@@ -3334,7 +3334,8 @@
         "y": 480,
         "wires": [
             [
-                "6f8cedb39c0d3850"
+                "6f8cedb39c0d3850",
+                "4c51bb34a42f65e2"
             ]
         ]
     },
@@ -3359,8 +3360,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 60,
-        "y": 460,
+        "x": 100,
+        "y": 440,
         "wires": [
             [
                 "9fa435dc272b60c2"
