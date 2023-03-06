@@ -3337,5 +3337,34 @@
                 "6f8cedb39c0d3850"
             ]
         ]
+    },
+    {
+        "id": "9e2509b2d744296d",
+        "type": "inject",
+        "z": "a3ba71e6b430d658",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 60,
+        "y": 460,
+        "wires": [
+            [
+                "9fa435dc272b60c2"
+            ]
+        ]
     }
 ]
