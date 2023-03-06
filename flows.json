@@ -3216,12 +3216,12 @@
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
+        "complete": "true",
+        "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 460,
-        "y": 460,
+        "x": 480,
+        "y": 560,
         "wires": []
     },
     {
@@ -3275,8 +3275,8 @@
         "type": "BLE Scan",
         "z": "a3ba71e6b430d658",
         "name": "",
-        "x": 380,
-        "y": 600,
+        "x": 120,
+        "y": 560,
         "wires": [
             [
                 "995ab22438ad7180"
@@ -3323,7 +3323,7 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 430,
+        "x": 290,
         "y": 560,
         "wires": [
             [
