@@ -3263,7 +3263,7 @@
         "z": "a3ba71e6b430d658",
         "name": "",
         "property": "payload",
-        "pattern": "x88 => sensorType, \nb8 => packetNumber,\nb16=> r1,\nb16 => r2,\nb16 => r3,\nb16 => r4\n",
+        "pattern": "x88 => sensorType, \nb8 => packetNumber,\nb16=> r1,\nb16 => r2,\nb16 => r3\n",
         "x": 670,
         "y": 440,
         "wires": [
