@@ -3290,7 +3290,7 @@
         "type": "function",
         "z": "a3ba71e6b430d658",
         "name": "Obtain T,H,B",
-        "func": "\nif (msg.payload.noteId == 13) {\nmsg.temperature = msg.payload.r2/10;\nmsg.temperature = msg.payload.r3/10;\n}\nif (msg.payload.noteId == 10) {\n    msg.battery = msg.payload.r2;\n}\nmsg.payload = {};\n\nreturn msg;",
+        "func": "var r1 = msg.payload.r1;\nvar r2 = msg.payload.r2;\nvar r3 = msg.payload.r3;\nmsg.payload = undefined;\n\nif (msg.payload.noteId == 13) {\nmsg.temperature = r2/10;\nmsg.temperature = r3/10;\n}\nif (msg.payload.noteId == 10) {\n    msg.battery = r2;\n}\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
