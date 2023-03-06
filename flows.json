@@ -2861,6 +2861,7 @@
         "id": "65ee833ee7ebf8b1",
         "type": "config",
         "z": "6f858e2bc48be764",
+        "d": true,
         "name": "GLOBAL CONFIG",
         "properties": [
             {
@@ -2890,6 +2891,30 @@
         ],
         "active": true,
         "x": 250,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "c659c63e28d7c47e",
+        "type": "config",
+        "z": "6f858e2bc48be764",
+        "name": "GLOBAL CONFIG",
+        "properties": [
+            {
+                "p": "LocalBroker.host",
+                "pt": "global",
+                "to": "localhost",
+                "tot": "str"
+            },
+            {
+                "p": "LocalBroker.port",
+                "pt": "global",
+                "to": "1883",
+                "tot": "str"
+            }
+        ],
+        "active": true,
+        "x": 510,
         "y": 80,
         "wires": []
     },
