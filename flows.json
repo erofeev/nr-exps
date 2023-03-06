@@ -3257,5 +3257,30 @@
         "wires": [
             []
         ]
+    },
+    {
+        "id": "476922123b6b0186",
+        "type": "inject",
+        "z": "a3ba71e6b430d658",
+        "name": "",
+        "props": [
+            {
+                "p": "address",
+                "v": "A4:C1:38:87:F3:DB ",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 110,
+        "y": 500,
+        "wires": [
+            [
+                "cf237327f911d7d5"
+            ]
+        ]
     }
 ]
