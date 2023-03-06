@@ -3229,8 +3229,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 310,
-        "y": 560,
+        "x": 490,
+        "y": 580,
         "wires": [
             [],
             [
@@ -3246,7 +3246,7 @@
         "property": "payload",
         "pattern": "x88 => sensorType, \nb8 => noteId,\nl16=> r1,\nl16 => r2,\nl16 => r3\n",
         "x": 610,
-        "y": 560,
+        "y": 660,
         "wires": [
             [
                 "d96fbd05d3d4769c"
@@ -3264,8 +3264,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 460,
-        "y": 560,
+        "x": 560,
+        "y": 620,
         "wires": [
             [
                 "868f578e4866d1e6"
@@ -3283,8 +3283,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 770,
-        "y": 560,
+        "x": 710,
+        "y": 540,
         "wires": [
             [
                 "f0b87857e46ef01f"
@@ -3304,8 +3304,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 960,
-        "y": 620,
+        "x": 780,
+        "y": 580,
         "wires": []
     },
     {
@@ -3315,8 +3315,8 @@
         "uuids": "",
         "duplicates": true,
         "name": "",
-        "x": 190,
-        "y": 460,
+        "x": 410,
+        "y": 540,
         "wires": [
             [
                 "995ab22438ad7180"
@@ -3324,24 +3324,51 @@
         ]
     },
     {
-        "id": "09c98e7fee330b28",
-        "type": "inject",
+        "id": "20e3ed0ce94c14f9",
+        "type": "delay",
         "z": "a3ba71e6b430d658",
-        "name": "start",
-        "props": [
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "30",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 140,
+        "y": 620,
+        "wires": [
+            [
+                "dd86d58776dbddd6"
+            ]
+        ]
+    },
+    {
+        "id": "dd86d58776dbddd6",
+        "type": "change",
+        "z": "a3ba71e6b430d658",
+        "name": "Stop after 30 secs",
+        "rules": [
             {
+                "t": "set",
                 "p": "payload.scan",
-                "v": "true",
-                "vt": "bool"
+                "pt": "msg",
+                "to": "false",
+                "tot": "bool"
             }
         ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "x": 90,
-        "y": 580,
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 210,
+        "y": 660,
         "wires": [
             [
                 "8c490d4b037515d3"
@@ -3349,26 +3376,31 @@
         ]
     },
     {
-        "id": "1e42574b251c41dc",
+        "id": "e2dc396017fdc533",
         "type": "inject",
         "z": "a3ba71e6b430d658",
-        "name": "stop",
+        "name": "Start scan every 1 min",
         "props": [
             {
-                "p": "payload.scan",
-                "v": "false",
-                "vt": "bool"
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
             }
         ],
-        "repeat": "",
+        "repeat": "60",
         "crontab": "",
-        "once": false,
+        "once": true,
         "onceDelay": 0.1,
         "topic": "",
-        "x": 90,
-        "y": 640,
+        "payload": "",
+        "payloadType": "date",
+        "x": 150,
+        "y": 540,
         "wires": [
             [
+                "20e3ed0ce94c14f9",
                 "8c490d4b037515d3"
             ]
         ]
