@@ -3355,9 +3355,11 @@
         "name": "Stop after 30 secs",
         "rules": [
             {
-                "t": "set",
+                "t": "change",
                 "p": "payload.scan",
                 "pt": "msg",
+                "from": "true",
+                "fromt": "bool",
                 "to": "false",
                 "tot": "bool"
             }
