@@ -3264,7 +3264,7 @@
         "type": "scan ble",
         "z": "a3ba71e6b430d658",
         "uuids": "",
-        "duplicates": true,
+        "duplicates": false,
         "name": "",
         "x": 410,
         "y": 540,
