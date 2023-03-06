@@ -3273,19 +3273,6 @@
         ]
     },
     {
-        "id": "0c26b3b0c542a013",
-        "type": "BLE Scan",
-        "z": "a3ba71e6b430d658",
-        "name": "",
-        "x": 160,
-        "y": 560,
-        "wires": [
-            [
-                "995ab22438ad7180"
-            ]
-        ]
-    },
-    {
         "id": "d96fbd05d3d4769c",
         "type": "function",
         "z": "a3ba71e6b430d658",
@@ -3320,5 +3307,20 @@
         "x": 940,
         "y": 560,
         "wires": []
+    },
+    {
+        "id": "8c490d4b037515d3",
+        "type": "scan ble",
+        "z": "a3ba71e6b430d658",
+        "uuids": "",
+        "duplicates": false,
+        "name": "",
+        "x": 190,
+        "y": 460,
+        "wires": [
+            [
+                "995ab22438ad7180"
+            ]
+        ]
     }
 ]
