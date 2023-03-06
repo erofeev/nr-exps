@@ -3303,12 +3303,12 @@
         "name": "",
         "services": "",
         "servicesType": "str",
-        "continuous": true,
+        "continuous": false,
         "x": 230,
         "y": 480,
         "wires": [
             [
-                "f5b97a70f335797f"
+                "4c51bb34a42f65e2"
             ]
         ]
     },
