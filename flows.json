@@ -3324,5 +3324,30 @@
                 "f0b87857e46ef01f"
             ]
         ]
+    },
+    {
+        "id": "09c98e7fee330b28",
+        "type": "inject",
+        "z": "a3ba71e6b430d658",
+        "name": "",
+        "props": [
+            {
+                "p": "state",
+                "v": "poweredOff",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 90,
+        "y": 580,
+        "wires": [
+            [
+                "8c490d4b037515d3"
+            ]
+        ]
     }
 ]
