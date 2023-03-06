@@ -3329,7 +3329,7 @@
         "z": "a3ba71e6b430d658",
         "name": "",
         "pauseType": "delay",
-        "timeout": "10",
+        "timeout": "30",
         "timeoutUnits": "seconds",
         "rate": "1",
         "nbRateUnits": "1",
@@ -3389,7 +3389,7 @@
                 "vt": "bool"
             }
         ],
-        "repeat": "30",
+        "repeat": "60",
         "crontab": "",
         "once": true,
         "onceDelay": 0.1,
