@@ -3208,7 +3208,13 @@
         "type": "inject",
         "z": "a3ba71e6b430d658",
         "name": "",
-        "props": [],
+        "props": [
+            {
+                "p": "scan",
+                "v": "true",
+                "vt": "bool"
+            }
+        ],
         "repeat": "",
         "crontab": "",
         "once": false,
