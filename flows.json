@@ -3212,7 +3212,7 @@
         "type": "debug",
         "z": "a3ba71e6b430d658",
         "name": "debug 3",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -3263,7 +3263,7 @@
         "z": "a3ba71e6b430d658",
         "name": "",
         "property": "payload",
-        "pattern": "x88 => sensorType, \nb8 => packetNumber,\nb8 => q1,\nb16=> r1,\nb16 => r2,\nb8 => r3\n",
+        "pattern": "x88 => sensorType, \nb8 => packetNumber,\nl16=> r1,\nl16 => r2,\nl16 => r3\n",
         "x": 670,
         "y": 440,
         "wires": [
