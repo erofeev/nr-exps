@@ -3327,7 +3327,7 @@
         "id": "09c98e7fee330b28",
         "type": "inject",
         "z": "a3ba71e6b430d658",
-        "name": "",
+        "name": "start",
         "props": [
             {
                 "p": "payload.scan",
@@ -3352,7 +3352,7 @@
         "id": "1e42574b251c41dc",
         "type": "inject",
         "z": "a3ba71e6b430d658",
-        "name": "",
+        "name": "stop",
         "props": [
             {
                 "p": "payload.scan",
