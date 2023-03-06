@@ -3268,7 +3268,7 @@
         "z": "a3ba71e6b430d658",
         "name": "",
         "property": "payload",
-        "pattern": "b8 => qw1, b8 => qw2",
+        "pattern": "b16 => qw1, b16 => qw2",
         "x": 610,
         "y": 560,
         "wires": [
