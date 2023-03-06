@@ -2804,7 +2804,7 @@
                 "vt": "str"
             }
         ],
-        "repeat": "1",
+        "repeat": "60",
         "crontab": "",
         "once": true,
         "onceDelay": "0.1",
@@ -2842,7 +2842,7 @@
                 "vt": "str"
             }
         ],
-        "repeat": "1",
+        "repeat": "60",
         "crontab": "",
         "once": true,
         "onceDelay": "0.1",
