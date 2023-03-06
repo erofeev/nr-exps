@@ -3220,7 +3220,7 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 720,
+        "x": 780,
         "y": 560,
         "wires": []
     },
@@ -3268,11 +3268,13 @@
         "z": "a3ba71e6b430d658",
         "name": "",
         "property": "payload",
-        "pattern": "x8 => float1, b32f => integer",
+        "pattern": "b8 => qw1, b8 => qw2",
         "x": 610,
-        "y": 480,
+        "y": 560,
         "wires": [
-            []
+            [
+                "4c51bb34a42f65e2"
+            ]
         ]
     },
     {
@@ -3290,7 +3292,7 @@
         "y": 560,
         "wires": [
             [
-                "4c51bb34a42f65e2"
+                "868f578e4866d1e6"
             ]
         ]
     }
