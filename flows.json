@@ -3259,7 +3259,7 @@
         "type": "function",
         "z": "a3ba71e6b430d658",
         "name": "function 2",
-        "func": "msg.type = msg.payload.advertisement.localName;\nmsg.address = msg.payload.address;\nmsg.payload = msg.payload.advertisement.serviceData[0].data;\nreturn msg;",
+        "func": "msg.type = msg.payload.advertisement.localName;\nmsg.address = msg.payload.address;\nmsg.payload = msg.payload.advertisement.serviceData[0].data;\nreturn msg; ",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
