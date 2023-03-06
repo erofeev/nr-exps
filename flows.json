@@ -3269,8 +3269,8 @@
         "name": "",
         "property": "payload",
         "pattern": "b24 => sensorType, \nb8 => packetNumber,\nb48 => mac,\nb16 => qw4",
-        "x": 730,
-        "y": 660,
+        "x": 850,
+        "y": 640,
         "wires": [
             [
                 "4c51bb34a42f65e2"
@@ -3292,33 +3292,19 @@
         "y": 560,
         "wires": [
             [
-                "6f8cedb39c0d3850",
-                "4c51bb34a42f65e2"
+                "19dc7d9777df5c41"
             ]
         ]
     },
     {
-        "id": "6f8cedb39c0d3850",
-        "type": "BLE device",
+        "id": "19dc7d9777df5c41",
+        "type": "Xiaomi BLE",
         "z": "a3ba71e6b430d658",
         "name": "",
-        "x": 670,
-        "y": 460,
-        "wires": [
-            [
-                "048b012b4d3169a9"
-            ]
-        ]
-    },
-    {
-        "id": "048b012b4d3169a9",
-        "type": "BLE in",
-        "z": "a3ba71e6b430d658",
-        "topic": "",
-        "characteristic": "0x0038",
-        "name": "",
-        "x": 810,
-        "y": 380,
+        "address": "",
+        "scanningTimeout": 60,
+        "x": 570,
+        "y": 680,
         "wires": [
             [
                 "4c51bb34a42f65e2"
