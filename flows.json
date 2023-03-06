@@ -3271,19 +3271,6 @@
         ]
     },
     {
-        "id": "1e0e66151a62f05a",
-        "type": "BLE in",
-        "z": "a3ba71e6b430d658",
-        "topic": "",
-        "characteristic": "",
-        "name": "",
-        "x": 170,
-        "y": 580,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "ae428c81cfb336c9",
         "type": "BLE Scan",
         "z": "a3ba71e6b430d658",
