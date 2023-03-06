@@ -3230,7 +3230,7 @@
         "type": "Xiaomi BLE",
         "z": "a3ba71e6b430d658",
         "name": "",
-        "address": "a4:c1:38:87:f3:db",
+        "address": "",
         "scanningTimeout": "10",
         "x": 310,
         "y": 460,
@@ -3265,7 +3265,7 @@
         "props": [
             {
                 "p": "address",
-                "v": "A4:C1:38:10:1A:AF",
+                "v": "a4:c1:38:10:1a:af",
                 "vt": "str"
             }
         ],
