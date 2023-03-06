@@ -3384,11 +3384,9 @@
         "name": "Start scan every 1 min",
         "props": [
             {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
+                "p": "payload.scan",
+                "v": "true",
+                "vt": "bool"
             }
         ],
         "repeat": "30",
@@ -3396,8 +3394,6 @@
         "once": true,
         "onceDelay": 0.1,
         "topic": "",
-        "payload": "",
-        "payloadType": "date",
         "x": 150,
         "y": 540,
         "wires": [
