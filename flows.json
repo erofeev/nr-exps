@@ -3292,21 +3292,6 @@
         "y": 560,
         "wires": [
             [
-                "19dc7d9777df5c41"
-            ]
-        ]
-    },
-    {
-        "id": "19dc7d9777df5c41",
-        "type": "Xiaomi BLE",
-        "z": "a3ba71e6b430d658",
-        "name": "",
-        "address": "",
-        "scanningTimeout": 60,
-        "x": 570,
-        "y": 680,
-        "wires": [
-            [
                 "4c51bb34a42f65e2"
             ]
         ]
