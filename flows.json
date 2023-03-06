@@ -3208,21 +3208,6 @@
         ]
     },
     {
-        "id": "cf237327f911d7d5",
-        "type": "Xiaomi BLE",
-        "z": "a3ba71e6b430d658",
-        "name": "",
-        "address": "",
-        "scanningTimeout": "10",
-        "x": 270,
-        "y": 460,
-        "wires": [
-            [
-                "4c51bb34a42f65e2"
-            ]
-        ]
-    },
-    {
         "id": "4c51bb34a42f65e2",
         "type": "debug",
         "z": "a3ba71e6b430d658",
@@ -3259,9 +3244,7 @@
         "x": 90,
         "y": 460,
         "wires": [
-            [
-                "cf237327f911d7d5"
-            ]
+            []
         ]
     },
     {
