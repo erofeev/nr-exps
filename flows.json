@@ -3236,14 +3236,22 @@
                 "t": "eq",
                 "v": "LYWSD03MMC",
                 "vt": "str"
+            },
+            {
+                "t": "cont",
+                "v": "ATC_",
+                "vt": "str"
             }
         ],
         "checkall": "true",
         "repair": false,
-        "outputs": 1,
+        "outputs": 2,
         "x": 310,
         "y": 560,
         "wires": [
+            [
+                "323f783d44c24f88"
+            ],
             [
                 "323f783d44c24f88"
             ]
@@ -3278,7 +3286,9 @@
         "x": 520,
         "y": 560,
         "wires": [
-            []
+            [
+                "4c51bb34a42f65e2"
+            ]
         ]
     },
     {
@@ -3291,101 +3301,6 @@
         "wires": [
             [
                 "995ab22438ad7180"
-            ]
-        ]
-    },
-    {
-        "id": "14e877d88869cf40",
-        "type": "BLE scanner",
-        "z": "a3ba71e6b430d658",
-        "name": "",
-        "services": "",
-        "servicesType": "str",
-        "continuous": true,
-        "x": 230,
-        "y": 480,
-        "wires": [
-            [
-                "7802fccae8aad910"
-            ]
-        ]
-    },
-    {
-        "id": "1a63417d07befce9",
-        "type": "inject",
-        "z": "a3ba71e6b430d658",
-        "name": "",
-        "props": [
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "5",
-        "crontab": "",
-        "once": false,
-        "onceDelay": "0.1",
-        "topic": "start",
-        "x": 90,
-        "y": 420,
-        "wires": [
-            [
-                "14e877d88869cf40"
-            ]
-        ]
-    },
-    {
-        "id": "f5b97a70f335797f",
-        "type": "BLE device",
-        "z": "a3ba71e6b430d658",
-        "name": "",
-        "x": 550,
-        "y": 400,
-        "wires": [
-            [
-                "4c51bb34a42f65e2",
-                "036f20e4262d0f5a"
-            ]
-        ]
-    },
-    {
-        "id": "7802fccae8aad910",
-        "type": "switch",
-        "z": "a3ba71e6b430d658",
-        "name": "",
-        "property": "name",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "eq",
-                "v": "LYWSD03MMC",
-                "vt": "str"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 1,
-        "x": 390,
-        "y": 480,
-        "wires": [
-            [
-                "f5b97a70f335797f",
-                "4c51bb34a42f65e2"
-            ]
-        ]
-    },
-    {
-        "id": "036f20e4262d0f5a",
-        "type": "BLE in",
-        "z": "a3ba71e6b430d658",
-        "topic": "",
-        "characteristic": "",
-        "name": "",
-        "x": 790,
-        "y": 400,
-        "wires": [
-            [
-                "4c51bb34a42f65e2"
             ]
         ]
     }
