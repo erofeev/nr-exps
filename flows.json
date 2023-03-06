@@ -3303,7 +3303,7 @@
         "name": "",
         "services": "",
         "servicesType": "str",
-        "continuous": false,
+        "continuous": true,
         "x": 230,
         "y": 480,
         "wires": [
