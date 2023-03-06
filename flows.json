@@ -296,7 +296,7 @@
         "tls": "",
         "clientid": "",
         "autoConnect": false,
-        "usetls": false,
+        "usetls": true,
         "protocolVersion": "4",
         "keepalive": "60",
         "cleansession": true,
@@ -2879,7 +2879,6 @@
         "id": "65ee833ee7ebf8b1",
         "type": "config",
         "z": "6f858e2bc48be764",
-        "d": true,
         "name": "GLOBAL CONFIG",
         "properties": [
             {
@@ -2907,7 +2906,7 @@
                 "tot": "str"
             }
         ],
-        "active": false,
+        "active": true,
         "x": 250,
         "y": 80,
         "wires": []
@@ -2943,7 +2942,7 @@
                 "tot": "str"
             }
         ],
-        "active": true,
+        "active": false,
         "x": 510,
         "y": 80,
         "wires": []
