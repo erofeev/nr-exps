@@ -3203,8 +3203,7 @@
         "y": 360,
         "wires": [
             [
-                "c2a54a41bc5646a3",
-                "4ab50ee612d599f8"
+                "c2a54a41bc5646a3"
             ]
         ]
     },
@@ -3303,7 +3302,7 @@
         "name": "",
         "services": "",
         "servicesType": "str",
-        "continuous": false,
+        "continuous": true,
         "x": 250,
         "y": 500,
         "wires": [
