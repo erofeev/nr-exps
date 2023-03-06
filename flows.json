@@ -3308,7 +3308,7 @@
         "y": 480,
         "wires": [
             [
-                "4c51bb34a42f65e2"
+                "7802fccae8aad910"
             ]
         ]
     },
@@ -3341,7 +3341,32 @@
         "type": "BLE device",
         "z": "a3ba71e6b430d658",
         "name": "",
-        "x": 410,
+        "x": 550,
+        "y": 400,
+        "wires": [
+            [
+                "4c51bb34a42f65e2"
+            ]
+        ]
+    },
+    {
+        "id": "7802fccae8aad910",
+        "type": "switch",
+        "z": "a3ba71e6b430d658",
+        "name": "",
+        "property": "name",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "LYWSD03MMC",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 390,
         "y": 480,
         "wires": [
             [
