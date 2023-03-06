@@ -3331,9 +3331,9 @@
         "name": "",
         "props": [
             {
-                "p": "state",
-                "v": "poweredOff",
-                "vt": "str"
+                "p": "payload.scan",
+                "v": "false",
+                "vt": "bool"
             }
         ],
         "repeat": "",
