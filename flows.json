@@ -3315,7 +3315,48 @@
         "y": 500,
         "wires": [
             [
-                "cf237327f911d7d5"
+                "cf237327f911d7d5",
+                "15b982b9188a1bb9"
+            ]
+        ]
+    },
+    {
+        "id": "6961fe825bc3d6cf",
+        "type": "BLE device",
+        "z": "a3ba71e6b430d658",
+        "name": "",
+        "x": 530,
+        "y": 560,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "aa9d53d8d7f8356f",
+        "type": "BLE in",
+        "z": "a3ba71e6b430d658",
+        "topic": "",
+        "characteristic": "",
+        "name": "",
+        "x": 750,
+        "y": 560,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "15b982b9188a1bb9",
+        "type": "BLE scanner",
+        "z": "a3ba71e6b430d658",
+        "name": "",
+        "services": "",
+        "servicesType": "str",
+        "continuous": true,
+        "x": 410,
+        "y": 660,
+        "wires": [
+            [
+                "4c51bb34a42f65e2"
             ]
         ]
     }
