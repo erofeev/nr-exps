@@ -3268,7 +3268,7 @@
         "z": "a3ba71e6b430d658",
         "name": "",
         "property": "payload",
-        "pattern": "b16 => qw1, \nb16 => qw2,\nb16 => qw3,\nb16 => qw4",
+        "pattern": "b24 => sensorType, \nb8 => packetNumber,\nb48 => mac,\nb16 => qw4",
         "x": 610,
         "y": 560,
         "wires": [
