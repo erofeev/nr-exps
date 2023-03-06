@@ -3331,7 +3331,7 @@
         "props": [
             {
                 "p": "payload.scan",
-                "v": "false",
+                "v": "true",
                 "vt": "bool"
             }
         ],
@@ -3356,7 +3356,7 @@
         "props": [
             {
                 "p": "payload.scan",
-                "v": "true",
+                "v": "false",
                 "vt": "bool"
             }
         ],
