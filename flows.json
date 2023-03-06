@@ -3233,8 +3233,7 @@
         "y": 560,
         "wires": [
             [
-                "995ab22438ad7180",
-                "4ab50ee612d599f8"
+                "995ab22438ad7180"
             ]
         ]
     },
@@ -3291,22 +3290,6 @@
         "libs": [],
         "x": 520,
         "y": 560,
-        "wires": [
-            [
-                "4c51bb34a42f65e2"
-            ]
-        ]
-    },
-    {
-        "id": "4ab50ee612d599f8",
-        "type": "BLE scanner",
-        "z": "a3ba71e6b430d658",
-        "name": "",
-        "services": "",
-        "servicesType": "str",
-        "continuous": true,
-        "x": 250,
-        "y": 500,
         "wires": [
             [
                 "4c51bb34a42f65e2"
