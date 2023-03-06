@@ -3083,7 +3083,7 @@
             {
                 "p": "thing.type",
                 "pt": "flow",
-                "to": "tv",
+                "to": "th_sensor",
                 "tot": "str"
             }
         ],
@@ -3141,35 +3141,6 @@
         "wires": []
     },
     {
-        "id": "95e3c1d308e39126",
-        "type": "inject",
-        "z": "a3ba71e6b430d658",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "1",
-        "crontab": "",
-        "once": true,
-        "onceDelay": "0.1",
-        "topic": "temperature",
-        "payload": "",
-        "payloadType": "date",
-        "x": 210,
-        "y": 280,
-        "wires": [
-            [
-                "c2a54a41bc5646a3"
-            ]
-        ]
-    },
-    {
         "id": "c2a54a41bc5646a3",
         "type": "subflow:4778c81a96bb6f95",
         "z": "a3ba71e6b430d658",
@@ -3177,35 +3148,6 @@
         "x": 700,
         "y": 280,
         "wires": []
-    },
-    {
-        "id": "267c514201cc5782",
-        "type": "inject",
-        "z": "a3ba71e6b430d658",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "1",
-        "crontab": "",
-        "once": true,
-        "onceDelay": "0.1",
-        "topic": "custom2222",
-        "payload": "",
-        "payloadType": "date",
-        "x": 210,
-        "y": 360,
-        "wires": [
-            [
-                "c2a54a41bc5646a3"
-            ]
-        ]
     },
     {
         "id": "995ab22438ad7180",
@@ -3277,16 +3219,25 @@
         "type": "function",
         "z": "a3ba71e6b430d658",
         "name": "Obtain T,H,B",
-        "func": "var id = msg.payload.noteId;\nvar r1 = msg.payload.r1;\nvar r2 = msg.payload.r2;\nvar r3 = msg.payload.r3;\ndelete msg.payload;\ndelete msg.original;\n\n\nif (id == 13) {\nmsg.temperature = r2/10;\nmsg.humidity = r3/10;\n}\nif (id == 10) {\n    msg.battery = r2;\n}\n\nreturn msg;",
-        "outputs": 1,
+        "func": "var id = msg.payload.noteId;\nvar r1 = msg.payload.r1;\nvar r2 = msg.payload.r2;\nvar r3 = msg.payload.r3;\ndelete msg.payload;\ndelete msg.original;\n\nvar nmsg1 = null;\nvar nmsg2 = null;\nvar nmsg3 = null;\n\nif (id == 13) {\n    nmsg1.payload = r2/10;\n    nmsg1.topic = msg.localName + \"/temperature\";\n    nmsg2.payload = r3 / 10;\n    nmsg2.topic = msg.localName + \"/humidity\";\n}\nif (id == 10) {\n\n    nmsg3.payload = r2;\n    nmsg3.topic = msg.localName + \"/battery\";\n}\n\n\nreturn nmsg1, nmsg2, nmsg3;",
+        "outputs": 3,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 710,
-        "y": 540,
+        "x": 690,
+        "y": 520,
         "wires": [
             [
+                "f0b87857e46ef01f",
+                "c2a54a41bc5646a3"
+            ],
+            [
+                "c2a54a41bc5646a3",
+                "f0b87857e46ef01f"
+            ],
+            [
+                "c2a54a41bc5646a3",
                 "f0b87857e46ef01f"
             ]
         ]
@@ -3304,7 +3255,7 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 780,
+        "x": 800,
         "y": 580,
         "wires": []
     },
