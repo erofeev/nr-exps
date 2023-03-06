@@ -2911,6 +2911,18 @@
                 "pt": "global",
                 "to": "1883",
                 "tot": "str"
+            },
+            {
+                "p": "LocalBroker.user",
+                "pt": "global",
+                "to": "devicemqtt",
+                "tot": "str"
+            },
+            {
+                "p": "LocalBroker.pswd",
+                "pt": "flow",
+                "to": "devicemqtt",
+                "tot": "str"
             }
         ],
         "active": true,
