@@ -3269,7 +3269,9 @@
         "x": 110,
         "y": 500,
         "wires": [
-            []
+            [
+                "18b2fc457c6dbe2e"
+            ]
         ]
     },
     {
@@ -3280,8 +3282,34 @@
         "services": "",
         "servicesType": "str",
         "continuous": false,
-        "x": 230,
+        "x": 270,
         "y": 460,
+        "wires": [
+            [
+                "4c51bb34a42f65e2"
+            ]
+        ]
+    },
+    {
+        "id": "1e0e66151a62f05a",
+        "type": "BLE in",
+        "z": "a3ba71e6b430d658",
+        "topic": "",
+        "characteristic": "",
+        "name": "",
+        "x": 170,
+        "y": 580,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "18b2fc457c6dbe2e",
+        "type": "BLE device",
+        "z": "a3ba71e6b430d658",
+        "name": "",
+        "x": 270,
+        "y": 500,
         "wires": [
             [
                 "4c51bb34a42f65e2"
