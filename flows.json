@@ -3230,8 +3230,8 @@
         "type": "Xiaomi BLE",
         "z": "a3ba71e6b430d658",
         "name": "",
-        "address": "",
-        "scanningTimeout": "5",
+        "address": "a4:c1:38:87:f3:db",
+        "scanningTimeout": "10",
         "x": 310,
         "y": 460,
         "wires": [
