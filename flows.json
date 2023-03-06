@@ -3283,7 +3283,7 @@
         "type": "function",
         "z": "a3ba71e6b430d658",
         "name": "function 2",
-        "func": "msg.payload = msg.payload.advertisement.serviceData[0].data;\nmsg.address = {};\nmsg.address = msg.payload.address;\nreturn msg;",
+        "func": "msg.payload.data = msg.payload.advertisement.serviceData[0].data;\nmsg.payload.address = msg.payload.address;\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
