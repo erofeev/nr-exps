@@ -3210,11 +3210,6 @@
         "name": "",
         "props": [
             {
-                "p": "scan",
-                "v": "true",
-                "vt": "bool"
-            },
-            {
                 "p": "address",
                 "v": "A4:C1:38:10:1A:AF",
                 "vt": "str"
