@@ -2861,6 +2861,7 @@
         "id": "65ee833ee7ebf8b1",
         "type": "config",
         "z": "6f858e2bc48be764",
+        "d": true,
         "name": "GLOBAL CONFIG",
         "properties": [
             {
@@ -2888,7 +2889,7 @@
                 "tot": "str"
             }
         ],
-        "active": true,
+        "active": false,
         "x": 250,
         "y": 80,
         "wires": []
@@ -2897,7 +2898,6 @@
         "id": "c659c63e28d7c47e",
         "type": "config",
         "z": "6f858e2bc48be764",
-        "d": true,
         "name": "GLOBAL CONFIG",
         "properties": [
             {
@@ -2925,7 +2925,7 @@
                 "tot": "str"
             }
         ],
-        "active": false,
+        "active": true,
         "x": 510,
         "y": 80,
         "wires": []
