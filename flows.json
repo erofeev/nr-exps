@@ -3237,6 +3237,25 @@
         "y": 560,
         "wires": [
             [
+                "127e89c7f4bf36c7"
+            ]
+        ]
+    },
+    {
+        "id": "127e89c7f4bf36c7",
+        "type": "function",
+        "z": "a3ba71e6b430d658",
+        "name": "function 2",
+        "func": "msg.address = msg.payload.address;\nmsg.scan = true;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 600,
+        "wires": [
+            [
                 "cf237327f911d7d5"
             ]
         ]
