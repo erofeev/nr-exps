@@ -3313,7 +3313,7 @@
         "type": "scan ble",
         "z": "a3ba71e6b430d658",
         "uuids": "",
-        "duplicates": false,
+        "duplicates": true,
         "name": "",
         "x": 190,
         "y": 460,
