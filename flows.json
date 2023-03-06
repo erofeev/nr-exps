@@ -3279,6 +3279,26 @@
         "y": 600,
         "wires": [
             [
+                "02d719c3f3d056ca"
+            ]
+        ]
+    },
+    {
+        "id": "02d719c3f3d056ca",
+        "type": "rbe",
+        "z": "a3ba71e6b430d658",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload.address",
+        "topi": "topic",
+        "x": 630,
+        "y": 540,
+        "wires": [
+            [
                 "4c51bb34a42f65e2"
             ]
         ]
