@@ -3234,7 +3234,8 @@
         "wires": [
             [],
             [
-                "323f783d44c24f88"
+                "323f783d44c24f88",
+                "f0b87857e46ef01f"
             ]
         ]
     },
@@ -3304,8 +3305,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 940,
-        "y": 560,
+        "x": 960,
+        "y": 620,
         "wires": []
     },
     {
