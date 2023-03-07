@@ -3247,7 +3247,7 @@
         "type": "debug",
         "z": "a3ba71e6b430d658",
         "name": "debug 3",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -3363,6 +3363,26 @@
         "name": "",
         "x": 360,
         "y": 440,
+        "wires": [
+            [
+                "d601643cfdc272ec"
+            ]
+        ]
+    },
+    {
+        "id": "d601643cfdc272ec",
+        "type": "rbe",
+        "z": "a3ba71e6b430d658",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload.other",
+        "topi": "id",
+        "x": 530,
+        "y": 400,
         "wires": [
             [
                 "f0b87857e46ef01f"
