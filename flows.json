@@ -3247,7 +3247,7 @@
         "type": "debug",
         "z": "a3ba71e6b430d658",
         "name": "debug 3",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -3348,6 +3348,26 @@
         "name": "",
         "x": 390,
         "y": 520,
+        "wires": [
+            [
+                "dad0a7dd1d8dccf3"
+            ]
+        ]
+    },
+    {
+        "id": "dad0a7dd1d8dccf3",
+        "type": "rbe",
+        "z": "a3ba71e6b430d658",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "peripheralUuid",
+        "x": 410,
+        "y": 660,
         "wires": [
             [
                 "995ab22438ad7180"
