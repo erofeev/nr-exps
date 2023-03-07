@@ -3663,37 +3663,20 @@
         "id": "c0b6855553c41c6a",
         "type": "function",
         "z": "9da1654216b6a11d",
-        "name": "Thing Model Description",
+        "name": "Clear all flow vars",
         "func": "var keys = flow.keys();\nfor (var index = 0; index < keys.length; ++index) {\n    flow.set(keys[index]);\n}\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 370,
+        "x": 350,
         "y": 60,
         "wires": [
             [
-                "17895f2f29039313",
-                "db892960f12b4560"
+                "17895f2f29039313"
             ]
         ]
-    },
-    {
-        "id": "db892960f12b4560",
-        "type": "debug",
-        "z": "9da1654216b6a11d",
-        "name": "debug 5",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 820,
-        "y": 460,
-        "wires": []
     },
     {
         "id": "8494ad7b1fc92df3",
