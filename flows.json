@@ -3721,12 +3721,6 @@
                 "pt": "flow",
                 "to": "registry",
                 "tot": "str"
-            },
-            {
-                "p": "thing",
-                "pt": "flow",
-                "to": "123",
-                "tot": "str"
             }
         ],
         "active": true,
