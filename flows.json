@@ -3345,6 +3345,31 @@
         "y": 260,
         "wires": [
             [
+                "df10096a3a9da91b"
+            ]
+        ]
+    },
+    {
+        "id": "df10096a3a9da91b",
+        "type": "switch",
+        "z": "a3ba71e6b430d658",
+        "name": "",
+        "property": "payload.localName",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "LYWSD03MMC",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 410,
+        "y": 400,
+        "wires": [
+            [
                 "f0b87857e46ef01f"
             ]
         ]
