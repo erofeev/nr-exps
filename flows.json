@@ -3379,7 +3379,7 @@
         "type": "function",
         "z": "a3ba71e6b430d658",
         "name": "function 3",
-        "func": "msg.topic = \"out\";\nreturn msg;",
+        "func": "msg.topic = \"out\";\nmsg.payload = JSON.stringify(msg.advertisement);\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
