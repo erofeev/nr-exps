@@ -3337,20 +3337,6 @@
         ]
     },
     {
-        "id": "b175adf9ae1a15fa",
-        "type": "Beacon-Scanner",
-        "z": "a3ba71e6b430d658",
-        "name": "Beacon Scanner",
-        "gracePeriod": 1000,
-        "x": 140,
-        "y": 380,
-        "wires": [
-            [
-                "f0b87857e46ef01f"
-            ]
-        ]
-    },
-    {
         "id": "0e224fc523b442a6",
         "type": "BLE Beacon Scanner",
         "z": "a3ba71e6b430d658",
