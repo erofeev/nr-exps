@@ -3279,9 +3279,7 @@
         "x": 240,
         "y": 620,
         "wires": [
-            [
-                "548aecb7c7c64c6a"
-            ]
+            []
         ]
     },
     {
@@ -3334,23 +3332,7 @@
         "y": 540,
         "wires": [
             [
-                "dd86d58776dbddd6",
-                "548aecb7c7c64c6a"
-            ]
-        ]
-    },
-    {
-        "id": "548aecb7c7c64c6a",
-        "type": "scan ble",
-        "z": "a3ba71e6b430d658",
-        "uuids": "",
-        "duplicates": true,
-        "name": "",
-        "x": 390,
-        "y": 520,
-        "wires": [
-            [
-                "dad0a7dd1d8dccf3"
+                "dd86d58776dbddd6"
             ]
         ]
     },
