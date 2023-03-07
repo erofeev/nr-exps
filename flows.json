@@ -3247,7 +3247,7 @@
         "type": "debug",
         "z": "a3ba71e6b430d658",
         "name": "debug 3",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -3277,9 +3277,11 @@
         "allowrate": false,
         "outputs": 1,
         "x": 240,
-        "y": 620,
+        "y": 400,
         "wires": [
-            []
+            [
+                "8be0fd39d1c31073"
+            ]
         ]
     },
     {
@@ -3304,7 +3306,7 @@
         "to": "",
         "reg": false,
         "x": 190,
-        "y": 580,
+        "y": 360,
         "wires": [
             [
                 "20e3ed0ce94c14f9"
@@ -3329,10 +3331,11 @@
         "onceDelay": 0.1,
         "topic": "",
         "x": 150,
-        "y": 540,
+        "y": 320,
         "wires": [
             [
-                "dd86d58776dbddd6"
+                "dd86d58776dbddd6",
+                "8be0fd39d1c31073"
             ]
         ]
     },
@@ -3349,44 +3352,44 @@
         "property": "advertisement",
         "topi": "peripheralUuid",
         "x": 410,
-        "y": 660,
-        "wires": [
-            [
-                "995ab22438ad7180"
-            ]
-        ]
-    },
-    {
-        "id": "d601643cfdc272ec",
-        "type": "rbe",
-        "z": "a3ba71e6b430d658",
-        "name": "",
-        "func": "rbe",
-        "gap": "",
-        "start": "",
-        "inout": "out",
-        "septopics": true,
-        "property": "payload.other",
-        "topi": "payload.id",
-        "x": 530,
         "y": 400,
         "wires": [
             [
-                "f0b87857e46ef01f"
+                "e33ab8329b2dce73"
             ]
         ]
     },
     {
-        "id": "9c3899bf499eb212",
-        "type": "BLE Beacon Scanner",
+        "id": "8be0fd39d1c31073",
+        "type": "scan ble",
         "z": "a3ba71e6b430d658",
+        "uuids": "",
+        "duplicates": false,
         "name": "",
-        "x": 360,
-        "y": 300,
+        "x": 410,
+        "y": 360,
         "wires": [
             [
-                "d601643cfdc272ec",
-                "f0b87857e46ef01f"
+                "dad0a7dd1d8dccf3"
+            ]
+        ]
+    },
+    {
+        "id": "e33ab8329b2dce73",
+        "type": "function",
+        "z": "a3ba71e6b430d658",
+        "name": "function 3",
+        "func": "msg.topic = \"out\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 400,
+        "y": 500,
+        "wires": [
+            [
+                "c2a54a41bc5646a3"
             ]
         ]
     }
