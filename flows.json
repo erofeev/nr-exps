@@ -3773,7 +3773,7 @@
         "type": "function",
         "z": "9da1654216b6a11d",
         "name": "function 3",
-        "func": "msg.topic = \"+/config\";\nreturn msg;",
+        "func": "msg.topic = \"+/+/config\";\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
