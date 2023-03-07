@@ -3279,7 +3279,9 @@
         "x": 240,
         "y": 620,
         "wires": [
-            []
+            [
+                "548aecb7c7c64c6a"
+            ]
         ]
     },
     {
@@ -3332,46 +3334,23 @@
         "y": 540,
         "wires": [
             [
-                "dd86d58776dbddd6"
+                "dd86d58776dbddd6",
+                "548aecb7c7c64c6a"
             ]
         ]
     },
     {
-        "id": "df10096a3a9da91b",
-        "type": "switch",
+        "id": "548aecb7c7c64c6a",
+        "type": "scan ble",
         "z": "a3ba71e6b430d658",
+        "uuids": "",
+        "duplicates": false,
         "name": "",
-        "property": "payload.localName",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "cont",
-                "v": "ATC_",
-                "vt": "str"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 1,
-        "x": 410,
-        "y": 400,
+        "x": 290,
+        "y": 480,
         "wires": [
             [
-                "f0b87857e46ef01f"
-            ]
-        ]
-    },
-    {
-        "id": "77a47c829b59a91e",
-        "type": "BLE Beacon Scanner",
-        "z": "a3ba71e6b430d658",
-        "name": "",
-        "x": 200,
-        "y": 220,
-        "wires": [
-            [
-                "df10096a3a9da91b",
-                "f0b87857e46ef01f"
+                "995ab22438ad7180"
             ]
         ]
     }
