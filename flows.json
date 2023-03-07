@@ -3528,7 +3528,7 @@
         "z": "9da1654216b6a11d",
         "name": "Connect to local broker",
         "func": "msg.action = \"connect\";\nmsg.broker = { broker: \"\", port: \"\"}\nmsg.broker.broker = global.get(\"LocalBroker.host\") || \"\";\nmsg.broker.port = global.get(\"LocalBroker.port\") || \"\";\nmsg.broker.username = global.get(\"LocalBroker.user\") || \"\";\nmsg.broker.password = global.get(\"LocalBroker.pswd\") || \"\";\nmsg.broker.force  = true;\nmsg.broker.clientid = flow.get(\"$parent.thing.type\") || \"na\";\nmsg.broker.clientid = msg.broker.clientid + ':c:' + + Math.random();\nmsg.broker.clientid = msg.broker.clientid + flow.get(\"$parent.thing.id\") || \"na\";\n\nmsg2.action = \"subscribe\";\nmsg2.topic = \"#\";\n\nreturn [msg, msg2];",
-        "outputs": 1,
+        "outputs": 2,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
@@ -3538,6 +3538,9 @@
         "wires": [
             [
                 "bd2d3ae6322f626c"
+            ],
+            [
+                "c97f797a8a59a470"
             ]
         ]
     },
@@ -3557,5 +3560,30 @@
         "x": 780,
         "y": 220,
         "wires": []
+    },
+    {
+        "id": "c97f797a8a59a470",
+        "type": "delay",
+        "z": "9da1654216b6a11d",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 460,
+        "y": 280,
+        "wires": [
+            [
+                "bd2d3ae6322f626c"
+            ]
+        ]
     }
 ]
