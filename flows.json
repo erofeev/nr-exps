@@ -3379,7 +3379,7 @@
         "type": "function",
         "z": "a3ba71e6b430d658",
         "name": "Data out",
-        "func": "msg.topic = \"out\";\nmsg.payload = JSON.stringify(msg);\nreturn msg;",
+        "func": "var nmsg = {};\nnmsg.topic = \"out\";\nnmsg.payload = {};\nnmsg.payload.id = msg.payload.peripheralUuid;\nnmsg.payload.advertisement = msg.advertisement;\n\nreturn nmsg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
