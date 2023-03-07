@@ -3251,8 +3251,8 @@
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
+        "complete": "payload",
+        "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
         "x": 920,
@@ -3364,7 +3364,9 @@
         "x": 360,
         "y": 440,
         "wires": [
-            []
+            [
+                "f0b87857e46ef01f"
+            ]
         ]
     }
 ]
