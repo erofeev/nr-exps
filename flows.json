@@ -3737,7 +3737,7 @@
         "func": "\nmsg.payload = flow.get(\"thing\");\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "initialize": "// Code added here will be run once\n// whenever the node is started.\nflow.set(\"thing.topics\",\"\");",
+        "initialize": "",
         "finalize": "",
         "libs": [],
         "x": 450,
