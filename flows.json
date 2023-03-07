@@ -3551,9 +3551,9 @@
         "y": 120,
         "wires": [
             [
-                "17895f2f29039313",
                 "993a60cddde7da1f",
-                "c089681eaf2455c2"
+                "c089681eaf2455c2",
+                "c0b6855553c41c6a"
             ]
         ]
     },
@@ -3577,7 +3577,7 @@
             }
         ],
         "active": true,
-        "x": 300,
+        "x": 590,
         "y": 60,
         "wires": [],
         "info": "пвапрвап"
@@ -3647,7 +3647,7 @@
         "type": "debug",
         "z": "9da1654216b6a11d",
         "name": "debug 4",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -3657,6 +3657,42 @@
         "statusType": "auto",
         "x": 730,
         "y": 200,
+        "wires": []
+    },
+    {
+        "id": "c0b6855553c41c6a",
+        "type": "function",
+        "z": "9da1654216b6a11d",
+        "name": "Thing Model Description",
+        "func": "msg.payload = flow.toString();\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 370,
+        "y": 60,
+        "wires": [
+            [
+                "17895f2f29039313",
+                "db892960f12b4560"
+            ]
+        ]
+    },
+    {
+        "id": "db892960f12b4560",
+        "type": "debug",
+        "z": "9da1654216b6a11d",
+        "name": "debug 5",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 820,
+        "y": 460,
         "wires": []
     }
 ]
