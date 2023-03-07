@@ -3349,5 +3349,18 @@
                 "f0b87857e46ef01f"
             ]
         ]
+    },
+    {
+        "id": "0e224fc523b442a6",
+        "type": "BLE Beacon Scanner",
+        "z": "a3ba71e6b430d658",
+        "name": "",
+        "x": 140,
+        "y": 260,
+        "wires": [
+            [
+                "f0b87857e46ef01f"
+            ]
+        ]
     }
 ]
