@@ -3577,7 +3577,7 @@
             }
         ],
         "active": true,
-        "x": 590,
+        "x": 570,
         "y": 60,
         "wires": [],
         "info": "пвапрвап"
@@ -3593,7 +3593,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 360,
+        "x": 350,
         "y": 120,
         "wires": [
             [
@@ -3606,7 +3606,7 @@
         "type": "subflow:c1aee611e52a8323",
         "z": "9da1654216b6a11d",
         "name": "",
-        "x": 600,
+        "x": 590,
         "y": 120,
         "wires": []
     },
@@ -3615,7 +3615,7 @@
         "type": "subflow:ed5a77f4448c2cf5",
         "z": "9da1654216b6a11d",
         "name": "",
-        "x": 570,
+        "x": 580,
         "y": 200,
         "wires": [
             [
@@ -3634,7 +3634,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 360,
+        "x": 350,
         "y": 200,
         "wires": [
             [
@@ -3655,7 +3655,7 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 730,
+        "x": 780,
         "y": 200,
         "wires": []
     },
@@ -3670,37 +3670,12 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 350,
+        "x": 330,
         "y": 60,
         "wires": [
             [
                 "17895f2f29039313"
             ]
-        ]
-    },
-    {
-        "id": "8494ad7b1fc92df3",
-        "type": "change",
-        "z": "9da1654216b6a11d",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 260,
-        "y": 340,
-        "wires": [
-            []
         ]
     }
 ]
