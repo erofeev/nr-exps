@@ -3255,7 +3255,7 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 920,
+        "x": 900,
         "y": 520,
         "wires": []
     },
@@ -3386,7 +3386,8 @@
         "y": 360,
         "wires": [
             [
-                "d601643cfdc272ec"
+                "d601643cfdc272ec",
+                "f0b87857e46ef01f"
             ]
         ]
     }
