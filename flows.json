@@ -3251,8 +3251,8 @@
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
+        "complete": "payload",
+        "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
         "x": 900,
@@ -3377,13 +3377,12 @@
         ]
     },
     {
-        "id": "936d4a806c2ac6e9",
-        "type": "Beacon-Scanner",
+        "id": "9c3899bf499eb212",
+        "type": "BLE Beacon Scanner",
         "z": "a3ba71e6b430d658",
-        "name": "Beacon Scanner",
-        "gracePeriod": "100",
-        "x": 340,
-        "y": 360,
+        "name": "",
+        "x": 360,
+        "y": 300,
         "wires": [
             [
                 "d601643cfdc272ec",
