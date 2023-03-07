@@ -3664,9 +3664,9 @@
         "type": "function",
         "z": "9da1654216b6a11d",
         "name": "Thing Model Description",
-        "func": "for (var i in flow.keys()) {\n    node.log(\"rrrr\");\n}\n\nreturn msg;",
+        "func": "var keys = flow.keys();\nfor (index = 0; index < keys.length; ++index) {\n    flow.set(keys[index]);\n}\n\nreturn msg;",
         "outputs": 1,
-        "noerr": 0,
+        "noerr": 4,
         "initialize": "",
         "finalize": "",
         "libs": [],
@@ -3694,5 +3694,30 @@
         "x": 820,
         "y": 460,
         "wires": []
+    },
+    {
+        "id": "8494ad7b1fc92df3",
+        "type": "change",
+        "z": "9da1654216b6a11d",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 260,
+        "y": 340,
+        "wires": [
+            []
+        ]
     }
 ]
