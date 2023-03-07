@@ -3374,7 +3374,7 @@
         "type": "rbe",
         "z": "a3ba71e6b430d658",
         "name": "",
-        "func": "rbei",
+        "func": "rbe",
         "gap": "",
         "start": "",
         "inout": "out",
