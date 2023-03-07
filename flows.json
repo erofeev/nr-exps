@@ -3527,7 +3527,7 @@
         "type": "function",
         "z": "9da1654216b6a11d",
         "name": "Connect to local broker",
-        "func": "msg.action = \"connect\";\nmsg.broker = { broker: \"\", port: \"\"}\nmsg.broker.broker = global.get(\"LocalBroker.host\") || \"\";\nmsg.broker.port = global.get(\"LocalBroker.port\") || \"\";\nmsg.broker.username = global.get(\"LocalBroker.user\") || \"\";\nmsg.broker.password = global.get(\"LocalBroker.pswd\") || \"\";\nmsg.broker.force  = true;\nmsg.broker.clientid = flow.get(\"$parent.thing.type\") || \"na\";\nmsg.broker.clientid = msg.broker.clientid + ':c:' + + Math.random();\nmsg.broker.clientid = msg.broker.clientid + flow.get(\"$parent.thing.id\") || \"na\";\n\nmsg.topic = \"#\";\n\nreturn msg;",
+        "func": "msg.action = \"connect\";\nmsg.broker = { broker: \"\", port: \"\"}\nmsg.broker.broker = global.get(\"LocalBroker.host\") || \"\";\nmsg.broker.port = global.get(\"LocalBroker.port\") || \"\";\nmsg.broker.username = global.get(\"LocalBroker.user\") || \"\";\nmsg.broker.password = global.get(\"LocalBroker.pswd\") || \"\";\nmsg.broker.force  = true;\nmsg.broker.clientid = flow.get(\"$parent.thing.type\") || \"na\";\nmsg.broker.clientid = msg.broker.clientid + ':c:' + + Math.random();\nmsg.broker.clientid = msg.broker.clientid + flow.get(\"$parent.thing.id\") || \"na\";\n\nmsg2.action = \"subscribe\";\nmsg2.topic = \"#\";\n\nreturn [msg, msg2];",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
