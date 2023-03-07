@@ -3247,7 +3247,7 @@
         "type": "debug",
         "z": "a3ba71e6b430d658",
         "name": "debug 3",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -3345,8 +3345,7 @@
         "y": 260,
         "wires": [
             [
-                "df10096a3a9da91b",
-                "f0b87857e46ef01f"
+                "df10096a3a9da91b"
             ]
         ]
     },
@@ -3359,8 +3358,8 @@
         "propertyType": "msg",
         "rules": [
             {
-                "t": "eq",
-                "v": "LYWSD03MMC",
+                "t": "cont",
+                "v": "ATC_",
                 "vt": "str"
             }
         ],
