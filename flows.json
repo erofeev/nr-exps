@@ -3444,7 +3444,7 @@
         "rap": true,
         "rh": 0,
         "inputs": 1,
-        "x": 610,
+        "x": 630,
         "y": 220,
         "wires": [
             [
@@ -3527,13 +3527,13 @@
         "type": "function",
         "z": "9da1654216b6a11d",
         "name": "Connect to local broker",
-        "func": "msg.action = \"connect\";\nmsg.broker = { broker: \"\", port: \"\"}\nmsg.broker.broker = global.get(\"LocalBroker.host\") || \"\";\nmsg.broker.port = global.get(\"LocalBroker.port\") || \"\";\nmsg.broker.username = global.get(\"LocalBroker.user\") || \"\";\nmsg.broker.password = global.get(\"LocalBroker.pswd\") || \"\";\nmsg.broker.force  = true;\nmsg.broker.clientid = flow.get(\"$parent.thing.type\") || \"na\";\nmsg.broker.clientid = msg.broker.clientid + ':c:' + + Math.random();\nmsg.broker.clientid = msg.broker.clientid + flow.get(\"$parent.thing.id\") || \"na\";\nvar msg2 = {};\nmsg2.action = \"subscribe\";\nmsg2.topic = \"#\";\n\nreturn [msg, msg2];",
+        "func": "msg.action = \"connect\";\nmsg.broker = { broker: \"\", port: \"\"}\nmsg.broker.broker = global.get(\"LocalBroker.host\") || \"\";\nmsg.broker.port = global.get(\"LocalBroker.port\") || \"\";\nmsg.broker.username = global.get(\"LocalBroker.user\") || \"\";\nmsg.broker.password = global.get(\"LocalBroker.pswd1\") || \"\";\nmsg.broker.force  = true;\nmsg.broker.clientid = flow.get(\"$parent.thing.type\") || \"na\";\nmsg.broker.clientid = msg.broker.clientid + ':c:' + + Math.random();\nmsg.broker.clientid = msg.broker.clientid + flow.get(\"$parent.thing.id\") || \"na\";\nvar msg2 = {};\nmsg2.action = \"subscribe\";\nmsg2.topic = \"#\";\n\nreturn [msg, msg2];",
         "outputs": 2,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 310,
+        "x": 290,
         "y": 220,
         "wires": [
             [
@@ -3549,7 +3549,7 @@
         "type": "debug",
         "z": "9da1654216b6a11d",
         "name": "debug 4",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -3557,7 +3557,7 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 780,
+        "x": 800,
         "y": 220,
         "wires": []
     },
@@ -3578,8 +3578,8 @@
         "drop": false,
         "allowrate": false,
         "outputs": 1,
-        "x": 460,
-        "y": 280,
+        "x": 480,
+        "y": 240,
         "wires": [
             [
                 "bd2d3ae6322f626c"
