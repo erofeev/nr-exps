@@ -3726,7 +3726,8 @@
         "active": true,
         "x": 390,
         "y": 80,
-        "wires": []
+        "wires": [],
+        "info": "пвапрвап"
     },
     {
         "id": "993a60cddde7da1f",
@@ -3736,7 +3737,7 @@
         "func": "\nmsg.payload = flow.get(\"thing\");\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "initialize": "",
+        "initialize": "// Code added here will be run once\n// whenever the node is started.\nflow.set(\"thing\",\"\");",
         "finalize": "",
         "libs": [],
         "x": 450,
