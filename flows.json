@@ -3083,7 +3083,7 @@
             {
                 "p": "thing.type",
                 "pt": "flow",
-                "to": "th_sensor",
+                "to": "ble_scanner",
                 "tot": "str"
             }
         ],
