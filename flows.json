@@ -3364,7 +3364,7 @@
         "start": "",
         "inout": "out",
         "septopics": true,
-        "property": "payload",
+        "property": "advertisement",
         "topi": "peripheralUuid",
         "x": 410,
         "y": 660,
