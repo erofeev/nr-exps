@@ -3760,7 +3760,7 @@
         "type": "subflow:ed5a77f4448c2cf5",
         "z": "9da1654216b6a11d",
         "name": "",
-        "x": 420,
+        "x": 480,
         "y": 300,
         "wires": [
             [
@@ -3772,15 +3772,15 @@
         "id": "c089681eaf2455c2",
         "type": "function",
         "z": "9da1654216b6a11d",
-        "name": "function 3",
+        "name": "Subscribe to all configs",
         "func": "msg.topic = \"+/+/config\";\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 220,
-        "y": 260,
+        "x": 270,
+        "y": 300,
         "wires": [
             [
                 "c1854b6fc3694e01"
