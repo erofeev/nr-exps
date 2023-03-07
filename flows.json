@@ -71,6 +71,14 @@
         "env": []
     },
     {
+        "id": "9da1654216b6a11d",
+        "type": "tab",
+        "label": "Registry",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "ef8a80e9c499bb4e",
         "type": "subflow",
         "name": "Zip-64",
@@ -322,6 +330,34 @@
         "name": "",
         "broker": "l",
         "port": "0000",
+        "tls": "",
+        "clientid": "",
+        "autoConnect": false,
+        "usetls": true,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "16b124ebd05a0a10",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "l",
+        "port": "000",
         "tls": "",
         "clientid": "",
         "autoConnect": false,
@@ -2324,7 +2360,8 @@
         "mode": "link",
         "links": [
             "6bb356f31f3d79ae",
-            "5b292c5534d77568"
+            "5b292c5534d77568",
+            "03db6d7135ae751b"
         ],
         "x": 695,
         "y": 140,
@@ -3393,5 +3430,131 @@
                 "f0b87857e46ef01f"
             ]
         ]
+    },
+    {
+        "id": "bd2d3ae6322f626c",
+        "type": "mqtt in",
+        "z": "9da1654216b6a11d",
+        "name": "",
+        "topic": "",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "16b124ebd05a0a10",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 1,
+        "x": 610,
+        "y": 220,
+        "wires": [
+            [
+                "191829bd6ba07507"
+            ]
+        ]
+    },
+    {
+        "id": "03db6d7135ae751b",
+        "type": "link in",
+        "z": "9da1654216b6a11d",
+        "name": "link in 1",
+        "links": [
+            "e1e41d7a50c87ccd"
+        ],
+        "x": 145,
+        "y": 100,
+        "wires": [
+            [
+                "17895f2f29039313",
+                "993a60cddde7da1f",
+                "f96359632c077b10"
+            ]
+        ]
+    },
+    {
+        "id": "17895f2f29039313",
+        "type": "config",
+        "z": "9da1654216b6a11d",
+        "name": "",
+        "properties": [
+            {
+                "p": "thing.id",
+                "pt": "flow",
+                "to": "000",
+                "tot": "str"
+            },
+            {
+                "p": "thing.type",
+                "pt": "flow",
+                "to": "registry",
+                "tot": "str"
+            }
+        ],
+        "active": true,
+        "x": 390,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "993a60cddde7da1f",
+        "type": "function",
+        "z": "9da1654216b6a11d",
+        "name": "Thing Model Description",
+        "func": "flow.set(\"thing.topics.custom1\", \"\");\nflow.set(\"thing.topics.custom2\", \"\");\nflow.set(\"thing.topics.custom3\", \"\");\nflow.set(\"thing.topics.custom4\", \"\");\nflow.set(\"thing.topics.custom5\", \"\");\nflow.set(\"thing.topics.custom6\", \"\");\nflow.set(\"thing.topics.cmd\", \"cmdblock\");\n\nmsg.payload = flow.get(\"thing\");\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 450,
+        "y": 140,
+        "wires": [
+            [
+                "588df26c2de6e9ab"
+            ]
+        ]
+    },
+    {
+        "id": "588df26c2de6e9ab",
+        "type": "subflow:c1aee611e52a8323",
+        "z": "9da1654216b6a11d",
+        "name": "",
+        "x": 690,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "f96359632c077b10",
+        "type": "function",
+        "z": "9da1654216b6a11d",
+        "name": "Connect to local broker",
+        "func": "msg.action = \"connect\";\nmsg.broker = { broker: \"\", port: \"\"}\nmsg.broker.broker = global.get(\"LocalBroker.host\") || \"\";\nmsg.broker.port = global.get(\"LocalBroker.port\") || \"\";\nmsg.broker.username = global.get(\"LocalBroker.user\") || \"\";\nmsg.broker.password = global.get(\"LocalBroker.pswd\") || \"\";\nmsg.broker.force  = true;\nmsg.broker.clientid = flow.get(\"$parent.thing.type\") || \"na\";\nmsg.broker.clientid = msg.broker.clientid + ':c:' + + Math.random();\nmsg.broker.clientid = msg.broker.clientid + flow.get(\"$parent.thing.id\") || \"na\";\n\nmsg.topic = \"#\";\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 310,
+        "y": 220,
+        "wires": [
+            [
+                "bd2d3ae6322f626c"
+            ]
+        ]
+    },
+    {
+        "id": "191829bd6ba07507",
+        "type": "debug",
+        "z": "9da1654216b6a11d",
+        "name": "debug 4",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 780,
+        "y": 220,
+        "wires": []
     }
 ]
