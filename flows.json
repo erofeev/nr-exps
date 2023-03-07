@@ -3171,8 +3171,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 490,
-        "y": 580,
+        "x": 590,
+        "y": 660,
         "wires": [
             [],
             [
@@ -3187,8 +3187,8 @@
         "name": "",
         "property": "payload",
         "pattern": "x88 => sensorType, \nb8 => noteId,\nl16=> r1,\nl16 => r2,\nl16 => r3\n",
-        "x": 610,
-        "y": 660,
+        "x": 850,
+        "y": 640,
         "wires": [
             [
                 "d96fbd05d3d4769c"
@@ -3206,8 +3206,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 560,
-        "y": 620,
+        "x": 720,
+        "y": 640,
         "wires": [
             [
                 "868f578e4866d1e6"
@@ -3269,9 +3269,7 @@
         "x": 410,
         "y": 540,
         "wires": [
-            [
-                "995ab22438ad7180"
-            ]
+            []
         ]
     },
     {
@@ -3342,7 +3340,7 @@
         ],
         "repeat": "60",
         "crontab": "",
-        "once": true,
+        "once": false,
         "onceDelay": 0.1,
         "topic": "",
         "x": 150,
