@@ -49,7 +49,7 @@
     {
         "id": "6f858e2bc48be764",
         "type": "tab",
-        "label": "Flow 1",
+        "label": "test",
         "disabled": false,
         "info": "",
         "env": []
@@ -3733,7 +3733,7 @@
         "type": "function",
         "z": "9da1654216b6a11d",
         "name": "Thing Model Description",
-        "func": "flow.set(\"thing.topics.custom1\", \"\");\nflow.set(\"thing.topics.custom2\", \"\");\nflow.set(\"thing.topics.custom3\", \"\");\nflow.set(\"thing.topics.custom4\", \"\");\nflow.set(\"thing.topics.custom5\", \"\");\nflow.set(\"thing.topics.custom6\", \"\");\nflow.set(\"thing.topics.cmd\", \"cmdblock\");\n\nmsg.payload = flow.get(\"thing\");\nreturn msg;",
+        "func": "\nmsg.payload = flow.get(\"thing\");\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
