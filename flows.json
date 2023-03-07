@@ -3233,8 +3233,8 @@
             }
         ],
         "active": true,
-        "x": 410,
-        "y": 100,
+        "x": 670,
+        "y": 80,
         "wires": []
     },
     {
@@ -3271,8 +3271,8 @@
         "y": 120,
         "wires": [
             [
-                "90c04bdaf7e90773",
-                "dec9452877568190"
+                "dec9452877568190",
+                "d7ff622dbdd0f3a0"
             ]
         ]
     },
@@ -3536,6 +3536,25 @@
             [
                 "c2a54a41bc5646a3",
                 "f0b87857e46ef01f"
+            ]
+        ]
+    },
+    {
+        "id": "d7ff622dbdd0f3a0",
+        "type": "function",
+        "z": "a3ba71e6b430d658",
+        "name": "Clear all flow vars",
+        "func": "var keys = flow.keys();\nfor (var index = 0; index < keys.length; ++index) {\n    flow.set(keys[index]);\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 450,
+        "y": 80,
+        "wires": [
+            [
+                "90c04bdaf7e90773"
             ]
         ]
     },
