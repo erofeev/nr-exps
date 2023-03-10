@@ -160,7 +160,28 @@
                 ]
             }
         ],
-        "out": [],
+        "out": [
+            {
+                "x": 160,
+                "y": 30,
+                "wires": [
+                    {
+                        "id": "2172e85f166a5cf4",
+                        "port": 0
+                    }
+                ]
+            },
+            {
+                "x": 215,
+                "y": 30,
+                "wires": [
+                    {
+                        "id": "d8827288e46a3dc3",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
         "env": [],
         "meta": {},
         "color": "#DDAA99",
@@ -3200,7 +3221,10 @@
         "name": "",
         "x": 700,
         "y": 280,
-        "wires": []
+        "wires": [
+            [],
+            []
+        ]
     },
     {
         "id": "995ab22438ad7180",
@@ -3574,23 +3598,6 @@
         ]
     },
     {
-        "id": "0325a892a25bd6a9",
-        "type": "debug",
-        "z": "9da1654216b6a11d",
-        "name": "debug 4",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 780,
-        "y": 180,
-        "wires": []
-    },
-    {
         "id": "c0b6855553c41c6a",
         "type": "function",
         "z": "9da1654216b6a11d",
@@ -3615,8 +3622,13 @@
         "z": "9da1654216b6a11d",
         "name": "",
         "x": 800,
-        "y": 340,
-        "wires": []
+        "y": 240,
+        "wires": [
+            [
+                "2f2ddf8001a36a43"
+            ],
+            []
+        ]
     },
     {
         "id": "b52f08c18704038f",
@@ -3629,28 +3641,33 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 440,
-        "y": 340,
+        "x": 740,
+        "y": 180,
         "wires": [
             [
-                "0325a892a25bd6a9",
                 "e5285405b3363f33"
             ]
         ]
     },
     {
-        "id": "d89ab5dc3ee6157e",
-        "type": "inject",
+        "id": "2f2ddf8001a36a43",
+        "type": "delay",
         "z": "9da1654216b6a11d",
         "name": "",
-        "props": [],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "x": 190,
-        "y": 280,
+        "pauseType": "delay",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 860,
+        "y": 320,
         "wires": [
             [
                 "c089681eaf2455c2"
