@@ -3089,7 +3089,7 @@
             {
                 "p": "LocalBroker.port",
                 "pt": "global",
-                "to": "8883",
+                "to": "1883",
                 "tot": "str"
             },
             {
