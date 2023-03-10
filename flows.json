@@ -917,7 +917,7 @@
         "type": "function",
         "z": "ed5a77f4448c2cf5",
         "name": "Try to subscribe",
-        "func": "var p = flow.get(\"cachedMsg.p\") || undefined;\nvar t = flow.get(\"cachedMsg.t\") || undefined;\n\nif (p) {\n    flow.set(\"cachedMsg.p\", undefined);\n    if (t) {\n        flow.set(\"cachedMsg.t\", undefined)\n        msg.payload = p;\n        msg.topic = t;\n    }\n}\n\nif (!msg.topic) return;\n\nmsg.action = \"subscribe\";\nmsg.qos = 2;\n\nreturn msg;",
+        "func": "var p = flow.get(\"cachedMsg.p\") || undefined;\nvar t = flow.get(\"cachedMsg.t\") || undefined;\n\nif (p) {\n    flow.set(\"cachedMsg.p\", undefined);\n    msg.payload = p;\n}\nif (t) {\n    flow.set(\"cachedMsg.t\", undefined);\n    msg.topic = t;\n}\nif (!msg.topic) return;\n\nmsg.action = \"subscribe\";\nmsg.qos = 2;\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -1013,7 +1013,8 @@
         "y": 200,
         "wires": [
             [
-                "25d5bb4f66ba88fb"
+                "25d5bb4f66ba88fb",
+                "4a98c415c3bb47e4"
             ]
         ]
     },
@@ -1031,7 +1032,9 @@
         "x": 550,
         "y": 240,
         "wires": [
-            []
+            [
+                "4a98c415c3bb47e4"
+            ]
         ]
     },
     {
