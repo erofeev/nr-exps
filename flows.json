@@ -3639,6 +3639,35 @@
         ]
     },
     {
+        "id": "d89ab5dc3ee6157e",
+        "type": "inject",
+        "z": "9da1654216b6a11d",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 200,
+        "y": 280,
+        "wires": [
+            [
+                "b52f08c18704038f"
+            ]
+        ]
+    },
+    {
         "id": "394a5b0c95ee3a73",
         "type": "link in",
         "z": "3c50040f913fd396",
