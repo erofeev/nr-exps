@@ -157,7 +157,7 @@
     {
         "id": "4778c81a96bb6f95",
         "type": "subflow",
-        "name": "SendData",
+        "name": "Not Connected",
         "info": "",
         "category": "",
         "in": [
@@ -3729,7 +3729,7 @@
         "type": "subflow:4778c81a96bb6f95",
         "z": "9da1654216b6a11d",
         "name": "",
-        "x": 800,
+        "x": 820,
         "y": 380,
         "wires": [
             [
