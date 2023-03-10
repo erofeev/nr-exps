@@ -3661,27 +3661,17 @@
         "type": "inject",
         "z": "9da1654216b6a11d",
         "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
+        "props": [],
         "repeat": "",
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
-        "topic": "test",
-        "payload": "",
-        "payloadType": "date",
-        "x": 220,
+        "topic": "",
+        "x": 190,
         "y": 280,
         "wires": [
             [
-                "b52f08c18704038f"
+                "c089681eaf2455c2"
             ]
         ]
     },
