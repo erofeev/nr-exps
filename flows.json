@@ -73,7 +73,7 @@
     {
         "id": "3c50040f913fd396",
         "type": "tab",
-        "label": "Flow 2",
+        "label": "Bridge",
         "disabled": false,
         "info": "",
         "env": []
@@ -3550,7 +3550,8 @@
         "y": 180,
         "wires": [
             [
-                "0325a892a25bd6a9"
+                "0325a892a25bd6a9",
+                "b52f08c18704038f"
             ]
         ]
     },
@@ -3606,6 +3607,34 @@
         "wires": [
             [
                 "17895f2f29039313"
+            ]
+        ]
+    },
+    {
+        "id": "e5285405b3363f33",
+        "type": "subflow:4778c81a96bb6f95",
+        "z": "9da1654216b6a11d",
+        "name": "",
+        "x": 600,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "b52f08c18704038f",
+        "type": "function",
+        "z": "9da1654216b6a11d",
+        "name": "function 3",
+        "func": "const match = '\\/config$';\nconst topic = msg.topic;\nconst found = topic.replace(match, \"\");\nmsg.payload = found;\nmsg.topic = found;\nmsg.retain = true;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 440,
+        "y": 340,
+        "wires": [
+            [
+                "e5285405b3363f33"
             ]
         ]
     },
@@ -3698,7 +3727,7 @@
         "type": "function",
         "z": "3c50040f913fd396",
         "name": "Subscribe to all configs",
-        "func": "msg.topic = \"+/+/config\";\nreturn msg;",
+        "func": "msg.topic = \"#\";\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
