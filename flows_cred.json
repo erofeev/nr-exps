@@ -3,9 +3,9 @@
         "username": "devicemqtt",
         "password": "devicemqtt"
     },
-    "9b9ea97fbd86e279": {
+    "9b9ea97fbd86e279": {},
+    "6843187ae988fdc8": {
         "user": "devicemqtt",
         "password": "devicemqtt"
-    },
-    "6843187ae988fdc8": {}
+    }
 }
