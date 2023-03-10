@@ -3170,7 +3170,9 @@
         "x": 130,
         "y": 400,
         "wires": [
-            []
+            [
+                "a52961706c16a38f"
+            ]
         ]
     },
     {
@@ -3630,7 +3632,7 @@
         "type": "debug",
         "z": "9da1654216b6a11d",
         "name": "debug 4",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
