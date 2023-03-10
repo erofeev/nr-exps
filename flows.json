@@ -2745,8 +2745,8 @@
         "z": "e00d584b4e2e74af",
         "name": "Local MQTT broker is up, send notifications",
         "info": "",
-        "x": 740,
-        "y": 100,
+        "x": 860,
+        "y": 40,
         "wires": []
     },
     {
@@ -3569,8 +3569,7 @@
         "wires": [
             [
                 "993a60cddde7da1f",
-                "c0b6855553c41c6a",
-                "c089681eaf2455c2"
+                "c0b6855553c41c6a"
             ]
         ]
     },
