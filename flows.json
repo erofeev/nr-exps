@@ -3074,7 +3074,7 @@
             },
             {
                 "p": "LocalBroker.pswd",
-                "pt": "flow",
+                "pt": "global",
                 "to": "devicemqtt",
                 "tot": "str"
             }
