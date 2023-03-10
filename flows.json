@@ -372,7 +372,7 @@
         "tls": "",
         "clientid": "",
         "autoConnect": false,
-        "usetls": true,
+        "usetls": false,
         "protocolVersion": "4",
         "keepalive": "60",
         "cleansession": true,
