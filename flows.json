@@ -420,6 +420,10 @@
         "sessionExpiry": ""
     },
     {
+        "id": "2d3640b36a0eba3e",
+        "type": "ewelink-credentials"
+    },
+    {
         "id": "2b65109daddacd99",
         "type": "json",
         "z": "ef8a80e9c499bb4e",
@@ -3110,6 +3114,66 @@
         "active": true,
         "x": 510,
         "y": 80,
+        "wires": []
+    },
+    {
+        "id": "6dd448779f66090a",
+        "type": "ewelink-devices",
+        "z": "6f858e2bc48be764",
+        "name": "",
+        "auth": "2d3640b36a0eba3e",
+        "x": 270,
+        "y": 340,
+        "wires": [
+            [
+                "371456efcb16b50c"
+            ]
+        ]
+    },
+    {
+        "id": "6bae4431ecd73932",
+        "type": "inject",
+        "z": "6f858e2bc48be764",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 100,
+        "y": 280,
+        "wires": [
+            [
+                "6dd448779f66090a"
+            ]
+        ]
+    },
+    {
+        "id": "371456efcb16b50c",
+        "type": "debug",
+        "z": "6f858e2bc48be764",
+        "name": "debug 7",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 520,
+        "y": 340,
         "wires": []
     },
     {
