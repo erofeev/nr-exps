@@ -565,7 +565,7 @@
         "type": "function",
         "z": "c1aee611e52a8323",
         "name": "Popoluate /config data",
-        "func": "msg.payload = flow.get(\"$parent.thing\") || '';\n\nreturn msg;",
+        "func": "msg.payload = flow.get(\"$parent.thing\") || '';\nmsg.qos = 2;\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
