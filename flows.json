@@ -420,6 +420,13 @@
         "sessionExpiry": ""
     },
     {
+        "id": "f7f9e535319be918",
+        "type": "sonoff-server",
+        "serverIP": "192.168.1.21",
+        "httpsPort": "1080",
+        "websocketPort": "443"
+    },
+    {
         "id": "2b65109daddacd99",
         "type": "json",
         "z": "ef8a80e9c499bb4e",
@@ -3111,6 +3118,65 @@
         "x": 510,
         "y": 80,
         "wires": []
+    },
+    {
+        "id": "1ba66a4ad8f69e92",
+        "type": "sonoff-list",
+        "z": "6f858e2bc48be764",
+        "name": "",
+        "server": "f7f9e535319be918",
+        "x": 220,
+        "y": 360,
+        "wires": [
+            [
+                "a52961706c16a38f"
+            ]
+        ]
+    },
+    {
+        "id": "a52961706c16a38f",
+        "type": "debug",
+        "z": "6f858e2bc48be764",
+        "name": "debug 7",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 400,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "e8a446b4a81e549c",
+        "type": "inject",
+        "z": "6f858e2bc48be764",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 60,
+        "y": 280,
+        "wires": [
+            [
+                "1ba66a4ad8f69e92"
+            ]
+        ]
     },
     {
         "id": "90c04bdaf7e90773",
