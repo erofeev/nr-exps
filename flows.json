@@ -340,7 +340,7 @@
         "name": "",
         "broker": "l",
         "port": "0000",
-        "tls": "",
+        "tls": "cde06881b6379d7b",
         "clientid": "",
         "autoConnect": false,
         "usetls": true,
@@ -418,6 +418,21 @@
         "willMsg": {},
         "userProps": "",
         "sessionExpiry": ""
+    },
+    {
+        "id": "cde06881b6379d7b",
+        "type": "tls-config",
+        "z": "c1aee611e52a8323",
+        "name": "",
+        "cert": "",
+        "key": "",
+        "ca": "",
+        "certname": "",
+        "keyname": "",
+        "caname": "",
+        "servername": "",
+        "verifyservercert": false,
+        "alpnprotocol": ""
     },
     {
         "id": "2b65109daddacd99",
