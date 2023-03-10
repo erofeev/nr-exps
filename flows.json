@@ -3598,8 +3598,7 @@
         "y": 120,
         "wires": [
             [
-                "ae7ba8fce859c623",
-                "3dcb22b653cd9742"
+                "ae7ba8fce859c623"
             ]
         ]
     },
@@ -3672,14 +3671,14 @@
         "id": "b52f08c18704038f",
         "type": "function",
         "z": "9da1654216b6a11d",
-        "name": "function 3",
+        "name": "Remove prefix and postfix",
         "func": "msg.topic = msg.topic.replace(/\\/config$/, \"\");\nmsg.topic = msg.topic.replace(/.*\\//, \"\");\nmsg.retain = true;\nmsg.qos = 2;\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 740,
+        "x": 790,
         "y": 440,
         "wires": [
             [
@@ -3717,7 +3716,7 @@
         "type": "subflow:ed5a77f4448c2cf5",
         "z": "9da1654216b6a11d",
         "name": "",
-        "x": 740,
+        "x": 760,
         "y": 120,
         "wires": [
             [
