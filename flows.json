@@ -420,13 +420,6 @@
         "sessionExpiry": ""
     },
     {
-        "id": "f7f9e535319be918",
-        "type": "sonoff-server",
-        "serverIP": "192.168.1.21",
-        "httpsPort": "1080",
-        "websocketPort": "443"
-    },
-    {
         "id": "2b65109daddacd99",
         "type": "json",
         "z": "ef8a80e9c499bb4e",
@@ -2598,7 +2591,7 @@
         "type": "debug",
         "z": "267f0896c2544dd9",
         "name": "debug 5",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
