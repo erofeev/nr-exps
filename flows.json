@@ -420,6 +420,12 @@
         "sessionExpiry": ""
     },
     {
+        "id": "7ee317a26a6f2d1c",
+        "type": "sonoff-lan-config",
+        "host": "0.00.0.0",
+        "port": "8081"
+    },
+    {
         "id": "2b65109daddacd99",
         "type": "json",
         "z": "ef8a80e9c499bb4e",
@@ -3151,6 +3157,18 @@
         "payloadType": "date",
         "x": 160,
         "y": 300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e0de2ccd5d040d80",
+        "type": "sonoff-lan-listener",
+        "z": "6f858e2bc48be764",
+        "name": "",
+        "sonoffConfig": "7ee317a26a6f2d1c",
+        "x": 130,
+        "y": 400,
         "wires": [
             []
         ]
