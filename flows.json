@@ -3119,63 +3119,6 @@
         "wires": []
     },
     {
-        "id": "a52961706c16a38f",
-        "type": "debug",
-        "z": "6f858e2bc48be764",
-        "name": "debug 7",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 400,
-        "y": 340,
-        "wires": []
-    },
-    {
-        "id": "e8a446b4a81e549c",
-        "type": "inject",
-        "z": "6f858e2bc48be764",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 160,
-        "y": 300,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "e0de2ccd5d040d80",
-        "type": "sonoff-lan-listener",
-        "z": "6f858e2bc48be764",
-        "name": "",
-        "sonoffConfig": "7ee317a26a6f2d1c",
-        "x": 130,
-        "y": 400,
-        "wires": [
-            [
-                "a52961706c16a38f"
-            ]
-        ]
-    },
-    {
         "id": "90c04bdaf7e90773",
         "type": "config",
         "z": "a3ba71e6b430d658",
