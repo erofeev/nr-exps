@@ -420,10 +420,6 @@
         "sessionExpiry": ""
     },
     {
-        "id": "2d3640b36a0eba3e",
-        "type": "ewelink-credentials"
-    },
-    {
         "id": "2b65109daddacd99",
         "type": "json",
         "z": "ef8a80e9c499bb4e",
