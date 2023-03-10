@@ -3005,6 +3005,7 @@
         "id": "65ee833ee7ebf8b1",
         "type": "config",
         "z": "6f858e2bc48be764",
+        "d": true,
         "name": "GLOBAL CONFIG",
         "properties": [
             {
@@ -3032,7 +3033,7 @@
                 "tot": "str"
             }
         ],
-        "active": true,
+        "active": false,
         "x": 250,
         "y": 80,
         "wires": []
@@ -3053,7 +3054,7 @@
             {
                 "p": "LocalBroker.port",
                 "pt": "global",
-                "to": "1883",
+                "to": "8883",
                 "tot": "str"
             },
             {
@@ -3069,7 +3070,7 @@
                 "tot": "str"
             }
         ],
-        "active": false,
+        "active": true,
         "x": 510,
         "y": 80,
         "wires": []
