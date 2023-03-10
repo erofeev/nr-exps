@@ -71,6 +71,14 @@
         "env": []
     },
     {
+        "id": "3c50040f913fd396",
+        "type": "tab",
+        "label": "Flow 2",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "ef8a80e9c499bb4e",
         "type": "subflow",
         "name": "Zip-64",
@@ -2645,7 +2653,8 @@
         "links": [
             "6bb356f31f3d79ae",
             "5b292c5534d77568",
-            "03db6d7135ae751b"
+            "03db6d7135ae751b",
+            "394a5b0c95ee3a73"
         ],
         "x": 695,
         "y": 140,
@@ -3597,6 +3606,145 @@
         "wires": [
             [
                 "17895f2f29039313"
+            ]
+        ]
+    },
+    {
+        "id": "394a5b0c95ee3a73",
+        "type": "link in",
+        "z": "3c50040f913fd396",
+        "name": "link in 2",
+        "links": [
+            "e1e41d7a50c87ccd"
+        ],
+        "x": 125,
+        "y": 140,
+        "wires": [
+            [
+                "551afef49fc9d01c",
+                "ffd72964407b6da5",
+                "300ea799b1f00bd1"
+            ]
+        ]
+    },
+    {
+        "id": "ae22081240debf6c",
+        "type": "config",
+        "z": "3c50040f913fd396",
+        "name": "",
+        "properties": [
+            {
+                "p": "thing.id",
+                "pt": "flow",
+                "to": "000",
+                "tot": "str"
+            },
+            {
+                "p": "thing.type",
+                "pt": "flow",
+                "to": "bridge",
+                "tot": "str"
+            }
+        ],
+        "active": true,
+        "x": 540,
+        "y": 80,
+        "wires": [],
+        "info": "пвапрвап"
+    },
+    {
+        "id": "551afef49fc9d01c",
+        "type": "function",
+        "z": "3c50040f913fd396",
+        "name": "Thing Model Description",
+        "func": "\nmsg.payload = flow.get(\"thing\");\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 140,
+        "wires": [
+            [
+                "44741fbf17d87e7e"
+            ]
+        ]
+    },
+    {
+        "id": "44741fbf17d87e7e",
+        "type": "subflow:c1aee611e52a8323",
+        "z": "3c50040f913fd396",
+        "name": "",
+        "x": 560,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "28ed644251b02944",
+        "type": "subflow:ed5a77f4448c2cf5",
+        "z": "3c50040f913fd396",
+        "name": "",
+        "x": 550,
+        "y": 200,
+        "wires": [
+            [
+                "5e7e5ade9de8cf22"
+            ]
+        ]
+    },
+    {
+        "id": "ffd72964407b6da5",
+        "type": "function",
+        "z": "3c50040f913fd396",
+        "name": "Subscribe to all configs",
+        "func": "msg.topic = \"+/+/config\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 200,
+        "wires": [
+            [
+                "28ed644251b02944"
+            ]
+        ]
+    },
+    {
+        "id": "5e7e5ade9de8cf22",
+        "type": "debug",
+        "z": "3c50040f913fd396",
+        "name": "debug 7",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 750,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "300ea799b1f00bd1",
+        "type": "function",
+        "z": "3c50040f913fd396",
+        "name": "Clear all flow vars",
+        "func": "var keys = flow.keys();\nfor (var index = 0; index < keys.length; ++index) {\n    flow.set(keys[index]);\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 300,
+        "y": 80,
+        "wires": [
+            [
+                "ae22081240debf6c"
             ]
         ]
     }
