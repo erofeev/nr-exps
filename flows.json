@@ -74,7 +74,7 @@
         "id": "3c50040f913fd396",
         "type": "tab",
         "label": "Bridge",
-        "disabled": true,
+        "disabled": false,
         "info": "",
         "env": []
     },
@@ -3899,7 +3899,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 320,
+        "x": 310,
         "y": 140,
         "wires": [
             [
@@ -3912,10 +3912,12 @@
         "type": "subflow:c1aee611e52a8323",
         "z": "3c50040f913fd396",
         "name": "",
-        "x": 560,
+        "x": 550,
         "y": 140,
         "wires": [
-            []
+            [
+                "a379e5c1077ef903"
+            ]
         ]
     },
     {
@@ -3923,8 +3925,8 @@
         "type": "subflow:ed5a77f4448c2cf5",
         "z": "3c50040f913fd396",
         "name": "",
-        "x": 550,
-        "y": 200,
+        "x": 560,
+        "y": 400,
         "wires": [
             [
                 "5e7e5ade9de8cf22"
@@ -3935,15 +3937,15 @@
         "id": "ffd72964407b6da5",
         "type": "function",
         "z": "3c50040f913fd396",
-        "name": "Subscribe to all configs",
+        "name": "Subscribe to everything",
         "func": "msg.topic = \"#\";\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 320,
-        "y": 200,
+        "x": 330,
+        "y": 400,
         "wires": [
             [
                 "28ed644251b02944"
@@ -3963,8 +3965,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 750,
-        "y": 200,
+        "x": 760,
+        "y": 400,
         "wires": []
     },
     {
@@ -3983,6 +3985,69 @@
         "wires": [
             [
                 "ae22081240debf6c"
+            ]
+        ]
+    },
+    {
+        "id": "a379e5c1077ef903",
+        "type": "subflow:ed5a77f4448c2cf5",
+        "z": "3c50040f913fd396",
+        "name": "",
+        "x": 720,
+        "y": 140,
+        "wires": [
+            [
+                "d22123600360f845"
+            ]
+        ]
+    },
+    {
+        "id": "d22123600360f845",
+        "type": "switch",
+        "z": "3c50040f913fd396",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 750,
+        "y": 200,
+        "wires": [
+            [
+                "6600c3e37e2faeeb"
+            ]
+        ]
+    },
+    {
+        "id": "6600c3e37e2faeeb",
+        "type": "delay",
+        "z": "3c50040f913fd396",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 880,
+        "y": 200,
+        "wires": [
+            [
+                "551afef49fc9d01c"
             ]
         ]
     }
