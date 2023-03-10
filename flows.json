@@ -3193,20 +3193,6 @@
         ]
     },
     {
-        "id": "e23a4b63c62c0209",
-        "type": "ewelink-power-state-read",
-        "z": "6f858e2bc48be764",
-        "name": "",
-        "deviceId": "",
-        "channel": 1,
-        "auth": "",
-        "x": 540,
-        "y": 420,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "56ee98629c377dfc",
         "type": "ewelink-generic-device",
         "z": "6f858e2bc48be764",
