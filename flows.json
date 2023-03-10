@@ -3656,10 +3656,10 @@
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
-        "topic": "",
+        "topic": "test",
         "payload": "",
         "payloadType": "date",
-        "x": 200,
+        "x": 220,
         "y": 280,
         "wires": [
             [
