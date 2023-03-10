@@ -74,7 +74,7 @@
         "id": "3c50040f913fd396",
         "type": "tab",
         "label": "Bridge",
-        "disabled": false,
+        "disabled": true,
         "info": "",
         "env": []
     },
@@ -224,6 +224,9 @@
                 "wires": [
                     {
                         "id": "25d5bb4f66ba88fb"
+                    },
+                    {
+                        "id": "4a98c415c3bb47e4"
                     }
                 ]
             }
