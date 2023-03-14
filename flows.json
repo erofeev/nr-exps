@@ -3975,7 +3975,7 @@
         "type": "function",
         "z": "9da1654216b6a11d",
         "name": "function 3",
-        "func": "\nif (msg.payload != 0) {\n    msg.payload = msg.payload - 1;\n}\n\nif (msg.payload == 0) {\n// clear config\n    msg.payload = \"\";\n    msg.topic = msg.topic.replace(/\\/cmd\\/hb$/, \"/config\");\n}\nmsg.overrideRoot = true;\nmsg.qos = 2;\nmsg.retain = false;\n\nreturn msg;",
+        "func": "// client alive and want to stop hb\nif (msg.payload == \"alive\") return null;\n\nif (msg.payload != 0) {\n    msg.payload = msg.payload - 1;\n}\n\nif (msg.payload == 0) {\n    // clear config\n    msg.payload = \"\";\n    msg.topic = msg.topic.replace(/\\/cmd\\/hb$/, \"/config\");\n}\nmsg.overrideRoot = true;\nmsg.qos = 2;\nmsg.retain = false;\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -4127,7 +4127,8 @@
         "y": 140,
         "wires": [
             [
-                "a379e5c1077ef903"
+                "a379e5c1077ef903",
+                "765f9993a1f1dce5"
             ]
         ]
     },
@@ -4259,6 +4260,42 @@
         "wires": [
             [
                 "551afef49fc9d01c"
+            ]
+        ]
+    },
+    {
+        "id": "805bf7dc933fbb68",
+        "type": "function",
+        "z": "3c50040f913fd396",
+        "name": "Subscribe to hb",
+        "func": "msg.topic = \"#\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 560,
+        "y": 220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "765f9993a1f1dce5",
+        "type": "function",
+        "z": "3c50040f913fd396",
+        "name": "Replace /config to /cmd/hb",
+        "func": "// If update is \"deletion\"\nif (msg.payload == \"\") {\n    return null;\n}\n\nmsg.topic = msg.topic.replace(/\\/config$/, \"/cmd/hb\");\nmsg.overrideRoot = true;\nmsg.retain = false;\nmsg.qos = 2;\n\nmsg.payload = 10;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 340,
+        "y": 220,
+        "wires": [
+            [
+                "805bf7dc933fbb68"
             ]
         ]
     }
