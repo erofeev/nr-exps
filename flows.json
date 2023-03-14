@@ -3923,7 +3923,7 @@
         "type": "function",
         "z": "9da1654216b6a11d",
         "name": "Replace /config to /cmd/hb",
-        "func": "// If update is \"deletion\"\nif (msg.payload != \"\") {\n    msg.payload = 10;\n}\n\nmsg.topic = msg.topic.replace(/\\/config$/, \"/cmd/hb\");\nmsg.overrideRoot = true;\nmsg.retain = false;\nmsg.qos = 2;\nmsg.payload = 10;\nreturn msg;",
+        "func": "// If update is \"deletion\"\nif (msg.payload != \"\") {\n    msg.payload = 10;\n}\n\nmsg.topic = msg.topic.replace(/\\/config$/, \"/cmd/hb\");\nmsg.overrideRoot = true;\nmsg.retain = false;\nmsg.qos = 2;\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -3933,7 +3933,7 @@
         "y": 460,
         "wires": [
             [
-                "736f956dcb17af7a"
+                "e30d837855d6e6e3"
             ]
         ]
     },
@@ -4045,14 +4045,31 @@
         "valueProperty": "payload",
         "useString": true,
         "outputs": 1,
-        "x": 470,
-        "y": 460,
+        "x": 190,
+        "y": 640,
         "wires": [
             [
                 "d8f80d8f54515033",
                 "fa4bc1fd4920895d"
             ]
         ]
+    },
+    {
+        "id": "e30d837855d6e6e3",
+        "type": "Cache out",
+        "z": "9da1654216b6a11d",
+        "name": "",
+        "cache": "403a2d257b9966ec",
+        "keyType": "msg",
+        "keyProperty": "topic",
+        "valueType": "msg",
+        "valueProperty": "payload",
+        "ttlType": "msg",
+        "ttlProperty": "",
+        "useString": false,
+        "x": 190,
+        "y": 560,
+        "wires": []
     },
     {
         "id": "394a5b0c95ee3a73",
