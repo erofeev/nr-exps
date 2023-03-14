@@ -3923,7 +3923,7 @@
         "type": "function",
         "z": "9da1654216b6a11d",
         "name": "Replace /config to /cmd/hb",
-        "func": "// If update is \"deletion\"\nif (msg.payload != \"\") {\n    msg.payload = 10;\n}\n\nmsg.topic = msg.topic.replace(/\\/config$/, \"/cmd/hb\");\nmsg.overrideRoot = true;\nmsg.retain = false;\nmsg.qos = 2;\n\nreturn msg;",
+        "func": "// If update is \"deletion\"\nif (msg.payload != \"\") {\n    msg.payload = 10;\n}\n\nmsg.topic = msg.topic.replace(/\\/config$/, \"/cmd/hb\");\nmsg.overrideRoot = true;\nmsg.retain = false;\nmsg.qos = 2;\nmsg.payload = 10;\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
