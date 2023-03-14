@@ -3900,7 +3900,8 @@
         "y": 580,
         "wires": [
             [
-                "1e2dd314a8bab2b8"
+                "1e2dd314a8bab2b8",
+                "68a217f491fed8d5"
             ]
         ]
     },
@@ -3919,8 +3920,7 @@
         "y": 580,
         "wires": [
             [
-                "2545dcd97ccd9620",
-                "fa4bc1fd4920895d"
+                "2545dcd97ccd9620"
             ]
         ]
     },
@@ -3954,7 +3954,7 @@
         "type": "debug",
         "z": "9da1654216b6a11d",
         "name": "debug 8",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -3965,6 +3965,31 @@
         "x": 760,
         "y": 660,
         "wires": []
+    },
+    {
+        "id": "68a217f491fed8d5",
+        "type": "switch",
+        "z": "9da1654216b6a11d",
+        "name": "",
+        "property": "topic",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "cont",
+                "v": "ble",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 570,
+        "y": 660,
+        "wires": [
+            [
+                "fa4bc1fd4920895d"
+            ]
+        ]
     },
     {
         "id": "394a5b0c95ee3a73",
