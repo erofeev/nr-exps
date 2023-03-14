@@ -4000,7 +4000,7 @@
         "type": "debug",
         "z": "9da1654216b6a11d",
         "name": "debug 8",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -4052,7 +4052,6 @@
         "wires": [
             [
                 "d8f80d8f54515033",
-                "e5285405b3363f33",
                 "fa4bc1fd4920895d"
             ]
         ]
