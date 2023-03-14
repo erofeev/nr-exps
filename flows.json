@@ -3682,7 +3682,8 @@
         "y": 320,
         "wires": [
             [
-                "b52f08c18704038f"
+                "b52f08c18704038f",
+                "228628be459c32b4"
             ]
         ]
     },
@@ -3842,6 +3843,50 @@
         "wires": [
             [
                 "993a60cddde7da1f"
+            ]
+        ]
+    },
+    {
+        "id": "228628be459c32b4",
+        "type": "delay",
+        "z": "9da1654216b6a11d",
+        "name": "",
+        "pauseType": "random",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 300,
+        "y": 500,
+        "wires": [
+            [
+                "b3bdf5e8b49555b3"
+            ]
+        ]
+    },
+    {
+        "id": "b3bdf5e8b49555b3",
+        "type": "function",
+        "z": "9da1654216b6a11d",
+        "name": "Remove prefix and postfix",
+        "func": "msg.topic = msg.topic.replace(/\\/config$/, \"\");\nmsg.topic = msg.topic.replace(/.*\\//, \"cmd/hb\");\nmsg.retain = false;\nmsg.qos = 0;\nmsg.payload = 10;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 510,
+        "y": 500,
+        "wires": [
+            [
+                "e5285405b3363f33"
             ]
         ]
     },
