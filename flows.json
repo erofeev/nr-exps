@@ -460,13 +460,6 @@
         "sessionExpiry": ""
     },
     {
-        "id": "403a2d257b9966ec",
-        "type": "Cache",
-        "name": "",
-        "defaultTtl": "5",
-        "checkPeriod": "1"
-    },
-    {
         "id": "2b65109daddacd99",
         "type": "json",
         "z": "ef8a80e9c499bb4e",
