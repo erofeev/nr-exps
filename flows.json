@@ -4290,7 +4290,9 @@
         "x": 560,
         "y": 220,
         "wires": [
-            []
+            [
+                "b0d5d04d2a5c6fa3"
+            ]
         ]
     },
     {
@@ -4309,17 +4311,19 @@
         "id": "b0d5d04d2a5c6fa3",
         "type": "function",
         "z": "3c50040f913fd396",
-        "name": "Replace /config to /cmd/hb",
+        "name": "I'm alive",
         "func": "msg.topic = \"/cmd/hb\";\nmsg.payload = \"alive\";\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 500,
+        "x": 560,
         "y": 280,
         "wires": [
-            []
+            [
+                "835c1e3dd1e077df"
+            ]
         ]
     }
 ]
