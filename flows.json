@@ -2824,7 +2824,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 510,
+        "x": 470,
         "y": 160,
         "wires": [
             [
@@ -2990,7 +2990,7 @@
         "type": "subflow:c1aee611e52a8323",
         "z": "4074d230f2e616af",
         "name": "",
-        "x": 730,
+        "x": 670,
         "y": 160,
         "wires": [
             [
@@ -3003,8 +3003,8 @@
         "type": "subflow:ed5a77f4448c2cf5",
         "z": "4074d230f2e616af",
         "name": "",
-        "x": 800,
-        "y": 220,
+        "x": 820,
+        "y": 160,
         "wires": [
             [
                 "1b48e98d6cae1a38"
@@ -3028,8 +3028,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 830,
-        "y": 280,
+        "x": 850,
+        "y": 220,
         "wires": [
             [
                 "163f471b79ff47dc"
@@ -3053,8 +3053,8 @@
         "drop": false,
         "allowrate": false,
         "outputs": 1,
-        "x": 960,
-        "y": 280,
+        "x": 920,
+        "y": 260,
         "wires": [
             [
                 "7cc310d61bc0aa0c"
@@ -4244,7 +4244,7 @@
         "z": "3c50040f913fd396",
         "name": "",
         "pauseType": "delay",
-        "timeout": "5",
+        "timeout": "1",
         "timeoutUnits": "seconds",
         "rate": "1",
         "nbRateUnits": "1",
@@ -4264,23 +4264,6 @@
         ]
     },
     {
-        "id": "805bf7dc933fbb68",
-        "type": "function",
-        "z": "3c50040f913fd396",
-        "name": "Subscribe to hb",
-        "func": "msg.topic = \"#\";\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 560,
-        "y": 220,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "765f9993a1f1dce5",
         "type": "function",
         "z": "3c50040f913fd396",
@@ -4295,8 +4278,48 @@
         "y": 220,
         "wires": [
             [
-                "805bf7dc933fbb68"
+                "5823e427fc633ea6"
             ]
+        ]
+    },
+    {
+        "id": "5823e427fc633ea6",
+        "type": "subflow:ed5a77f4448c2cf5",
+        "z": "3c50040f913fd396",
+        "name": "",
+        "x": 560,
+        "y": 220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "835c1e3dd1e077df",
+        "type": "subflow:4778c81a96bb6f95",
+        "z": "3c50040f913fd396",
+        "name": "",
+        "x": 740,
+        "y": 280,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "b0d5d04d2a5c6fa3",
+        "type": "function",
+        "z": "3c50040f913fd396",
+        "name": "Replace /config to /cmd/hb",
+        "func": "msg.topic = \"/cmd/hb\";\nmsg.payload = \"alive\";\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 500,
+        "y": 280,
+        "wires": [
+            []
         ]
     }
 ]
