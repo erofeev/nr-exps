@@ -3933,9 +3933,7 @@
         "y": 400,
         "wires": [
             [
-                "e30d837855d6e6e3",
-                "d8f80d8f54515033",
-                "e5285405b3363f33"
+                "d8f80d8f54515033"
             ]
         ]
     },
@@ -3961,8 +3959,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 900,
-        "y": 560,
+        "x": 580,
+        "y": 580,
         "wires": [
             []
         ]
@@ -3982,43 +3980,6 @@
         "statusType": "auto",
         "x": 760,
         "y": 700,
-        "wires": []
-    },
-    {
-        "id": "736f956dcb17af7a",
-        "type": "Cache in",
-        "z": "9da1654216b6a11d",
-        "name": "",
-        "cache": "403a2d257b9966ec",
-        "keyType": "msg",
-        "keyProperty": "topic",
-        "valueType": "msg",
-        "valueProperty": "payload",
-        "useString": false,
-        "outputs": 1,
-        "x": 570,
-        "y": 580,
-        "wires": [
-            [
-                "fa4bc1fd4920895d"
-            ]
-        ]
-    },
-    {
-        "id": "e30d837855d6e6e3",
-        "type": "Cache out",
-        "z": "9da1654216b6a11d",
-        "name": "",
-        "cache": "403a2d257b9966ec",
-        "keyType": "msg",
-        "keyProperty": "topic",
-        "valueType": "msg",
-        "valueProperty": "payload",
-        "ttlType": "msg",
-        "ttlProperty": "",
-        "useString": false,
-        "x": 490,
-        "y": 460,
         "wires": []
     },
     {
