@@ -4043,7 +4043,7 @@
         "keyProperty": "topic",
         "valueType": "msg",
         "valueProperty": "payload",
-        "useString": false,
+        "useString": true,
         "outputs": 1,
         "x": 470,
         "y": 460,
