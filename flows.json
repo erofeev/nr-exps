@@ -3929,8 +3929,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 260,
-        "y": 460,
+        "x": 360,
+        "y": 400,
         "wires": [
             [
                 "e30d837855d6e6e3"
@@ -4067,8 +4067,8 @@
         "ttlType": "msg",
         "ttlProperty": "",
         "useString": false,
-        "x": 190,
-        "y": 560,
+        "x": 490,
+        "y": 460,
         "wires": []
     },
     {
