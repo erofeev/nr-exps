@@ -3683,8 +3683,7 @@
         "wires": [
             [
                 "b52f08c18704038f",
-                "228628be459c32b4",
-                "e0c1431b5da399e5"
+                "228628be459c32b4"
             ]
         ]
     },
@@ -3876,37 +3875,51 @@
         "id": "b3bdf5e8b49555b3",
         "type": "function",
         "z": "9da1654216b6a11d",
-        "name": "Remove prefix and postfix",
+        "name": "Replace /config to /cmd/hb",
         "func": "msg.topic = msg.topic.replace(/\\/config$/, \"/cmd/hb\");\nmsg.overrideRoot = true;\nmsg.retain = false;\nmsg.qos = 0;\nmsg.payload = 10;\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 510,
+        "x": 520,
         "y": 500,
         "wires": [
             [
-                "e5285405b3363f33"
+                "e5285405b3363f33",
+                "d8f80d8f54515033"
             ]
         ]
     },
     {
-        "id": "e0c1431b5da399e5",
-        "type": "debug",
+        "id": "d8f80d8f54515033",
+        "type": "subflow:ed5a77f4448c2cf5",
         "z": "9da1654216b6a11d",
-        "name": "debug 8",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 760,
-        "y": 520,
-        "wires": []
+        "name": "",
+        "x": 420,
+        "y": 580,
+        "wires": [
+            [
+                "1e2dd314a8bab2b8"
+            ]
+        ]
+    },
+    {
+        "id": "1e2dd314a8bab2b8",
+        "type": "function",
+        "z": "9da1654216b6a11d",
+        "name": "function 3",
+        "func": "\nif (msg.payload != 0) {\n    msg.payload = msg.payload - 1;\n}\n\nif (msg.payload == 0) {\n// clear config\n    msg.payload = \"\";\n    msg.topic = msg.topic.replace(/\\/cmd\\/hb$/, \"/config\");\n}\nmsg.overrideRoot = true;\nmsg.qos = 2;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 600,
+        "y": 580,
+        "wires": [
+            []
+        ]
     },
     {
         "id": "394a5b0c95ee3a73",
