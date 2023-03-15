@@ -3988,7 +3988,7 @@
         "type": "function",
         "z": "9da1654216b6a11d",
         "name": "function 4",
-        "func": "msg.hb_thing_interval = msg.payload.hb_interval_sec || flow.get(\"thing.def_config.hb_interval\") || 10;\n\nvar elem = { p: msg.payload, hb_i: msg.hb_thing_interval};\nvar key = \"table.\" + msg.topic;\nflow.set(key, elem);\n\nvar table = flow.get(\"table\");\n\nvar length = 0;\nfor (var key in table) {\n    if (table.hasOwnProperty(key)) {\n        ++length;\n    }\n}\n\n\nnode.status({ fill: \"green\", shape: \"dot\", text: length });\nmsg.cnt = length;\n\nreturn msg;",
+        "func": "msg.hb_thing_interval = msg.payload.hb_interval_sec || flow.get(\"thing.def_config.hb_interval\") || 10;\n\nvar elem = { p: msg.payload, hb_i: msg.hb_thing_interval};\nvar key = \"table.\" + msg.topic;\nflow.set(key, elem);\n\nvar table = flow.get(\"table\");\n\nvar length = 0;\nfor (var key in table) {\n    if (table.hasOwnProperty(key)) {\n        ++length;\n        table.delete(key);\n    }\n}\n\n\nnode.status({ fill: \"green\", shape: \"dot\", text: length });\nmsg.cnt = length;\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
