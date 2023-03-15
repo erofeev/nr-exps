@@ -3980,7 +3980,7 @@
         "type": "function",
         "z": "9da1654216b6a11d",
         "name": "function 4",
-        "func": "msg.hb_thing_interval = msg.payload.hb_interval_sec || flow.get(\"thing.def_config.hb_interval\") || 10;\n\nvar table = flow.get(\"table\") || [];\nvar elem = { p: msg.payload, t: msg.topic, hb_i: msg.hb_thing_interval};\ntable.push(elem);\nvar key = \"table.\" + msg.topic;\nflow.set(key, table);\n\nreturn msg;",
+        "func": "msg.hb_thing_interval = msg.payload.hb_interval_sec || flow.get(\"thing.def_config.hb_interval\") || 10;\n\nvar elem = { p: msg.payload, hb_i: msg.hb_thing_interval};\nvar key = \"table.\" + msg.topic;\nflow.set(key, elem);\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
