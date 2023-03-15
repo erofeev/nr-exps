@@ -892,7 +892,9 @@
                 "vt": "str"
             },
             {
-                "t": "null"
+                "t": "neq",
+                "v": "connected",
+                "vt": "str"
             }
         ],
         "checkall": "true",
