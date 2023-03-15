@@ -3698,6 +3698,12 @@
                 "pt": "flow",
                 "to": "registry",
                 "tot": "str"
+            },
+            {
+                "p": "thing.hb_interval_sec",
+                "pt": "flow",
+                "to": "99",
+                "tot": "num"
             }
         ],
         "active": true,
