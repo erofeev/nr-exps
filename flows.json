@@ -3748,7 +3748,7 @@
         "wires": [
             [
                 "b52f08c18704038f",
-                "b3bdf5e8b49555b3"
+                "8cfe4231bf39edb2"
             ]
         ]
     },
@@ -3922,8 +3922,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 360,
-        "y": 400,
+        "x": 260,
+        "y": 540,
         "wires": [
             [
                 "d8f80d8f54515033"
@@ -3971,9 +3971,28 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 760,
-        "y": 700,
+        "x": 580,
+        "y": 440,
         "wires": []
+    },
+    {
+        "id": "8cfe4231bf39edb2",
+        "type": "function",
+        "z": "9da1654216b6a11d",
+        "name": "function 4",
+        "func": "msg.hb_thing_interval = msg.payload.hb_interval_sec || flow.get(\"thing.def_config.hb_interval\") || 10;\n\nvar table = flow.get(\"table\") || [];\nvar elem = {p: msg.payload; t: msg.topic};\ntable.push(elem);\n\nflow.set(\"table\", table);\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 1,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 400,
+        "y": 440,
+        "wires": [
+            [
+                "fa4bc1fd4920895d"
+            ]
+        ]
     },
     {
         "id": "394a5b0c95ee3a73",
