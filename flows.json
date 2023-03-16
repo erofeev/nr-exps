@@ -566,9 +566,10 @@
         "name": "",
         "broker": "g",
         "port": "0000",
+        "tls": "",
         "clientid": "",
         "autoConnect": false,
-        "usetls": false,
+        "usetls": true,
         "protocolVersion": "4",
         "keepalive": "60",
         "cleansession": true,
@@ -4621,7 +4622,7 @@
         "y": 400,
         "wires": [
             [
-                "5e7e5ade9de8cf22"
+                "31c5f1724b81ffdc"
             ]
         ]
     },
@@ -4643,23 +4644,6 @@
                 "28ed644251b02944"
             ]
         ]
-    },
-    {
-        "id": "5e7e5ade9de8cf22",
-        "type": "debug",
-        "z": "3c50040f913fd396",
-        "name": "debug 7",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 780,
-        "y": 400,
-        "wires": []
     },
     {
         "id": "300ea799b1f00bd1",
@@ -4919,6 +4903,18 @@
             [
                 "0f0748f017ddbfcd"
             ]
+        ]
+    },
+    {
+        "id": "31c5f1724b81ffdc",
+        "type": "subflow:9bcc7449d0bc9589",
+        "z": "3c50040f913fd396",
+        "name": "",
+        "x": 760,
+        "y": 400,
+        "wires": [
+            [],
+            []
         ]
     }
 ]
