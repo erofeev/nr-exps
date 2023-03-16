@@ -259,6 +259,106 @@
         }
     },
     {
+        "id": "9bcc7449d0bc9589",
+        "type": "subflow",
+        "name": "SendDataGlobal",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 80,
+                "y": 140,
+                "wires": [
+                    {
+                        "id": "c5dde98c49ed0654"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 820,
+                "y": 220,
+                "wires": [
+                    {
+                        "id": "b505704302cb33bc",
+                        "port": 0
+                    }
+                ]
+            },
+            {
+                "x": 820,
+                "y": 260,
+                "wires": [
+                    {
+                        "id": "6df40a097d61b326",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [],
+        "meta": {},
+        "color": "#3FADB5",
+        "status": {
+            "x": 820,
+            "y": 400,
+            "wires": [
+                {
+                    "id": "09471baf13409fda",
+                    "port": 0
+                },
+                {
+                    "id": "e4ba3e204491c83f",
+                    "port": 0
+                }
+            ]
+        }
+    },
+    {
+        "id": "e6cda07194865795",
+        "type": "subflow",
+        "name": "SendConfigGlobal",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 100,
+                "y": 120,
+                "wires": [
+                    {
+                        "id": "27023864bc7b6dfa"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 900,
+                "y": 520,
+                "wires": [
+                    {
+                        "id": "0ce11a1403a42898",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [],
+        "meta": {},
+        "color": "#3FADB5",
+        "status": {
+            "x": 1000,
+            "y": 200,
+            "wires": [
+                {
+                    "id": "cc4727806e541eb3",
+                    "port": 0
+                }
+            ]
+        }
+    },
+    {
         "id": "5e1c22f8.d65d2c",
         "type": "ui_group",
         "name": "group 2",
@@ -438,6 +538,34 @@
         "name": "",
         "broker": "s",
         "port": "000",
+        "clientid": "",
+        "autoConnect": false,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "c1bb3138895a3311",
+        "type": "mqtt-broker",
+        "z": "9bcc7449d0bc9589",
+        "name": "",
+        "broker": "g",
+        "port": "0000",
         "clientid": "",
         "autoConnect": false,
         "usetls": false,
@@ -1122,6 +1250,412 @@
         "inputs": 1,
         "x": 750,
         "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "bc92555c1c9f75f1",
+        "type": "mqtt out",
+        "z": "9bcc7449d0bc9589",
+        "name": "",
+        "topic": "",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "c1bb3138895a3311",
+        "x": 910,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "2439dcf227b42864",
+        "type": "function",
+        "z": "9bcc7449d0bc9589",
+        "name": "Add /broker-id",
+        "func": "var p = flow.get(\"cachedMsg.p\") || undefined;\nvar t = flow.get(\"cachedMsg.t\") || undefined;\nvar m = flow.get(\"cachedMsg.m\") || undefined;\n\nflow.set(\"cachedMsg.m\", undefined);\n\nif (p) {\n    flow.set(\"cachedMsg.p\", undefined);\n    msg.payload = p;\n}\nif (t) {\n    flow.set(\"cachedMsg.t\", undefined)\n    msg.topic = t;\n}\nif (m) {\n    flow.set(\"cachedMsg.m\", undefined)\n    msg.overrideRoot = m.overrideRoot;\n}\n\nvar dataTopic = flow.get(\"$parent.thing.type\") || \"na\";\ndataTopic = dataTopic + ':';\ndataTopic = dataTopic + flow.get(\"$parent.thing.id\") || \"na\";\n\nif (!msg.topic) return null;\n\nif (msg.overrideRoot != true) {\nmsg.topic = global.get(\"broker.id\") + \"/\" + dataTopic +  \"/\" + msg.topic;\n}\nmsg.qos = 2;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 600,
+        "y": 80,
+        "wires": [
+            [
+                "bc92555c1c9f75f1"
+            ]
+        ]
+    },
+    {
+        "id": "09471baf13409fda",
+        "type": "status",
+        "z": "9bcc7449d0bc9589",
+        "name": "Status of [MQTT out] node",
+        "scope": [
+            "bc92555c1c9f75f1"
+        ],
+        "x": 190,
+        "y": 240,
+        "wires": [
+            [
+                "49d02003f901f124"
+            ]
+        ]
+    },
+    {
+        "id": "49d02003f901f124",
+        "type": "switch",
+        "z": "9bcc7449d0bc9589",
+        "name": "if connected",
+        "property": "status.text",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "node-red:common.status.connected",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "node-red:common.status.disconnected",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 410,
+        "y": 240,
+        "wires": [
+            [
+                "b505704302cb33bc"
+            ],
+            [
+                "6df40a097d61b326"
+            ]
+        ]
+    },
+    {
+        "id": "96dc3e58b455e70d",
+        "type": "catch",
+        "z": "9bcc7449d0bc9589",
+        "name": "",
+        "scope": [
+            "bc92555c1c9f75f1"
+        ],
+        "uncaught": false,
+        "x": 170,
+        "y": 380,
+        "wires": [
+            [
+                "e4ba3e204491c83f"
+            ]
+        ]
+    },
+    {
+        "id": "b505704302cb33bc",
+        "type": "function",
+        "z": "9bcc7449d0bc9589",
+        "name": "Status",
+        "func": "msg.payload = \"Connected\";\nflow.set(\"Status\", \"connected\");\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 590,
+        "y": 220,
+        "wires": [
+            [
+                "c5dde98c49ed0654"
+            ]
+        ]
+    },
+    {
+        "id": "6df40a097d61b326",
+        "type": "function",
+        "z": "9bcc7449d0bc9589",
+        "name": "Status",
+        "func": "msg.payload = \"Disconnected\";\nflow.set(\"Status\", undefined);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 590,
+        "y": 260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e4ba3e204491c83f",
+        "type": "function",
+        "z": "9bcc7449d0bc9589",
+        "name": "Status",
+        "func": "msg.payload = \"Error\";\nflow.set(\"Status\", undefined);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 310,
+        "y": 380,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7477f40d5e2ddd7f",
+        "type": "function",
+        "z": "9bcc7449d0bc9589",
+        "name": "Connect to local broker",
+        "func": "flow.set(\"cachedMsg.p\", msg.payload);\nflow.set(\"cachedMsg.t\", msg.topic);\nflow.set(\"cachedMsg.m\", msg);\nmsg.topic = undefined;\nmsg.payload = undefined;\n\nmsg.action = \"connect\";\nmsg.broker = {};\nmsg.broker.broker = global.get(\"GlobalBroker.host\") || \"\";\nmsg.broker.port = global.get(\"GlobalBroker.port\") || \"\";\nmsg.broker.username = global.get(\"GlobalBroker.user\") || \"\";\nmsg.broker.password = global.get(\"GlobalBroker.pswd\") || \"\";\nmsg.broker.force  = true;\nmsg.broker.clientid = flow.get(\"$parent.thing.type\") || \"na\";\nmsg.broker.clientid = msg.broker.clientid + ':d:' + + Math.random();\nmsg.broker.clientid = msg.broker.clientid + flow.get(\"$parent.thing.id\") || \"na\";\n\nmsg.qos = 2;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "// Code added here will be run once\n// whenever the node is started.\nflow.set(\"Status\", undefined);",
+        "finalize": "",
+        "libs": [],
+        "x": 510,
+        "y": 160,
+        "wires": [
+            [
+                "bc92555c1c9f75f1"
+            ]
+        ]
+    },
+    {
+        "id": "c5dde98c49ed0654",
+        "type": "switch",
+        "z": "9bcc7449d0bc9589",
+        "name": "if connected",
+        "property": "Status",
+        "propertyType": "flow",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "connected",
+                "vt": "str"
+            },
+            {
+                "t": "neq",
+                "v": "connected",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 270,
+        "y": 140,
+        "wires": [
+            [
+                "2439dcf227b42864"
+            ],
+            [
+                "7477f40d5e2ddd7f"
+            ]
+        ]
+    },
+    {
+        "id": "b64385e9d3c4fbfb",
+        "type": "mqtt out",
+        "z": "e6cda07194865795",
+        "name": "",
+        "topic": "",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "9b9ea97fbd86e279",
+        "x": 650,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "27023864bc7b6dfa",
+        "type": "function",
+        "z": "e6cda07194865795",
+        "name": "Connect to local broker",
+        "func": "msg.action = \"connect\";\nmsg.broker = { broker: \"\", port: \"\"}\nmsg.broker.broker = global.get(\"GlobalBroker.host\") || \"\";\nmsg.broker.port = global.get(\"GlobalBroker.port\") || \"\";\nmsg.broker.username = global.get(\"GlobalBroker.user\") || \"\";\nmsg.broker.password = global.get(\"GlobalBroker.pswd\") || \"\";\nmsg.broker.force  = true;\nmsg.broker.clientid = flow.get(\"$parent.thing.type\") || \"na\";\nmsg.broker.clientid = msg.broker.clientid + ':c:' + + Math.random();\nmsg.broker.clientid = msg.broker.clientid + flow.get(\"$parent.thing.id\") || \"na\";\n\nmsg.qos = 2;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 350,
+        "y": 120,
+        "wires": [
+            [
+                "b64385e9d3c4fbfb"
+            ]
+        ]
+    },
+    {
+        "id": "a1fd85e5ccfcb2c1",
+        "type": "status",
+        "z": "e6cda07194865795",
+        "name": "Status of [MQTT out] node",
+        "scope": [
+            "b64385e9d3c4fbfb"
+        ],
+        "x": 210,
+        "y": 200,
+        "wires": [
+            [
+                "cf6bd1aeb197a857",
+                "cc4727806e541eb3"
+            ]
+        ]
+    },
+    {
+        "id": "cf6bd1aeb197a857",
+        "type": "switch",
+        "z": "e6cda07194865795",
+        "name": "if connected",
+        "property": "status.text",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "node-red:common.status.connected",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "node-red:common.status.disconnected",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 450,
+        "y": 220,
+        "wires": [
+            [
+                "37bf622fd511359b"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "37bf622fd511359b",
+        "type": "function",
+        "z": "e6cda07194865795",
+        "name": "Add /broker-id",
+        "func": "var cfgTopic = flow.get(\"$parent.thing.type\") || \"na\";\ncfgTopic = cfgTopic + ':';\ncfgTopic = cfgTopic + flow.get(\"$parent.thing.id\") || \"na\";\ncfgTopic = cfgTopic + '/config';\n\n\nmsg.topic = global.get(\"broker.id\") + \"/\" + cfgTopic;\n\n\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 520,
+        "y": 260,
+        "wires": [
+            [
+                "852f6e683297a4fe"
+            ]
+        ]
+    },
+    {
+        "id": "852f6e683297a4fe",
+        "type": "function",
+        "z": "e6cda07194865795",
+        "name": "Set retained for /config",
+        "func": "const match = '\\/config$';\nconst topic = msg.topic;\nconst found = topic.match(match);\n\nif (found) {\n    msg.qos = 2;\n    msg.retain = true;\n}\ndelete msg.topic;\nmsg.topic = topic;\nmsg.qos = 2;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 600,
+        "y": 320,
+        "wires": [
+            [
+                "7cb7578427278d99"
+            ]
+        ]
+    },
+    {
+        "id": "7cb7578427278d99",
+        "type": "function",
+        "z": "e6cda07194865795",
+        "name": "Popoluate /config data",
+        "func": "msg.payload = flow.get(\"$parent.thing\") || '';\nmsg.qos = 2;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 720,
+        "y": 380,
+        "wires": [
+            [
+                "b64385e9d3c4fbfb",
+                "0ce11a1403a42898"
+            ]
+        ]
+    },
+    {
+        "id": "cc4727806e541eb3",
+        "type": "change",
+        "z": "e6cda07194865795",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "status",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 860,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9fcf6d18c70ea145",
+        "type": "catch",
+        "z": "e6cda07194865795",
+        "name": "",
+        "scope": null,
+        "uncaught": false,
+        "x": 300,
+        "y": 480,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "0ce11a1403a42898",
+        "type": "function",
+        "z": "e6cda07194865795",
+        "name": "Passthrough Topic",
+        "func": "var nmsg = {  };\nnmsg.topic = msg.topic;\nreturn nmsg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 750,
+        "y": 520,
         "wires": [
             []
         ]
