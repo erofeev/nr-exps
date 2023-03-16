@@ -3578,7 +3578,8 @@
         "y": 120,
         "wires": [
             [
-                "ae7ba8fce859c623"
+                "ae7ba8fce859c623",
+                "4f9ce3146e113b71"
             ]
         ]
     },
@@ -3870,6 +3871,79 @@
         "wires": [
             []
         ]
+    },
+    {
+        "id": "4f9ce3146e113b71",
+        "type": "function",
+        "z": "9da1654216b6a11d",
+        "name": "Replace /config to /cmd/hb",
+        "func": "// If update is \"deletion\"\nif (msg.payload == \"\") {\n    return null;\n}\n\nmsg.topic = msg.topic.replace(/\\/config$/, \"/cmd/hb\");\nmsg.overrideRoot = true;\nmsg.retain = false;\nmsg.qos = 2;\n\nmsg.payload = 10;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 360,
+        "y": 240,
+        "wires": [
+            [
+                "172f96751fec3721"
+            ]
+        ]
+    },
+    {
+        "id": "172f96751fec3721",
+        "type": "subflow:ed5a77f4448c2cf5",
+        "z": "9da1654216b6a11d",
+        "name": "",
+        "x": 560,
+        "y": 240,
+        "wires": [
+            [
+                "4a4f2f8f5e70d663"
+            ]
+        ]
+    },
+    {
+        "id": "72dcea5042fbbd49",
+        "type": "subflow:4778c81a96bb6f95",
+        "z": "9da1654216b6a11d",
+        "name": "",
+        "x": 880,
+        "y": 240,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "4a4f2f8f5e70d663",
+        "type": "function",
+        "z": "9da1654216b6a11d",
+        "name": "I'm alive",
+        "func": "if (msg.payload == \"alive\") return null;\n\nmsg.topic = \"cmd/hb\";\nmsg.payload = \"alive\";\nmsg.retain = false;\nmsg.qos = 0;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 720,
+        "y": 240,
+        "wires": [
+            [
+                "72dcea5042fbbd49"
+            ]
+        ]
+    },
+    {
+        "id": "8c3d8e715dad43e7",
+        "type": "comment",
+        "z": "9da1654216b6a11d",
+        "name": "Answer to heartbeats ",
+        "info": "",
+        "x": 340,
+        "y": 200,
+        "wires": []
     },
     {
         "id": "394a5b0c95ee3a73",
