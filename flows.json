@@ -1524,8 +1524,7 @@
         "y": 120,
         "wires": [
             [
-                "b64385e9d3c4fbfb",
-                "ac34adc6b3c5a3a0"
+                "b64385e9d3c4fbfb"
             ]
         ]
     },
@@ -1542,8 +1541,7 @@
         "wires": [
             [
                 "cf6bd1aeb197a857",
-                "cc4727806e541eb3",
-                "ac34adc6b3c5a3a0"
+                "cc4727806e541eb3"
             ]
         ]
     },
@@ -1690,23 +1688,6 @@
         "wires": [
             []
         ]
-    },
-    {
-        "id": "ac34adc6b3c5a3a0",
-        "type": "debug",
-        "z": "e6cda07194865795",
-        "name": "debug 8",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": true,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "payload",
-        "statusType": "auto",
-        "x": 360,
-        "y": 360,
-        "wires": []
     },
     {
         "id": "c41f3ce662f9f4bb",
@@ -3657,25 +3638,25 @@
             },
             {
                 "p": "GlobalBroker.host",
-                "pt": "flow",
+                "pt": "global",
                 "to": "413bc8ac8d2849b7bf0706f84800f7a8.s2.eu.hivemq.cloud",
                 "tot": "str"
             },
             {
                 "p": "GlobalBroker.port",
-                "pt": "flow",
+                "pt": "global",
                 "to": "8883",
                 "tot": "str"
             },
             {
                 "p": "GlobalBroker.user",
-                "pt": "flow",
+                "pt": "global",
                 "to": "devicemqtt",
                 "tot": "str"
             },
             {
                 "p": "GlobalBroker.pswd",
-                "pt": "flow",
+                "pt": "global",
                 "to": "devicemqtt",
                 "tot": "str"
             }
