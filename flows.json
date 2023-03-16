@@ -3606,6 +3606,30 @@
                 "pt": "global",
                 "to": "devicemqtt",
                 "tot": "str"
+            },
+            {
+                "p": "GlobalBroker.host",
+                "pt": "flow",
+                "to": "413bc8ac8d2849b7bf0706f84800f7a8.s2.eu.hivemq.cloud",
+                "tot": "str"
+            },
+            {
+                "p": "GlobalBroker.port",
+                "pt": "flow",
+                "to": "8883",
+                "tot": "str"
+            },
+            {
+                "p": "GlobalBroker.user",
+                "pt": "flow",
+                "to": "devicemqtt",
+                "tot": "str"
+            },
+            {
+                "p": "GlobalBroker.pswd",
+                "pt": "flow",
+                "to": "devicemqtt",
+                "tot": "str"
             }
         ],
         "active": true,
@@ -4496,7 +4520,8 @@
             [
                 "551afef49fc9d01c",
                 "ffd72964407b6da5",
-                "300ea799b1f00bd1"
+                "300ea799b1f00bd1",
+                "0f0748f017ddbfcd"
             ]
         ]
     },
@@ -4516,6 +4541,18 @@
                 "p": "thing.type",
                 "pt": "flow",
                 "to": "bridge",
+                "tot": "str"
+            },
+            {
+                "p": "",
+                "pt": "flow",
+                "to": "",
+                "tot": "str"
+            },
+            {
+                "p": "",
+                "pt": "flow",
+                "to": "",
                 "tot": "str"
             }
         ],
@@ -4563,7 +4600,7 @@
         "type": "subflow:ed5a77f4448c2cf5",
         "z": "3c50040f913fd396",
         "name": "",
-        "x": 560,
+        "x": 580,
         "y": 400,
         "wires": [
             [
@@ -4582,7 +4619,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 330,
+        "x": 350,
         "y": 400,
         "wires": [
             [
@@ -4603,7 +4640,7 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 760,
+        "x": 780,
         "y": 400,
         "wires": []
     },
@@ -4771,5 +4808,100 @@
         "x": 340,
         "y": 260,
         "wires": []
+    },
+    {
+        "id": "40ddad26088854f2",
+        "type": "subflow:e6cda07194865795",
+        "z": "3c50040f913fd396",
+        "name": "",
+        "x": 590,
+        "y": 500,
+        "wires": [
+            [
+                "5b37949ba51a7097"
+            ]
+        ]
+    },
+    {
+        "id": "0f0748f017ddbfcd",
+        "type": "function",
+        "z": "3c50040f913fd396",
+        "name": "Thing Model Description",
+        "func": "\nmsg.payload = flow.get(\"thing\");\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 350,
+        "y": 500,
+        "wires": [
+            [
+                "40ddad26088854f2"
+            ]
+        ]
+    },
+    {
+        "id": "5b37949ba51a7097",
+        "type": "subflow:ed5a77f4448c2cf5",
+        "z": "3c50040f913fd396",
+        "name": "",
+        "x": 780,
+        "y": 500,
+        "wires": [
+            [
+                "a9e921e0f12b8ea8"
+            ]
+        ]
+    },
+    {
+        "id": "a9e921e0f12b8ea8",
+        "type": "switch",
+        "z": "3c50040f913fd396",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 810,
+        "y": 560,
+        "wires": [
+            [
+                "86647c6b04cc3cb3"
+            ]
+        ]
+    },
+    {
+        "id": "86647c6b04cc3cb3",
+        "type": "delay",
+        "z": "3c50040f913fd396",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "1",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 940,
+        "y": 560,
+        "wires": [
+            [
+                "0f0748f017ddbfcd"
+            ]
+        ]
     }
 ]
