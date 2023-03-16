@@ -4544,8 +4544,8 @@
         "links": [
             "e1e41d7a50c87ccd"
         ],
-        "x": 125,
-        "y": 140,
+        "x": 75,
+        "y": 120,
         "wires": [
             [
                 "551afef49fc9d01c",
@@ -4575,8 +4575,8 @@
             }
         ],
         "active": true,
-        "x": 570,
-        "y": 80,
+        "x": 520,
+        "y": 60,
         "wires": [],
         "info": "пвапрвап"
     },
@@ -4591,8 +4591,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 350,
-        "y": 180,
+        "x": 300,
+        "y": 160,
         "wires": [
             [
                 "44741fbf17d87e7e"
@@ -4604,8 +4604,8 @@
         "type": "subflow:c1aee611e52a8323",
         "z": "3c50040f913fd396",
         "name": "",
-        "x": 590,
-        "y": 180,
+        "x": 540,
+        "y": 160,
         "wires": [
             [
                 "a379e5c1077ef903",
@@ -4618,11 +4618,11 @@
         "type": "subflow:ed5a77f4448c2cf5",
         "z": "3c50040f913fd396",
         "name": "",
-        "x": 580,
-        "y": 400,
+        "x": 510,
+        "y": 380,
         "wires": [
             [
-                "31c5f1724b81ffdc"
+                "e9f6e7f4a9f37ac9"
             ]
         ]
     },
@@ -4637,8 +4637,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 350,
-        "y": 400,
+        "x": 300,
+        "y": 380,
         "wires": [
             [
                 "28ed644251b02944"
@@ -4656,8 +4656,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 330,
-        "y": 80,
+        "x": 280,
+        "y": 60,
         "wires": [
             [
                 "ae22081240debf6c"
@@ -4669,8 +4669,8 @@
         "type": "subflow:ed5a77f4448c2cf5",
         "z": "3c50040f913fd396",
         "name": "",
-        "x": 760,
-        "y": 180,
+        "x": 710,
+        "y": 160,
         "wires": [
             [
                 "d22123600360f845"
@@ -4694,8 +4694,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 790,
-        "y": 240,
+        "x": 740,
+        "y": 220,
         "wires": [
             [
                 "6600c3e37e2faeeb"
@@ -4719,8 +4719,8 @@
         "drop": false,
         "allowrate": false,
         "outputs": 1,
-        "x": 920,
-        "y": 240,
+        "x": 870,
+        "y": 220,
         "wires": [
             [
                 "551afef49fc9d01c"
@@ -4738,8 +4738,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 360,
-        "y": 300,
+        "x": 310,
+        "y": 280,
         "wires": [
             [
                 "5823e427fc633ea6"
@@ -4751,8 +4751,8 @@
         "type": "subflow:ed5a77f4448c2cf5",
         "z": "3c50040f913fd396",
         "name": "",
-        "x": 560,
-        "y": 300,
+        "x": 510,
+        "y": 280,
         "wires": [
             [
                 "b0d5d04d2a5c6fa3"
@@ -4764,8 +4764,8 @@
         "type": "subflow:4778c81a96bb6f95",
         "z": "3c50040f913fd396",
         "name": "",
-        "x": 880,
-        "y": 300,
+        "x": 830,
+        "y": 280,
         "wires": [
             [],
             []
@@ -4782,8 +4782,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 720,
-        "y": 300,
+        "x": 670,
+        "y": 280,
         "wires": [
             [
                 "835c1e3dd1e077df"
@@ -4796,8 +4796,8 @@
         "z": "3c50040f913fd396",
         "name": "Publish configuration and autorestore this topic if deleted somehow",
         "info": "",
-        "x": 480,
-        "y": 140,
+        "x": 430,
+        "y": 120,
         "wires": []
     },
     {
@@ -4806,8 +4806,8 @@
         "z": "3c50040f913fd396",
         "name": "Answer to heartbeats ",
         "info": "",
-        "x": 340,
-        "y": 260,
+        "x": 290,
+        "y": 240,
         "wires": []
     },
     {
@@ -4815,8 +4815,8 @@
         "type": "subflow:e6cda07194865795",
         "z": "3c50040f913fd396",
         "name": "",
-        "x": 590,
-        "y": 500,
+        "x": 540,
+        "y": 480,
         "wires": [
             [
                 "5b37949ba51a7097"
@@ -4834,8 +4834,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 350,
-        "y": 500,
+        "x": 300,
+        "y": 480,
         "wires": [
             [
                 "40ddad26088854f2"
@@ -4847,8 +4847,8 @@
         "type": "subflow:ed5a77f4448c2cf5",
         "z": "3c50040f913fd396",
         "name": "",
-        "x": 780,
-        "y": 500,
+        "x": 730,
+        "y": 480,
         "wires": [
             [
                 "a9e921e0f12b8ea8"
@@ -4872,8 +4872,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 810,
-        "y": 560,
+        "x": 760,
+        "y": 540,
         "wires": [
             [
                 "86647c6b04cc3cb3"
@@ -4897,8 +4897,8 @@
         "drop": false,
         "allowrate": false,
         "outputs": 1,
-        "x": 940,
-        "y": 560,
+        "x": 890,
+        "y": 540,
         "wires": [
             [
                 "0f0748f017ddbfcd"
@@ -4910,11 +4910,30 @@
         "type": "subflow:9bcc7449d0bc9589",
         "z": "3c50040f913fd396",
         "name": "",
-        "x": 760,
-        "y": 400,
+        "x": 910,
+        "y": 380,
         "wires": [
             [],
             []
+        ]
+    },
+    {
+        "id": "e9f6e7f4a9f37ac9",
+        "type": "function",
+        "z": "3c50040f913fd396",
+        "name": "OverrideRoot - true",
+        "func": "msg.overrideRoot = true;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 700,
+        "y": 380,
+        "wires": [
+            [
+                "31c5f1724b81ffdc"
+            ]
         ]
     }
 ]
