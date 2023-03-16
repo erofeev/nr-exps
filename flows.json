@@ -916,7 +916,7 @@
         "type": "function",
         "z": "ed5a77f4448c2cf5",
         "name": "Try to subscribe",
-        "func": "var p = flow.get(\"cachedMsg.p\") || undefined;\nvar t = flow.get(\"cachedMsg.t\") || undefined;\n\nif (p) {\n    flow.set(\"cachedMsg.p\", undefined);\n    msg.payload = p;\n}\nif (t) {\n    flow.set(\"cachedMsg.t\", undefined);\n    msg.topic = t;\n}\nif (!msg.topic) return;\n\nmsg.action = \"subscribe\";\nmsg.qos = 2;\n\nreturn msg;",
+        "func": "var p = flow.get(\"cachedMsg.p\") || undefined;\nvar t = flow.get(\"cachedMsg.t\") || undefined;\n\nif (p) {\n    flow.set(\"cachedMsg.p\", undefined);\n    msg.payload = p;\n}\nif (t) {\n    flow.set(\"cachedMsg.t\", undefined);\n    msg.topic = t;\n}\nif (!msg.topic) return;\n\nmsg.action = msg.superAction || \"subscribe\";\nmsg.qos = 2;\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -3803,8 +3803,8 @@
         "type": "subflow:4778c81a96bb6f95",
         "z": "9da1654216b6a11d",
         "name": "",
-        "x": 800,
-        "y": 380,
+        "x": 900,
+        "y": 360,
         "wires": [
             [
                 "2f2ddf8001a36a43"
@@ -3823,7 +3823,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 790,
+        "x": 830,
         "y": 320,
         "wires": [
             [
@@ -3848,8 +3848,8 @@
         "drop": false,
         "allowrate": false,
         "outputs": 1,
-        "x": 880,
-        "y": 460,
+        "x": 940,
+        "y": 420,
         "wires": [
             [
                 "c089681eaf2455c2"
@@ -3923,18 +3923,18 @@
         "id": "b3bdf5e8b49555b3",
         "type": "function",
         "z": "9da1654216b6a11d",
-        "name": "Replace /config to /cmd/hb",
-        "func": "// If update is \"deletion\"\nif (msg.payload != \"\") {\n    msg.payload = 10;\n}\n\nmsg.topic = msg.topic.replace(/\\/config$/, \"/cmd/hb\");\nmsg.overrideRoot = true;\nmsg.retain = false;\nmsg.qos = 2;\n\nreturn msg;",
+        "name": "Check thing on regular interval",
+        "func": "var table = flow.get(\"table\") || {};\nvar length = 0;\n\nconst newNames = Object.keys(table).reduce((object, key) => {\n    length++;\n    msg.topic = key;\n    object[key].counter--;\n    if (object[key].counter < 0) {\n        msg.payload = object[key].counter;\n    }\n    return object\n}, {})\n\nnode.status({ fill: \"green\", shape: \"dot\", text: length });\nmsg.cnt = length;\n\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 260,
-        "y": 540,
+        "x": 330,
+        "y": 560,
         "wires": [
             [
-                "d8f80d8f54515033"
+                "533ce68a853439e5"
             ]
         ]
     },
@@ -3943,8 +3943,8 @@
         "type": "subflow:ed5a77f4448c2cf5",
         "z": "9da1654216b6a11d",
         "name": "",
-        "x": 420,
-        "y": 580,
+        "x": 640,
+        "y": 440,
         "wires": [
             []
         ]
@@ -3960,14 +3960,52 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 580,
-        "y": 580,
+        "x": 780,
+        "y": 600,
         "wires": [
             []
         ]
     },
     {
-        "id": "fa4bc1fd4920895d",
+        "id": "8cfe4231bf39edb2",
+        "type": "function",
+        "z": "9da1654216b6a11d",
+        "name": "Update thing table",
+        "func": "msg.topic = msg.topic.replace(/\\/config$/, \"/cmd/hb\");\nmsg.hb_thing_interval = msg.payload.hb_interval_sec || flow.get(\"thing.def_config.hb_interval\") || 10;\n\nvar elem = { p: msg.payload, hb_i: msg.hb_thing_interval, counter: 0};\nelem.counter = elem.hb_i;\nvar key = \"table.\" + msg.topic;\nflow.set(key, elem);\n\nvar table = flow.get(\"table\") || {};\nvar length = 0;\n\nconst newNames = Object.keys(table).reduce((object, key) => {\n  length++;\n    if (key == msg.topic) {\n     if (msg.payload == \"\") {\n       delete object[key];\n       length--;\n     }\n    }\n    return object\n}, {})\n\nif (msg.payload = \"\") msg.superAction = 'unsubscribe';\n\nnode.status({ fill: \"green\", shape: \"dot\", text: length });\nmsg.cnt = length;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 430,
+        "y": 440,
+        "wires": [
+            [
+                "d8f80d8f54515033"
+            ]
+        ]
+    },
+    {
+        "id": "bc3ab5a3d7e1250f",
+        "type": "inject",
+        "z": "9da1654216b6a11d",
+        "name": "",
+        "props": [],
+        "repeat": "1",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "1",
+        "topic": "",
+        "x": 110,
+        "y": 560,
+        "wires": [
+            [
+                "b3bdf5e8b49555b3"
+            ]
+        ]
+    },
+    {
+        "id": "533ce68a853439e5",
         "type": "debug",
         "z": "9da1654216b6a11d",
         "name": "debug 8",
@@ -3979,28 +4017,9 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 580,
-        "y": 440,
+        "x": 600,
+        "y": 560,
         "wires": []
-    },
-    {
-        "id": "8cfe4231bf39edb2",
-        "type": "function",
-        "z": "9da1654216b6a11d",
-        "name": "function 4",
-        "func": "msg.topic = msg.topic.replace(/\\/config$/, \"/cmd/hb\");\nmsg.hb_thing_interval = msg.payload.hb_interval_sec || flow.get(\"thing.def_config.hb_interval\") || 10;\n\nvar elem = { p: msg.payload, hb_i: msg.hb_thing_interval};\nvar key = \"table.\" + msg.topic;\nflow.set(key, elem);\n\nvar table = flow.get(\"table\");\nvar length = 0;\n\nconst newNames = Object.keys(table).reduce((object, key) => {\n  length++;\n    if (key == msg.topic) {\n     if (msg.payload == \"\") {\n       delete object[key];\n       length--;\n     }\n    }\n    return object\n}, {})\n\nnode.status({ fill: \"green\", shape: \"dot\", text: length });\nmsg.cnt = length;\n\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 400,
-        "y": 440,
-        "wires": [
-            [
-                "fa4bc1fd4920895d"
-            ]
-        ]
     },
     {
         "id": "394a5b0c95ee3a73",
