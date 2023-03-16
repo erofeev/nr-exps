@@ -3750,8 +3750,8 @@
         "id": "c1854b6fc3694e01",
         "type": "subflow:ed5a77f4448c2cf5",
         "z": "9da1654216b6a11d",
-        "name": "",
-        "x": 580,
+        "name": "Sub to all /config",
+        "x": 590,
         "y": 320,
         "wires": [
             [
@@ -3943,8 +3943,8 @@
         "id": "d8f80d8f54515033",
         "type": "subflow:ed5a77f4448c2cf5",
         "z": "9da1654216b6a11d",
-        "name": "",
-        "x": 500,
+        "name": "Sub to all /cmd/hb",
+        "x": 530,
         "y": 460,
         "wires": [
             [
@@ -4047,7 +4047,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 730,
+        "x": 770,
         "y": 460,
         "wires": [
             []
