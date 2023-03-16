@@ -3536,6 +3536,12 @@
                 "pt": "flow",
                 "to": "60",
                 "tot": "num"
+            },
+            {
+                "p": "thing.def_config.hb_interval",
+                "pt": "flow",
+                "to": "25",
+                "tot": "str"
             }
         ],
         "active": true,
@@ -3803,7 +3809,7 @@
         "type": "function",
         "z": "9da1654216b6a11d",
         "name": "Update thing table",
-        "func": "msg.topic = msg.topic.replace(/\\/config$/, \"/cmd/hb\");\nmsg.hb_thing_interval = msg.payload.hb_interval_sec || flow.get(\"thing.def_config.hb_interval\") || 10;\n\nvar elem = { p: msg.payload, hb_i: msg.hb_thing_interval, counter: 0};\nelem.counter = elem.hb_i;\nvar key = \"table.\" + msg.topic;\nflow.set(key, elem);\n\nvar table = flow.get(\"table\") || {};\nvar length = 0;\n\nconst newNames = Object.keys(table).reduce((object, key) => {\n  length++;\n    if (key == msg.topic) {\n     if (msg.payload == \"\") {\n       delete object[key];\n       length--;\n     }\n    }\n    return object\n}, {})\n\nif (msg.payload = \"\") msg.superAction = 'unsubscribe';\n\nnode.status({ fill: \"green\", shape: \"dot\", text: length });\nmsg.cnt = length;\n\nreturn msg;",
+        "func": "msg.topic = msg.topic.replace(/\\/config$/, \"/cmd/hb\");\nmsg.hb_thing_interval = msg.payload.hb_interval_sec || flow.get(\"thing.def_config.hb_interval\") || 60;\n\nvar elem = { p: msg.payload, hb_i: msg.hb_thing_interval, counter: 0};\nelem.counter = elem.hb_i;\nvar key = \"table.\" + msg.topic;\nflow.set(key, elem);\n\nvar table = flow.get(\"table\") || {};\nvar length = 0;\n\nconst newNames = Object.keys(table).reduce((object, key) => {\n  length++;\n    if (key == msg.topic) {\n     if (msg.payload == \"\") {\n       delete object[key];\n       length--;\n     }\n    }\n    return object\n}, {})\n\nif (msg.payload = \"\") msg.superAction = 'unsubscribe';\n\nnode.status({ fill: \"green\", shape: \"dot\", text: length });\nmsg.cnt = length;\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
