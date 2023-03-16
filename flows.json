@@ -3589,7 +3589,7 @@
         "z": "9da1654216b6a11d",
         "name": "Sub to all /config",
         "x": 590,
-        "y": 320,
+        "y": 340,
         "wires": [
             [
                 "b52f08c18704038f",
@@ -3609,7 +3609,7 @@
         "finalize": "",
         "libs": [],
         "x": 350,
-        "y": 320,
+        "y": 340,
         "wires": [
             [
                 "c1854b6fc3694e01"
@@ -3640,8 +3640,8 @@
         "type": "subflow:4778c81a96bb6f95",
         "z": "9da1654216b6a11d",
         "name": "",
-        "x": 900,
-        "y": 360,
+        "x": 820,
+        "y": 400,
         "wires": [
             [
                 "2f2ddf8001a36a43"
@@ -3661,7 +3661,7 @@
         "finalize": "",
         "libs": [],
         "x": 830,
-        "y": 320,
+        "y": 340,
         "wires": [
             [
                 "e5285405b3363f33"
@@ -3685,8 +3685,8 @@
         "drop": false,
         "allowrate": false,
         "outputs": 1,
-        "x": 940,
-        "y": 420,
+        "x": 960,
+        "y": 400,
         "wires": [
             [
                 "c089681eaf2455c2"
@@ -3767,8 +3767,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 490,
-        "y": 560,
+        "x": 570,
+        "y": 580,
         "wires": [
             [
                 "918f7a0e461f4d9f"
@@ -3780,7 +3780,7 @@
         "type": "subflow:ed5a77f4448c2cf5",
         "z": "9da1654216b6a11d",
         "name": "Sub to all /cmd/hb",
-        "x": 530,
+        "x": 550,
         "y": 460,
         "wires": [
             [
@@ -3799,7 +3799,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 310,
+        "x": 330,
         "y": 460,
         "wires": [
             [
@@ -3818,8 +3818,8 @@
         "once": true,
         "onceDelay": "1",
         "topic": "",
-        "x": 240,
-        "y": 560,
+        "x": 320,
+        "y": 580,
         "wires": [
             [
                 "b3bdf5e8b49555b3"
@@ -3831,8 +3831,8 @@
         "type": "subflow:4778c81a96bb6f95",
         "z": "9da1654216b6a11d",
         "name": "",
-        "x": 720,
-        "y": 560,
+        "x": 800,
+        "y": 580,
         "wires": [
             [],
             []
@@ -3849,7 +3849,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 770,
+        "x": 790,
         "y": 460,
         "wires": [
             []
@@ -3926,6 +3926,26 @@
         "info": "",
         "x": 340,
         "y": 200,
+        "wires": []
+    },
+    {
+        "id": "3b3da08bf7b0d8a2",
+        "type": "comment",
+        "z": "9da1654216b6a11d",
+        "name": "Monitor /configs and update hb table",
+        "info": "",
+        "x": 380,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "254d7989c3787bc4",
+        "type": "comment",
+        "z": "9da1654216b6a11d",
+        "name": "Decrement hb counters and send out hb if 0",
+        "info": "",
+        "x": 410,
+        "y": 540,
         "wires": []
     },
     {
