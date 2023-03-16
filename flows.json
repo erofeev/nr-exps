@@ -3704,7 +3704,7 @@
             {
                 "p": "thing.hb_interval_sec",
                 "pt": "flow",
-                "to": "3",
+                "to": "60",
                 "tot": "num"
             }
         ],
