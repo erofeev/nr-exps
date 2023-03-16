@@ -3767,7 +3767,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 330,
+        "x": 370,
         "y": 560,
         "wires": [
             [
@@ -3786,23 +3786,6 @@
             [
                 "a4c77a5e3297f534"
             ]
-        ]
-    },
-    {
-        "id": "1e2dd314a8bab2b8",
-        "type": "function",
-        "z": "9da1654216b6a11d",
-        "name": "function 3",
-        "func": "// client alive and want to stop hb\nif (msg.payload == \"alive\") return null;\n\nif (msg.payload != 0) {\n    msg.payload = msg.payload - 1;\n}\n\nif (msg.payload == 0) {\n    // clear config\n    msg.payload = \"\";\n    msg.topic = msg.topic.replace(/\\/cmd\\/hb$/, \"/config\");\n}\nmsg.overrideRoot = true;\nmsg.qos = 2;\nmsg.retain = false;\n\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 780,
-        "y": 600,
-        "wires": [
-            []
         ]
     },
     {
@@ -3828,14 +3811,14 @@
         "id": "bc3ab5a3d7e1250f",
         "type": "inject",
         "z": "9da1654216b6a11d",
-        "name": "",
+        "name": "Check hb table",
         "props": [],
         "repeat": "1",
         "crontab": "",
         "once": true,
         "onceDelay": "1",
         "topic": "",
-        "x": 110,
+        "x": 180,
         "y": 560,
         "wires": [
             [
@@ -3848,7 +3831,7 @@
         "type": "subflow:4778c81a96bb6f95",
         "z": "9da1654216b6a11d",
         "name": "",
-        "x": 560,
+        "x": 600,
         "y": 560,
         "wires": [
             [],
