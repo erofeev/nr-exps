@@ -594,9 +594,10 @@
         "name": "",
         "broker": "g",
         "port": "0987",
+        "tls": "",
         "clientid": "",
         "autoConnect": false,
-        "usetls": false,
+        "usetls": true,
         "protocolVersion": "4",
         "keepalive": "60",
         "cleansession": true,
@@ -1540,7 +1541,8 @@
         "wires": [
             [
                 "cf6bd1aeb197a857",
-                "cc4727806e541eb3"
+                "cc4727806e541eb3",
+                "ac34adc6b3c5a3a0"
             ]
         ]
     },
@@ -1687,6 +1689,23 @@
         "wires": [
             []
         ]
+    },
+    {
+        "id": "ac34adc6b3c5a3a0",
+        "type": "debug",
+        "z": "e6cda07194865795",
+        "name": "debug 8",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 360,
+        "y": 360,
+        "wires": []
     },
     {
         "id": "c41f3ce662f9f4bb",
