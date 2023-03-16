@@ -726,7 +726,7 @@
         "type": "function",
         "z": "4778c81a96bb6f95",
         "name": "Add /broker-id",
-        "func": "var p = flow.get(\"cachedMsg.p\") || undefined;\nvar t = flow.get(\"cachedMsg.t\") || undefined;\nvar m = flow.get(\"cachedMsg.m\") || {};\nmsg = m;\nflow.set(\"cachedMsg.m\", undefined);\n\nif (p) {\n    flow.set(\"cachedMsg.p\", undefined);\n    msg.payload = p;\n}\nif (t) {\n    flow.set(\"cachedMsg.t\", undefined)\n    msg.topic = t;\n}\n\nvar dataTopic = flow.get(\"$parent.thing.type\") || \"na\";\ndataTopic = dataTopic + ':';\ndataTopic = dataTopic + flow.get(\"$parent.thing.id\") || \"na\";\n\nif (!msg.topic) return null;\n\nif (msg.overrideRoot != true) {\nmsg.topic = global.get(\"broker.id\") + \"/\" + dataTopic +  \"/\" + msg.topic;\n}\nmsg.qos = 2;\n\nreturn msg;",
+        "func": "var p = flow.get(\"cachedMsg.p\") || undefined;\nvar t = flow.get(\"cachedMsg.t\") || undefined;\nvar m = flow.get(\"cachedMsg.m\") || {overrideRoot: false};\nmsg.overrideRoot = m.overrideRoot;\nflow.set(\"cachedMsg.m\", undefined);\n\nif (p) {\n    flow.set(\"cachedMsg.p\", undefined);\n    msg.payload = p;\n}\nif (t) {\n    flow.set(\"cachedMsg.t\", undefined)\n    msg.topic = t;\n}\n\nvar dataTopic = flow.get(\"$parent.thing.type\") || \"na\";\ndataTopic = dataTopic + ':';\ndataTopic = dataTopic + flow.get(\"$parent.thing.id\") || \"na\";\n\nif (!msg.topic) return null;\n\nif (msg.overrideRoot != true) {\nmsg.topic = global.get(\"broker.id\") + \"/\" + dataTopic +  \"/\" + msg.topic;\n}\nmsg.qos = 2;\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
