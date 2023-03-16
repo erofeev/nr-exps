@@ -2794,8 +2794,8 @@
             }
         ],
         "active": true,
-        "x": 330,
-        "y": 100,
+        "x": 310,
+        "y": 20,
         "wires": []
     },
     {
@@ -2826,8 +2826,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 470,
-        "y": 160,
+        "x": 510,
+        "y": 100,
         "wires": [
             [
                 "45909591c6a48acc"
@@ -2857,8 +2857,8 @@
                 "valueValue": "v2"
             }
         ],
-        "x": 290,
-        "y": 160,
+        "x": 310,
+        "y": 100,
         "wires": [
             [
                 "198791de571b405a"
@@ -2872,7 +2872,7 @@
         "name": "MQTT cmd: node-red:000-000-001/cmd",
         "info": "",
         "x": 290,
-        "y": 280,
+        "y": 560,
         "wires": []
     },
     {
@@ -2882,7 +2882,7 @@
         "name": "node-red:000-000-001/cmd",
         "links": [],
         "x": 165,
-        "y": 340,
+        "y": 620,
         "wires": [
             [
                 "3183799529a841aa"
@@ -2897,7 +2897,7 @@
         "mode": "return",
         "links": [],
         "x": 765,
-        "y": 340,
+        "y": 620,
         "wires": []
     },
     {
@@ -2918,7 +2918,7 @@
         "repair": false,
         "outputs": 1,
         "x": 270,
-        "y": 340,
+        "y": 620,
         "wires": [
             [
                 "c75542bc819108a9"
@@ -2937,7 +2937,7 @@
         "finalize": "",
         "libs": [],
         "x": 440,
-        "y": 340,
+        "y": 620,
         "wires": [
             [
                 "5716fa9935aa8590"
@@ -2980,7 +2980,7 @@
             }
         ],
         "x": 630,
-        "y": 340,
+        "y": 620,
         "wires": [
             [
                 "194612cb31eb08e8"
@@ -2992,11 +2992,12 @@
         "type": "subflow:c1aee611e52a8323",
         "z": "4074d230f2e616af",
         "name": "",
-        "x": 670,
-        "y": 160,
+        "x": 710,
+        "y": 100,
         "wires": [
             [
-                "0ef91a7f177e2b34"
+                "0ef91a7f177e2b34",
+                "48e1d62f616b120c"
             ]
         ]
     },
@@ -3005,8 +3006,8 @@
         "type": "subflow:ed5a77f4448c2cf5",
         "z": "4074d230f2e616af",
         "name": "",
-        "x": 820,
-        "y": 160,
+        "x": 900,
+        "y": 100,
         "wires": [
             [
                 "1b48e98d6cae1a38"
@@ -3030,8 +3031,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 850,
-        "y": 220,
+        "x": 770,
+        "y": 180,
         "wires": [
             [
                 "163f471b79ff47dc"
@@ -3055,13 +3056,96 @@
         "drop": false,
         "allowrate": false,
         "outputs": 1,
-        "x": 920,
-        "y": 260,
+        "x": 940,
+        "y": 180,
         "wires": [
             [
                 "7cc310d61bc0aa0c"
             ]
         ]
+    },
+    {
+        "id": "e380b69fd2e8d406",
+        "type": "comment",
+        "z": "4074d230f2e616af",
+        "name": "Publish configuration and autorestore this topic if deleted somehow",
+        "info": "",
+        "x": 480,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "48e1d62f616b120c",
+        "type": "function",
+        "z": "4074d230f2e616af",
+        "name": "Replace /config to /cmd/hb",
+        "func": "// If update is \"deletion\"\nif (msg.payload == \"\") {\n    return null;\n}\n\nmsg.topic = msg.topic.replace(/\\/config$/, \"/cmd/hb\");\nmsg.overrideRoot = true;\nmsg.retain = false;\nmsg.qos = 2;\n\nmsg.payload = 10;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 360,
+        "y": 240,
+        "wires": [
+            [
+                "343d151927eeb863"
+            ]
+        ]
+    },
+    {
+        "id": "343d151927eeb863",
+        "type": "subflow:ed5a77f4448c2cf5",
+        "z": "4074d230f2e616af",
+        "name": "",
+        "x": 560,
+        "y": 240,
+        "wires": [
+            [
+                "9f12450a2bc5d158"
+            ]
+        ]
+    },
+    {
+        "id": "ae2b7840acaebf7d",
+        "type": "subflow:4778c81a96bb6f95",
+        "z": "4074d230f2e616af",
+        "name": "",
+        "x": 880,
+        "y": 240,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "9f12450a2bc5d158",
+        "type": "function",
+        "z": "4074d230f2e616af",
+        "name": "I'm alive",
+        "func": "if (msg.payload == \"alive\") return null;\n\nmsg.topic = \"cmd/hb\";\nmsg.payload = \"alive\";\nmsg.retain = false;\nmsg.qos = 0;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 720,
+        "y": 240,
+        "wires": [
+            [
+                "ae2b7840acaebf7d"
+            ]
+        ]
+    },
+    {
+        "id": "7ab3e627407f3590",
+        "type": "comment",
+        "z": "4074d230f2e616af",
+        "name": "Answer to heartbeats ",
+        "info": "",
+        "x": 340,
+        "y": 200,
+        "wires": []
     },
     {
         "id": "1b7da4426da512f4",
@@ -4073,7 +4157,7 @@
             }
         ],
         "active": true,
-        "x": 540,
+        "x": 570,
         "y": 80,
         "wires": [],
         "info": "пвапрвап"
@@ -4089,8 +4173,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 310,
-        "y": 140,
+        "x": 350,
+        "y": 180,
         "wires": [
             [
                 "44741fbf17d87e7e"
@@ -4102,8 +4186,8 @@
         "type": "subflow:c1aee611e52a8323",
         "z": "3c50040f913fd396",
         "name": "",
-        "x": 550,
-        "y": 140,
+        "x": 590,
+        "y": 180,
         "wires": [
             [
                 "a379e5c1077ef903",
@@ -4171,7 +4255,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 300,
+        "x": 330,
         "y": 80,
         "wires": [
             [
@@ -4184,8 +4268,8 @@
         "type": "subflow:ed5a77f4448c2cf5",
         "z": "3c50040f913fd396",
         "name": "",
-        "x": 720,
-        "y": 140,
+        "x": 760,
+        "y": 180,
         "wires": [
             [
                 "d22123600360f845"
@@ -4209,8 +4293,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 750,
-        "y": 200,
+        "x": 790,
+        "y": 240,
         "wires": [
             [
                 "6600c3e37e2faeeb"
@@ -4234,8 +4318,8 @@
         "drop": false,
         "allowrate": false,
         "outputs": 1,
-        "x": 880,
-        "y": 200,
+        "x": 920,
+        "y": 240,
         "wires": [
             [
                 "551afef49fc9d01c"
@@ -4253,8 +4337,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 340,
-        "y": 220,
+        "x": 360,
+        "y": 300,
         "wires": [
             [
                 "5823e427fc633ea6"
@@ -4267,7 +4351,7 @@
         "z": "3c50040f913fd396",
         "name": "",
         "x": 560,
-        "y": 220,
+        "y": 300,
         "wires": [
             [
                 "b0d5d04d2a5c6fa3"
@@ -4279,8 +4363,8 @@
         "type": "subflow:4778c81a96bb6f95",
         "z": "3c50040f913fd396",
         "name": "",
-        "x": 740,
-        "y": 280,
+        "x": 880,
+        "y": 300,
         "wires": [
             [],
             []
@@ -4297,12 +4381,32 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 560,
-        "y": 280,
+        "x": 720,
+        "y": 300,
         "wires": [
             [
                 "835c1e3dd1e077df"
             ]
         ]
+    },
+    {
+        "id": "477ee339fbf7c583",
+        "type": "comment",
+        "z": "3c50040f913fd396",
+        "name": "Publish configuration and autorestore this topic if deleted somehow",
+        "info": "",
+        "x": 480,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "f6e45096385fbac0",
+        "type": "comment",
+        "z": "3c50040f913fd396",
+        "name": "Answer to heartbeats ",
+        "info": "",
+        "x": 340,
+        "y": 260,
+        "wires": []
     }
 ]
