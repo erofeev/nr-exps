@@ -4570,18 +4570,6 @@
                 "pt": "flow",
                 "to": "bridge",
                 "tot": "str"
-            },
-            {
-                "p": "",
-                "pt": "flow",
-                "to": "",
-                "tot": "str"
-            },
-            {
-                "p": "",
-                "pt": "flow",
-                "to": "",
-                "tot": "str"
             }
         ],
         "active": true,
