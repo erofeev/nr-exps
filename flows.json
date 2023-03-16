@@ -3924,7 +3924,7 @@
         "type": "function",
         "z": "9da1654216b6a11d",
         "name": "Check thing on regular interval",
-        "func": "var table = flow.get(\"table\") || {};\nvar length = 0;\nmsg.overrideRoot = true;\n\nconst newNames = Object.keys(table).reduce((object, key) => {\n    length++;\n    msg.topic = key;\n        msg.payload = flow.get('table.' + key);\n        msg.payload.counter--;\n        var elem = msg.payload;\n        flow.set('table.' + key, elem);\n        msg.payload = msg.payload.counter;\n\n  if (msg.payload < 0) {\n    if (msg.payload > -5) {\n      // send hb every 5 seconds after i expires\n      node.send(msg);\n      node.done();\n    } else {\n      // clear /config\n      msg.topic = msg.topic.replace(/\\/cmd\\/hb$/, \"/config\");\n      msg.payload = \"\";\n      node.send(msg);\n      node.done();\n    }\n  }\n\n      //  if (msg.payload < -5) { length--; delete object[key];}\n    return object\n}, {})\n\nnode.status({ fill: \"green\", shape: \"dot\", text: length });\nmsg.cnt = length;\n\nreturn null;",
+        "func": "var table = flow.get(\"table\") || {};\nvar length = 0;\nmsg.overrideRoot = true;\n\nconst newNames = Object.keys(table).reduce((object, key) => {\n    length++;\n    msg.topic = key;\n        msg.payload = flow.get('table.' + key);\n        msg.payload.counter--;\n        var elem = msg.payload;\n        flow.set('table.' + key, elem);\n        msg.payload = msg.payload.counter;\n\n  if (msg.payload <= 0) {\n    if (msg.payload > -5) {\n      // send hb every 5 seconds after i expires\n      node.send(msg);\n      node.done();\n    } else {\n      // clear /config\n      msg.topic = msg.topic.replace(/\\/cmd\\/hb$/, \"/config\");\n      msg.payload = \"\";\n      node.send(msg);\n      node.done();\n    }\n  }\n\n      //  if (msg.payload < -5) { length--; delete object[key];}\n    return object\n}, {})\n\nnode.status({ fill: \"green\", shape: \"dot\", text: length });\nmsg.cnt = length;\n\nreturn null;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -3944,10 +3944,12 @@
         "type": "subflow:ed5a77f4448c2cf5",
         "z": "9da1654216b6a11d",
         "name": "",
-        "x": 640,
-        "y": 440,
+        "x": 500,
+        "y": 460,
         "wires": [
-            []
+            [
+                "a4c77a5e3297f534"
+            ]
         ]
     },
     {
@@ -3978,8 +3980,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 430,
-        "y": 440,
+        "x": 310,
+        "y": 460,
         "wires": [
             [
                 "d8f80d8f54515033"
@@ -4031,6 +4033,23 @@
         "y": 620,
         "wires": [
             [],
+            []
+        ]
+    },
+    {
+        "id": "a4c77a5e3297f534",
+        "type": "function",
+        "z": "9da1654216b6a11d",
+        "name": "Restore counter if thing is alive",
+        "func": "if (msg.payload != \"alive\") {\n  return null;\n}\nmsg.hb_thing_interval = msg.payload.hb_interval_sec || flow.get(\"thing.def_config.hb_interval\") || 10;\n\nvar elem = { p: msg.payload, hb_i: msg.hb_thing_interval, counter: 0};\nelem.counter = elem.hb_i;\nvar key = \"table.\" + msg.topic;\nflow.set(key, elem);\n\nvar table = flow.get(\"table\") || {};\nvar length = 0;\n\nconst newNames = Object.keys(table).reduce((object, key) => {\n  length++;\n    if (key == msg.topic) {\n     if (msg.payload == \"\") {\n       delete object[key];\n       length--;\n     }\n    }\n    return object\n}, {})\n\nif (msg.payload = \"\") msg.superAction = 'unsubscribe';\n\nnode.status({ fill: \"green\", shape: \"dot\", text: length });\nmsg.cnt = length;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 730,
+        "y": 460,
+        "wires": [
             []
         ]
     },
