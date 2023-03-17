@@ -5250,7 +5250,7 @@
                 "3cf7691fe8a23e77"
             ],
             [
-                "3ae1647ef4c266d1"
+                "cc46619977b31d68"
             ]
         ]
     },
@@ -5272,23 +5272,6 @@
                 "5c36517f04a2e7ef"
             ]
         ]
-    },
-    {
-        "id": "3ae1647ef4c266d1",
-        "type": "debug",
-        "z": "3c50040f913fd396",
-        "name": "debug 7",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 800,
-        "y": 680,
-        "wires": []
     },
     {
         "id": "743a9c3a786b6985",
@@ -5317,6 +5300,37 @@
             [
                 "e9f6e7f4a9f37ac9"
             ]
+        ]
+    },
+    {
+        "id": "cc46619977b31d68",
+        "type": "function",
+        "z": "3c50040f913fd396",
+        "name": "OverrideRoot - true",
+        "func": "msg.overrideRoot = true;\nmsg.qos = 2;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 730,
+        "y": 620,
+        "wires": [
+            [
+                "3eaab5ac99ffd4ef"
+            ]
+        ]
+    },
+    {
+        "id": "3eaab5ac99ffd4ef",
+        "type": "subflow:4778c81a96bb6f95",
+        "z": "3c50040f913fd396",
+        "name": "",
+        "x": 920,
+        "y": 620,
+        "wires": [
+            [],
+            []
         ]
     }
 ]
