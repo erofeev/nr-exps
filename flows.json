@@ -79,6 +79,14 @@
         "env": []
     },
     {
+        "id": "8148eb81de3546b8",
+        "type": "tab",
+        "label": "global registry",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "ef8a80e9c499bb4e",
         "type": "subflow",
         "name": "Zip-64",
@@ -3324,7 +3332,8 @@
             "5b292c5534d77568",
             "03db6d7135ae751b",
             "394a5b0c95ee3a73",
-            "6e362e6cdedf9910"
+            "6e362e6cdedf9910",
+            "53f9306b45e3d2c8"
         ],
         "x": 695,
         "y": 140,
@@ -5328,6 +5337,467 @@
         "name": "",
         "x": 920,
         "y": 620,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "53f9306b45e3d2c8",
+        "type": "link in",
+        "z": "8148eb81de3546b8",
+        "name": "link in 4",
+        "links": [
+            "e1e41d7a50c87ccd"
+        ],
+        "x": 95,
+        "y": 120,
+        "wires": [
+            [
+                "042f7fa1de862c7d",
+                "d421496e4eb5b053",
+                "356f6ebc961d82f4"
+            ]
+        ]
+    },
+    {
+        "id": "50af40a0d0458553",
+        "type": "config",
+        "z": "8148eb81de3546b8",
+        "name": "",
+        "properties": [
+            {
+                "p": "thing.id",
+                "pt": "flow",
+                "to": "000",
+                "tot": "str"
+            },
+            {
+                "p": "thing.type",
+                "pt": "flow",
+                "to": "registry",
+                "tot": "str"
+            },
+            {
+                "p": "thing.hb_interval_sec",
+                "pt": "flow",
+                "to": "60",
+                "tot": "num"
+            },
+            {
+                "p": "thing.def_config.hb_interval",
+                "pt": "flow",
+                "to": "25",
+                "tot": "str"
+            }
+        ],
+        "active": true,
+        "x": 510,
+        "y": 60,
+        "wires": [],
+        "info": "пвапрвап"
+    },
+    {
+        "id": "042f7fa1de862c7d",
+        "type": "function",
+        "z": "8148eb81de3546b8",
+        "name": "Thing Model Description",
+        "func": "\nmsg.payload = flow.get(\"thing\");\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 290,
+        "y": 120,
+        "wires": [
+            [
+                "747a40734ff02f88"
+            ]
+        ]
+    },
+    {
+        "id": "356f6ebc961d82f4",
+        "type": "function",
+        "z": "8148eb81de3546b8",
+        "name": "Subscribe to all configs",
+        "func": "msg.topic = \"+/+/config\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 290,
+        "y": 340,
+        "wires": [
+            [
+                "f054c41469cc327e"
+            ]
+        ]
+    },
+    {
+        "id": "d421496e4eb5b053",
+        "type": "function",
+        "z": "8148eb81de3546b8",
+        "name": "Clear all flow vars",
+        "func": "var keys = flow.keys();\nfor (var index = 0; index < keys.length; ++index) {\n    flow.set(keys[index]);\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 270,
+        "y": 60,
+        "wires": [
+            [
+                "50af40a0d0458553"
+            ]
+        ]
+    },
+    {
+        "id": "ed28efacad57f611",
+        "type": "function",
+        "z": "8148eb81de3546b8",
+        "name": "Remove prefix and postfix",
+        "func": "msg.topic = msg.topic.replace(/\\/config$/, \"\");\nmsg.topic = msg.topic.replace(/.*\\//, \"\");\nmsg.retain = true;\nmsg.qos = 2;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 770,
+        "y": 340,
+        "wires": [
+            [
+                "ae95276e5cdb5fc5"
+            ]
+        ]
+    },
+    {
+        "id": "bbc5d8856b6090ce",
+        "type": "delay",
+        "z": "8148eb81de3546b8",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 900,
+        "y": 400,
+        "wires": [
+            [
+                "356f6ebc961d82f4"
+            ]
+        ]
+    },
+    {
+        "id": "794d68288f740f27",
+        "type": "switch",
+        "z": "8148eb81de3546b8",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 730,
+        "y": 180,
+        "wires": [
+            [
+                "04fd0258e5b871c8"
+            ]
+        ]
+    },
+    {
+        "id": "04fd0258e5b871c8",
+        "type": "delay",
+        "z": "8148eb81de3546b8",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 860,
+        "y": 180,
+        "wires": [
+            [
+                "042f7fa1de862c7d"
+            ]
+        ]
+    },
+    {
+        "id": "d9ecc9336d4ba1ef",
+        "type": "function",
+        "z": "8148eb81de3546b8",
+        "name": "Check thing on regular interval",
+        "func": "var table = flow.get(\"table\") || {};\nvar length = 0;\nmsg.overrideRoot = true;\nmsg.retain = false;\n\nconst newNames = Object.keys(table).reduce((object, key) => {\n    length++;\n    msg.topic = key;\n        msg.payload = flow.get('table.' + key);\n        msg.payload.counter--;\n        var elem = msg.payload;\n        flow.set('table.' + key, elem);\n        msg.payload = msg.payload.counter;\n\n  if (msg.payload <= 0) {\n    if (msg.payload > -5) {\n      // send hb every 5 seconds after i expires\n      msg.qos = 0;\n      node.send(msg);\n      node.done();\n    } else {\n      // clear /config\n      msg.topic = msg.topic.replace(/\\/cmd\\/hb$/, \"/config\");\n      msg.payload = \"\";\n      msg.qos = 2;\n      node.send(msg);\n      node.done();\n    }\n  }\n   return object\n}, {})\n\nnode.status({ fill: \"green\", shape: \"dot\", text: length });\nmsg.cnt = length;\n\nreturn null;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 510,
+        "y": 580,
+        "wires": [
+            [
+                "758d6e2d99f74bbf"
+            ]
+        ]
+    },
+    {
+        "id": "c920d524649399bf",
+        "type": "function",
+        "z": "8148eb81de3546b8",
+        "name": "Update thing table",
+        "func": "msg.topic = msg.topic.replace(/\\/config$/, \"/cmd/hb\");\nmsg.hb_thing_interval = msg.payload.hb_interval_sec || flow.get(\"thing.def_config.hb_interval\") || 60;\n\nvar elem = { p: msg.payload, hb_i: msg.hb_thing_interval, counter: 0};\nelem.counter = elem.hb_i;\nvar key = \"table.\" + msg.topic;\nflow.set(key, elem);\n\nvar table = flow.get(\"table\") || {};\nvar length = 0;\n\nconst newNames = Object.keys(table).reduce((object, key) => {\n  length++;\n    if (key == msg.topic) {\n     if (msg.payload == \"\") {\n       delete object[key];\n       length--;\n     }\n    }\n    return object\n}, {})\n\nmsg.topic = msg.topic.replace(/\\/cmd\\/hb$/, \"/status/hb\");\nif (msg.payload = \"\") msg.superAction = 'unsubscribe';\n\nnode.status({ fill: \"green\", shape: \"dot\", text: length });\nmsg.cnt = length;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 270,
+        "y": 460,
+        "wires": [
+            [
+                "4eea6d633d760bb6"
+            ]
+        ]
+    },
+    {
+        "id": "7881debc316b159a",
+        "type": "inject",
+        "z": "8148eb81de3546b8",
+        "name": "Check hb table",
+        "props": [],
+        "repeat": "1",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "1",
+        "topic": "",
+        "x": 260,
+        "y": 580,
+        "wires": [
+            [
+                "d9ecc9336d4ba1ef"
+            ]
+        ]
+    },
+    {
+        "id": "567edd81eac838b4",
+        "type": "function",
+        "z": "8148eb81de3546b8",
+        "name": "Restore counter if thing is alive",
+        "func": "msg.topic = msg.topic.replace(/\\/status\\/hb$/, \"/cmd/hb\");\n\nif (msg.payload != \"alive\") {\n  return null;\n}\nmsg.hb_thing_interval = msg.payload.hb_interval_sec || flow.get(\"thing.def_config.hb_interval\") || 10;\n\nvar elem = { p: msg.payload, hb_i: msg.hb_thing_interval, counter: 0};\nelem.counter = elem.hb_i;\nvar key = \"table.\" + msg.topic;\nflow.set(key, elem);\n\nvar table = flow.get(\"table\") || {};\nvar length = 0;\n\nconst newNames = Object.keys(table).reduce((object, key) => {\n  length++;\n    if (key == msg.topic) {\n     if (msg.payload == \"\") {\n       delete object[key];\n       length--;\n     }\n    }\n    return object\n}, {})\n\nnode.status({ fill: \"green\", shape: \"dot\", text: length });\nmsg.cnt = length;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 750,
+        "y": 460,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d9b7ca77265d9938",
+        "type": "function",
+        "z": "8148eb81de3546b8",
+        "name": "Replace /config to /cmd/hb",
+        "func": "// If update is \"deletion\"\nif (msg.payload == \"\") {\n    return null;\n}\n\nmsg.topic = msg.topic.replace(/\\/config$/, \"/cmd/hb\");\nmsg.overrideRoot = true;\nmsg.retain = false;\nmsg.qos = 2;\n\nmsg.payload = 10;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 300,
+        "y": 240,
+        "wires": [
+            [
+                "6660b46e9acce587"
+            ]
+        ]
+    },
+    {
+        "id": "432f7dc7267d18d4",
+        "type": "function",
+        "z": "8148eb81de3546b8",
+        "name": "I'm alive",
+        "func": "if (msg.payload == \"alive\") return null;\n\nmsg.topic = \"status/hb\";\nmsg.payload = \"alive\";\nmsg.retain = false;\nmsg.qos = 0;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 680,
+        "y": 240,
+        "wires": [
+            [
+                "f9ce3b1e3bd36f33"
+            ]
+        ]
+    },
+    {
+        "id": "a4aa95387c785c37",
+        "type": "comment",
+        "z": "8148eb81de3546b8",
+        "name": "Answer to heartbeats ",
+        "info": "",
+        "x": 280,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "79a7cffff0d5dae9",
+        "type": "comment",
+        "z": "8148eb81de3546b8",
+        "name": "Monitor /configs and update hb table",
+        "info": "",
+        "x": 320,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "4996b7c70358528d",
+        "type": "comment",
+        "z": "8148eb81de3546b8",
+        "name": "Decrement hb counters and send out hb if 0",
+        "info": "",
+        "x": 350,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "747a40734ff02f88",
+        "type": "subflow:e6cda07194865795",
+        "z": "8148eb81de3546b8",
+        "name": "",
+        "x": 530,
+        "y": 120,
+        "wires": [
+            [
+                "d9b7ca77265d9938",
+                "91d33003eeb7ccad"
+            ]
+        ]
+    },
+    {
+        "id": "91d33003eeb7ccad",
+        "type": "subflow:11bfeb4f7f9d000f",
+        "z": "8148eb81de3546b8",
+        "name": "",
+        "x": 760,
+        "y": 120,
+        "wires": [
+            [],
+            [
+                "794d68288f740f27"
+            ]
+        ]
+    },
+    {
+        "id": "6660b46e9acce587",
+        "type": "subflow:11bfeb4f7f9d000f",
+        "z": "8148eb81de3546b8",
+        "name": "",
+        "x": 520,
+        "y": 240,
+        "wires": [
+            [
+                "d9b7ca77265d9938"
+            ],
+            [
+                "432f7dc7267d18d4"
+            ]
+        ]
+    },
+    {
+        "id": "f054c41469cc327e",
+        "type": "subflow:11bfeb4f7f9d000f",
+        "z": "8148eb81de3546b8",
+        "name": "",
+        "x": 520,
+        "y": 340,
+        "wires": [
+            [
+                "356f6ebc961d82f4"
+            ],
+            [
+                "ed28efacad57f611",
+                "c920d524649399bf"
+            ]
+        ]
+    },
+    {
+        "id": "4eea6d633d760bb6",
+        "type": "subflow:11bfeb4f7f9d000f",
+        "z": "8148eb81de3546b8",
+        "name": "",
+        "x": 500,
+        "y": 460,
+        "wires": [
+            [],
+            [
+                "567edd81eac838b4"
+            ]
+        ]
+    },
+    {
+        "id": "758d6e2d99f74bbf",
+        "type": "subflow:9bcc7449d0bc9589",
+        "z": "8148eb81de3546b8",
+        "name": "",
+        "x": 760,
+        "y": 580,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "ae95276e5cdb5fc5",
+        "type": "subflow:9bcc7449d0bc9589",
+        "z": "8148eb81de3546b8",
+        "name": "",
+        "x": 740,
+        "y": 400,
+        "wires": [
+            [
+                "bbc5d8856b6090ce"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "f9ce3b1e3bd36f33",
+        "type": "subflow:9bcc7449d0bc9589",
+        "z": "8148eb81de3546b8",
+        "name": "",
+        "x": 860,
+        "y": 240,
         "wires": [
             [],
             []
