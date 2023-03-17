@@ -5293,7 +5293,7 @@
         "type": "function",
         "z": "3c50040f913fd396",
         "name": "Subscribe to all cmds",
-        "func": "msg.topic = global.get(\"broker.id\") || \"\";\nmsg.topic = msg.topic + \"/\";\nvar nmsg = RED.util.cloneMessage(msg);\nmsg.topic = msg.topic + \"+/cmd/#\";\nnmsg.topic = msg.topic + \"+/cmd\";\nreturn [msg, nmsg];",
+        "func": "msg.topic = global.get(\"broker.id\") || \"\";\nmsg.topic = msg.topic + \"/\";\nvar nmsg = RED.util.cloneMessage(msg);\nmsg.topic = msg.topic + \"+/cmd/#\";\nnmsg.topic = nmsg.topic + \"+/cmd\";\nreturn [msg, nmsg];",
         "outputs": 2,
         "noerr": 0,
         "initialize": "",
