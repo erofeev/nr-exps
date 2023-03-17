@@ -81,7 +81,7 @@
     {
         "id": "8148eb81de3546b8",
         "type": "tab",
-        "label": "global registry",
+        "label": "Global registry",
         "disabled": false,
         "info": "",
         "env": []
@@ -5376,7 +5376,7 @@
         "type": "function",
         "z": "8148eb81de3546b8",
         "name": "Subscribe to all configs",
-        "func": "msg.topic = \"+/+/registry:21/out/+\";\nmsg.payload = {};\nreturn msg;",
+        "func": "msg.topic = \"+/registry:0/out/+\";\nmsg.payload = {};\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -5504,80 +5504,6 @@
         ]
     },
     {
-        "id": "d9ecc9336d4ba1ef",
-        "type": "function",
-        "z": "8148eb81de3546b8",
-        "name": "Check thing on regular interval",
-        "func": "var table = flow.get(\"table\") || {};\nvar length = 0;\nmsg.overrideRoot = true;\nmsg.retain = false;\n\nconst newNames = Object.keys(table).reduce((object, key) => {\n    length++;\n    msg.topic = key;\n        msg.payload = flow.get('table.' + key);\n        msg.payload.counter--;\n        var elem = msg.payload;\n        flow.set('table.' + key, elem);\n        msg.payload = msg.payload.counter;\n\n  if (msg.payload <= 0) {\n    if (msg.payload > -5) {\n      // send hb every 5 seconds after i expires\n      msg.qos = 0;\n      node.send(msg);\n      node.done();\n    } else {\n      // clear /config\n      msg.topic = msg.topic.replace(/\\/cmd\\/hb$/, \"/config\");\n      msg.payload = \"\";\n      msg.qos = 2;\n      msg.retain = true;\n      flow.set('table.' + key, undefined);\n      node.send(msg);\n      node.done();\n    }\n  }\n   return object\n}, {})\n\nnode.status({ fill: \"green\", shape: \"dot\", text: length });\nmsg.cnt = length;\n\nreturn null;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 510,
-        "y": 580,
-        "wires": [
-            [
-                "758d6e2d99f74bbf"
-            ]
-        ]
-    },
-    {
-        "id": "c920d524649399bf",
-        "type": "function",
-        "z": "8148eb81de3546b8",
-        "name": "Update thing table",
-        "func": "msg.topic = msg.topic.replace(/\\/config$/, \"/cmd/hb\");\nmsg.hb_thing_interval = msg.payload.hb_interval_sec || flow.get(\"thing.def_config.hb_interval\") || 60;\n\nvar elem = { p: msg.payload, hb_i: msg.hb_thing_interval, counter: 0};\nelem.counter = elem.hb_i;\nvar key = \"table.\" + msg.topic;\nflow.set(key, elem);\n\nvar table = flow.get(\"table\") || {};\nvar length = 0;\n\nconst newNames = Object.keys(table).reduce((object, key) => {\n  length++;\n    if (key == msg.topic) {\n     if (msg.payload == \"\") {\n       delete object[key];\n       flow.set('table.' + key, undefined);\n       length--;\n     }\n    }\n    return object\n}, {})\n\n\nmsg.topic = msg.topic.replace(/\\/cmd\\/hb$/, \"/status/hb\");\nif (msg.payload = \"\") msg.superAction = 'unsubscribe';\n\nnode.status({ fill: \"green\", shape: \"dot\", text: length });\nmsg.cnt = length;\n\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 270,
-        "y": 460,
-        "wires": [
-            [
-                "4eea6d633d760bb6"
-            ]
-        ]
-    },
-    {
-        "id": "7881debc316b159a",
-        "type": "inject",
-        "z": "8148eb81de3546b8",
-        "name": "Check hb table",
-        "props": [],
-        "repeat": "1",
-        "crontab": "",
-        "once": true,
-        "onceDelay": "1",
-        "topic": "",
-        "x": 260,
-        "y": 580,
-        "wires": [
-            [
-                "d9ecc9336d4ba1ef"
-            ]
-        ]
-    },
-    {
-        "id": "567edd81eac838b4",
-        "type": "function",
-        "z": "8148eb81de3546b8",
-        "name": "Restore counter if thing is alive",
-        "func": "msg.topic = msg.topic.replace(/\\/status\\/hb$/, \"/cmd/hb\");\n\nif (msg.payload != \"alive\") {\n  return null;\n}\nmsg.hb_thing_interval = msg.payload.hb_interval_sec || flow.get(\"thing.def_config.hb_interval\") || 10;\n\nvar elem = { p: msg.payload, hb_i: msg.hb_thing_interval, counter: 0};\nelem.counter = elem.hb_i;\nvar key = \"table.\" + msg.topic;\nflow.set(key, elem);\n\nvar table = flow.get(\"table\") || {};\nvar length = 0;\n\nconst newNames = Object.keys(table).reduce((object, key) => {\n  length++;\n    if (key == msg.topic) {\n     if (msg.payload == \"\") {\n       delete object[key];\n       flow.set('table.' + key, undefined);\n       length--;\n     }\n    }\n    return object\n}, {})\n\n\nnode.status({ fill: \"green\", shape: \"dot\", text: length });\nmsg.cnt = length;\n\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 750,
-        "y": 460,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "d9b7ca77265d9938",
         "type": "function",
         "z": "8148eb81de3546b8",
@@ -5636,16 +5562,6 @@
         "wires": []
     },
     {
-        "id": "4996b7c70358528d",
-        "type": "comment",
-        "z": "8148eb81de3546b8",
-        "name": "Decrement hb counters and send out hb if 0",
-        "info": "",
-        "x": 350,
-        "y": 540,
-        "wires": []
-    },
-    {
         "id": "747a40734ff02f88",
         "type": "subflow:e6cda07194865795",
         "z": "8148eb81de3546b8",
@@ -5701,37 +5617,8 @@
                 "356f6ebc961d82f4"
             ],
             [
-                "ed28efacad57f611",
-                "c920d524649399bf"
+                "ed28efacad57f611"
             ]
-        ]
-    },
-    {
-        "id": "4eea6d633d760bb6",
-        "type": "subflow:11bfeb4f7f9d000f",
-        "z": "8148eb81de3546b8",
-        "name": "",
-        "x": 500,
-        "y": 460,
-        "wires": [
-            [
-                "356f6ebc961d82f4"
-            ],
-            [
-                "567edd81eac838b4"
-            ]
-        ]
-    },
-    {
-        "id": "758d6e2d99f74bbf",
-        "type": "subflow:9bcc7449d0bc9589",
-        "z": "8148eb81de3546b8",
-        "name": "",
-        "x": 760,
-        "y": 580,
-        "wires": [
-            [],
-            []
         ]
     },
     {
