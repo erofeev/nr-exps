@@ -5285,7 +5285,7 @@
         "type": "function",
         "z": "3c50040f913fd396",
         "name": "Subscribe to all cmds",
-        "func": "msg.topic = global.get(\"broker.id\") || \"\";\nmsg.topic = msg.topic + \"/\";\nvar nmsg = RED.util.cloneMessage(msg);\nmsg.topic = msg.topic + \"+/cmd/#\";\nnmsg.topic = nmsg.topic + \"+/cmd\";\nreturn [msg, nmsg];",
+        "func": "msg.topic = global.get(\"broker.id\") || \"\";\nmsg.topic = msg.topic + \"/\";\nvar nmsg = RED.util.cloneMessage(msg);\nmsg.topic = msg.topic + \"+/cmd/#\";\n//nmsg.topic = nmsg.topic + \"+/cmd\";\nreturn [msg, null];",
         "outputs": 2,
         "noerr": 0,
         "initialize": "",
@@ -5366,7 +5366,7 @@
         "allowrate": false,
         "outputs": 1,
         "x": 550,
-        "y": 680,
+        "y": 700,
         "wires": [
             [
                 "3cf7691fe8a23e77"
