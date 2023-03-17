@@ -5421,7 +5421,7 @@
         "type": "function",
         "z": "8148eb81de3546b8",
         "name": "Subscribe to all configs",
-        "func": "msg.topic = \"+/+/config\";\nreturn msg;",
+        "func": "msg.topic = \"+/+/config\";\nmsg.payload = {};\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -5554,7 +5554,7 @@
         "type": "function",
         "z": "8148eb81de3546b8",
         "name": "Check thing on regular interval",
-        "func": "var table = flow.get(\"table\") || {};\nvar length = 0;\nmsg.overrideRoot = true;\nmsg.retain = false;\n\nconst newNames = Object.keys(table).reduce((object, key) => {\n    length++;\n    msg.topic = key;\n        msg.payload = flow.get('table.' + key);\n        msg.payload.counter--;\n        var elem = msg.payload;\n        flow.set('table.' + key, elem);\n        msg.payload = msg.payload.counter;\n\n  if (msg.payload <= 0) {\n    if (msg.payload > -5) {\n      // send hb every 5 seconds after i expires\n      msg.qos = 0;\n      node.send(msg);\n      node.done();\n    } else {\n      // clear /config\n      msg.topic = msg.topic.replace(/\\/cmd\\/hb$/, \"/config\");\n      msg.payload = \"\";\n      msg.qos = 2;\n      flow.set('table.' + key, undefined);\n      node.send(msg);\n      node.done();\n    }\n  }\n   return object\n}, {})\n\nnode.status({ fill: \"green\", shape: \"dot\", text: length });\nmsg.cnt = length;\n\nreturn null;",
+        "func": "var table = flow.get(\"table\") || {};\nvar length = 0;\nmsg.overrideRoot = true;\nmsg.retain = false;\n\nconst newNames = Object.keys(table).reduce((object, key) => {\n    length++;\n    msg.topic = key;\n        msg.payload = flow.get('table.' + key);\n        msg.payload.counter--;\n        var elem = msg.payload;\n        flow.set('table.' + key, elem);\n        msg.payload = msg.payload.counter;\n\n  if (msg.payload <= 0) {\n    if (msg.payload > -5) {\n      // send hb every 5 seconds after i expires\n      msg.qos = 0;\n      node.send(msg);\n      node.done();\n    } else {\n      // clear /config\n      msg.topic = msg.topic.replace(/\\/cmd\\/hb$/, \"/config\");\n      msg.payload = \"\";\n      msg.qos = 2;\n      msg.retain = true;\n      flow.set('table.' + key, undefined);\n      node.send(msg);\n      node.done();\n    }\n  }\n   return object\n}, {})\n\nnode.status({ fill: \"green\", shape: \"dot\", text: length });\nmsg.cnt = length;\n\nreturn null;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -5748,8 +5748,7 @@
             ],
             [
                 "ed28efacad57f611",
-                "c920d524649399bf",
-                "3c2a8e63e7455ac4"
+                "c920d524649399bf"
             ]
         ]
     },
@@ -5812,7 +5811,7 @@
         "type": "debug",
         "z": "8148eb81de3546b8",
         "name": "debug 7",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
