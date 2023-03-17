@@ -5273,13 +5273,13 @@
             {
                 "p": "thing.id",
                 "pt": "flow",
-                "to": "777",
+                "to": "000",
                 "tot": "str"
             },
             {
                 "p": "thing.type",
                 "pt": "flow",
-                "to": "registry",
+                "to": "globalregistry",
                 "tot": "str"
             },
             {
@@ -5325,7 +5325,7 @@
         "type": "function",
         "z": "8148eb81de3546b8",
         "name": "Subscribe to all configs",
-        "func": "msg.topic = \"+/+/config\";\nmsg.payload = {};\nreturn msg;",
+        "func": "msg.topic = \"+/+/registry:21/out/+\";\nmsg.payload = {};\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
