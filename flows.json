@@ -5414,7 +5414,7 @@
         "type": "function",
         "z": "8148eb81de3546b8",
         "name": "Remove prefix and postfix",
-        "func": "msg.topic = msg.topic.replace(/\\/config$/, \"\");\nmsg.topic = msg.topic.replace(/.*\\//, \"\");\nmsg.retain = true;\nmsg.qos = 2;\nreturn msg;",
+        "func": "msg.topic = msg.topic.replace(/\\/config$/, \"\");\nmsg.topic = msg.topic.replace(/.*\\//, \"/out\");\nmsg.retain = true;\nmsg.qos = 2;\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
