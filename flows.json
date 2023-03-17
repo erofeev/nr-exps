@@ -4549,14 +4549,14 @@
         "id": "b52f08c18704038f",
         "type": "function",
         "z": "9da1654216b6a11d",
-        "name": "Remove prefix and postfix",
+        "name": "Publish to own /out",
         "func": "msg.topic = msg.topic.replace(/\\/config$/, \"\");\nmsg.topic = msg.topic.replace(/.*\\//, \"out/\");\nmsg.retain = true;\nmsg.qos = 2;\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 830,
+        "x": 810,
         "y": 340,
         "wires": [
             [
@@ -4676,8 +4676,8 @@
         "type": "subflow:ed5a77f4448c2cf5",
         "z": "9da1654216b6a11d",
         "name": "Sub to all /status/hb",
-        "x": 550,
-        "y": 460,
+        "x": 570,
+        "y": 540,
         "wires": [
             [
                 "a4c77a5e3297f534"
@@ -4689,14 +4689,14 @@
         "type": "function",
         "z": "9da1654216b6a11d",
         "name": "Update thing table",
-        "func": "msg.topic = msg.topic.replace(/\\/config$/, \"/cmd/hb\");\nmsg.hb_thing_interval = msg.payload.hb_interval_sec || flow.get(\"thing.def_config.hb_interval\") || 60;\n\nvar elem = { p: msg.payload, hb_i: msg.hb_thing_interval, counter: 0};\nelem.counter = elem.hb_i;\nvar key = \"table.\" + msg.topic;\nflow.set(key, elem);\n\nvar table = flow.get(\"table\") || {};\nvar length = 0;\n\nconst newNames = Object.keys(table).reduce((object, key) => {\n  length++;\n    if (key == msg.topic) {\n     if (msg.payload == \"\") {\n       delete object[key];\n       length--;\n       flow.set('table.' + key, undefined);\n     }\n    }\n    return object\n}, {})\n\n\nmsg.topic = msg.topic.replace(/\\/cmd\\/hb$/, \"/status/hb\");\nif (msg.payload = \"\") msg.superAction = 'unsubscribe';\n\nnode.status({ fill: \"green\", shape: \"dot\", text: length });\nmsg.cnt = length;\n\nreturn msg;",
+        "func": "msg.hb_thing_interval = msg.payload.hb_interval_sec || flow.get(\"thing.def_config.hb_interval\") || 60;\n\nvar elem = { p: msg.payload, hb_i: msg.hb_thing_interval, counter: 0};\nelem.counter = elem.hb_i;\nvar key = \"table.\" + msg.topic;\nflow.set(key, elem);\n\nvar table = flow.get(\"table\") || {};\nvar length = 0;\n\nconst newNames = Object.keys(table).reduce((object, key) => {\n  length++;\n    if (key == msg.topic) {\n     if (msg.payload == \"\") {\n       delete object[key];\n       length--;\n       flow.set('table.' + key, undefined);\n     }\n    }\n    return object\n}, {})\n\n\nmsg.topic = msg.topic.replace(/\\/cmd\\/hb$/, \"/status/hb\");\nif (msg.payload = \"\") msg.superAction = 'unsubscribe';\n\nnode.status({ fill: \"green\", shape: \"dot\", text: length });\nmsg.cnt = length;\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 330,
-        "y": 460,
+        "x": 350,
+        "y": 540,
         "wires": [
             [
                 "d8f80d8f54515033"
@@ -4745,8 +4745,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 810,
-        "y": 460,
+        "x": 830,
+        "y": 540,
         "wires": [
             []
         ]
@@ -4856,7 +4856,7 @@
         "finalize": "",
         "libs": [],
         "x": 380,
-        "y": 520,
+        "y": 480,
         "wires": [
             [
                 "184f1f95abb12bf6"
@@ -4867,15 +4867,15 @@
         "id": "5534c737914a58cc",
         "type": "function",
         "z": "9da1654216b6a11d",
-        "name": "Remove prefix and postfix",
-        "func": "var str = msg.topic;\nvar path    = str.replace(/registry:0\\/out\\//, \"\");\nmsg.topic   = path +  \"/config\";\nreturn msg;",
+        "name": "Build valid cmd/hb path",
+        "func": "var str = msg.topic;\nvar path    = str.replace(/registry:0\\/out\\//, \"\");\nmsg.topic   = path +  \"/cmd/hb\";\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 850,
-        "y": 520,
+        "x": 870,
+        "y": 480,
         "wires": [
             [
                 "8cfe4231bf39edb2"
@@ -4888,7 +4888,7 @@
         "z": "9da1654216b6a11d",
         "name": "Sub to all /out",
         "x": 640,
-        "y": 520,
+        "y": 480,
         "wires": [
             [
                 "5534c737914a58cc"
