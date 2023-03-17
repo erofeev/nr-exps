@@ -5214,7 +5214,7 @@
         "y": 560,
         "wires": [
             [
-                "450c383a7b1e9dfe"
+                "ffd72964407b6da5"
             ],
             []
         ]
@@ -5239,31 +5239,6 @@
         ]
     },
     {
-        "id": "450c383a7b1e9dfe",
-        "type": "delay",
-        "z": "3c50040f913fd396",
-        "name": "",
-        "pauseType": "rate",
-        "timeout": "1",
-        "timeoutUnits": "seconds",
-        "rate": "1",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": true,
-        "allowrate": false,
-        "outputs": 1,
-        "x": 950,
-        "y": 620,
-        "wires": [
-            [
-                "ffd72964407b6da5"
-            ]
-        ]
-    },
-    {
         "id": "5c36517f04a2e7ef",
         "type": "subflow:11bfeb4f7f9d000f",
         "z": "3c50040f913fd396",
@@ -5272,8 +5247,7 @@
         "y": 620,
         "wires": [
             [
-                "42c6aa1fb7b544a0",
-                "3ae1647ef4c266d1"
+                "3cf7691fe8a23e77"
             ],
             [
                 "3ae1647ef4c266d1"
@@ -5285,8 +5259,8 @@
         "type": "function",
         "z": "3c50040f913fd396",
         "name": "Subscribe to all cmds",
-        "func": "msg.topic = global.get(\"broker.id\") || \"\";\nmsg.topic = msg.topic + \"/\";\nvar nmsg = RED.util.cloneMessage(msg);\nmsg.topic = msg.topic + \"+/cmd/#\";\n//nmsg.topic = nmsg.topic + \"+/cmd\";\nreturn [msg, null];",
-        "outputs": 2,
+        "func": "msg.topic = global.get(\"broker.id\") || \"\";\nmsg.topic = msg.topic + \"/\";\nmsg.topic = msg.topic + \"+/cmd/#\";\n\nreturn msg;",
+        "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
@@ -5294,9 +5268,6 @@
         "x": 280,
         "y": 620,
         "wires": [
-            [
-                "5c36517f04a2e7ef"
-            ],
             [
                 "5c36517f04a2e7ef"
             ]
@@ -5345,31 +5316,6 @@
             [],
             [
                 "e9f6e7f4a9f37ac9"
-            ]
-        ]
-    },
-    {
-        "id": "42c6aa1fb7b544a0",
-        "type": "delay",
-        "z": "3c50040f913fd396",
-        "name": "",
-        "pauseType": "rate",
-        "timeout": "1",
-        "timeoutUnits": "seconds",
-        "rate": "1",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": true,
-        "allowrate": false,
-        "outputs": 1,
-        "x": 550,
-        "y": 700,
-        "wires": [
-            [
-                "3cf7691fe8a23e77"
             ]
         ]
     }
