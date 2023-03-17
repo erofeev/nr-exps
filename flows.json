@@ -4405,7 +4405,8 @@
             [
                 "993a60cddde7da1f",
                 "c0b6855553c41c6a",
-                "c089681eaf2455c2"
+                "c089681eaf2455c2",
+                "906639cff2aa42a4"
             ]
         ]
     },
@@ -4663,8 +4664,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 570,
-        "y": 580,
+        "x": 590,
+        "y": 680,
         "wires": [
             [
                 "918f7a0e461f4d9f"
@@ -4714,8 +4715,8 @@
         "once": true,
         "onceDelay": "1",
         "topic": "",
-        "x": 320,
-        "y": 580,
+        "x": 340,
+        "y": 680,
         "wires": [
             [
                 "b3bdf5e8b49555b3"
@@ -4727,8 +4728,8 @@
         "type": "subflow:4778c81a96bb6f95",
         "z": "9da1654216b6a11d",
         "name": "",
-        "x": 800,
-        "y": 580,
+        "x": 820,
+        "y": 680,
         "wires": [
             [],
             []
@@ -4840,8 +4841,76 @@
         "z": "9da1654216b6a11d",
         "name": "Decrement hb counters and send out hb if 0",
         "info": "",
-        "x": 410,
-        "y": 540,
+        "x": 430,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "906639cff2aa42a4",
+        "type": "function",
+        "z": "9da1654216b6a11d",
+        "name": "Subscribe to own registry (retained)",
+        "func": "msg.topic = \"+/+/registry:0/out/+\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 380,
+        "y": 520,
+        "wires": [
+            [
+                "184f1f95abb12bf6"
+            ]
+        ]
+    },
+    {
+        "id": "5534c737914a58cc",
+        "type": "function",
+        "z": "9da1654216b6a11d",
+        "name": "Remove prefix and postfix",
+        "func": "var str = msg.topic;\nvar thingId = str.replace(/.*\\//, \"\");\nvar path    = str.replace(/\\registry:0\\/out\\//, \"\");\nmsg.topic   = path +  thingId + \"/config\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 850,
+        "y": 520,
+        "wires": [
+            [
+                "8cfe4231bf39edb2",
+                "601828c965d20589"
+            ]
+        ]
+    },
+    {
+        "id": "184f1f95abb12bf6",
+        "type": "subflow:ed5a77f4448c2cf5",
+        "z": "9da1654216b6a11d",
+        "name": "Sub to all /out",
+        "x": 640,
+        "y": 520,
+        "wires": [
+            [
+                "5534c737914a58cc"
+            ]
+        ]
+    },
+    {
+        "id": "601828c965d20589",
+        "type": "debug",
+        "z": "9da1654216b6a11d",
+        "name": "debug 7",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 880,
+        "y": 600,
         "wires": []
     },
     {
