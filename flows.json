@@ -1902,7 +1902,9 @@
         "x": 330,
         "y": 400,
         "wires": [
-            []
+            [
+                "a9e74e65db908979"
+            ]
         ]
     },
     {
@@ -4932,7 +4934,7 @@
         "y": 520,
         "wires": [
             [
-                "e9f6e7f4a9f37ac9"
+                "743a9c3a786b6985"
             ]
         ]
     },
@@ -5221,7 +5223,7 @@
         "z": "3c50040f913fd396",
         "name": "",
         "x": 900,
-        "y": 520,
+        "y": 560,
         "wires": [
             [
                 "450c383a7b1e9dfe"
@@ -5240,7 +5242,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 690,
+        "x": 850,
         "y": 520,
         "wires": [
             [
@@ -5266,7 +5268,7 @@
         "allowrate": false,
         "outputs": 1,
         "x": 950,
-        "y": 580,
+        "y": 620,
         "wires": [
             [
                 "ffd72964407b6da5"
@@ -5325,5 +5327,34 @@
         "x": 720,
         "y": 720,
         "wires": []
+    },
+    {
+        "id": "743a9c3a786b6985",
+        "type": "switch",
+        "z": "3c50040f913fd396",
+        "name": "Ignore /cmd*",
+        "property": "topic",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "cont",
+                "v": "cmd",
+                "vt": "str"
+            },
+            {
+                "t": "nnull"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "x": 650,
+        "y": 520,
+        "wires": [
+            [],
+            [
+                "e9f6e7f4a9f37ac9"
+            ]
+        ]
     }
 ]
