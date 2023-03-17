@@ -4849,7 +4849,7 @@
         "type": "function",
         "z": "9da1654216b6a11d",
         "name": "Subscribe to own registry (retained)",
-        "func": "msg.topic = \"+/registry:0/out/+\";\nreturn msg;",
+        "func": "msg.topic = \"+/\" + \n   flow.get(\"thing.type\") +\n   \":\" + \n   flow.get(\"thing.id\") +\n   \"/out/+\";\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
