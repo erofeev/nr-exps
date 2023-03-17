@@ -5747,7 +5747,8 @@
             ],
             [
                 "ed28efacad57f611",
-                "c920d524649399bf"
+                "c920d524649399bf",
+                "3c2a8e63e7455ac4"
             ]
         ]
     },
@@ -5804,5 +5805,22 @@
             [],
             []
         ]
+    },
+    {
+        "id": "3c2a8e63e7455ac4",
+        "type": "debug",
+        "z": "8148eb81de3546b8",
+        "name": "debug 7",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 620,
+        "y": 700,
+        "wires": []
     }
 ]
