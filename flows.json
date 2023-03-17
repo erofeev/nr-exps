@@ -5137,7 +5137,7 @@
         "type": "function",
         "z": "3c50040f913fd396",
         "name": "OverrideRoot - true",
-        "func": "msg.overrideRoot = true;\nmsg.qos = 2;\n\nif (msg.topic.contains(\"registry:0/out/\")) {\n    msg.retain = true;\n}\nif (msg.topic.contains(\"/config\")) {\n    msg.retain = true;\n}\nreturn msg;",
+        "func": "msg.overrideRoot = true;\nmsg.qos = 2;\n\nif (msg.topic.includes(\"registry:0/out/\")) {\n    msg.retain = true;\n}\nif (msg.topic.contains(\"/config\")) {\n    msg.retain = true;\n}\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
